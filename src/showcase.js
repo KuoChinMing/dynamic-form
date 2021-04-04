@@ -1,5 +1,5 @@
 const tableTemplates = {
-  name: "table test",
+  name: "table",
   template: {
     type: "box",
     layout: "vertical",
@@ -148,8 +148,27 @@ const tableTemplates = {
                     ],
                   },
                   {
-                    type: "textField",
-                    id: 28,
+                    type: "td",
+                    id: 34,
+                    contents: [
+                      {
+                        type: "box",
+                        layout: "horizontal",
+                        id: 35,
+                        contents: [
+                          {
+                            type: "text",
+                            text: "qwer",
+                            id: 36,
+                          },
+                          {
+                            type: "textField",
+                            id: 28,
+                            width: "100px",
+                          },
+                        ],
+                      },
+                    ],
                   },
                   {
                     type: "td",
@@ -178,6 +197,50 @@ const tableTemplates = {
         type: "text",
         text: "123",
         id: 32,
+      },
+    ],
+  },
+};
+
+const tableDemo = {
+  name: "table demo",
+  template: {
+    type: "table",
+    id: 0,
+    contents: [
+      {
+        type: "trow",
+        id: 1,
+        contents: [
+          {
+            type: "tcol",
+            colspan: 2,
+            text: "1",
+            id: 2,
+          },
+          {
+            type: "tcol",
+            rowspan: 2,
+            text: "2",
+            id: 3,
+          },
+        ],
+      },
+      {
+        type: "trow",
+        id: 4,
+        contents: [
+          {
+            type: "tcol",
+            text: "3",
+            id: 5,
+          },
+          {
+            type: "tcol",
+            text: "4",
+            id: 6,
+          },
+        ],
       },
     ],
   },
@@ -407,4 +470,4 @@ const diagnosisTemplates = {
 
 export const templates = [tableTemplates, diagnosisTemplates];
 
-export default tableTemplates.template;
+export default tableDemo.template;

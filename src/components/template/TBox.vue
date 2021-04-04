@@ -34,7 +34,7 @@ export default {
     const comlumnLayout = data.layout === "vertical";
     const layoutStyle = {
       alignItems: data.alignItems,
-      flexWrap: data.wrap ?? "wrap",
+      flexWrap: data.wrap ?? "nowrap",
     };
 
     return (

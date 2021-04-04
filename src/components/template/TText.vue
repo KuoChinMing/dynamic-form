@@ -34,7 +34,7 @@ export default {
 
     return (
       <v-flex style={style}>
-        <span>{this.$slots.default}</span>
+        <span>{this.$slots.default ?? this.data.text ?? "hello world"}</span>
       </v-flex>
     );
   },

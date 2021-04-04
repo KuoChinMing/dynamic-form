@@ -68,7 +68,7 @@ export default {
           return <t-separator data={element}></t-separator>;
 
         case "text":
-          return <t-text data={element}>{element.text}</t-text>;
+          return <t-text data={element}></t-text>;
 
         case "checkbox":
           if (element.bindingData in this.data) {
@@ -94,44 +94,37 @@ export default {
 
         case "table":
           return (
-            <table>
-              {element.contents.map((element) => this.renderElement(element))}
+            <table
+              id="form"
+              style={{
+                borderCollapse: "collapse",
+                borderSpacing: 0,
+                width: "100%",
+              }}
+            >
+              <tbody>
+                {element.contents.map((element) => this.renderElement(element))}
+              </tbody>
             </table>
           );
 
-        case "thead":
-          return (
-            <thead>
-              {element.contents.map((element) => this.renderElement(element))}
-            </thead>
-          );
-
-        case "tbody":
-          return (
-            <tbody>
-              {element.contents.map((element) => this.renderElement(element))}
-            </tbody>
-          );
-
-        case "tr":
+        case "trow":
           return (
             <tr>
-              {element.contents.map((element) => this.renderElement(element))}
+              {element.contents?.map((element) => this.renderElement(element))}
             </tr>
           );
 
-        case "th":
+        case "tcol":
           return (
-            <th colspan={element.colspan} width={element.width}>
-              {"contents" in element
-                ? element.contents.map((element) => this.renderElement(element))
-                : element.text}
-            </th>
-          );
-
-        case "td":
-          return (
-            <td>
+            <td
+              colspan={element.colspan}
+              rowspan={element.rowspan}
+              style={{
+                border: "1px solid #ddd",
+                padding: "8px",
+              }}
+            >
               {"contents" in element
                 ? element.contents.map((element) => this.renderElement(element))
                 : element.text}

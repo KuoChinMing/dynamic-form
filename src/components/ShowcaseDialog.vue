@@ -74,7 +74,7 @@ export default {
     if (this.value) {
       this.value = this.isOpen;
     }
-    console.log(templates);
+
     this.templates = templates;
   },
 

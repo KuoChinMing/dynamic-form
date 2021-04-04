@@ -6,8 +6,8 @@
           <textarea
             v-model="templateString"
             ref="templateInput"
-            style="scroll: auto; border: 1px solid grey"
-            class="rounded h-100 w-100"
+            style="scroll: auto; border: 1px solid grey; width: 100%"
+            class="rounded"
             rows="20"
           ></textarea>
         </v-sheet>
