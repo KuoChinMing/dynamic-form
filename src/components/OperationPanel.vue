@@ -221,7 +221,7 @@ export default {
     },
     selectNode([selectedNode]) {
       this.selectedNode = selectedNode;
-      this.$emit("selectNode", selectedNode);
+      this.$emit("select-node", selectedNode);
     },
     addNode({ type }) {
       const id = this.genUniqueId();

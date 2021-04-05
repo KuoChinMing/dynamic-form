@@ -1,208 +1,4 @@
 const tableTemplate = {
-  name: "table",
-  template: {
-    type: "box",
-    layout: "vertical",
-    id: 0,
-    contents: [
-      {
-        type: "table",
-        id: 1,
-        contents: [
-          {
-            type: "thead",
-            id: 2,
-            contents: [
-              {
-                type: "tr",
-                id: 3,
-                contents: [
-                  {
-                    type: "th",
-                    colspan: 3,
-                    width: "500px",
-                    text: "th th th",
-                  },
-                  {
-                    type: "th",
-                    colspan: 2,
-                    id: 6,
-                    text: "other th",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            type: "tbody",
-            id: 8,
-            contents: [
-              {
-                type: "tr",
-                id: 9,
-                contents: [
-                  {
-                    type: "td",
-                    id: 10,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "nosdf",
-                        id: 11,
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 12,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "cool",
-                        id: 13,
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 14,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "yes",
-                        id: 15,
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 16,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "no",
-                        id: 17,
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 18,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "no",
-                        id: 19,
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                type: "tr",
-                id: 20,
-                contents: [
-                  {
-                    type: "td",
-                    id: 21,
-                    contents: [
-                      {
-                        type: "box",
-                        layout: "horizontal",
-                        id: 33,
-                        contents: [
-                          {
-                            type: "checkbox",
-                            id: 22,
-                          },
-                          {
-                            type: "text",
-                            text: "this is text",
-                            flexBasis: "auto",
-                            id: 23,
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 24,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "with two columns",
-                        id: 25,
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 26,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "ddd",
-                        id: 27,
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 34,
-                    contents: [
-                      {
-                        type: "box",
-                        layout: "horizontal",
-                        id: 35,
-                        contents: [
-                          {
-                            type: "text",
-                            text: "flex",
-                            id: 36,
-                          },
-                          {
-                            type: "textField",
-                            id: 28,
-                            width: "100px",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "td",
-                    id: 29,
-                    contents: [
-                      {
-                        type: "text",
-                        text: "no",
-                        id: 30,
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "separator",
-        marginTop: "10px",
-        marginBottom: "100px",
-        id: 31,
-      },
-      {
-        type: "text",
-        text: "123",
-        id: 32,
-      },
-    ],
-  },
-};
-
-const tableDemo = {
   name: "table demo",
   template: {
     type: "table",
@@ -217,12 +13,38 @@ const tableDemo = {
             colspan: 2,
             text: "1",
             id: 2,
+            contents: [
+              {
+                type: "text",
+                id: 10,
+                text: "1234",
+                width: "",
+                fontSize: "50px",
+                color: "red",
+                fontStyle: "italic",
+                fontWeight: "bold",
+                textDecoration: "line-through",
+                textAlign: "",
+                position: "relative",
+                left: "",
+                right: "",
+                bottom: "",
+                top: "",
+              },
+            ],
           },
           {
             type: "tcol",
             rowspan: 2,
-            text: "2",
+            text: "",
             id: 3,
+            contents: [
+              {
+                type: "text",
+                id: 11,
+                text: "QQ",
+              },
+            ],
           },
         ],
       },
@@ -232,13 +54,257 @@ const tableDemo = {
         contents: [
           {
             type: "tcol",
-            text: "3",
+            text: "",
             id: 5,
+            contents: [
+              {
+                type: "text",
+                id: 12,
+                text: "TT",
+              },
+            ],
           },
           {
             type: "tcol",
             text: "4",
             id: 6,
+            contents: [
+              {
+                type: "text",
+                id: 13,
+                text: "T_T",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "trow",
+        id: 7,
+        contents: [
+          {
+            type: "tcol",
+            colspan: 2,
+            text: "1",
+            id: 8,
+            contents: [
+              {
+                type: "text",
+                id: 14,
+                text: "Q_Q",
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            rowspan: 2,
+            text: "2",
+            id: 9,
+            contents: [
+              {
+                type: "text",
+                id: 15,
+                text: "@@",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "trow",
+        id: 16,
+        contents: [
+          {
+            type: "tcol",
+            colspan: 2,
+            text: "1",
+            id: 17,
+            contents: [
+              {
+                type: "text",
+                id: 18,
+                text: "1234",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "trow",
+        id: 19,
+        contents: [
+          {
+            type: "tcol",
+            colspan: 2,
+            text: "1",
+            id: 20,
+            contents: [
+              {
+                type: "text",
+                id: 21,
+                text: "1234",
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            id: 22,
+            contents: [
+              {
+                type: "table",
+                id: 23,
+                contents: [
+                  {
+                    type: "trow",
+                    id: 24,
+                    contents: [
+                      {
+                        type: "tcol",
+                        colspan: 2,
+                        text: "1",
+                        id: 25,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 26,
+                            text: "1234",
+                            width: "",
+                            fontSize: "50px",
+                            color: "red",
+                            fontStyle: "italic",
+                            fontWeight: "bold",
+                            textDecoration: "line-through",
+                            textAlign: "",
+                            position: "relative",
+                            left: "",
+                            right: "",
+                            bottom: "",
+                            top: "",
+                          },
+                        ],
+                      },
+                      {
+                        type: "tcol",
+                        rowspan: 2,
+                        text: "",
+                        id: 26,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 27,
+                            text: "QQ",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    type: "trow",
+                    id: 25,
+                    contents: [
+                      {
+                        type: "tcol",
+                        text: "",
+                        id: 26,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 27,
+                            text: "TT",
+                          },
+                        ],
+                      },
+                      {
+                        type: "tcol",
+                        text: "4",
+                        id: 27,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 28,
+                            text: "T_T",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    type: "trow",
+                    id: 26,
+                    contents: [
+                      {
+                        type: "tcol",
+                        colspan: 2,
+                        text: "1",
+                        id: 27,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 28,
+                            text: "Q_Q",
+                          },
+                        ],
+                      },
+                      {
+                        type: "tcol",
+                        rowspan: 2,
+                        text: "2",
+                        id: 28,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 29,
+                            text: "@@",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    type: "trow",
+                    id: 27,
+                    contents: [
+                      {
+                        type: "tcol",
+                        colspan: 2,
+                        text: "1",
+                        id: 28,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 29,
+                            text: "1234",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    type: "trow",
+                    id: 28,
+                    contents: [
+                      {
+                        type: "tcol",
+                        colspan: 2,
+                        text: "1",
+                        id: 29,
+                        contents: [
+                          {
+                            type: "text",
+                            id: 30,
+                            text: "1234",
+                          },
+                        ],
+                      },
+                      {
+                        type: "tcol",
+                        id: 30,
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -279,7 +345,6 @@ const diagnosisTemplate = {
             align: "center",
             fontWeight: "bold",
             fontSize: "18px",
-            paddingAll: "5px",
             id: 3,
           },
           {
@@ -443,7 +508,6 @@ const diagnosisTemplate = {
             align: "center",
             fontWeight: "bold",
             fontSize: "18px",
-            paddingAll: "5px",
             id: 26,
           },
           {
@@ -503,7 +567,6 @@ const diagnosisTemplate = {
 export const templates = {
   tableTemplate,
   diagnosisTemplate,
-  tableDemo,
 };
 export const bindingData = { diagnosisTypeBindingData };
 export const defaultTemplate = diagnosisTemplate.template;

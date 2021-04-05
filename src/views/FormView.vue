@@ -7,22 +7,27 @@
       <v-layout column fill-height>
         <div class="grey lighten-3 pa-6" style="flex: 1 0 0; overflow: auto">
           <v-sheet class="pa-2" elevation="6" style="overflow: auto">
+            <!-- warning: template is mutating -->
+            <!-- warning: binding data is mutating -->
             <t-form :template="template" :binding-data="bindingData"></t-form>
           </v-sheet>
         </div>
       </v-layout>
     </v-flex>
     <v-flex style="flex: 0 0 auto" :style="{ width: expanded ? '50%' : '30%' }">
+      <!-- warning: template is mutating -->
       <operation-panel
         :template="template"
-        @selectNode="selectNode"
+        @select-node="selectNode"
       ></operation-panel>
     </v-flex>
     <v-flex style="flex: 0 0 auto" :style="{ width: expanded ? '50%' : '30%' }">
+      <!-- warning: template is mutating -->
+      <!-- warning: binding data is mutating -->
       <element-setting-panel
         class="grey lighten-3"
-        :binding-data="bindingData"
         :element="selectedNode"
+        :binding-data="bindingData"
       ></element-setting-panel>
     </v-flex>
   </v-layout>
