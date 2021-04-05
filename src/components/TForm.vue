@@ -40,12 +40,12 @@ export default {
       },
       deep: true,
     },
-    data: {
-      handler(value) {
-        this.$emit("input", value);
-      },
-      deep: true,
-    },
+    // data: {
+    //   handler(value) {
+    //     this.$emit("input", value);
+    //   },
+    //   deep: true,
+    // },
   },
 
   created() {

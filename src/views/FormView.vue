@@ -21,7 +21,8 @@
     <v-flex style="flex: 0 0 auto" :style="{ width: expanded ? '50%' : '30%' }">
       <element-setting-panel
         class="grey lighten-3"
-        :element="selectedNode && selectedNode.type"
+        :binding-data="bindingData"
+        :element="selectedNode"
       ></element-setting-panel>
     </v-flex>
   </v-layout>

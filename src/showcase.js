@@ -158,7 +158,7 @@ const tableTemplate = {
                         contents: [
                           {
                             type: "text",
-                            text: "qwer",
+                            text: "flex",
                             id: 36,
                           },
                           {

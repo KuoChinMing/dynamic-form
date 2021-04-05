@@ -20,16 +20,21 @@ export default {
     const style = {
       flexGrow: data.flex ?? 0,
       flexShrink: 0,
-      flexBasis: data.flexBasis ?? 0,
-      textAlign: data.align,
+      flexBasis: data.flexBasis || 0,
+      width: data.width,
+      textAlign: data.textAlign,
       fontWeight: data.fontWeight,
       fontSize: data.fontSize,
-      // TODO
-      // padding: data.paddingAll,
-      paddingTop: data.paddingTop,
-      paddingRight: data.paddingRight,
-      paddingBottom: data.paddingBottom,
-      paddingLeft: data.paddingLeft,
+      fontStyle: data.fontStyle,
+      color: data.color,
+      textDecoration: data.textDecoration,
+      position: data.position,
+      whiteSpace: data.whiteSpace,
+      margin: data.margin,
+      top: data.top,
+      bottom: data.bottom,
+      left: data.left,
+      right: data.right,
     };
 
     return (
