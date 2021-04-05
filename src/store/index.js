@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import defaultTemplate from "@/showcase.js";
+import { defaultTemplate } from "@/showcase.js";
 
 Vue.use(Vuex);
 

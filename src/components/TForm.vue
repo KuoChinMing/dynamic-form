@@ -6,7 +6,7 @@ import TCheckbox from "@/components/template/TCheckbox.vue";
 import TTextField from "@/components/template/TTextField.vue";
 
 export default {
-  name: "DynamicForm",
+  name: "TForm",
 
   props: {
     template: {
@@ -60,7 +60,7 @@ export default {
         case "box":
           return (
             <t-box data={element}>
-              {element.contents.map((element) => this.renderElement(element))}
+              {element.contents?.map((element) => this.renderElement(element))}
             </t-box>
           );
 
@@ -95,7 +95,6 @@ export default {
         case "table":
           return (
             <table
-              id="form"
               style={{
                 borderCollapse: "collapse",
                 borderSpacing: 0,
@@ -103,7 +102,9 @@ export default {
               }}
             >
               <tbody>
-                {element.contents.map((element) => this.renderElement(element))}
+                {element.contents?.map((element) =>
+                  this.renderElement(element)
+                )}
               </tbody>
             </table>
           );
@@ -126,7 +127,9 @@ export default {
               }}
             >
               {"contents" in element
-                ? element.contents.map((element) => this.renderElement(element))
+                ? element.contents?.map((element) =>
+                    this.renderElement(element)
+                  )
                 : element.text}
             </td>
           );

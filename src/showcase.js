@@ -1,4 +1,4 @@
-const tableTemplates = {
+const tableTemplate = {
   name: "table",
   template: {
     type: "box",
@@ -246,30 +246,31 @@ const tableDemo = {
   },
 };
 
-// const diagnosisTypeBindingData = {
-//   jointsD: "",
-//   jointsMtRib: "",
-//   jointsPd: "",
-//   jointsSgCheckbox: false,
-//   jointsDCheckbox: false,
-//   jointsMtRibCheckbox: false,
-//   jointsLsjCheckbox: false,
-//   jointsPdCheckbox: false,
-//   softTissueOpenUpLigCheckbox: false,
-//   softTissueEoCheckbox: false,
-// };
+const diagnosisTypeBindingData = {
+  jointsD: "",
+  jointsMtRib: "",
+  jointsPd: "",
+  jointsSgCheckbox: false,
+  jointsDCheckbox: false,
+  jointsMtRibCheckbox: false,
+  jointsLsjCheckbox: false,
+  jointsPdCheckbox: false,
+  softTissueOpenUpLigCheckbox: false,
+  softTissueEoCheckbox: false,
+};
 
-const diagnosisTemplates = {
+const diagnosisTemplate = {
   name: "diagnosis",
-  id: 0,
   template: {
     type: "box",
     layout: "vertical",
+    id: 1,
     contents: [
       {
         type: "box",
         layout: "horizontal",
         alignItems: "center",
+        id: 2,
         contents: [
           {
             type: "text",
@@ -279,26 +280,31 @@ const diagnosisTemplates = {
             fontWeight: "bold",
             fontSize: "18px",
             paddingAll: "5px",
+            id: 3,
           },
           {
             type: "box",
             layout: "vertical",
             flex: 4,
+            id: 4,
             contents: [
               {
                 type: "box",
                 layout: "horizontal",
                 paddingTop: "5px",
                 paddingBottom: "5px",
+                id: 5,
                 contents: [
                   {
                     type: "checkbox",
                     bindingData: "jointsSgCheckbox",
+                    id: 6,
                   },
                   {
                     type: "text",
                     text: "SG:Rt SG ER+EN",
                     flexBasis: "auto",
+                    id: 7,
                   },
                 ],
               },
@@ -308,15 +314,18 @@ const diagnosisTemplates = {
                 paddingTop: "5px",
                 paddingBottom: "5px",
                 alignItems: "center",
+                id: 8,
                 contents: [
                   {
                     type: "checkbox",
                     bindingData: "jointsDCheckbox",
+                    id: 9,
                   },
                   {
                     type: "text",
                     text: "D+: Tx group dysfn 1st rib on the left +",
                     flexBasis: "auto",
+                    id: 10,
                   },
                   {
                     type: "textField",
@@ -324,6 +333,7 @@ const diagnosisTemplates = {
                     flexBasis: "auto",
                     width: "140px",
                     bindingData: "jointsD",
+                    id: 11,
                   },
                 ],
               },
@@ -333,15 +343,18 @@ const diagnosisTemplates = {
                 paddingTop: "5px",
                 paddingBottom: "5px",
                 alignItems: "center",
+                id: 12,
                 contents: [
                   {
                     type: "checkbox",
                     bindingData: "jointsMtRibCheckbox",
+                    id: 13,
                   },
                   {
                     type: "text",
                     text: "MT/rib:",
                     flexBasis: "auto",
+                    id: 14,
                   },
                   {
                     type: "textField",
@@ -349,11 +362,13 @@ const diagnosisTemplates = {
                     flexBasis: "auto",
                     width: "140px",
                     bindingData: "jointsMtRib",
+                    id: 15,
                   },
                   {
                     type: "text",
                     text: "3D derot/thrust",
                     flexBasis: "auto",
+                    id: 16,
                   },
                 ],
               },
@@ -362,15 +377,18 @@ const diagnosisTemplates = {
                 layout: "horizontal",
                 paddingTop: "5px",
                 paddingBottom: "5px",
+                id: 17,
                 contents: [
                   {
                     type: "checkbox",
                     bindingData: "jointsLsjCheckbox",
+                    id: 18,
                   },
                   {
                     type: "text",
                     text: "LSJ: derotation",
                     flexBasis: "auto",
+                    id: 19,
                   },
                 ],
               },
@@ -380,15 +398,18 @@ const diagnosisTemplates = {
                 paddingTop: "5px",
                 paddingBottom: "5px",
                 alignItems: "center",
+                id: 20,
                 contents: [
                   {
                     type: "checkbox",
                     bindingData: "jointsPdCheckbox",
+                    id: 21,
                   },
                   {
                     type: "text",
                     text: "Pelvic Dysfn:",
                     flexBasis: "auto",
+                    id: 22,
                   },
                   {
                     type: "textField",
@@ -396,6 +417,7 @@ const diagnosisTemplates = {
                     flexBasis: "auto",
                     width: "140px",
                     bindingData: "jointsPd",
+                    id: 23,
                   },
                 ],
               },
@@ -406,11 +428,13 @@ const diagnosisTemplates = {
       {
         type: "separator",
         marginAll: "16px",
+        id: 24,
       },
       {
         type: "box",
         layout: "horizontal",
         alignItems: "center",
+        id: 25,
         contents: [
           {
             type: "text",
@@ -420,26 +444,31 @@ const diagnosisTemplates = {
             fontWeight: "bold",
             fontSize: "18px",
             paddingAll: "5px",
+            id: 26,
           },
           {
             type: "box",
             layout: "vertical",
             flex: 4,
+            id: 27,
             contents: [
               {
                 type: "box",
                 layout: "horizontal",
                 paddingTop: "5px",
                 paddingBottom: "5px",
+                id: 28,
                 contents: [
                   {
                     type: "checkbox",
                     bindingData: "softTissueOpenUpLigCheckbox",
+                    id: 29,
                   },
                   {
                     type: "text",
                     text: "Lt T/L side: open up lig. & intercostrals",
                     flexBasis: "auto",
+                    id: 30,
                   },
                 ],
               },
@@ -448,15 +477,18 @@ const diagnosisTemplates = {
                 layout: "horizontal",
                 paddingTop: "5px",
                 paddingBottom: "5px",
+                id: 31,
                 contents: [
                   {
                     type: "checkbox",
                     bindingData: "softTissueEoCheckbox",
+                    id: 32,
                   },
                   {
                     type: "text",
                     text: "Lt T/L side: open up EO/IO/QL",
                     flexBasis: "auto",
+                    id: 33,
                   },
                 ],
               },
@@ -468,6 +500,10 @@ const diagnosisTemplates = {
   },
 };
 
-export const templates = [tableTemplates, diagnosisTemplates];
-
-export default tableDemo.template;
+export const templates = {
+  tableTemplate,
+  diagnosisTemplate,
+  tableDemo,
+};
+export const bindingData = { diagnosisTypeBindingData };
+export const defaultTemplate = diagnosisTemplate.template;
