@@ -40,9 +40,24 @@ const tableTemplate = {
             id: 3,
             contents: [
               {
-                type: "text",
-                id: 11,
-                text: "QQ",
+                type: "box",
+                id: 33,
+                contents: [
+                  {
+                    type: "checkbox",
+                    id: 34,
+                  },
+                  {
+                    type: "text",
+                    id: 35,
+                    text: "dynamic form",
+                    top: "",
+                    position: "",
+                    color: "blue",
+                    fontWeight: "bold",
+                    fontSize: "30px",
+                  },
+                ],
               },
             ],
           },
@@ -72,7 +87,7 @@ const tableTemplate = {
               {
                 type: "text",
                 id: 13,
-                text: "T_T",
+                text: "T_______T",
               },
             ],
           },
@@ -91,7 +106,10 @@ const tableTemplate = {
               {
                 type: "text",
                 id: 14,
-                text: "Q_Q",
+                text: "Hello World",
+                color: "purple",
+                fontStyle: "",
+                fontWeight: "bold",
               },
             ],
           },
@@ -222,7 +240,7 @@ const tableTemplate = {
                           {
                             type: "text",
                             id: 28,
-                            text: "T_T",
+                            text: "T_______T",
                           },
                         ],
                       },
@@ -308,6 +326,48 @@ const tableTemplate = {
           },
         ],
       },
+      {
+        type: "trow",
+        id: 36,
+        contents: [
+          {
+            type: "tcol",
+            text: "",
+            id: 37,
+            contents: [
+              {
+                type: "text",
+                id: 38,
+                text: "TT",
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            text: "4",
+            id: 38,
+            contents: [
+              {
+                type: "text",
+                id: 39,
+                text: "T_______T",
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            text: "",
+            id: 40,
+            contents: [
+              {
+                type: "text",
+                id: 41,
+                text: "TT",
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 };
@@ -346,6 +406,7 @@ const diagnosisTemplate = {
             fontWeight: "bold",
             fontSize: "18px",
             id: 3,
+            
           },
           {
             type: "box",

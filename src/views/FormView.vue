@@ -36,7 +36,7 @@
 <script>
 import TForm from "@/components/TForm.vue";
 import OperationPanel from "@/components/OperationPanel.vue";
-import ElementSettingPanel from "@/components/ElementSettingPanel.vue";
+import ElementSettingPanel from "@/components/panel/ElementSettingPanel.vue";
 import { mapState } from "vuex";
 
 import { bindingData } from "@/showcase.js";

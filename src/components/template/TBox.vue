@@ -31,17 +31,20 @@ export default {
       paddingLeft: data.paddingLeft,
     };
 
-    const comlumnLayout = data.layout === "vertical";
+    const layout = {
+      horizontal: "row",
+      vertical: "column",
+    };
+
     const layoutStyle = {
       alignItems: data.alignItems,
       flexWrap: data.wrap ?? "nowrap",
+      flexDirection: layout[data.layout] ?? "row",
     };
 
     return (
       <v-flex style={style}>
-        <v-layout column={comlumnLayout} style={layoutStyle}>
-          {this.$slots.default}
-        </v-layout>
+        <v-layout style={layoutStyle}>{this.$slots.default}</v-layout>
       </v-flex>
     );
   },

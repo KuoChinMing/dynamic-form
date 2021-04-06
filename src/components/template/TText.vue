@@ -18,7 +18,7 @@ export default {
   render() {
     const data = this.data;
     const style = {
-      flexGrow: data.flex ?? 0,
+      flexGrow: data.flex || 0,
       flexShrink: 0,
       flexBasis: data.flexBasis || 0,
       width: data.width,

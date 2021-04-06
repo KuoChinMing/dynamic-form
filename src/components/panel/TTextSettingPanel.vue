@@ -1,70 +1,44 @@
 <template>
   <v-container>
-    <!-- <element-setting-input-box
-      v-model="element['text']"
-      input-class="white"
+    <element-setting-input-box
+      :value="element['type']"
+      type="textField"
       label="type"
-    ></element-setting-input-box> -->
+      disabled
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
 
-    <v-row align="center">
-      <v-col cols="3" class="text-right">
-        <label>type</label>
-      </v-col>
-      <v-col cols="9">
-        <v-text-field
-          :value="element['type']"
-          disabled
-          dense
-          outlined
-          hide-details
-        ></v-text-field>
-      </v-col>
-    </v-row>
+    <element-setting-input-box
+      :value="element['id']"
+      type="textField"
+      label="id"
+      disabled
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
 
-    <v-row align="center">
-      <v-col cols="3" class="text-right">
-        <label>id</label>
-      </v-col>
-      <v-col cols="9">
-        <v-text-field
-          :value="element['id']"
-          disabled
-          dense
-          outlined
-          hide-details
-        ></v-text-field>
-      </v-col>
-    </v-row>
+    <element-setting-input-box
+      v-model="element['text']"
+      type="textField"
+      input-class="white"
+      label="text"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
 
-    <v-row align="center">
-      <v-col cols="3" class="text-right">
-        <label>text</label>
-      </v-col>
-      <v-col cols="9">
-        <v-text-field
-          v-model="element['text']"
-          class="white"
-          dense
-          outlined
-          hide-details
-        ></v-text-field>
-      </v-col>
-    </v-row>
-
-    <v-row align="center">
-      <v-col cols="3" class="text-right">
-        <label>flex</label>
-      </v-col>
-      <v-col cols="9">
-        <v-text-field
-          v-model="element['flex']"
-          class="white"
-          dense
-          outlined
-          hide-details
-        ></v-text-field>
-      </v-col>
-    </v-row>
+    <element-setting-input-box
+      v-model="element['flex']"
+      type="textField"
+      input-class="white"
+      label="flex"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
 
     <v-row align="center">
       <v-col cols="3" class="text-right">

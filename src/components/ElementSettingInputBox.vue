@@ -4,24 +4,26 @@
       <label>{{ label }}</label>
     </v-col>
     <v-col cols="9">
-      <v-text-field
-        :v-bind="$attrs"
-        v-on="$listeners"
+      <component
+        :is="input"
+        :value="value"
         :class="inputClass"
-        :disabled="$attrs.disabled"
-        dense
-        outlined
-        hide-details
-      ></v-text-field>
+        v-bind="$attrs"
+        v-on="$listeners"
+      ></component>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import { VTextField } from "vuetify/lib";
+
 export default {
   name: "ElementSettingInputBox",
 
-  inheritAttrs: false,
+  components: {
+    VTextField,
+  },
 
   props: {
     label: {
@@ -31,6 +33,21 @@ export default {
     inputClass: {
       type: [Object, Array, String],
       default: "",
+    },
+    value: {},
+    type: {
+      type: String,
+      default: "textField",
+    },
+  },
+
+  computed: {
+    input() {
+      const type = {
+        textField: "v-text-field",
+      };
+
+      return type[this.type] || null;
     },
   },
 };
