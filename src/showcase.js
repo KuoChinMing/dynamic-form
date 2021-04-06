@@ -406,7 +406,6 @@ const diagnosisTemplate = {
             fontWeight: "bold",
             fontSize: "18px",
             id: 3,
-            
           },
           {
             type: "box",

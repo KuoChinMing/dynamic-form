@@ -16,7 +16,7 @@
         </template>
         <v-list dense>
           <v-list-item
-            @click="addNode(element)"
+            @click="addNode(element.type)"
             v-for="(element, index) in elements"
             :key="index"
           >
@@ -158,6 +158,9 @@ export default {
   },
 
   methods: {
+    deepCopy(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    },
     findMaxId(element) {
       let currentId = element.id || 0;
 
@@ -180,8 +183,17 @@ export default {
     replaceNodeId(element, uniqueId = this.genUniqueId()) {
       element.id = uniqueId;
       if ("contents" in element) {
-        for (const [index, childElement] of element.contents.entries()) {
-          this.replaceNodeId(childElement, uniqueId + index + 1);
+        let previosChildElement = null;
+        for (const childElement of element.contents) {
+          if (!previosChildElement) {
+            this.replaceNodeId(childElement, uniqueId + 1);
+          } else {
+            this.replaceNodeId(
+              childElement,
+              this.findMaxId(previosChildElement) + 1
+            );
+          }
+          previosChildElement = childElement;
         }
       }
 
@@ -223,7 +235,7 @@ export default {
       this.selectedNode = selectedNode;
       this.$emit("select-node", selectedNode);
     },
-    addNode({ type }) {
+    addNode(type) {
       const id = this.genUniqueId();
       const element = { type, id };
 
@@ -241,16 +253,15 @@ export default {
       this.$set(parentNode, "contents", parentNodeContents);
     },
     cutNode() {
-      this.copiedNode = this.selectedNode;
+      this.copyNode();
       this.deleteNode();
     },
     copyNode() {
-      this.copiedNode = this.selectedNode;
+      this.copiedNode = this.deepCopy(this.selectedNode);
     },
     pasteNode() {
-      const cloneCopiedNode = JSON.parse(JSON.stringify(this.copiedNode));
-      // TODO: cut to paste don't need to replace node id
-      const newNode = this.replaceNodeId(cloneCopiedNode);
+      // 深拷貝，才不會讓兩次以上的貼上參考到同一個 node
+      const newNode = this.deepCopy(this.replaceNodeId(this.copiedNode));
 
       if ("contents" in this.selectedNode) {
         this.selectedNode.contents.push(newNode);
