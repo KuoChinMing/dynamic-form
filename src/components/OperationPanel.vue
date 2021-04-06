@@ -260,7 +260,7 @@ export default {
       this.copiedNode = this.deepCopy(this.selectedNode);
     },
     pasteNode() {
-      // 深拷貝，才不會讓兩次以上的貼上參考到同一個 node
+      // 深拷貝，防止兩次以上的貼上 replaceNodeId() 參考到相同的 node
       const newNode = this.deepCopy(this.replaceNodeId(this.copiedNode));
 
       if ("contents" in this.selectedNode) {
