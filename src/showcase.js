@@ -406,7 +406,6 @@ const diagnosisTemplate = {
             fontWeight: "bold",
             fontSize: "18px",
             id: 3,
-            
           },
           {
             type: "box",
@@ -625,9 +624,32 @@ const diagnosisTemplate = {
   },
 };
 
+const textFIeldTemplate = {
+  name: "textField Demo",
+  template: {
+    type: "box",
+    layout: "horizontal",
+    id: 1,
+    contents: [
+      {
+        type: "text",
+        id: 3,
+        flexBasis: "auto",
+      },
+      {
+        type: "textField",
+        flexBasis: "auto",
+        width: "180px",
+        id: 2,
+      },
+    ],
+  },
+};
+
 export const templates = {
   tableTemplate,
   diagnosisTemplate,
 };
+
 export const bindingData = { diagnosisTypeBindingData };
-export const defaultTemplate = diagnosisTemplate.template;
+export const defaultTemplate = textFIeldTemplate.template;
