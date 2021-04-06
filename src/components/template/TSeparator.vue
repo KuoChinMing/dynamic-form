@@ -23,6 +23,7 @@ export default {
       marginLeft: data.marginLeft,
       marginBottom: data.marginBottom,
       marginRight: data.marginRight,
+      backgroundColor: data.backgroundColor,
     };
 
     return <v-divider style={style}></v-divider>;

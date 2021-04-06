@@ -35,6 +35,7 @@ export default {
       bottom: data.bottom,
       left: data.left,
       right: data.right,
+      backgroundColor: data.backgroundColor,
     };
 
     return (

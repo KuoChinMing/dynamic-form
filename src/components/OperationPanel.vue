@@ -9,6 +9,7 @@
             dark
             class="mr-1"
             color="primary"
+            :disabled="!selectedNode"
           >
             <v-icon small>mdi-plus</v-icon>
             <v-icon small>mdi-menu-down</v-icon>
@@ -28,29 +29,32 @@
       <v-btn-toggle class="mr-1" background-color="grey" dark>
         <toolbar-btn
           @click="moveUpNode"
-          :disabled="this.template === this.selectedNode"
+          :disabled="!selectedNode || template === selectedNode"
         >
           <v-icon size="16px">mdi-chevron-up</v-icon>
         </toolbar-btn>
         <toolbar-btn
           @click="moveDownNode"
-          :disabled="this.template === this.selectedNode"
+          :disabled="!selectedNode || template === selectedNode"
         >
           <v-icon small>mdi-chevron-down</v-icon>
         </toolbar-btn>
       </v-btn-toggle>
 
       <v-btn-toggle class="mr-1" background-color="grey" dark>
-        <toolbar-btn @click="copyNode">
+        <toolbar-btn @click="copyNode" :disabled="!selectedNode">
           <v-icon small>mdi-content-copy</v-icon>
         </toolbar-btn>
         <toolbar-btn
           @click="cutNode"
-          :disabled="this.template === this.selectedNode"
+          :disabled="!selectedNode || template === selectedNode"
         >
           <v-icon small>mdi-content-cut</v-icon>
         </toolbar-btn>
-        <toolbar-btn @click="pasteNode" :disabled="!copiedNode">
+        <toolbar-btn
+          @click="pasteNode"
+          :disabled="!selectedNode || !copiedNode"
+        >
           <v-icon small>mdi-content-paste</v-icon>
         </toolbar-btn>
       </v-btn-toggle>
@@ -68,7 +72,7 @@
         color="red"
         dark
         @click="deleteNode"
-        :disabled="this.template === this.selectedNode"
+        :disabled="!selectedNode || template === selectedNode"
       >
         <v-icon small>mdi-close</v-icon>
       </toolbar-btn>
@@ -76,6 +80,7 @@
 
     <v-layout style="flex: 1 0 0; overflow: auto">
       <v-treeview
+        hoverable
         style="flex-grow: 1"
         open-all
         @update:active="selectNode"
@@ -87,7 +92,23 @@
         item-children="contents"
         selected-color="primary"
         selection-type="independent"
-      ></v-treeview>
+      >
+        <template v-slot:label="{ item, active }">
+          <v-layout
+            align-center
+            @mouseenter="hightLightElement(item)"
+            @mouseleave="removeHightLighting(item)"
+          >
+            <v-icon
+              small
+              class="mr-1"
+              :color="selectedNode && active ? 'primary' : ''"
+              >{{ typeIcon(item.type) }}</v-icon
+            >
+            {{ item.type }}
+          </v-layout>
+        </template></v-treeview
+      >
     </v-layout>
   </v-layout>
 </template>
@@ -158,6 +179,20 @@ export default {
   },
 
   methods: {
+    removeHightLighting(element) {
+      this.$set(element, "backgroundColor", undefined);
+    },
+    hightLightElement(element) {
+      // TODO 元件其實不可直接設定 backgroundColor，不然 mouseLeave 時會把使用者設定的 backgroundColor 取代 (應該多剝一層元素，在這層設置 backgroundColor)
+      this.$set(element, "backgroundColor", "#E0E0E0");
+    },
+    typeIcon(type) {
+      const icon = {
+        text: "mdi-alpha-t-box",
+        checkbox: "mdi-checkbox-marked",
+      };
+      return icon[type];
+    },
     deepCopy(obj) {
       return JSON.parse(JSON.stringify(obj));
     },
