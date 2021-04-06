@@ -1,375 +1,356 @@
 const tableTemplate = {
   name: "table demo",
   template: {
-    type: "table",
-    id: 0,
-    contents: [
+    "type": "box",
+    "layout": "vertical",
+    "id": 1,
+    "contents": [
       {
-        type: "trow",
-        id: 1,
-        contents: [
+        "type": "table",
+        "id": 2,
+        "contents": [
           {
-            type: "tcol",
-            colspan: 2,
-            text: "1",
-            id: 2,
-            contents: [
+            "type": "trow",
+            "id": 5,
+            "contents": [
               {
-                type: "text",
-                id: 10,
-                text: "1234",
-                width: "",
-                fontSize: "50px",
-                color: "red",
-                fontStyle: "italic",
-                fontWeight: "bold",
-                textDecoration: "line-through",
-                textAlign: "",
-                position: "relative",
-                left: "",
-                right: "",
-                bottom: "",
-                top: "",
+                "type": "tcol",
+                "id": 6,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 16,
+                    "text": "姓名"
+                  }
+                ]
               },
-            ],
+              {
+                "type": "tcol",
+                "id": 9
+              },
+              {
+                "type": "tcol",
+                "id": 10
+              },
+              {
+                "type": "tcol",
+                "id": 11
+              },
+              {
+                "type": "tcol",
+                "id": 12
+              },
+              {
+                "type": "tcol",
+                "id": 13
+              }
+            ]
           },
           {
-            type: "tcol",
-            rowspan: 2,
-            text: "",
-            id: 3,
-            contents: [
+            "type": "trow",
+            "id": 7,
+            "contents": [
               {
-                type: "box",
-                id: 33,
-                contents: [
+                "type": "tcol",
+                "id": 8,
+                "contents": [
                   {
-                    type: "checkbox",
-                    id: 34,
-                  },
+                    "type": "text",
+                    "id": 17,
+                    "text": "訪問日時"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 14,
+                "colspan": "3"
+              },
+              {
+                "type": "tcol",
+                "id": 15,
+                "colspan": "2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "id": 3,
+        "contents": [
+          {
+            "type": "trow",
+            "id": 18,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 19,
+                "contents": [
                   {
-                    type: "text",
-                    id: 35,
-                    text: "dynamic form",
-                    top: "",
-                    position: "",
-                    color: "blue",
-                    fontWeight: "bold",
-                    fontSize: "30px",
-                  },
+                    "type": "text",
+                    "id": 26,
+                    "text": "體溫"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 22
+              },
+              {
+                "type": "tcol",
+                "id": 23
+              },
+              {
+                "type": "tcol",
+                "id": 24
+              },
+              {
+                "type": "tcol",
+                "id": 25
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 20,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 21
+              },
+              {
+                "type": "tcol",
+                "id": 27
+              },
+              {
+                "type": "tcol",
+                "id": 28
+              },
+              {
+                "type": "tcol",
+                "id": 29
+              },
+              {
+                "type": "tcol",
+                "id": 30
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "id": 4,
+        "contents": [
+          {
+            "type": "trow",
+            "id": 31,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 32,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 35,
+                    "text": "排尿"
+                  }
                 ],
+                "rowspan": "4"
               },
-            ],
+              {
+                "type": "tcol",
+                "id": 36
+              }
+            ]
           },
-        ],
+          {
+            "type": "trow",
+            "id": 37,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 38
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 39,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 40
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 41,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 42
+              }
+            ]
+          }
+        ]
       },
       {
-        type: "trow",
-        id: 4,
-        contents: [
+        "type": "table",
+        "id": 43,
+        "contents": [
           {
-            type: "tcol",
-            text: "",
-            id: 5,
-            contents: [
+            "type": "trow",
+            "id": 44,
+            "contents": [
               {
-                type: "text",
-                id: 12,
-                text: "TT",
-              },
-            ],
-          },
-          {
-            type: "tcol",
-            text: "4",
-            id: 6,
-            contents: [
-              {
-                type: "text",
-                id: 13,
-                text: "T_______T",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "trow",
-        id: 7,
-        contents: [
-          {
-            type: "tcol",
-            colspan: 2,
-            text: "1",
-            id: 8,
-            contents: [
-              {
-                type: "text",
-                id: 14,
-                text: "Hello World",
-                color: "purple",
-                fontStyle: "",
-                fontWeight: "bold",
-              },
-            ],
-          },
-          {
-            type: "tcol",
-            rowspan: 2,
-            text: "2",
-            id: 9,
-            contents: [
-              {
-                type: "text",
-                id: 15,
-                text: "@@",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "trow",
-        id: 16,
-        contents: [
-          {
-            type: "tcol",
-            colspan: 2,
-            text: "1",
-            id: 17,
-            contents: [
-              {
-                type: "text",
-                id: 18,
-                text: "1234",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "trow",
-        id: 19,
-        contents: [
-          {
-            type: "tcol",
-            colspan: 2,
-            text: "1",
-            id: 20,
-            contents: [
-              {
-                type: "text",
-                id: 21,
-                text: "1234",
-              },
-            ],
-          },
-          {
-            type: "tcol",
-            id: 22,
-            contents: [
-              {
-                type: "table",
-                id: 23,
-                contents: [
+                "type": "tcol",
+                "id": 45,
+                "contents": [
                   {
-                    type: "trow",
-                    id: 24,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 25,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 26,
-                            text: "1234",
-                            width: "",
-                            fontSize: "50px",
-                            color: "red",
-                            fontStyle: "italic",
-                            fontWeight: "bold",
-                            textDecoration: "line-through",
-                            textAlign: "",
-                            position: "relative",
-                            left: "",
-                            right: "",
-                            bottom: "",
-                            top: "",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        rowspan: 2,
-                        text: "",
-                        id: 26,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 27,
-                            text: "QQ",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 25,
-                    contents: [
-                      {
-                        type: "tcol",
-                        text: "",
-                        id: 26,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 27,
-                            text: "TT",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        text: "4",
-                        id: 27,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 28,
-                            text: "T_______T",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 26,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 27,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 28,
-                            text: "Q_Q",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        rowspan: 2,
-                        text: "2",
-                        id: 28,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 29,
-                            text: "@@",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 27,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 28,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 29,
-                            text: "1234",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 28,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 29,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 30,
-                            text: "1234",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        id: 30,
-                      },
-                    ],
-                  },
+                    "type": "text",
+                    "id": 46,
+                    "text": "排便"
+                  }
                 ],
+                "rowspan": "11"
               },
-            ],
-          },
-        ],
-      },
-      {
-        type: "trow",
-        id: 36,
-        contents: [
-          {
-            type: "tcol",
-            text: "",
-            id: 37,
-            contents: [
               {
-                type: "text",
-                id: 38,
-                text: "TT",
-              },
-            ],
+                "type": "tcol",
+                "id": 47,
+                "colspan": "2"
+              }
+            ]
           },
           {
-            type: "tcol",
-            text: "4",
-            id: 38,
-            contents: [
+            "type": "trow",
+            "id": 48,
+            "contents": [
               {
-                type: "text",
-                id: 39,
-                text: "T_______T",
-              },
-            ],
+                "type": "tcol",
+                "id": 49,
+                "colspan": "2"
+              }
+            ]
           },
           {
-            type: "tcol",
-            text: "",
-            id: 40,
-            contents: [
+            "type": "trow",
+            "id": 50,
+            "contents": [
               {
-                type: "text",
-                id: 41,
-                text: "TT",
+                "type": "tcol",
+                "id": 51
               },
-            ],
+              {
+                "type": "tcol",
+                "id": 68
+              }
+            ]
           },
-        ],
-      },
-    ],
-  },
+          {
+            "type": "trow",
+            "id": 52,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 53
+              },
+              {
+                "type": "tcol",
+                "id": 69
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 54,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 55
+              },
+              {
+                "type": "tcol",
+                "id": 70
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 56,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 57
+              },
+              {
+                "type": "tcol",
+                "id": 71
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 58,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 59,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 60,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 61,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 62,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 63,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 64,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 65,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 66,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 67,
+                "colspan": "2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 };
 
 const diagnosisTypeBindingData = {
@@ -630,4 +611,4 @@ export const templates = {
   diagnosisTemplate,
 };
 export const bindingData = { diagnosisTypeBindingData };
-export const defaultTemplate = diagnosisTemplate.template;
+export const defaultTemplate = tableTemplate.template;

@@ -4,6 +4,7 @@ import TSeparator from "@/components/template/TSeparator.vue";
 import TBox from "@/components/template/TBox.vue";
 import TCheckbox from "@/components/template/TCheckbox.vue";
 import TTextField from "@/components/template/TTextField.vue";
+import TTest from "@/components/template/TTest.vue";
 
 export default {
   name: "TForm",
@@ -25,6 +26,7 @@ export default {
     TBox,
     TCheckbox,
     TTextField,
+    TTest
   },
 
   data() {
@@ -133,6 +135,9 @@ export default {
                 : element.text}
             </td>
           );
+
+        case "radioGroup":
+          return <t-test data={element}></t-test>;
 
         default:
           return;

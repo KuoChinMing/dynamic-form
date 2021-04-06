@@ -123,6 +123,10 @@ export default {
   created() {
     this.elements = [
       {
+        type: "radioGroup",
+        name: "radioGroup",
+      },
+      {
         type: "table",
         name: "table",
       },

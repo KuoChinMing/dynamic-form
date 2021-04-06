@@ -12,6 +12,7 @@
 import TTextSettingPanel from "@/components/panel/TTextSettingPanel.vue";
 import TTcolSettingPanel from "@/components/panel/TTcolSettingPanel.vue";
 import TBoxSettingPanel from "@/components/panel/TBoxSettingPanel.vue";
+import TTestSettingPanel from "@/components/panel/TTestSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
@@ -20,6 +21,7 @@ export default {
     TTextSettingPanel,
     TTcolSettingPanel,
     TBoxSettingPanel,
+    TTestSettingPanel
   },
 
   props: {
@@ -40,6 +42,7 @@ export default {
         text: "t-text-setting-panel",
         tcol: "t-tcol-setting-panel",
         box: "t-box-setting-panel",
+        radioGroup: "t-test-setting-panel"
       };
       const type = this.element?.type;
 
