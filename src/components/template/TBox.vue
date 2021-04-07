@@ -29,6 +29,7 @@ export default {
       paddingRight: data.paddingRight,
       paddingBottom: data.paddingBottom,
       paddingLeft: data.paddingLeft,
+      backgroundColor: data.backgroundColor,
     };
 
     const layout = {

@@ -75,15 +75,20 @@ export default {
       this.value = this.isOpen;
     }
 
-    this.templates = templates;
+    // 初次載入時， vuex 裡的 template 也是從 showcase.js 拿，深拷貝一份到這裏，之後再次 create 才會是最初的 template
+    this.templates = this.deepCopy(templates);
   },
 
   methods: {
+    deepCopy(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    },
     closeDialog() {
       this.isOpen = false;
     },
     applyTemplate() {
-      this.$store.commit("template", this.selectedTemplate);
+      // 選擇 template 後，深拷貝給 vuex，再去做表單編輯，不然會影響這裡的 this.templates
+      this.$store.commit("template", this.deepCopy(this.selectedTemplate));
       this.closeDialog();
     },
   },
