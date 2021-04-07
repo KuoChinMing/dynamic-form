@@ -17,6 +17,15 @@
       dense
       outlined
     ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['width']"
+      input-class="white"
+      label="width"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
   </v-container>
 </template>
 

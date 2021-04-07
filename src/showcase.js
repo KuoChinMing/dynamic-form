@@ -16,33 +16,58 @@ const tableTemplate = {
               {
                 "type": "tcol",
                 "id": 6,
+                "width": "16.6%",
                 "contents": [
                   {
                     "type": "text",
                     "id": 16,
-                    "text": "姓名"
+                    "text": "利用者氏名",
+                    "fontStyle": "",
+                    "textAlign": "center"
                   }
                 ]
               },
               {
                 "type": "tcol",
-                "id": 9
+                "id": 9,
+                "width": "16.6%"
               },
               {
                 "type": "tcol",
-                "id": 10
+                "id": 10,
+                "width": "16.6%",
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 178,
+                    "text": "訪問者",
+                    "textAlign": "center"
+                  }
+                ]
               },
               {
                 "type": "tcol",
-                "id": 11
+                "id": 11,
+                "width": "16.6%"
               },
               {
                 "type": "tcol",
-                "id": 12
+                "id": 12,
+                "width": "16.6%",
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 179,
+                    "text": "同行者",
+                    "width": "",
+                    "textAlign": "center"
+                  }
+                ]
               },
               {
                 "type": "tcol",
-                "id": 13
+                "id": 13,
+                "width": "16.6%"
               }
             ]
           },
@@ -57,19 +82,52 @@ const tableTemplate = {
                   {
                     "type": "text",
                     "id": 17,
-                    "text": "訪問日時"
+                    "text": "訪問日時",
+                    "textAlign": "center"
                   }
-                ]
+                ],
+                "width": "16.6%"
               },
               {
                 "type": "tcol",
                 "id": 14,
-                "colspan": "3"
+                "colspan": "3",
+                "width": "49.8%"
               },
               {
                 "type": "tcol",
                 "id": 15,
-                "colspan": "2"
+                "colspan": "2",
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 180,
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "id": 181,
+                        "text": "室温",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "textField",
+                        "id": 182
+                      },
+                      {
+                        "type": "text",
+                        "id": 183,
+                        "text": "湿度",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "textField",
+                        "id": 184
+                      }
+                    ]
+                  }
+                ],
+                "width": "16.6%"
               }
             ]
           }
@@ -90,25 +148,58 @@ const tableTemplate = {
                   {
                     "type": "text",
                     "id": 26,
-                    "text": "體溫"
+                    "text": "體溫",
+                    "textAlign": "center"
                   }
                 ]
               },
               {
                 "type": "tcol",
-                "id": 22
+                "id": 22,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 185,
+                    "textAlign": "center",
+                    "text": "脈拍"
+                  }
+                ]
               },
               {
                 "type": "tcol",
-                "id": 23
+                "id": 23,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 186,
+                    "text": "血圧",
+                    "textAlign": "center"
+                  }
+                ]
               },
               {
                 "type": "tcol",
-                "id": 24
+                "id": 24,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 187,
+                    "text": "呼吸",
+                    "textAlign": "center"
+                  }
+                ]
               },
               {
                 "type": "tcol",
-                "id": 25
+                "id": 25,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 188,
+                    "text": "SpO2",
+                    "textAlign": "center"
+                  }
+                ]
               }
             ]
           },
@@ -118,7 +209,13 @@ const tableTemplate = {
             "contents": [
               {
                 "type": "tcol",
-                "id": 21
+                "id": 21,
+                "contents": [
+                  {
+                    "type": "textField",
+                    "id": 189
+                  }
+                ]
               },
               {
                 "type": "tcol",
@@ -134,7 +231,13 @@ const tableTemplate = {
               },
               {
                 "type": "tcol",
-                "id": 30
+                "id": 30,
+                "contents": [
+                  {
+                    "type": "textField",
+                    "id": 190
+                  }
+                ]
               }
             ]
           }
@@ -155,14 +258,17 @@ const tableTemplate = {
                   {
                     "type": "text",
                     "id": 35,
-                    "text": "排尿"
+                    "text": "排尿",
+                    "textAlign": "center"
                   }
                 ],
-                "rowspan": "4"
+                "rowspan": "4",
+                "width": "20%"
               },
               {
                 "type": "tcol",
-                "id": 36
+                "id": 191,
+                "width": "80%"
               }
             ]
           },
@@ -172,7 +278,8 @@ const tableTemplate = {
             "contents": [
               {
                 "type": "tcol",
-                "id": 38
+                "id": 38,
+                "width": ""
               }
             ]
           },
@@ -213,15 +320,18 @@ const tableTemplate = {
                   {
                     "type": "text",
                     "id": 46,
-                    "text": "排便"
+                    "text": "排便",
+                    "textAlign": "center"
                   }
                 ],
-                "rowspan": "11"
+                "rowspan": "11",
+                "width": "20%"
               },
               {
                 "type": "tcol",
                 "id": 47,
-                "colspan": "2"
+                "colspan": "2",
+                "width": "80%"
               }
             ]
           },
@@ -343,6 +453,546 @@ const tableTemplate = {
               {
                 "type": "tcol",
                 "id": 67,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 72,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 73,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 75,
+                    "text": "オムツ交換",
+                    "textAlign": "center"
+                  }
+                ],
+                "width": ""
+              },
+              {
+                "type": "tcol",
+                "id": 74,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 76,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 80,
+                "rowspan": "",
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 89,
+                    "text": "清潔ケア・指導",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 81,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 85,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 90,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 92,
+                    "text": "衣生活のケア・指導",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 91,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 86,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 93,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 95,
+                    "text": "食事栄養のケア・指導",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 94,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 87,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 98,
+                "rowspan": "4",
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 103,
+                    "text": "皮膚処置",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 99,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 88,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 100,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 96,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 101,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 97,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 102,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 104,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 108,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 110,
+                    "text": "薬の管理・指導",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 109,
+                "rowspan": "",
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 105,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 111,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 113,
+                    "text": "リハビリテーション",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 112,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 106,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 114,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 116,
+                    "text": "排痰ケア",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 115,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 107,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 117,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 119,
+                    "text": "医療処置",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 118,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 120,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 122,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 129,
+                    "text": "睡眠のケア・指導",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 123,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 121,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 124,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 130,
+                    "text": "体重",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 125,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 126,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 127,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 131,
+                    "text": "留意点",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 128,
+                "colspan": "2"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 132,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 133,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 135,
+                    "text": "次回訪問予定日",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 134,
+                "colspan": "2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "id": 136,
+        "contents": [
+          {
+            "type": "trow",
+            "id": 137,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 141,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 144,
+                    "text": "実績",
+                    "textAlign": "center"
+                  }
+                ],
+                "width": "15%"
+              },
+              {
+                "type": "tcol",
+                "id": 142,
+                "width": "25%"
+              },
+              {
+                "type": "tcol",
+                "id": 143,
+                "width": "60%"
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 138,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 145,
+                "contents": []
+              },
+              {
+                "type": "tcol",
+                "id": 146,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 148,
+                    "text": "精神基本療養費",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 147
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 139,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 149,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 152,
+                    "text": "加算",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 150
+              },
+              {
+                "type": "tcol",
+                "id": 151
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 140,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 158
+              },
+              {
+                "type": "tcol",
+                "id": 159,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 161,
+                    "text": "特別管理加算",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 160
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 153,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 162
+              },
+              {
+                "type": "tcol",
+                "id": 163
+              },
+              {
+                "type": "tcol",
+                "id": 164
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 154,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 165,
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 168,
+                    "text": "保険外",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              {
+                "type": "tcol",
+                "id": 166,
+                "colspan": "2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "id": 169,
+        "contents": [
+          {
+            "type": "trow",
+            "id": 170,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 173
+              },
+              {
+                "type": "tcol",
+                "id": 174
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 171,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 175,
+                "colspan": "2",
+                "contents": [
+                  {
+                    "type": "text",
+                    "id": 176,
+                    "text": "経過記録"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "trow",
+            "id": 172,
+            "contents": [
+              {
+                "type": "tcol",
+                "id": 177,
                 "colspan": "2"
               }
             ]
@@ -630,7 +1280,8 @@ const textFIeldTemplate = {
 export const templates = {
   tableTemplate,
   diagnosisTemplate,
+  textFIeldTemplate
 };
 
 export const bindingData = { diagnosisTypeBindingData };
-export const defaultTemplate = textFIeldTemplate.template;
+export const defaultTemplate = tableTemplate.template;
