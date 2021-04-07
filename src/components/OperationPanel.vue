@@ -183,7 +183,7 @@ export default {
       this.$set(element, "backgroundColor", undefined);
     },
     hightLightElement(element) {
-      // TODO 元件其實不可直接設定 backgroundColor，不然 mouseLeave 時會把使用者設定的 backgroundColor 取代 (應該多剝一層元素，在這層設置 backgroundColor)
+      // TODO 元件其實不可直接設定 backgroundColor，不然 mouseLeave 時會把使用者設定的 backgroundColor 取代 (應該多一層元素，在這層設置 backgroundColor)
       this.$set(element, "backgroundColor", "#E0E0E0");
     },
     typeIcon(type) {
