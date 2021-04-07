@@ -10,54 +10,113 @@ const tableTemplate = {
         contents: [
           {
             type: "tcol",
-            colspan: 2,
-            text: "1",
             id: 2,
             contents: [
               {
                 type: "text",
-                id: 10,
-                text: "1234",
-                width: "",
-                fontSize: "50px",
-                color: "red",
-                fontStyle: "italic",
-                fontWeight: "bold",
+                id: 3,
+                text: "123",
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            id: 19,
+            contents: [
+              {
+                type: "text",
+                id: 20,
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            id: 21,
+            contents: [
+              {
+                type: "text",
+                id: 22,
+              },
+            ],
+            colspan: "2",
+          },
+          {
+            type: "tcol",
+            id: 23,
+            contents: [
+              {
+                type: "text",
+                id: 24,
+                text: "text",
+                color: "green",
+                fontSize: "80px",
                 textDecoration: "line-through",
-                textAlign: "",
-                position: "relative",
-                left: "",
-                right: "",
+                textAlign: "right",
                 bottom: "",
+                position: "",
+                top: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "trow",
+        id: 27,
+        contents: [
+          {
+            type: "tcol",
+            id: 28,
+            contents: [
+              {
+                type: "text",
+                id: 29,
+                color: "purple",
+                fontSize: "35px",
+                fontWeight: "bold",
+                fontStyle: "italic",
+                text: "table-data",
+              },
+            ],
+            colspan: "2",
+            rowspan: "2",
+          },
+          {
+            type: "tcol",
+            id: 32,
+            contents: [
+              {
+                type: "text",
+                id: 33,
+                text: "321",
+                color: "orange",
+                fontSize: "30px",
+                position: "relative",
+                bottom: "18px",
+                left: "",
+                right: "9px",
                 top: "",
               },
             ],
           },
           {
             type: "tcol",
-            rowspan: 2,
-            text: "",
-            id: 3,
+            id: 34,
             contents: [
               {
-                type: "box",
-                id: 33,
-                contents: [
-                  {
-                    type: "checkbox",
-                    id: 34,
-                  },
-                  {
-                    type: "text",
-                    id: 35,
-                    text: "dynamic form",
-                    top: "",
-                    position: "",
-                    color: "blue",
-                    fontWeight: "bold",
-                    fontSize: "30px",
-                  },
-                ],
+                type: "text",
+                id: 35,
+              },
+            ],
+            rowspan: "2",
+          },
+          {
+            type: "tcol",
+            id: 36,
+            contents: [
+              {
+                type: "text",
+                id: 37,
               },
             ],
           },
@@ -65,304 +124,191 @@ const tableTemplate = {
       },
       {
         type: "trow",
-        id: 4,
+        id: 38,
         contents: [
           {
             type: "tcol",
-            text: "",
-            id: 5,
+            id: 39,
             contents: [
               {
                 type: "text",
-                id: 12,
-                text: "TT",
+                id: 40,
               },
             ],
           },
           {
             type: "tcol",
-            text: "4",
-            id: 6,
+            id: 45,
             contents: [
               {
                 type: "text",
-                id: 13,
-                text: "T_______T",
+                id: 46,
+                text: "1234567",
+                color: "blue",
               },
             ],
+            colspan: "",
           },
         ],
       },
       {
         type: "trow",
-        id: 7,
+        id: 72,
         contents: [
           {
             type: "tcol",
-            colspan: 2,
-            text: "1",
-            id: 8,
+            id: 79,
             contents: [
               {
                 type: "text",
-                id: 14,
-                text: "Hello World",
-                color: "purple",
+                id: 80,
+                text: "text",
+                color: "green",
+                fontSize: "80px",
+                textDecoration: "line-through",
+                textAlign: "right",
+                bottom: "",
+                position: "",
+                top: "",
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            id: 73,
+            contents: [
+              {
+                type: "text",
+                id: 74,
+                text: "123",
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            id: 75,
+            contents: [
+              {
+                type: "text",
+                id: 76,
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            id: 77,
+            contents: [
+              {
+                type: "text",
+                id: 78,
+              },
+            ],
+            colspan: "2",
+          },
+        ],
+      },
+      {
+        type: "trow",
+        id: 49,
+        contents: [
+          {
+            type: "tcol",
+            id: 50,
+            contents: [
+              {
+                type: "text",
+                id: 51,
+              },
+            ],
+          },
+          {
+            type: "tcol",
+            id: 52,
+            contents: [
+              {
+                type: "text",
+                id: 53,
+              },
+            ],
+            colspan: "4",
+          },
+        ],
+      },
+      {
+        type: "trow",
+        id: 60,
+        contents: [
+          {
+            type: "tcol",
+            id: 61,
+            contents: [
+              {
+                type: "text",
+                id: 62,
+                textAlign: "center",
                 fontStyle: "",
+                color: "red",
                 fontWeight: "bold",
+                fontSize: "25px",
+                textDecoration: "underline",
+                text: "dynamic form",
               },
             ],
-          },
-          {
-            type: "tcol",
-            rowspan: 2,
-            text: "2",
-            id: 9,
-            contents: [
-              {
-                type: "text",
-                id: 15,
-                text: "@@",
-              },
-            ],
+            colspan: "5",
           },
         ],
       },
       {
         type: "trow",
-        id: 16,
+        id: 63,
         contents: [
           {
             type: "tcol",
-            colspan: 2,
-            text: "1",
-            id: 17,
+            id: 64,
             contents: [
               {
                 type: "text",
-                id: 18,
-                text: "1234",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "trow",
-        id: 19,
-        contents: [
-          {
-            type: "tcol",
-            colspan: 2,
-            text: "1",
-            id: 20,
-            contents: [
-              {
-                type: "text",
-                id: 21,
-                text: "1234",
+                id: 65,
+                text: "123",
               },
             ],
           },
           {
             type: "tcol",
-            id: 22,
-            contents: [
-              {
-                type: "table",
-                id: 23,
-                contents: [
-                  {
-                    type: "trow",
-                    id: 24,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 25,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 26,
-                            text: "1234",
-                            width: "",
-                            fontSize: "50px",
-                            color: "red",
-                            fontStyle: "italic",
-                            fontWeight: "bold",
-                            textDecoration: "line-through",
-                            textAlign: "",
-                            position: "relative",
-                            left: "",
-                            right: "",
-                            bottom: "",
-                            top: "",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        rowspan: 2,
-                        text: "",
-                        id: 26,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 27,
-                            text: "QQ",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 25,
-                    contents: [
-                      {
-                        type: "tcol",
-                        text: "",
-                        id: 26,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 27,
-                            text: "TT",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        text: "4",
-                        id: 27,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 28,
-                            text: "T_______T",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 26,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 27,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 28,
-                            text: "Q_Q",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        rowspan: 2,
-                        text: "2",
-                        id: 28,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 29,
-                            text: "@@",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 27,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 28,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 29,
-                            text: "1234",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    type: "trow",
-                    id: 28,
-                    contents: [
-                      {
-                        type: "tcol",
-                        colspan: 2,
-                        text: "1",
-                        id: 29,
-                        contents: [
-                          {
-                            type: "text",
-                            id: 30,
-                            text: "1234",
-                          },
-                        ],
-                      },
-                      {
-                        type: "tcol",
-                        id: 30,
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "trow",
-        id: 36,
-        contents: [
-          {
-            type: "tcol",
-            text: "",
-            id: 37,
+            id: 66,
             contents: [
               {
                 type: "text",
-                id: 38,
-                text: "TT",
+                id: 67,
               },
             ],
           },
           {
             type: "tcol",
-            text: "4",
-            id: 38,
+            id: 68,
             contents: [
               {
                 type: "text",
-                id: 39,
-                text: "T_______T",
+                id: 69,
               },
             ],
+            colspan: "2",
           },
           {
             type: "tcol",
-            text: "",
-            id: 40,
+            id: 70,
             contents: [
               {
                 type: "text",
-                id: 41,
-                text: "TT",
+                id: 71,
+                text: "text",
+                color: "green",
+                fontSize: "80px",
+                textDecoration: "line-through",
+                textAlign: "right",
+                bottom: "",
+                position: "",
+                top: "",
               },
             ],
           },
@@ -649,7 +595,8 @@ const textFIeldTemplate = {
 export const templates = {
   tableTemplate,
   diagnosisTemplate,
+  textFIeldTemplate,
 };
 
 export const bindingData = { diagnosisTypeBindingData };
-export const defaultTemplate = textFIeldTemplate.template;
+export const defaultTemplate = tableTemplate.template;

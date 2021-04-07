@@ -4,7 +4,7 @@
       <v-toolbar-title
         class="text-uppercase text-h5 font-weight-bold grey--text text--darken-1"
       >
-        Dynamic Form
+        dynamic form editor
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
