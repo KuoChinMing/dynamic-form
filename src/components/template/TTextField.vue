@@ -45,6 +45,7 @@ export default {
       flexGrow: data.flex || 0,
       flexShrink: 0,
       flexBasis: data.flexBasis || 0,
+      backgroundColor: data.backgroundColor,
     };
     // TODO data.width == "" ? data.width == 0 ? 的時候判斷
     const inputStyle = {

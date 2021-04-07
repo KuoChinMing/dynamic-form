@@ -5,6 +5,9 @@ import TBox from "@/components/template/TBox.vue";
 import TCheckbox from "@/components/template/TCheckbox.vue";
 import TTextField from "@/components/template/TTextField.vue";
 import TTest from "@/components/template/TTest.vue";
+import TTable from "@/components/template/TTable.vue";
+import TRow from "@/components/template/TRow.vue";
+import TCol from "@/components/template/TCol.vue";
 
 export default {
   name: "TForm",
@@ -26,7 +29,10 @@ export default {
     TBox,
     TCheckbox,
     TTextField,
-    TTest
+    TTest,
+    TTable,
+    TRow,
+    TCol,
   },
 
   data() {
@@ -96,44 +102,23 @@ export default {
 
         case "table":
           return (
-            <table
-              style={{
-                borderCollapse: "collapse",
-                borderSpacing: 0,
-                width: "100%",
-              }}
-            >
-              <tbody>
-                {element.contents?.map((element) =>
-                  this.renderElement(element)
-                )}
-              </tbody>
-            </table>
+            <t-table data={element}>
+              {element.contents?.map((element) => this.renderElement(element))}
+            </t-table>
           );
 
         case "trow":
           return (
-            <tr>
+            <t-row data={element}>
               {element.contents?.map((element) => this.renderElement(element))}
-            </tr>
+            </t-row>
           );
 
         case "tcol":
           return (
-            <td
-              colspan={element.colspan}
-              rowspan={element.rowspan}
-              style={{
-                border: "1px solid #ddd",
-                padding: "8px",
-              }}
-            >
-              {"contents" in element
-                ? element.contents?.map((element) =>
-                    this.renderElement(element)
-                  )
-                : element.text}
-            </td>
+            <t-col data={element}>
+              {element.contents?.map((element) => this.renderElement(element))}
+            </t-col>
           );
 
         case "radioGroup":

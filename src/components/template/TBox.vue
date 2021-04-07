@@ -23,12 +23,13 @@ export default {
       flexGrow: data.flex ?? 0,
       flexShrink: 0,
       flexBasis: data.flexBasis ?? 0,
-      // TODO
+      // TODO: paddingAll
       // padding: data.paddingAll,
       paddingTop: data.paddingTop,
       paddingRight: data.paddingRight,
       paddingBottom: data.paddingBottom,
       paddingLeft: data.paddingLeft,
+      backgroundColor: data.backgroundColor,
     };
 
     const layout = {

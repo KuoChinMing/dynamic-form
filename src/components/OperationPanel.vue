@@ -9,6 +9,7 @@
             dark
             class="mr-1"
             color="primary"
+            :disabled="!selectedNode"
           >
             <v-icon small>mdi-plus</v-icon>
             <v-icon small>mdi-menu-down</v-icon>
@@ -16,7 +17,7 @@
         </template>
         <v-list dense>
           <v-list-item
-            @click="addNode(element)"
+            @click="addNode(element.type)"
             v-for="(element, index) in elements"
             :key="index"
           >
@@ -28,29 +29,32 @@
       <v-btn-toggle class="mr-1" background-color="grey" dark>
         <toolbar-btn
           @click="moveUpNode"
-          :disabled="this.template === this.selectedNode"
+          :disabled="!selectedNode || template === selectedNode"
         >
           <v-icon size="16px">mdi-chevron-up</v-icon>
         </toolbar-btn>
         <toolbar-btn
           @click="moveDownNode"
-          :disabled="this.template === this.selectedNode"
+          :disabled="!selectedNode || template === selectedNode"
         >
           <v-icon small>mdi-chevron-down</v-icon>
         </toolbar-btn>
       </v-btn-toggle>
 
       <v-btn-toggle class="mr-1" background-color="grey" dark>
-        <toolbar-btn @click="copyNode">
+        <toolbar-btn @click="copyNode" :disabled="!selectedNode">
           <v-icon small>mdi-content-copy</v-icon>
         </toolbar-btn>
         <toolbar-btn
           @click="cutNode"
-          :disabled="this.template === this.selectedNode"
+          :disabled="!selectedNode || template === selectedNode"
         >
           <v-icon small>mdi-content-cut</v-icon>
         </toolbar-btn>
-        <toolbar-btn @click="pasteNode" :disabled="!copiedNode">
+        <toolbar-btn
+          @click="pasteNode"
+          :disabled="!selectedNode || !copiedNode"
+        >
           <v-icon small>mdi-content-paste</v-icon>
         </toolbar-btn>
       </v-btn-toggle>
@@ -68,7 +72,7 @@
         color="red"
         dark
         @click="deleteNode"
-        :disabled="this.template === this.selectedNode"
+        :disabled="!selectedNode || template === selectedNode"
       >
         <v-icon small>mdi-close</v-icon>
       </toolbar-btn>
@@ -76,6 +80,7 @@
 
     <v-layout style="flex: 1 0 0; overflow: auto">
       <v-treeview
+        hoverable
         style="flex-grow: 1"
         open-all
         @update:active="selectNode"
@@ -87,7 +92,23 @@
         item-children="contents"
         selected-color="primary"
         selection-type="independent"
-      ></v-treeview>
+      >
+        <template v-slot:label="{ item, active }">
+          <v-layout
+            align-center
+            @mouseenter="hightLightElement(item)"
+            @mouseleave="removeHightLighting(item)"
+          >
+            <v-icon
+              small
+              class="mr-1"
+              :color="selectedNode && active ? 'primary' : ''"
+              >{{ typeIcon(item.type) }}</v-icon
+            >
+            {{ item.type }}
+          </v-layout>
+        </template></v-treeview
+      >
     </v-layout>
   </v-layout>
 </template>
@@ -162,6 +183,23 @@ export default {
   },
 
   methods: {
+    removeHightLighting(element) {
+      this.$set(element, "backgroundColor", undefined);
+    },
+    hightLightElement(element) {
+      // TODO 元件其實不可直接設定 backgroundColor，不然 mouseLeave 時會把使用者設定的 backgroundColor 取代 (應該多一層元素，在這層設置 backgroundColor)
+      this.$set(element, "backgroundColor", "#E0E0E0");
+    },
+    typeIcon(type) {
+      const icon = {
+        text: "mdi-alpha-t-box",
+        checkbox: "mdi-checkbox-marked",
+      };
+      return icon[type];
+    },
+    deepCopy(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    },
     findMaxId(element) {
       let currentId = element.id || 0;
 
@@ -184,8 +222,17 @@ export default {
     replaceNodeId(element, uniqueId = this.genUniqueId()) {
       element.id = uniqueId;
       if ("contents" in element) {
-        for (const [index, childElement] of element.contents.entries()) {
-          this.replaceNodeId(childElement, uniqueId + index + 1);
+        let previosChildElement = null;
+        for (const childElement of element.contents) {
+          if (!previosChildElement) {
+            this.replaceNodeId(childElement, uniqueId + 1);
+          } else {
+            this.replaceNodeId(
+              childElement,
+              this.findMaxId(previosChildElement) + 1
+            );
+          }
+          previosChildElement = childElement;
         }
       }
 
@@ -227,7 +274,7 @@ export default {
       this.selectedNode = selectedNode;
       this.$emit("select-node", selectedNode);
     },
-    addNode({ type }) {
+    addNode(type) {
       const id = this.genUniqueId();
       const element = { type, id };
 
@@ -245,16 +292,15 @@ export default {
       this.$set(parentNode, "contents", parentNodeContents);
     },
     cutNode() {
-      this.copiedNode = this.selectedNode;
+      this.copyNode();
       this.deleteNode();
     },
     copyNode() {
-      this.copiedNode = this.selectedNode;
+      this.copiedNode = this.deepCopy(this.selectedNode);
     },
     pasteNode() {
-      const cloneCopiedNode = JSON.parse(JSON.stringify(this.copiedNode));
-      // TODO: cut to paste don't need to replace node id
-      const newNode = this.replaceNodeId(cloneCopiedNode);
+      // 深拷貝，防止兩次以上的貼上 replaceNodeId() 參考到相同的 node
+      const newNode = this.deepCopy(this.replaceNodeId(this.copiedNode));
 
       if ("contents" in this.selectedNode) {
         this.selectedNode.contents.push(newNode);
