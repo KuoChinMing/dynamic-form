@@ -43,13 +43,13 @@ export default {
     const data = this.data;
     const style = {
       flexGrow: data.flex || 0,
-      flexShrink: 0,
+      flexShrink: data.shrink || 0,
       flexBasis: data.flexBasis || 0,
       backgroundColor: data.backgroundColor,
     };
     // TODO data.width == "" ? data.width == 0 ? 的時候判斷
     const inputStyle = {
-      width: data.width ?? "auto",
+      width: data.width ?? "140px",
     };
 
     return (

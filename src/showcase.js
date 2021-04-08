@@ -105,26 +105,57 @@ const tableTemplate = {
                     "layout": "horizontal",
                     "contents": [
                       {
-                        "type": "text",
-                        "id": 181,
-                        "text": "室温",
-                        "flexBasis": "auto"
+                        "type": "box",
+                        "id": 335,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 336,
+                            "text": "室温",
+                            "flexBasis": "auto"
+                          },
+                          {
+                            "type": "textField",
+                            "id": 337,
+                            "width": "140px"
+                          },
+                          {
+                            "type": "text",
+                            "id": 341,
+                            "text": "℃",
+                            "flexBasis": "auto"
+                          }
+                        ],
+                        "flex": "1",
+                        "wrap": "wrap"
                       },
                       {
-                        "type": "textField",
-                        "id": 182
-                      },
-                      {
-                        "type": "text",
-                        "id": 183,
-                        "text": "湿度",
-                        "flexBasis": "auto"
-                      },
-                      {
-                        "type": "textField",
-                        "id": 184
+                        "type": "box",
+                        "id": 338,
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 339,
+                            "text": "湿度",
+                            "flexBasis": "auto"
+                          },
+                          {
+                            "type": "textField",
+                            "id": 340,
+                            "width": "140px"
+                          },
+                          {
+                            "type": "text",
+                            "id": 342,
+                            "text": "%",
+                            "flexBasis": "auto"
+                          }
+                        ],
+                        "flex": "1",
+                        "wrap": "wrap"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ],
                 "width": "16.6%"
@@ -243,9 +274,14 @@ const tableTemplate = {
                           },
                           {
                             "type": "textField",
-                            "id": 195
+                            "id": 195,
+                            "shrink": "1",
+                            "flex": "1",
+                            "flexBasis": "",
+                            "width": "auto"
                           }
-                        ]
+                        ],
+                        "wrap": ""
                       },
                       {
                         "type": "box",
@@ -255,11 +291,16 @@ const tableTemplate = {
                             "type": "text",
                             "id": 197,
                             "flexBasis": "auto",
-                            "text": "最低"
+                            "text": "最低",
+                            "flex": ""
                           },
                           {
                             "type": "textField",
-                            "id": 198
+                            "id": 198,
+                            "flex": "1",
+                            "shrink": "1",
+                            "width": "auto",
+                            "flexBasis": ""
                           }
                         ]
                       }
@@ -276,8 +317,15 @@ const tableTemplate = {
                 "id": 30,
                 "contents": [
                   {
-                    "type": "textField",
-                    "id": 190
+                    "type": "box",
+                    "id": 343,
+                    "contents": [
+                      {
+                        "type": "textField",
+                        "id": 344,
+                        "width": "100%"
+                      }
+                    ]
                   }
                 ]
               }
@@ -1322,8 +1370,59 @@ const tableTemplate = {
                         "id": 306,
                         "flexBasis": "auto",
                         "text": "関節可動域"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 351
+                      },
+                      {
+                        "type": "text",
+                        "id": 345,
+                        "flexBasis": "auto",
+                        "text": "関節可動域"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 352
+                      },
+                      {
+                        "type": "text",
+                        "id": 346,
+                        "flexBasis": "auto",
+                        "text": "関節可動域"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 353
+                      },
+                      {
+                        "type": "text",
+                        "id": 347,
+                        "flexBasis": "auto",
+                        "text": "関節可動域"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 354
+                      },
+                      {
+                        "type": "text",
+                        "id": 348,
+                        "flexBasis": "auto",
+                        "text": "関節可動域"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 355
+                      },
+                      {
+                        "type": "text",
+                        "id": 349,
+                        "flexBasis": "auto",
+                        "text": "関節可動域"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   },
                   {
                     "type": "box",
