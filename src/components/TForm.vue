@@ -8,6 +8,7 @@ import TTest from "@/components/template/TTest.vue";
 import TTable from "@/components/template/TTable.vue";
 import TRow from "@/components/template/TRow.vue";
 import TCol from "@/components/template/TCol.vue";
+import TTextarea from "@/components/template/TTextarea.vue";
 
 export default {
   name: "TForm",
@@ -25,14 +26,15 @@ export default {
 
   components: {
     TText,
+    TTextarea,
     TSeparator,
     TBox,
     TCheckbox,
     TTextField,
-    TTest,
     TTable,
     TRow,
     TCol,
+    TTest,
   },
 
   data() {
@@ -77,6 +79,9 @@ export default {
 
         case "text":
           return <t-text data={element}></t-text>;
+
+        case "textarea":
+          return <t-textarea data={element}></t-textarea>;
 
         case "checkbox":
           if (element.bindingData in this.data) {

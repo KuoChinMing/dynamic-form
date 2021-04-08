@@ -172,6 +172,10 @@ export default {
         name: "text",
       },
       {
+        type: "textarea",
+        name: "textarea",
+      },
+      {
         type: "checkbox",
         name: "checkbox",
       },
