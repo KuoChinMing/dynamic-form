@@ -4,8 +4,8 @@
       <v-card-text class="pa-4">
         <v-sheet flat>
           <textarea
-            v-model="templateString"
-            ref="templateInput"
+            v-model="bindingDataString"
+            ref="bindingDataInput"
             style="scroll: auto; border: 1px solid grey; width: 100%"
             class="rounded"
             rows="20"
@@ -18,7 +18,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn
-          @click="copyTemplate"
+          @click="copyBindingData"
           class="text-capitalize"
           color="primary"
           outlined
@@ -33,7 +33,7 @@
           >close</v-btn
         >
         <v-btn
-          @click="applyTemplate"
+          @click="applyBindingData"
           class="text-capitalize"
           depressed
           color="primary"
@@ -61,7 +61,7 @@
 import { mapState } from "vuex";
 
 export default {
-  name: "JsonDialog",
+  name: "FormJsonDialog",
 
   props: {
     value: {
@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      inputTemplateString: "",
+      inputBindingDataString: "",
       notificationMessage: "",
       showNotification: false,
       isOpen: false,
@@ -79,13 +79,13 @@ export default {
   },
 
   computed: {
-    ...mapState(["template"]),
-    templateString: {
+    ...mapState(["bindingData"]),
+    bindingDataString: {
       get: function () {
-        return JSON.stringify(this.template, null, 2);
+        return JSON.stringify(this.bindingData, null, 2);
       },
       set: function (newValue) {
-        this.inputTemplateString = newValue;
+        this.inputBindingDataString = newValue;
       },
     },
   },
@@ -102,26 +102,26 @@ export default {
     if (this.value) {
       this.value = this.isOpen;
     }
-    this.inputTemplateString = this.templateString;
+    this.inputBindingDataString = this.bindingDataString;
   },
 
   methods: {
     closeDialog() {
       this.isOpen = false;
     },
-    copyTemplate() {
-      this.$refs.templateInput.select();
+    copyBindingData() {
+      this.$refs.bindingDataInput.select();
       document.execCommand("copy");
-      this.$refs.templateInput.blur();
+      this.$refs.bindingDataInput.blur();
       this.notify("copied");
     },
     notify(message) {
       this.notificationMessage = message;
       this.showNotification = true;
     },
-    applyTemplate() {
-      const template = JSON.parse(this.inputTemplateString);
-      this.$store.commit("template", template);
+    applyBindingData() {
+      const bindingData = JSON.parse(this.inputBindingDataString);
+      this.$store.commit("bindingData", bindingData);
       this.closeDialog();
     },
   },

@@ -68,7 +68,7 @@ export default {
 
   watch: {
     defaultValueTest(value) {
-      this.$set(this.bindingData, this.element['bindingKey'], value);
+      this.$set(this.bindingData, this.element["bindingKey"], value);
       console.log(this.bindingData);
     },
   },

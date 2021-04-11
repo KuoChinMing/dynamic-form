@@ -35,93 +35,79 @@ export default {
 
   data() {
     return {
-      data: null,
+      elementMap: {
+        box: this.renderBox,
+        separator: this.renderSeparator,
+        text: this.renderText,
+        checkbox: this.renderCheckbox,
+        textField: this.renderTextField,
+        table: this.renderTable,
+        trow: this.renderTrow,
+        tcol: this.renderTcol,
+      },
     };
   },
 
-  watch: {
-    bindingData: {
-      handler(value) {
-        this.data = value;
-      },
-      deep: true,
-    },
-    // data: {
-    //   handler(value) {
-    //     this.$emit("input", value);
-    //   },
-    //   deep: true,
-    // },
-  },
-
-  created() {
-    if (this.bindingData) {
-      this.data = this.bindingData;
-    }
-  },
-
   methods: {
-    renderElement(element) {
-      switch (element?.type) {
-        case "box":
-          return (
-            <t-box data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-box>
-          );
-
-        case "separator":
-          return <t-separator data={element}></t-separator>;
-
-        case "text":
-          return <t-text data={element}></t-text>;
-
-        case "checkbox":
-          if (element.bindingData in this.data) {
-            return (
-              <t-checkbox
-                data={element}
-                v-model={this.data[element.bindingData]}
-              ></t-checkbox>
-            );
-          }
-          return <t-checkbox data={element}></t-checkbox>;
-
-        case "textField":
-          if (element.bindingData in this.data) {
-            return (
-              <t-text-field
-                data={element}
-                v-model={this.data[element.bindingData]}
-              ></t-text-field>
-            );
-          }
-          return <t-text-field data={element}></t-text-field>;
-
-        case "table":
-          return (
-            <t-table data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-table>
-          );
-
-        case "trow":
-          return (
-            <t-row data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-row>
-          );
-
-        case "tcol":
-          return (
-            <t-col data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-col>
-          );
-
-        default:
-          return;
+    renderTcol(el) {
+      return (
+        <t-col data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-col>
+      );
+    },
+    renderTrow(el) {
+      return (
+        <t-row data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-row>
+      );
+    },
+    renderTable(el) {
+      return (
+        <t-table data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-table>
+      );
+    },
+    renderTextField(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-text-field
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-text-field>
+        );
       }
+      return <t-text-field data={el}></t-text-field>;
+    },
+    renderCheckbox(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-checkbox
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-checkbox>
+        );
+      }
+      return <t-checkbox data={el}></t-checkbox>;
+    },
+    renderText(el) {
+      return <t-text data={el}></t-text>;
+    },
+    renderSeparator(el) {
+      return <t-separator data={el}></t-separator>;
+    },
+    renderBox(el) {
+      return (
+        <t-box data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-box>
+      );
+    },
+
+    renderElement(element) {
+      return this.elementMap?.[element.type](element);
     },
   },
 

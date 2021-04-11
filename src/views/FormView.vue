@@ -39,8 +39,6 @@ import OperationPanel from "@/components/OperationPanel.vue";
 import ElementSettingPanel from "@/components/panel/ElementSettingPanel.vue";
 import { mapState } from "vuex";
 
-import { bindingData } from "@/showcase.js";
-
 export default {
   name: "FormView",
 
@@ -64,21 +62,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["template"]),
-  },
-
-  watch: {
-    bindingData: {
-      handler() {
-        console.log("binding data changed.");
-      },
-      deep: true,
-    },
-  },
-
-  created() {
-    // TODO: binding data
-    this.bindingData = bindingData.diagnosisTypeBindingData;
+    ...mapState(["template", "bindingData"]),
   },
 
   methods: {
