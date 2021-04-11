@@ -591,11 +591,30 @@ const textFieldTemplate = {
   },
 };
 
+const newElementTemplate = {
+  name: "new element template",
+  template: {
+    type: "box",
+    id: 0,
+    contents: [
+      {
+        type: "icon",
+        id: 1,
+        url:
+          "https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube_icon_full-color.svg?cache=f2ec7a5",
+        size: "50px",
+      },
+    ],
+  },
+  bindingData: {},
+};
+
 export const templates = {
   tableTemplate,
   diagnosisTemplate,
   textFieldTemplate,
+  newElementTemplate,
 };
 
-export const defaultBindingData = diagnosisTemplate.bindingData;
-export const defaultTemplate = diagnosisTemplate.template;
+export const defaultBindingData = newElementTemplate.bindingData;
+export const defaultTemplate = newElementTemplate.template;

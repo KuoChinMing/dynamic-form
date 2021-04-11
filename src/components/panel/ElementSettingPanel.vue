@@ -17,6 +17,8 @@ import TTextSettingPanel from "@/components/panel/TTextSettingPanel.vue";
 import TTcolSettingPanel from "@/components/panel/TTcolSettingPanel.vue";
 import TBoxSettingPanel from "@/components/panel/TBoxSettingPanel.vue";
 import TTextFieldSettingPanel from "@/components/panel/TTextFieldSettingPanel.vue";
+import TCheckboxSettingPanel from "@/components/panel/TCheckboxSettingPanel.vue";
+import TIconSettingPanel from "@/components/panel/TIconSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
@@ -26,6 +28,8 @@ export default {
     TTcolSettingPanel,
     TBoxSettingPanel,
     TTextFieldSettingPanel,
+    TCheckboxSettingPanel,
+    TIconSettingPanel,
   },
 
   props: {
@@ -47,6 +51,8 @@ export default {
         tcol: "t-tcol-setting-panel",
         box: "t-box-setting-panel",
         textField: "t-text-field-setting-panel",
+        checkbox: "t-checkbox-setting-panel",
+        icon: "t-icon-setting-panel",
       };
       const type = this.element?.type;
 

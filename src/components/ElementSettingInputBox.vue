@@ -8,7 +8,7 @@
         :is="input"
         :value="value"
         :class="inputClass"
-        v-bind="$attrs"
+        v-bind="attrs"
         v-on="$listeners"
       ></component>
     </v-col>
@@ -16,13 +16,14 @@
 </template>
 
 <script>
-import { VTextField } from "vuetify/lib";
+import { VTextField, VSelect } from "vuetify/lib";
 
 export default {
   name: "ElementSettingInputBox",
 
   components: {
     VTextField,
+    VSelect,
   },
 
   props: {
@@ -39,15 +40,28 @@ export default {
       type: String,
       default: "textField",
     },
+    items: {
+      type: Array,
+      default: () => [],
+    },
   },
 
   computed: {
+    attrs() {
+      const attrs = {
+        textField: this.$attrs,
+        select: { ...this.$attrs, items: this.items },
+      };
+
+      return attrs[this.type] ?? attrs["textField"];
+    },
     input() {
       const type = {
         textField: "v-text-field",
+        select: "v-select",
       };
 
-      return type[this.type] || null;
+      return type[this.type] ?? type["textField"];
     },
   },
 };

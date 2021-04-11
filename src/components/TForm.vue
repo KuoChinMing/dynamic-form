@@ -7,6 +7,7 @@ import TTextField from "@/components/template/TTextField.vue";
 import TTable from "@/components/template/TTable.vue";
 import TRow from "@/components/template/TRow.vue";
 import TCol from "@/components/template/TCol.vue";
+import TIcon from "@/components/template/TIcon.vue";
 
 export default {
   name: "TForm",
@@ -31,6 +32,7 @@ export default {
     TTable,
     TRow,
     TCol,
+    TIcon,
   },
 
   data() {
@@ -44,11 +46,15 @@ export default {
         table: this.renderTable,
         trow: this.renderTrow,
         tcol: this.renderTcol,
+        icon: this.renderIcon,
       },
     };
   },
 
   methods: {
+    renderIcon(el) {
+      return <t-icon data={el}></t-icon>;
+    },
     renderTcol(el) {
       return (
         <t-col data={el}>

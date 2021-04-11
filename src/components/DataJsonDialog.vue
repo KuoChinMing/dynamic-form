@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      bindingDataString: "",
+      inputBindingDataString: "",
       notificationMessage: "",
       showNotification: false,
       isOpen: false,
@@ -80,6 +80,14 @@ export default {
 
   computed: {
     ...mapState(["bindingData"]),
+    bindingDataString: {
+      get: function () {
+        return JSON.stringify(this.bindingData, null, 2);
+      },
+      set: function (newValue) {
+        this.inputBindingDataString = newValue;
+      },
+    },
   },
 
   watch: {
@@ -95,7 +103,7 @@ export default {
       this.value = this.isOpen;
     }
 
-    this.bindingDataString = JSON.stringify(this.bindingData, null, 2);
+    this.inputBindingDataString = this.bindingDataString;
   },
 
   methods: {
@@ -113,7 +121,7 @@ export default {
       this.showNotification = true;
     },
     applyBindingData() {
-      const bindingData = JSON.parse(this.bindingDataString);
+      const bindingData = JSON.parse(this.inputBindingDataString);
       this.$store.commit("bindingData", bindingData);
       this.closeDialog();
     },

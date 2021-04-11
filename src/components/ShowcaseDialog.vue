@@ -75,13 +75,19 @@ export default {
       this.value = this.isOpen;
     }
 
-    // 初次載入時， vuex 裡的 template 也是從 showcase.js 拿，再這裏Ｆ深拷貝一份，之後再次 recreate 才會是最初的 template
-    this.templates = this.deepCopy(templates);
+    this.templates = templates;
   },
 
   methods: {
     deepCopy(obj) {
-      return JSON.parse(JSON.stringify(obj));
+      try {
+        return JSON.parse(JSON.stringify(obj));
+      } catch {
+        console.error(
+          `JSON 解析失敗, in file: ShowcaseDialog.vue, JSON: ${obj}`
+        );
+        return {};
+      }
     },
     closeDialog() {
       this.isOpen = false;

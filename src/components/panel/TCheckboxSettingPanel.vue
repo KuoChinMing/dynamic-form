@@ -32,25 +32,10 @@
     <element-setting-input-box
       v-model="bindingData[element['bindingKey']]"
       input-class="white"
+      type="select"
       label="defaultValue"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      input-class="white"
-      label="flexBasis"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['width']"
-      input-class="white"
-      label="width"
+      :items="[true, false]"
+      :disabled="!bindingData[element['bindingKey']]"
       hide-details
       dense
       outlined
