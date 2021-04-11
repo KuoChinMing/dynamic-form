@@ -61,7 +61,7 @@
 import { mapState } from "vuex";
 
 export default {
-  name: "FormJsonDialog",
+  name: "DataJsonDialog",
 
   props: {
     value: {
@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      inputBindingDataString: "",
+      bindingDataString: "",
       notificationMessage: "",
       showNotification: false,
       isOpen: false,
@@ -80,14 +80,6 @@ export default {
 
   computed: {
     ...mapState(["bindingData"]),
-    bindingDataString: {
-      get: function () {
-        return JSON.stringify(this.bindingData, null, 2);
-      },
-      set: function (newValue) {
-        this.inputBindingDataString = newValue;
-      },
-    },
   },
 
   watch: {
@@ -102,7 +94,8 @@ export default {
     if (this.value) {
       this.value = this.isOpen;
     }
-    this.inputBindingDataString = this.bindingDataString;
+
+    this.bindingDataString = JSON.stringify(this.bindingData, null, 2);
   },
 
   methods: {
@@ -120,7 +113,7 @@ export default {
       this.showNotification = true;
     },
     applyBindingData() {
-      const bindingData = JSON.parse(this.inputBindingDataString);
+      const bindingData = JSON.parse(this.bindingDataString);
       this.$store.commit("bindingData", bindingData);
       this.closeDialog();
     },

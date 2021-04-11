@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      inputTemplateString: "",
+      templateString: "",
       notificationMessage: "",
       showNotification: false,
       isOpen: false,
@@ -80,14 +80,6 @@ export default {
 
   computed: {
     ...mapState(["template"]),
-    templateString: {
-      get: function () {
-        return JSON.stringify(this.template, null, 2);
-      },
-      set: function (newValue) {
-        this.inputTemplateString = newValue;
-      },
-    },
   },
 
   watch: {
@@ -102,7 +94,8 @@ export default {
     if (this.value) {
       this.value = this.isOpen;
     }
-    this.inputTemplateString = this.templateString;
+
+    this.templateString = JSON.stringify(this.template, null, 2);
   },
 
   methods: {
@@ -120,7 +113,7 @@ export default {
       this.showNotification = true;
     },
     applyTemplate() {
-      const template = JSON.parse(this.inputTemplateString);
+      const template = JSON.parse(this.templateString);
       this.$store.commit("template", template);
       this.closeDialog();
     },
