@@ -179,6 +179,10 @@ export default {
         type: "icon",
         name: "icon",
       },
+      {
+        type: "select",
+        name: "select",
+      },
     ];
   },
 
@@ -204,6 +208,7 @@ export default {
         checkbox: "mdi-checkbox-marked",
         textField: "mdi-keyboard",
         icon: "mdi-star",
+        select: "mdi-arrow-down-drop-circle",
       };
       return icon[type];
     },

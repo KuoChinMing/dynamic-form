@@ -8,6 +8,7 @@ import TTable from "@/components/template/TTable.vue";
 import TRow from "@/components/template/TRow.vue";
 import TCol from "@/components/template/TCol.vue";
 import TIcon from "@/components/template/TIcon.vue";
+import TSelect from "@/components/template/TSelect.vue";
 
 export default {
   name: "TForm",
@@ -33,6 +34,7 @@ export default {
     TRow,
     TCol,
     TIcon,
+    TSelect,
   },
 
   data() {
@@ -47,11 +49,23 @@ export default {
         trow: this.renderTrow,
         tcol: this.renderTcol,
         icon: this.renderIcon,
+        select: this.renderSelect,
       },
     };
   },
 
   methods: {
+    renderSelect(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-select
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-select>
+        );
+      }
+      return <t-select data={el}></t-select>;
+    },
     renderIcon(el) {
       return <t-icon data={el}></t-icon>;
     },

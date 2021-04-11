@@ -24,6 +24,7 @@
       v-model="element['url']"
       type="textField"
       label="url"
+      input-class="white"
       dense
       outlined
       hide-details
@@ -33,6 +34,7 @@
       v-model="element['margin']"
       type="textField"
       label="margin"
+      input-class="white"
       dense
       outlined
       hide-details
@@ -42,6 +44,7 @@
       v-model="element['size']"
       type="textField"
       label="size"
+      input-class="white"
       dense
       outlined
       hide-details

@@ -604,9 +604,21 @@ const newElementTemplate = {
           "https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube_icon_full-color.svg?cache=f2ec7a5",
         size: "50px",
       },
+      {
+        type: "select",
+        id: 2,
+        style: "outlined",
+        width: "200px",
+        dense: true,
+        options: ["option5", "option4", "option3", "option2", "option1"],
+        bindingKey: "select",
+      },
     ],
+    layout: "vertical",
   },
-  bindingData: {},
+  bindingData: {
+    select: "option3",
+  },
 };
 
 export const templates = {
