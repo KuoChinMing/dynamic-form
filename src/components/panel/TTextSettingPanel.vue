@@ -231,7 +231,7 @@
 </template>
 
 <script>
-import ElementSettingInputBox from "@/components/ElementSettingInputBox.vue";
+import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 
 export default {
   name: "TTextSettingPanel",

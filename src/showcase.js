@@ -616,6 +616,12 @@ const newElementTemplate = {
       {
         type: "checkbox",
         id: 3,
+        bindingKey: "checkbox",
+      },
+      {
+        type: "select",
+        id: 4,
+        options: ["2", "1"],
       },
     ],
     layout: "vertical",
