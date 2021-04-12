@@ -21,7 +21,8 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['bindingKey']"
+      :value="element['bindingKey']"
+      @change="changeBindingKey"
       input-class="white"
       label="bindingKey"
       hide-details
@@ -33,6 +34,7 @@
       v-model="bindingData[element['bindingKey']]"
       input-class="white"
       label="defaultValue"
+      :disabled="!bindingData[element['bindingKey']]"
       hide-details
       dense
       outlined
@@ -81,12 +83,18 @@ export default {
 
   watch: {
     "element.bindingKey"(newKey, oldKey) {
-      if (oldKey && this.bindingData[oldKey]) {
-        this.$delete(this.bindingData, oldKey);
-        this.$set(this.bindingData, newKey, this.bindingData[oldKey]);
-      } else {
+      if (oldKey === undefined || this.bindingData[oldKey] === undefined) {
         this.$set(this.bindingData, newKey, null);
+      } else {
+        this.$set(this.bindingData, newKey, this.bindingData[oldKey]);
+        this.$delete(this.bindingData, oldKey);
       }
+    },
+  },
+
+  methods: {
+    changeBindingKey(newKey) {
+      this.element["bindingKey"] = newKey;
     },
   },
 };

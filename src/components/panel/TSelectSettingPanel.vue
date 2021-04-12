@@ -21,7 +21,8 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['bindingKey']"
+      :value="element['bindingKey']"
+      @change="changeBindingKey"
       input-class="white"
       label="bindingKey"
       hide-details
@@ -33,6 +34,7 @@
       v-model="bindingData[element['bindingKey']]"
       input-class="white"
       label="defaultValue"
+      :disabled="!bindingData[element['bindingKey']]"
       hide-details
       dense
       outlined
@@ -228,6 +230,9 @@ export default {
   },
 
   methods: {
+    changeBindingKey(newKey) {
+      this.element["bindingKey"] = newKey;
+    },
     addOptions() {
       this.options.unshift("");
     },

@@ -21,7 +21,8 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['bindingKey']"
+      :value="bindingKey"
+      @change="changeBindingKey"
       input-class="white"
       label="bindingKey"
       hide-details
@@ -29,13 +30,14 @@
       outlined
     ></element-setting-input-box>
 
+    <!-- bindingData[element['bindingKey']] can be null, 0, or "", disabled when it's undefined -->
     <element-setting-input-box
       v-model="bindingData[element['bindingKey']]"
-      input-class="white"
-      type="select"
-      label="defaultValue"
+      :disabled="bindingData[element['bindingKey']] === undefined"
       :items="[true, false]"
-      :disabled="!bindingData[element['bindingKey']]"
+      type="select"
+      input-class="white"
+      label="defaultValue"
       hide-details
       dense
       outlined
@@ -64,14 +66,34 @@ export default {
     },
   },
 
+  data() {
+    return {
+      // 不使用 this.element['bindingKey] 是因為 this.element['bindingKey]  有可能是 undefined, watch 不到這個變數
+      bindingKey: this.element["bindingKey"],
+    };
+  },
+
   watch: {
-    "element.bindingKey"(newKey, oldKey) {
-      if (oldKey && this.bindingData[oldKey]) {
-        this.$delete(this.bindingData, oldKey);
-        this.$set(this.bindingData, newKey, this.bindingData[oldKey]);
-      } else {
+    async bindingKey(newKey, oldKey) {
+      if (!newKey) {
+        await this.$nextTick();
+        const oldValue = this.bindingData[oldKey];
+        this.changeBindingKey(oldKey);
+        await this.$nextTick();
+        this.$set(this.bindingData, oldKey, oldValue);
+      } else if (!oldKey || this.bindingData[oldKey] === undefined) {
         this.$set(this.bindingData, newKey, null);
+      } else {
+        this.$set(this.bindingData, newKey, this.bindingData[oldKey]);
+        this.$delete(this.bindingData, oldKey);
       }
+    },
+  },
+
+  methods: {
+    async changeBindingKey(newKey) {
+      this.bindingKey = newKey;
+      this.$set(this.element, "bindingKey", newKey);
     },
   },
 };
