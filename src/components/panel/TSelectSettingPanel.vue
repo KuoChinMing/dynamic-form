@@ -20,21 +20,18 @@
       hide-details
     ></element-setting-input-box>
 
-    <element-setting-input-box
-      :value="element['bindingKey']"
-      @change="changeBindingKey"
-      input-class="white"
-      label="bindingKey"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
+    <binding-key-input-box
+      :element="element"
+      :binding-data="bindingData"
+    ></binding-key-input-box>
 
     <element-setting-input-box
       v-model="bindingData[element['bindingKey']]"
-      input-class="white"
+      :disabled="!element['bindingKey']"
+      :input-class="{ white: element['bindingKey'] }"
+      type="select"
+      :items="element['options']"
       label="defaultValue"
-      :disabled="!bindingData[element['bindingKey']]"
       hide-details
       dense
       outlined
@@ -183,13 +180,15 @@
 </template>
 
 <script>
-import ElementSettingInputBox from "@/components/ElementSettingInputBox.vue";
+import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
+import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
   name: "TIconSettingPanel",
 
   components: {
     ElementSettingInputBox,
+    BindingKeyInputBox,
   },
 
   props: {
@@ -210,17 +209,9 @@ export default {
   },
 
   watch: {
-    "element.bindingKey"(newKey, oldKey) {
-      if (oldKey === undefined || this.bindingData[oldKey] === undefined) {
-        this.$set(this.bindingData, newKey, null);
-      } else {
-        this.$set(this.bindingData, newKey, this.bindingData[oldKey]);
-        this.$delete(this.bindingData, oldKey);
-      }
-    },
     "element.options": {
       handler(newVal) {
-        this.options = newVal;
+        this.options = newVal || [];
       },
       immediate: true,
     },
@@ -230,9 +221,6 @@ export default {
   },
 
   methods: {
-    changeBindingKey(newKey) {
-      this.element["bindingKey"] = newKey;
-    },
     addOptions() {
       this.options.unshift("");
     },
