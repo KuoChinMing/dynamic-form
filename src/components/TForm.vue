@@ -9,6 +9,8 @@ import TTable from "@/components/template/TTable.vue";
 import TRow from "@/components/template/TRow.vue";
 import TCol from "@/components/template/TCol.vue";
 import TTextarea from "@/components/template/TTextarea.vue";
+import TSelection from "@/components/template/TSelection.vue";
+import TImageUploader from "@/components/template/TImageUploader.vue";
 
 export default {
   name: "TForm",
@@ -35,6 +37,8 @@ export default {
     TRow,
     TCol,
     TTest,
+    TSelection,
+    TImageUploader,
   },
 
   data() {
@@ -67,6 +71,9 @@ export default {
   methods: {
     renderElement(element) {
       switch (element?.type) {
+        case "imageUploader":
+          return <t-image-uploader data={element}></t-image-uploader>;
+
         case "box":
           return (
             <t-box data={element}>
@@ -128,6 +135,9 @@ export default {
 
         case "radioGroup":
           return <t-test data={element}></t-test>;
+
+        case "selection":
+          return <t-selection data={element}></t-selection>;
 
         default:
           return;

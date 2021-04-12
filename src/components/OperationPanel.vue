@@ -183,6 +183,14 @@ export default {
         type: "textField",
         name: "textField",
       },
+      {
+        type: "selection",
+        name: "selection",
+      },
+      {
+        type: "imageUploader",
+        name: "imageUploader",
+      },
     ];
   },
 

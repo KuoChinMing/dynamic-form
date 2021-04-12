@@ -30,7 +30,14 @@ const tableTemplate = {
               {
                 "type": "tcol",
                 "id": 9,
-                "width": "16.6%"
+                "width": "16.6%",
+                "contents": [
+                  {
+                    "type": "textField",
+                    "id": 356,
+                    "width": "auto"
+                  }
+                ]
               },
               {
                 "type": "tcol",
@@ -48,7 +55,14 @@ const tableTemplate = {
               {
                 "type": "tcol",
                 "id": 11,
-                "width": "16.6%"
+                "width": "16.6%",
+                "contents": [
+                  {
+                    "type": "textField",
+                    "id": 357,
+                    "width": "auto"
+                  }
+                ]
               },
               {
                 "type": "tcol",
@@ -67,7 +81,14 @@ const tableTemplate = {
               {
                 "type": "tcol",
                 "id": 13,
-                "width": "16.6%"
+                "width": "16.6%",
+                "contents": [
+                  {
+                    "type": "textField",
+                    "id": 358,
+                    "width": "auto"
+                  }
+                ]
               }
             ]
           },
@@ -92,7 +113,20 @@ const tableTemplate = {
                 "type": "tcol",
                 "id": 14,
                 "colspan": "3",
-                "width": "49.8%"
+                "width": "49.8%",
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 359,
+                    "layout": "horizontal",
+                    "contents": [
+                      {
+                        "type": "radioGroup",
+                        "id": 360
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "type": "tcol",
@@ -117,7 +151,7 @@ const tableTemplate = {
                           {
                             "type": "textField",
                             "id": 337,
-                            "width": "140px"
+                            "width": "100px"
                           },
                           {
                             "type": "text",
@@ -142,7 +176,7 @@ const tableTemplate = {
                           {
                             "type": "textField",
                             "id": 340,
-                            "width": "140px"
+                            "width": "100px"
                           },
                           {
                             "type": "text",
@@ -244,13 +278,15 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "textField",
-                    "id": 189
+                    "id": 189,
+                    "width": "auto"
                   }
                 ]
               },
               {
                 "type": "tcol",
-                "id": 27
+                "id": 27,
+                "contents": []
               },
               {
                 "type": "tcol",
@@ -1647,7 +1683,8 @@ const tableTemplate = {
                         "flexBasis": "auto",
                         "text": "足浴"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -1952,6 +1989,10 @@ const tableTemplate = {
             ]
           }
         ]
+      },
+      {
+        "type": "imageUploader",
+        "id": 361
       }
     ]
   }

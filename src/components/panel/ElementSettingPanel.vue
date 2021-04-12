@@ -18,6 +18,7 @@ import TTcolSettingPanel from "@/components/panel/TTcolSettingPanel.vue";
 import TBoxSettingPanel from "@/components/panel/TBoxSettingPanel.vue";
 import TTestSettingPanel from "@/components/panel/TTestSettingPanel.vue";
 import TTextFieldSettingPanel from "@/components/panel/TTextFieldSettingPanel.vue";
+import TImageUploaderSettingPanel from "@/components/panel/TImageUploaderSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
@@ -27,7 +28,8 @@ export default {
     TTcolSettingPanel,
     TBoxSettingPanel,
     TTestSettingPanel,
-    TTextFieldSettingPanel
+    TTextFieldSettingPanel,
+    TImageUploaderSettingPanel
   },
 
   props: {
@@ -50,6 +52,7 @@ export default {
         box: "t-box-setting-panel",
         radioGroup: "t-test-setting-panel",
         textField: "t-text-field-setting-panel",
+        imageUpader: 't-image-uploader-setting-panel'
       };
       const type = this.element?.type;
 
