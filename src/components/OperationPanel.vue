@@ -21,7 +21,17 @@
             v-for="(element, index) in elements"
             :key="index"
           >
-            <v-list-item-title>{{ element.name }}</v-list-item-title>
+            <v-list-item-title>
+              <v-icon
+                v-if="typeIcon(element.type)"
+                small
+                class="mr-1"
+                style="width: 16px; height: 16px"
+              >
+                {{ typeIcon(element.type) }}
+              </v-icon>
+              <span>{{ element.name }}</span>
+            </v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -100,6 +110,7 @@
             @mouseleave="removeHightLighting(item)"
           >
             <v-icon
+              v-if="typeIcon(item.type)"
               small
               class="mr-1"
               :color="selectedNode && active ? 'primary' : ''"
@@ -115,7 +126,7 @@
 
 <script>
 import ToolbarBtn from "@/components/ToolbarBtn.vue";
-// import { mapState } from "vuex";
+import icons from "@/iconMap.js";
 
 export default {
   name: "OperationPanel",
@@ -203,14 +214,7 @@ export default {
       // }
     },
     typeIcon(type) {
-      const icon = {
-        text: "mdi-alpha-t-box",
-        checkbox: "mdi-checkbox-marked",
-        textField: "mdi-keyboard",
-        icon: "mdi-star",
-        select: "mdi-arrow-down-drop-circle",
-      };
-      return icon[type];
+      return icons[type];
     },
     deepCopy(obj) {
       return JSON.parse(JSON.stringify(obj));
