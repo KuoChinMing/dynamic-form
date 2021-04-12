@@ -133,7 +133,6 @@ export default {
 
   data() {
     return {
-      // TODO: restrict element that can be added
       elements: [],
       selectedNode: null,
       copiedNode: null,
@@ -142,6 +141,7 @@ export default {
   },
 
   created() {
+    // TODO: restrict element that can be added
     this.elements = [
       {
         type: "radioGroup",
@@ -184,12 +184,16 @@ export default {
         name: "textField",
       },
       {
-        type: "selection",
-        name: "selection",
-      },
-      {
         type: "imageUploader",
         name: "imageUploader",
+      },
+      {
+        type: "icon",
+        name: "icon",
+      },
+      {
+        type: "select",
+        name: "select",
       },
     ];
   },
@@ -197,15 +201,26 @@ export default {
   methods: {
     removeHightLighting(element) {
       this.$set(element, "backgroundColor", undefined);
+      // const selectedEl = document.getElementById(element.id);
+      // if (selectedEl) {
+      //   selectedEl.style.backgroundColor = null;
+      // }
     },
     hightLightElement(element) {
-      // TODO 元件其實不可直接設定 backgroundColor，不然 mouseLeave 時會把使用者設定的 backgroundColor 取代 (應該多一層元素，在這層設置 backgroundColor)
+      // TODO 元件其實不可直接設定 backgroundColor，不然 mouseLeave 時會把使用者設定的 backgroundColor 取代 (建立元素仿製 overlay)
       this.$set(element, "backgroundColor", "#E0E0E0");
+      // const selectedEl = document.getElementById(element.id);
+      // if (selectedEl) {
+      //   selectedEl.style.backgroundColor = "#E0E0E0";
+      // }
     },
     typeIcon(type) {
       const icon = {
         text: "mdi-alpha-t-box",
         checkbox: "mdi-checkbox-marked",
+        textField: "mdi-keyboard",
+        icon: "mdi-star",
+        select: "mdi-arrow-down-drop-circle",
       };
       return icon[type];
     },

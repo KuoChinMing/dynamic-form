@@ -4,13 +4,14 @@ import TSeparator from "@/components/template/TSeparator.vue";
 import TBox from "@/components/template/TBox.vue";
 import TCheckbox from "@/components/template/TCheckbox.vue";
 import TTextField from "@/components/template/TTextField.vue";
-import TTest from "@/components/template/TTest.vue";
+import TRadioGroup from "@/components/template/TRadioGroup.vue";
 import TTable from "@/components/template/TTable.vue";
 import TRow from "@/components/template/TRow.vue";
 import TCol from "@/components/template/TCol.vue";
 import TTextarea from "@/components/template/TTextarea.vue";
-import TSelection from "@/components/template/TSelection.vue";
 import TImageUploader from "@/components/template/TImageUploader.vue";
+import TIcon from "@/components/template/TIcon.vue";
+import TSelect from "@/components/template/TSelect.vue";
 
 export default {
   name: "TForm",
@@ -36,112 +37,115 @@ export default {
     TTable,
     TRow,
     TCol,
-    TTest,
-    TSelection,
+    TRadioGroup,
     TImageUploader,
+    TIcon,
+    TSelect,
   },
 
   data() {
     return {
-      data: null,
+      elementMap: {
+        box: this.renderBox,
+        separator: this.renderSeparator,
+        text: this.renderText,
+        checkbox: this.renderCheckbox,
+        textField: this.renderTextField,
+        table: this.renderTable,
+        trow: this.renderTrow,
+        tcol: this.renderTcol,
+        icon: this.renderIcon,
+        select: this.renderSelect,
+        textarea: this.renderTextarea,
+        radioGroup: this.renderRadioGroup,
+        imageUploader: this.renderImageUploader,
+      },
     };
   },
 
-  watch: {
-    bindingData: {
-      handler(value) {
-        this.data = value;
-      },
-      deep: true,
-    },
-    // data: {
-    //   handler(value) {
-    //     this.$emit("input", value);
-    //   },
-    //   deep: true,
-    // },
-  },
-
-  created() {
-    if (this.bindingData) {
-      this.data = this.bindingData;
-    }
-  },
-
   methods: {
-    renderElement(element) {
-      switch (element?.type) {
-        case "imageUploader":
-          return <t-image-uploader data={element}></t-image-uploader>;
-
-        case "box":
-          return (
-            <t-box data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-box>
-          );
-
-        case "separator":
-          return <t-separator data={element}></t-separator>;
-
-        case "text":
-          return <t-text data={element}></t-text>;
-
-        case "textarea":
-          return <t-textarea data={element}></t-textarea>;
-
-        case "checkbox":
-          if (element.bindingData in this.data) {
-            return (
-              <t-checkbox
-                data={element}
-                v-model={this.data[element.bindingData]}
-              ></t-checkbox>
-            );
-          }
-          return <t-checkbox data={element}></t-checkbox>;
-
-        case "textField":
-          if (element.bindingData in this.data) {
-            return (
-              <t-text-field
-                data={element}
-                v-model={this.data[element.bindingData]}
-              ></t-text-field>
-            );
-          }
-          return <t-text-field data={element}></t-text-field>;
-
-        case "table":
-          return (
-            <t-table data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-table>
-          );
-
-        case "trow":
-          return (
-            <t-row data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-row>
-          );
-
-        case "tcol":
-          return (
-            <t-col data={element}>
-              {element.contents?.map((element) => this.renderElement(element))}
-            </t-col>
-          );
-
-        case "radioGroup":
-          return <t-test data={element}></t-test>;
-
-        case "selection":
-          return <t-selection data={element}></t-selection>;
-
-        default:
-          return;
+    renderImageUploader(el) {
+      return <t-image-uploader data={el}></t-image-uploader>;
+    },
+    renderRadioGroup(el) {
+      return <t-radio-group data={el}></t-radio-group>;
+    },
+    renderTextarea(el) {
+      return <t-textarea data={el}></t-textarea>;
+    },
+    renderSelect(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-select
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-select>
+        );
       }
+      return <t-select data={el}></t-select>;
+    },
+    renderIcon(el) {
+      return <t-icon data={el}></t-icon>;
+    },
+    renderTcol(el) {
+      return (
+        <t-col data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-col>
+      );
+    },
+    renderTrow(el) {
+      return (
+        <t-row data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-row>
+      );
+    },
+    renderTable(el) {
+      return (
+        <t-table data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-table>
+      );
+    },
+    renderTextField(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-text-field
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-text-field>
+        );
+      }
+      return <t-text-field data={el}></t-text-field>;
+    },
+    renderCheckbox(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-checkbox
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-checkbox>
+        );
+      }
+      return <t-checkbox data={el}></t-checkbox>;
+    },
+    renderText(el) {
+      return <t-text data={el}></t-text>;
+    },
+    renderSeparator(el) {
+      return <t-separator data={el}></t-separator>;
+    },
+    renderBox(el) {
+      return (
+        <t-box data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-box>
+      );
+    },
+
+    renderElement(element) {
+      return this.elementMap?.[element.type](element);
     },
   },
 

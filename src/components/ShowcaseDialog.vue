@@ -10,10 +10,10 @@
         >
           <v-chip
             label
-            v-for="({ name, template }, index) in templates"
+            v-for="(template, index) in templates"
             :key="index"
             :value="template"
-            >{{ name }}</v-chip
+            >{{ template.name }}</v-chip
           >
         </v-chip-group>
       </v-card-text>
@@ -75,20 +75,33 @@ export default {
       this.value = this.isOpen;
     }
 
-    // 初次載入時， vuex 裡的 template 也是從 showcase.js 拿，深拷貝一份到這裏，之後再次 create 才會是最初的 template
-    this.templates = this.deepCopy(templates);
+    this.templates = templates;
   },
 
   methods: {
     deepCopy(obj) {
-      return JSON.parse(JSON.stringify(obj));
+      try {
+        return JSON.parse(JSON.stringify(obj));
+      } catch {
+        console.error(
+          `JSON 解析失敗, in file: ShowcaseDialog.vue, JSON: ${obj}`
+        );
+        return {};
+      }
     },
     closeDialog() {
       this.isOpen = false;
     },
     applyTemplate() {
       // 選擇 template 後，深拷貝給 vuex，再去做表單編輯，不然會影響這裡的 this.templates
-      this.$store.commit("template", this.deepCopy(this.selectedTemplate));
+      this.$store.commit(
+        "template",
+        this.deepCopy(this.selectedTemplate.template)
+      );
+      this.$store.commit(
+        "bindingData",
+        this.deepCopy(this.selectedTemplate.bindingData)
+      );
       this.closeDialog();
     },
   },

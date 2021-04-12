@@ -26,10 +26,6 @@ export default {
     };
   },
 
-  created() {
-    this.innerValue = this.value;
-  },
-
   watch: {
     value(newValue) {
       this.innerValue = newValue;
@@ -37,6 +33,10 @@ export default {
     innerValue(newValue) {
       this.$emit("input", newValue);
     },
+  },
+
+  created() {
+    this.innerValue = this.value;
   },
 
   render() {

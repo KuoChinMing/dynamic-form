@@ -16,9 +16,12 @@
 import TTextSettingPanel from "@/components/panel/TTextSettingPanel.vue";
 import TTcolSettingPanel from "@/components/panel/TTcolSettingPanel.vue";
 import TBoxSettingPanel from "@/components/panel/TBoxSettingPanel.vue";
-import TTestSettingPanel from "@/components/panel/TTestSettingPanel.vue";
+import TRadioGroupSettingPanel from "@/components/panel/TRadioGroupSettingPanel.vue";
 import TTextFieldSettingPanel from "@/components/panel/TTextFieldSettingPanel.vue";
 import TImageUploaderSettingPanel from "@/components/panel/TImageUploaderSettingPanel.vue";
+import TCheckboxSettingPanel from "@/components/panel/TCheckboxSettingPanel.vue";
+import TIconSettingPanel from "@/components/panel/TIconSettingPanel.vue";
+import TSelectSettingPanel from "@/components/panel/TSelectSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
@@ -27,9 +30,12 @@ export default {
     TTextSettingPanel,
     TTcolSettingPanel,
     TBoxSettingPanel,
-    TTestSettingPanel,
+    TRadioGroupSettingPanel,
     TTextFieldSettingPanel,
-    TImageUploaderSettingPanel
+    TImageUploaderSettingPanel,
+    TCheckboxSettingPanel,
+    TIconSettingPanel,
+    TSelectSettingPanel,
   },
 
   props: {
@@ -52,7 +58,10 @@ export default {
         box: "t-box-setting-panel",
         radioGroup: "t-test-setting-panel",
         textField: "t-text-field-setting-panel",
-        imageUpader: 't-image-uploader-setting-panel'
+        imageUpader: 't-image-uploader-setting-panel',
+        checkbox: "t-checkbox-setting-panel",
+        icon: "t-icon-setting-panel",
+        select: "t-select-setting-panel",
       };
       const type = this.element?.type;
 

@@ -1,10 +1,5 @@
-<template >
-  <v-textarea
-  
-    :disabled="false"
-    class="h-100 p-0 "
-    hide-details
-  ></v-textarea>
+<template>
+  <v-textarea :disabled="false" :style="style" hide-details></v-textarea>
 </template>
 
 <script>
@@ -14,6 +9,15 @@ export default {
       type: [Object, null],
       default: null,
     },
+  },
+
+  data() {
+    return {
+      style: {
+        height: this.data.height,
+        // ...
+      },
+    };
   },
 };
 </script>

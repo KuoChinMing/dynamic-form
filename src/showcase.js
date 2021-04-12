@@ -1998,19 +1998,6 @@ const tableTemplate = {
   }
 };
 
-const diagnosisTypeBindingData = {
-  jointsD: "",
-  jointsMtRib: "",
-  jointsPd: "",
-  jointsSgCheckbox: false,
-  jointsDCheckbox: false,
-  jointsMtRibCheckbox: false,
-  jointsLsjCheckbox: false,
-  jointsPdCheckbox: false,
-  softTissueOpenUpLigCheckbox: false,
-  softTissueEoCheckbox: false,
-};
-
 const diagnosisTemplate = {
   name: "diagnosis",
   template: {
@@ -2048,7 +2035,7 @@ const diagnosisTemplate = {
                 contents: [
                   {
                     type: "checkbox",
-                    bindingData: "jointsSgCheckbox",
+                    bindingKey: "jointsSgCheckbox",
                     id: 6,
                   },
                   {
@@ -2069,7 +2056,7 @@ const diagnosisTemplate = {
                 contents: [
                   {
                     type: "checkbox",
-                    bindingData: "jointsDCheckbox",
+                    bindingKey: "jointsDCheckbox",
                     id: 9,
                   },
                   {
@@ -2083,7 +2070,7 @@ const diagnosisTemplate = {
                     value: "D+",
                     flexBasis: "auto",
                     width: "140px",
-                    bindingData: "jointsD",
+                    bindingKey: "jointsD",
                     id: 11,
                   },
                 ],
@@ -2098,7 +2085,7 @@ const diagnosisTemplate = {
                 contents: [
                   {
                     type: "checkbox",
-                    bindingData: "jointsMtRibCheckbox",
+                    bindingKey: "jointsMtRibCheckbox",
                     id: 13,
                   },
                   {
@@ -2112,7 +2099,7 @@ const diagnosisTemplate = {
                     value: "MT/rib",
                     flexBasis: "auto",
                     width: "140px",
-                    bindingData: "jointsMtRib",
+                    bindingKey: "jointsMtRib",
                     id: 15,
                   },
                   {
@@ -2132,7 +2119,7 @@ const diagnosisTemplate = {
                 contents: [
                   {
                     type: "checkbox",
-                    bindingData: "jointsLsjCheckbox",
+                    bindingKey: "jointsLsjCheckbox",
                     id: 18,
                   },
                   {
@@ -2153,7 +2140,7 @@ const diagnosisTemplate = {
                 contents: [
                   {
                     type: "checkbox",
-                    bindingData: "jointsPdCheckbox",
+                    bindingKey: "jointsPdCheckbox",
                     id: 21,
                   },
                   {
@@ -2167,7 +2154,7 @@ const diagnosisTemplate = {
                     value: "PelvicDysfn",
                     flexBasis: "auto",
                     width: "140px",
-                    bindingData: "jointsPd",
+                    bindingKey: "jointsPd",
                     id: 23,
                   },
                 ],
@@ -2211,7 +2198,7 @@ const diagnosisTemplate = {
                 contents: [
                   {
                     type: "checkbox",
-                    bindingData: "softTissueOpenUpLigCheckbox",
+                    bindingKey: "softTissueOpenUpLigCheckbox",
                     id: 29,
                   },
                   {
@@ -2231,7 +2218,7 @@ const diagnosisTemplate = {
                 contents: [
                   {
                     type: "checkbox",
-                    bindingData: "softTissueEoCheckbox",
+                    bindingKey: "softTissueEoCheckbox",
                     id: 32,
                   },
                   {
@@ -2248,9 +2235,21 @@ const diagnosisTemplate = {
       },
     ],
   },
+  bindingData: {
+    jointsD: "joints D+",
+    jointsMtRib: "Mt/rib data",
+    jointsPd: "",
+    jointsSgCheckbox: true,
+    jointsDCheckbox: false,
+    jointsMtRibCheckbox: true,
+    jointsLsjCheckbox: false,
+    jointsPdCheckbox: true,
+    softTissueOpenUpLigCheckbox: false,
+    softTissueEoCheckbox: true,
+  },
 };
 
-const textFIeldTemplate = {
+const textFieldTemplate = {
   name: "textField Demo",
   template: {
     type: "box",
@@ -2272,11 +2271,42 @@ const textFIeldTemplate = {
   },
 };
 
+const newElementTemplate = {
+  name: "new element template",
+  template: {
+    type: "box",
+    id: 0,
+    contents: [
+      {
+        type: "icon",
+        id: 1,
+        url:
+          "https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube_icon_full-color.svg?cache=f2ec7a5",
+        size: "50px",
+      },
+      {
+        type: "select",
+        id: 2,
+        style: "outlined",
+        width: "200px",
+        dense: true,
+        options: ["option5", "option4", "option3", "option2", "option1"],
+        bindingKey: "select",
+      },
+    ],
+    layout: "vertical",
+  },
+  bindingData: {
+    select: "option3",
+  },
+};
+
 export const templates = {
   tableTemplate,
   diagnosisTemplate,
-  textFIeldTemplate
+  textFieldTemplate,
+  newElementTemplate,
 };
 
-export const bindingData = { diagnosisTypeBindingData };
+export const defaultBindingData = newElementTemplate.bindingData;
 export const defaultTemplate = tableTemplate.template;

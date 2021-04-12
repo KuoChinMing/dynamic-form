@@ -1,48 +1,53 @@
 <template>
   <v-container>
     <element-setting-input-box
-      v-model="element['layout']"
-      input-class="white"
-      type="select"
-      label="layout"
-      :items="['', 'horizontal', 'vertical']"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flex']"
-      input-class="white"
-      label="flex"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      input-class="white"
+      :value="element['type']"
       type="textField"
-      label="flexBasis"
+      label="type"
       hide-details
       dense
       outlined
+      disabled
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['wrap']"
-      input-class="white"
-      type="select"
-      label="wrap"
-      :items="[
-        { text: '', value: '' },
-        { text: 'wrap', value: 'wrap' },
-        { text: 'nowrap', value: 'nowrap' },
-      ]"
-      hide-details
+      :value="element['id']"
+      type="textField"
+      label="id"
+      disabled
       dense
       outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['url']"
+      type="textField"
+      label="url"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['margin']"
+      type="textField"
+      label="margin"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['size']"
+      type="textField"
+      label="size"
+      input-class="white"
+      dense
+      outlined
+      hide-details
     ></element-setting-input-box>
   </v-container>
 </template>
@@ -51,7 +56,7 @@
 import ElementSettingInputBox from "@/components/ElementSettingInputBox.vue";
 
 export default {
-  name: "TBoxSettingPanel",
+  name: "TIconSettingPanel",
 
   components: {
     ElementSettingInputBox,

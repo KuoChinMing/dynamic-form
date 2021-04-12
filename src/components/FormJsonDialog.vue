@@ -61,7 +61,7 @@
 import { mapState } from "vuex";
 
 export default {
-  name: "JsonDialog",
+  name: "FormJsonDialog",
 
   props: {
     value: {
@@ -81,10 +81,10 @@ export default {
   computed: {
     ...mapState(["template"]),
     templateString: {
-      get: function () {
+      get() {
         return JSON.stringify(this.template, null, 2);
       },
-      set: function (newValue) {
+      set(newValue) {
         this.inputTemplateString = newValue;
       },
     },
@@ -102,6 +102,7 @@ export default {
     if (this.value) {
       this.value = this.isOpen;
     }
+
     this.inputTemplateString = this.templateString;
   },
 

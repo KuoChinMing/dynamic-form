@@ -15,7 +15,7 @@
 import ElementSettingInputBox from "@/components/ElementSettingInputBox.vue";
 
 export default {
-  name: "TTestSettingPanel",
+  name: "TRadioGroupSettingPanel",
 
   components: {
     ElementSettingInputBox,
