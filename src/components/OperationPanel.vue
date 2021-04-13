@@ -232,7 +232,6 @@ export default {
       return !(key in this.bindingData);
     },
     elementNeedsBindingKey(element) {
-      console.log(elementsNeedBindingKey.includes(element), element);
       return elementsNeedBindingKey.includes(element);
     },
     removeHightLighting(element) {

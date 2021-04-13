@@ -6,7 +6,11 @@
     >
       <v-layout column fill-height>
         <div class="grey lighten-3 pa-6" style="flex: 1 0 0; overflow: auto">
-          <v-sheet class="pa-2" elevation="6" style="overflow: auto">
+          <v-sheet
+            class="pa-2"
+            elevation="6"
+            style="overflow-x: auto; overflow-y: hidden"
+          >
             <!-- warning: template is mutating -->
             <!-- warning: binding data is mutating -->
             <t-form :template="template" :binding-data="bindingData"></t-form>

@@ -58,7 +58,7 @@ export default {
         box: "t-box-setting-panel",
         radioGroup: "t-test-setting-panel",
         textField: "t-text-field-setting-panel",
-        imageUpader: 't-image-uploader-setting-panel',
+        imageUpader: "t-image-uploader-setting-panel",
         checkbox: "t-checkbox-setting-panel",
         icon: "t-icon-setting-panel",
         select: "t-select-setting-panel",

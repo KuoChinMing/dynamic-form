@@ -44,7 +44,7 @@
       outlined
     ></element-setting-input-box>
 
-      <element-setting-input-box
+    <element-setting-input-box
       v-model="element['shrink']"
       input-class="white"
       label="shrink"
