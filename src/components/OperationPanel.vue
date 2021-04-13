@@ -120,17 +120,22 @@
 
             <span>{{ item.type }}</span>
 
-            <v-icon
+            <v-layout
               v-if="
                 elementNeedsBindingKey(item.type) &&
                 bindingKeyInBindingData(item.bindingKey)
               "
-              small
-              class="ml-1"
-              color="red"
-              v-text="'mdi-alert-circle'"
+              class="caption red--text"
             >
-            </v-icon>
+              <v-icon
+                small
+                class="mx-1"
+                color="red"
+                v-text="'mdi-alert-circle'"
+              >
+              </v-icon>
+              [invalid binding key]
+            </v-layout>
           </v-layout>
         </template>
       </v-treeview>
@@ -220,7 +225,6 @@ export default {
       return !(key in this.bindingData);
     },
     elementNeedsBindingKey(element) {
-      console.log(elementsNeedBindingKey.includes(element), element);
       return elementsNeedBindingKey.includes(element);
     },
     removeHightLighting(element) {
@@ -333,6 +337,10 @@ export default {
       const parentNodeContents = parentNode.contents.filter(
         (elment) => elment !== this.selectedNode
       );
+      const bindingKey = this.selectedNode["bindingKey"];
+      if (bindingKey && bindingKey in this.bindingData) {
+        this.$delete(this.bindingData, bindingKey);
+      }
       this.$set(parentNode, "contents", parentNodeContents);
     },
     cutNode() {

@@ -21,6 +21,7 @@
     ></element-setting-input-box>
 
     <binding-key-input-box
+      :key="element.id"
       :element="element"
       :binding-data="bindingData"
     ></binding-key-input-box>
@@ -36,6 +37,16 @@
       hide-details
       dense
       outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['label']"
+      type="textField"
+      label="label"
+      input-class="white"
+      dense
+      outlined
+      hide-details
     ></element-setting-input-box>
   </v-container>
 </template>

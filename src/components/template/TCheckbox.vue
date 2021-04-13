@@ -48,16 +48,21 @@ export default {
       flexBasis: data.flexBasis ?? 0,
       backgroundColor: data.backgroundColor,
     };
+    const props = {
+      attrs: {
+        label: data.label,
+      },
+    };
 
     return (
       <v-flex style={style}>
         <v-layout align-center>
           <v-checkbox
             v-model={this.innerValue}
+            {...props}
             class="ma-0 pa-0"
             hide-details
           ></v-checkbox>
-          {this.$slots.default}
         </v-layout>
       </v-flex>
     );
