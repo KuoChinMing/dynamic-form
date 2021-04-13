@@ -164,7 +164,7 @@
         >
           <v-icon small>mdi-close</v-icon>
         </v-btn>
-        <label>{{ `option${options.length - index}` }}</label>
+        <label>{{ `option${index+1}` }}</label>
       </v-col>
       <v-col cols="9">
         <v-text-field
@@ -222,7 +222,7 @@ export default {
 
   methods: {
     addOptions() {
-      this.options.unshift("");
+      this.options.push("");
     },
     removeOptions(index) {
       this.options = this.options.splice(index, 1);

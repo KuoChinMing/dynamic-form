@@ -68,6 +68,14 @@ export default {
       return <t-image-uploader data={el}></t-image-uploader>;
     },
     renderRadioGroup(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-radio-group
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-radio-group>
+        );
+      }
       return <t-radio-group data={el}></t-radio-group>;
     },
     renderTextarea(el) {
