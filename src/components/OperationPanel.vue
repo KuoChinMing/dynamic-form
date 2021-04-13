@@ -103,6 +103,7 @@
         selected-color="primary"
         selection-type="independent"
       >
+        <!-- :color="selectedNode && active ? 'primary' : ''" -->
         <template v-slot:label="{ item, active }">
           <v-layout
             align-center
@@ -114,12 +115,25 @@
               small
               class="mr-1"
               :color="selectedNode && active ? 'primary' : ''"
-              >{{ typeIcon(item.type) }}</v-icon
+              v-text="typeIcon(item.type)"
+            ></v-icon>
+
+            <span>{{ item.type }}</span>
+
+            <v-icon
+              v-if="
+                elementNeedsBindingKey(item.type) &&
+                bindingKeyInBindingData(item.bindingKey)
+              "
+              small
+              class="ml-1"
+              color="red"
+              v-text="'mdi-alert-circle'"
             >
-            {{ item.type }}
+            </v-icon>
           </v-layout>
-        </template></v-treeview
-      >
+        </template>
+      </v-treeview>
     </v-layout>
   </v-layout>
 </template>
@@ -127,6 +141,7 @@
 <script>
 import ToolbarBtn from "@/components/ToolbarBtn.vue";
 import icons from "@/iconMap.js";
+import elementsNeedBindingKey from "@/elementsNeedBindingKey.js";
 
 export default {
   name: "OperationPanel",
@@ -140,6 +155,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    bindingData: {
+      type: Object,
+      default: () => {},
+    },
   },
 
   data() {
@@ -147,7 +166,6 @@ export default {
       elements: [],
       selectedNode: null,
       copiedNode: null,
-      bindingData: null,
     };
   },
 
@@ -210,6 +228,12 @@ export default {
   },
 
   methods: {
+    bindingKeyInBindingData(key) {
+      return !(key in this.bindingData);
+    },
+    elementNeedsBindingKey(element) {
+      return elementsNeedBindingKey.includes(element);
+    },
     removeHightLighting(element) {
       this.$set(element, "backgroundColor", undefined);
       // const selectedEl = document.getElementById(element.id);

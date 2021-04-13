@@ -316,11 +316,11 @@ export default {
       console.log(picData);
       // this.$emit("callActiveUploadPicFunc", picData);
     },
-    parentMethod(){
+    parentMethod() {
       this.$nextTick(() => {
-				this.activeUploadPic = false;
-			});
-    }
+        this.activeUploadPic = false;
+      });
+    },
   },
 };
 </script>
