@@ -339,6 +339,7 @@ const diagnosisTemplate = {
             fontWeight: "bold",
             fontSize: "18px",
             id: 3,
+            textAlign: "center",
           },
           {
             type: "box",
@@ -502,6 +503,7 @@ const diagnosisTemplate = {
             fontWeight: "bold",
             fontSize: "18px",
             id: 26,
+            textAlign: "center",
           },
           {
             type: "box",
@@ -556,16 +558,16 @@ const diagnosisTemplate = {
     ],
   },
   bindingData: {
-    jointsD: "joints D+",
-    jointsMtRib: "Mt/rib data",
+    jointsD: "",
+    jointsMtRib: "",
     jointsPd: "",
-    jointsSgCheckbox: true,
+    jointsSgCheckbox: false,
     jointsDCheckbox: false,
-    jointsMtRibCheckbox: true,
+    jointsMtRibCheckbox: false,
     jointsLsjCheckbox: false,
-    jointsPdCheckbox: true,
+    jointsPdCheckbox: false,
     softTissueOpenUpLigCheckbox: false,
-    softTissueEoCheckbox: true,
+    softTissueEoCheckbox: false,
   },
 };
 
@@ -638,5 +640,5 @@ export const templates = {
   newElementTemplate,
 };
 
-export const defaultBindingData = newElementTemplate.bindingData;
-export const defaultTemplate = newElementTemplate.template;
+export const defaultBindingData = diagnosisTemplate.bindingData;
+export const defaultTemplate = diagnosisTemplate.template;
