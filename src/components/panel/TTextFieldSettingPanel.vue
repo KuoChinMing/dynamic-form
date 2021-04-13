@@ -20,18 +20,15 @@
       hide-details
     ></element-setting-input-box>
 
-    <element-setting-input-box
-      v-model="element['bindingKey']"
-      input-class="white"
-      label="bindingKey"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
+    <binding-key-input-box
+      :element="element"
+      :binding-data="bindingData"
+    ></binding-key-input-box>
 
     <element-setting-input-box
       v-model="bindingData[element['bindingKey']]"
-      input-class="white"
+      :disabled="!element['bindingKey']"
+      :input-class="{ white: element['bindingKey'] }"
       label="defaultValue"
       hide-details
       dense
@@ -77,13 +74,15 @@
 </template>
 
 <script>
-import ElementSettingInputBox from "@/components/ElementSettingInputBox.vue";
+import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
+import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
   name: "TTextFieldSettingPanel",
 
   components: {
     ElementSettingInputBox,
+    BindingKeyInputBox,
   },
 
   props: {
@@ -94,17 +93,6 @@ export default {
     bindingData: {
       type: [Object, null],
       default: null,
-    },
-  },
-
-  watch: {
-    "element.bindingKey"(newKey, oldKey) {
-      if (oldKey && this.bindingData[oldKey]) {
-        this.$delete(this.bindingData, oldKey);
-        this.$set(this.bindingData, newKey, this.bindingData[oldKey]);
-      } else {
-        this.$set(this.bindingData, newKey, null);
-      }
     },
   },
 };
