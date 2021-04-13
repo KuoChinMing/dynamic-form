@@ -18,6 +18,7 @@
       <!-- warning: template is mutating -->
       <operation-panel
         :template="template"
+        :binding-data="bindingData"
         @select-node="selectNode"
       ></operation-panel>
     </v-flex>
