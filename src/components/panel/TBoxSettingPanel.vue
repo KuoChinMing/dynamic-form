@@ -44,6 +44,24 @@
       dense
       outlined
     ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['justifyContent']"
+      input-class="white"
+      type="select"
+      label="justifyContent"
+      :items="[
+        { text: '', value: '' },
+        { text: 'start', value: 'flex-start' },
+        { text: 'end', value: 'flex-end' },
+        { text: 'center', value: 'center' },
+        { text: 'space between', value: 'space-between' },
+        { text: 'space around', value: 'space-around' },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
   </v-container>
 </template>
 

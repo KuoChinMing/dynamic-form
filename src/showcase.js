@@ -114,19 +114,7 @@ const tableTemplate = {
                 "id": 14,
                 "colspan": "3",
                 "width": "49.8%",
-                "contents": [
-                  {
-                    "type": "box",
-                    "id": 359,
-                    "layout": "horizontal",
-                    "contents": [
-                      {
-                        "type": "radioGroup",
-                        "id": 360
-                      }
-                    ]
-                  }
-                ]
+                "contents": []
               },
               {
                 "type": "tcol",
@@ -286,7 +274,95 @@ const tableTemplate = {
               {
                 "type": "tcol",
                 "id": 27,
-                "contents": []
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 362,
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "id": 367,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "textField",
+                            "id": 368
+                          }
+                        ],
+                        "justifyContent": "center"
+                      },
+                      {
+                        "type": "box",
+                        "id": 363,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "radioGroup",
+                            "id": 365
+                          }
+                        ],
+                        "wrap": "wrap",
+                        "justifyContent": "center"
+                      },
+                      {
+                        "type": "box",
+                        "id": 364,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "select",
+                            "id": 366,
+                            "style": "",
+                            "dense": true,
+                            "width": "100px",
+                            "flexBasis": "auto",
+                            "flexGrow": 0
+                          }
+                        ],
+                        "justifyContent": "flex-end"
+                      },
+                      {
+                        "type": "box",
+                        "id": 369,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "checkbox",
+                            "id": 370
+                          },
+                          {
+                            "type": "text",
+                            "id": 371,
+                            "text": "脈圧",
+                            "flexBasis": "auto"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "id": 374,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 375,
+                            "text": "("
+                          },
+                          {
+                            "type": "radioGroup",
+                            "id": 376
+                          },
+                          {
+                            "type": "text",
+                            "id": 377,
+                            "text": ")"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "type": "tcol",
@@ -346,7 +422,96 @@ const tableTemplate = {
               },
               {
                 "type": "tcol",
-                "id": 29
+                "id": 29,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 378,
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "id": 379,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "textField",
+                            "id": 380
+                          }
+                        ],
+                        "justifyContent": "center"
+                      },
+                      {
+                        "type": "box",
+                        "id": 381,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "radioGroup",
+                            "id": 382
+                          }
+                        ],
+                        "wrap": "wrap",
+                        "justifyContent": "center"
+                      },
+                      {
+                        "type": "box",
+                        "id": 383,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "select",
+                            "id": 384,
+                            "style": "",
+                            "dense": true,
+                            "width": "100px",
+                            "flexBasis": "auto",
+                            "flexGrow": 0
+                          }
+                        ],
+                        "justifyContent": "flex-start"
+                      },
+                      {
+                        "type": "box",
+                        "id": 385,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "checkbox",
+                            "id": 386
+                          },
+                          {
+                            "type": "text",
+                            "id": 387,
+                            "text": "air入り",
+                            "flexBasis": "auto"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "id": 388,
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "id": 389,
+                            "text": "("
+                          },
+                          {
+                            "type": "radioGroup",
+                            "id": 390
+                          },
+                          {
+                            "type": "text",
+                            "id": 391,
+                            "text": ")"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "type": "tcol",
@@ -359,7 +524,8 @@ const tableTemplate = {
                       {
                         "type": "textField",
                         "id": 344,
-                        "width": "100%"
+                        "width": "100%",
+                        "flexBasis": "auto"
                       }
                     ]
                   }
@@ -408,10 +574,43 @@ const tableTemplate = {
                       {
                         "type": "text",
                         "id": 201,
-                        "text": "尿量",
+                        "text": "尿量(",
                         "flexBasis": "auto"
+                      },
+                      {
+                        "type": "select",
+                        "id": 392,
+                        "dense": true,
+                        "style": "",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "text",
+                        "id": 393,
+                        "text": "ml）　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 394
+                      },
+                      {
+                        "type": "text",
+                        "id": 395,
+                        "text": "性状(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "select",
+                        "id": 396,
+                        "dense": true
+                      },
+                      {
+                        "type": "text",
+                        "id": 397,
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "nowrap"
                   }
                 ]
               }
@@ -428,20 +627,53 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 202,
+                    "id": 398,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 203
+                        "id": 399
                       },
                       {
                         "type": "text",
-                        "id": 204,
-                        "text": "道量",
+                        "id": 400,
+                        "text": "道量(",
                         "flexBasis": "auto"
+                      },
+                      {
+                        "type": "select",
+                        "id": 401,
+                        "dense": true,
+                        "style": "",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "text",
+                        "id": 402,
+                        "text": "ml）　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 403
+                      },
+                      {
+                        "type": "text",
+                        "id": 404,
+                        "text": "性状(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "select",
+                        "id": 405,
+                        "dense": true
+                      },
+                      {
+                        "type": "text",
+                        "id": 406,
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "nowrap"
                   }
                 ]
               }
@@ -457,20 +689,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 205,
+                    "id": 407,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 206
+                        "id": 408
                       },
                       {
                         "type": "text",
-                        "id": 207,
+                        "id": 409,
+                        "text": "尿管交換(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 410
+                      },
+                      {
+                        "type": "text",
+                        "id": 411,
                         "flexBasis": "auto",
-                        "text": "尿管交換"
+                        "text": "管のサイズ"
+                      },
+                      {
+                        "type": "select",
+                        "id": 412,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 413,
+                        "text": "Fr　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 414
+                      },
+                      {
+                        "type": "text",
+                        "id": 415,
+                        "flexBasis": "auto",
+                        "text": "カフ水"
+                      },
+                      {
+                        "type": "select",
+                        "id": 416,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 417,
+                        "flexBasis": "auto",
+                        "text": "ml）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -486,19 +763,64 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 208,
+                    "id": 418,
+                    "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 209
+                        "id": 419
                       },
                       {
                         "type": "text",
-                        "id": 210,
+                        "id": 420,
+                        "text": "尿管管理(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 421
+                      },
+                      {
+                        "type": "text",
+                        "id": 422,
                         "flexBasis": "auto",
-                        "text": "尿管管理"
+                        "text": "膀胱洗浄　"
+                      },
+                      {
+                        "type": "select",
+                        "id": 423,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 425
+                      },
+                      {
+                        "type": "text",
+                        "id": 426,
+                        "flexBasis": "auto",
+                        "text": "ミルキング"
+                      },
+                      {
+                        "type": "select",
+                        "id": 427,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 428
+                      },
+                      {
+                        "type": "text",
+                        "id": 429,
+                        "flexBasis": "auto",
+                        "text": "パープルシンドローム)"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -547,7 +869,19 @@ const tableTemplate = {
                         "type": "text",
                         "id": 212,
                         "flexBasis": "auto",
-                        "text": "腸蠕動音"
+                        "text": "腸蠕動音("
+                      },
+                      {
+                        "type": "select",
+                        "id": 430,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 431,
+                        "flexBasis": "auto",
+                        "text": ")"
                       }
                     ]
                   }
@@ -595,20 +929,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 217,
+                    "id": 432,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 218
+                        "id": 433
                       },
                       {
                         "type": "text",
-                        "id": 219,
+                        "id": 434,
+                        "text": "日(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 435
+                      },
+                      {
+                        "type": "text",
+                        "id": 436,
                         "flexBasis": "auto",
-                        "text": "日"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 437,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 438,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 439
+                      },
+                      {
+                        "type": "text",
+                        "id": 440,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 441,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 442,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               },
@@ -618,20 +997,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 220,
+                    "id": 443,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 221
+                        "id": 444
                       },
                       {
                         "type": "text",
-                        "id": 222,
+                        "id": 445,
+                        "text": "月(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 446
+                      },
+                      {
+                        "type": "text",
+                        "id": 447,
                         "flexBasis": "auto",
-                        "text": "月"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 448,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 449,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 450
+                      },
+                      {
+                        "type": "text",
+                        "id": 451,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 452,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 453,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -647,20 +1071,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 223,
+                    "id": 454,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 228
+                        "id": 455
                       },
                       {
                         "type": "text",
-                        "id": 238,
+                        "id": 456,
+                        "text": "火(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 457
+                      },
+                      {
+                        "type": "text",
+                        "id": 458,
                         "flexBasis": "auto",
-                        "text": "火"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 459,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 460,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 461
+                      },
+                      {
+                        "type": "text",
+                        "id": 462,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 463,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 464,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               },
@@ -670,20 +1139,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 224,
+                    "id": 465,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 230
+                        "id": 466
                       },
                       {
                         "type": "text",
-                        "id": 231,
+                        "id": 467,
+                        "text": "水(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 468
+                      },
+                      {
+                        "type": "text",
+                        "id": 469,
                         "flexBasis": "auto",
-                        "text": "水"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 470,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 471,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 472
+                      },
+                      {
+                        "type": "text",
+                        "id": 473,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 474,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 475,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -699,19 +1213,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 225,
+                    "id": 476,
+                    "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 232
+                        "id": 477
                       },
                       {
                         "type": "text",
-                        "id": 233,
+                        "id": 478,
+                        "text": "木(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 479
+                      },
+                      {
+                        "type": "text",
+                        "id": 480,
                         "flexBasis": "auto",
-                        "text": "木"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 481,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 482,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 483
+                      },
+                      {
+                        "type": "text",
+                        "id": 484,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 485,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 486,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               },
@@ -721,20 +1281,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 226,
+                    "id": 487,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 234
+                        "id": 488
                       },
                       {
                         "type": "text",
-                        "id": 235,
+                        "id": 489,
+                        "text": "金(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 490
+                      },
+                      {
+                        "type": "text",
+                        "id": 491,
                         "flexBasis": "auto",
-                        "text": "金"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 492,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 493,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 494
+                      },
+                      {
+                        "type": "text",
+                        "id": 495,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 496,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 497,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -750,20 +1355,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 227,
+                    "id": 498,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 236
+                        "id": 499
                       },
                       {
                         "type": "text",
-                        "id": 237,
+                        "id": 500,
+                        "text": "土(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 501
+                      },
+                      {
+                        "type": "text",
+                        "id": 502,
                         "flexBasis": "auto",
-                        "text": "土"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 503,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 504,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 505
+                      },
+                      {
+                        "type": "text",
+                        "id": 506,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 507,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 508,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               },
@@ -784,20 +1434,31 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 239,
+                    "id": 509,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 244
+                        "id": 510
                       },
                       {
                         "type": "text",
-                        "id": 245,
+                        "id": 511,
+                        "text": "指診(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "radioGroup",
+                        "id": 520
+                      },
+                      {
+                        "type": "text",
+                        "id": 519,
                         "flexBasis": "auto",
-                        "text": "指診"
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -814,20 +1475,31 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 240,
+                    "id": 521,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 246
+                        "id": 522
                       },
                       {
                         "type": "text",
-                        "id": 247,
+                        "id": 523,
+                        "text": "浣腸(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "radioGroup",
+                        "id": 524
+                      },
+                      {
+                        "type": "text",
+                        "id": 525,
                         "flexBasis": "auto",
-                        "text": "浣腸"
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -844,21 +1516,65 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 241,
+                    "id": 526,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 248
+                        "id": 527
                       },
                       {
                         "type": "text",
-                        "id": 249,
+                        "id": 528,
+                        "text": "摘便実施(",
+                        "flexBasis": "auto"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 529
+                      },
+                      {
+                        "type": "text",
+                        "id": 530,
                         "flexBasis": "auto",
-                        "flex": "",
-                        "text": "摘便"
+                        "text": "量"
+                      },
+                      {
+                        "type": "select",
+                        "id": 531,
+                        "dense": true,
+                        "width": "50px"
+                      },
+                      {
+                        "type": "text",
+                        "id": 532,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 533
+                      },
+                      {
+                        "type": "text",
+                        "id": 534,
+                        "flexBasis": "auto",
+                        "text": "性状"
+                      },
+                      {
+                        "type": "select",
+                        "id": 535,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 536,
+                        "flexBasis": "auto",
+                        "text": "）"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -968,7 +1684,7 @@ const tableTemplate = {
                         "type": "text",
                         "id": 258,
                         "flexBasis": "auto",
-                        "text": "オムツ"
+                        "text": "パット"
                       }
                     ],
                     "layout": "horizontal"
@@ -1032,9 +1748,222 @@ const tableTemplate = {
                         "id": 265,
                         "flexBasis": "auto",
                         "text": "部分浴"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 537
+                      },
+                      {
+                        "type": "text",
+                        "id": 538,
+                        "flexBasis": "auto",
+                        "text": "洗髪("
+                      },
+                      {
+                        "type": "select",
+                        "id": 539,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 540,
+                        "flexBasis": "auto",
+                        "text": ")"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 554
+                      },
+                      {
+                        "type": "text",
+                        "id": 555,
+                        "flexBasis": "auto",
+                        "text": "清拭("
+                      },
+                      {
+                        "type": "radioGroup",
+                        "id": 556
+                      },
+                      {
+                        "type": "select",
+                        "id": 557,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 558,
+                        "flexBasis": "auto",
+                        "text": ")"
                       }
                     ],
-                    "layout": "horizontal"
+                    "layout": "horizontal",
+                    "wrap": "wrap"
+                  },
+                  {
+                    "type": "box",
+                    "id": 541,
+                    "contents": [
+                      {
+                        "type": "checkbox",
+                        "id": 559
+                      },
+                      {
+                        "type": "text",
+                        "id": 560,
+                        "flexBasis": "auto",
+                        "text": "爪切り("
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 562
+                      },
+                      {
+                        "type": "text",
+                        "id": 561,
+                        "flexBasis": "auto",
+                        "text": "手("
+                      },
+                      {
+                        "type": "select",
+                        "id": 563,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 564,
+                        "flexBasis": "auto",
+                        "text": ")"
+                      },
+                      {
+                        "type": "text",
+                        "id": 565,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 566
+                      },
+                      {
+                        "type": "text",
+                        "id": 567,
+                        "flexBasis": "auto",
+                        "text": "足("
+                      },
+                      {
+                        "type": "select",
+                        "id": 568,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 569,
+                        "flexBasis": "auto",
+                        "text": ")"
+                      },
+                      {
+                        "type": "text",
+                        "id": 570,
+                        "text": "　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 571
+                      },
+                      {
+                        "type": "text",
+                        "id": 572,
+                        "flexBasis": "auto",
+                        "text": "耳垢除去　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 573
+                      },
+                      {
+                        "type": "text",
+                        "id": 574,
+                        "flexBasis": "auto",
+                        "text": "髭剃り　"
+                      }
+                    ],
+                    "layout": "horizontal",
+                    "wrap": "wrap"
+                  },
+                  {
+                    "type": "box",
+                    "id": 575,
+                    "contents": [
+                      {
+                        "type": "checkbox",
+                        "id": 576
+                      },
+                      {
+                        "type": "text",
+                        "id": 577,
+                        "flexBasis": "auto",
+                        "text": "口腔ケア("
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 578
+                      },
+                      {
+                        "type": "text",
+                        "id": 579,
+                        "flexBasis": "auto",
+                        "text": "歯磨き"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 580
+                      },
+                      {
+                        "type": "text",
+                        "id": 581,
+                        "flexBasis": "auto",
+                        "text": "うがい"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 582
+                      },
+                      {
+                        "type": "text",
+                        "id": 583,
+                        "flexBasis": "auto",
+                        "text": "拭き取り("
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 584
+                      },
+                      {
+                        "type": "text",
+                        "id": 585,
+                        "flexBasis": "auto",
+                        "text": "実施"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 586
+                      },
+                      {
+                        "type": "text",
+                        "id": 587,
+                        "flexBasis": "auto",
+                        "text": "指導))"
+                      }
+                    ],
+                    "layout": "horizontal",
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -1076,6 +2005,12 @@ const tableTemplate = {
                         "text": "衣服調整  "
                       },
                       {
+                        "type": "text",
+                        "id": 588,
+                        "flexBasis": "auto",
+                        "text": "　"
+                      },
+                      {
                         "type": "checkbox",
                         "id": 269
                       },
@@ -1083,10 +2018,47 @@ const tableTemplate = {
                         "type": "text",
                         "id": 270,
                         "flexBasis": "auto",
-                        "text": "更衣"
+                        "text": "更衣("
+                      },
+                      {
+                        "type": "select",
+                        "id": 589,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 590,
+                        "flexBasis": "auto",
+                        "text": ")　"
+                      },
+                      {
+                        "type": "checkbox",
+                        "id": 591
+                      },
+                      {
+                        "type": "text",
+                        "id": 592,
+                        "flexBasis": "auto",
+                        "text": "シーツ交換("
+                      },
+                      {
+                        "type": "select",
+                        "id": 593,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 594,
+                        "flexBasis": "auto",
+                        "text": ")　"
                       }
                     ],
-                    "layout": "horizontal"
+                    "layout": "horizontal",
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -1125,7 +2097,7 @@ const tableTemplate = {
                         "type": "text",
                         "id": 273,
                         "flexBasis": "auto",
-                        "text": "衣服調整"
+                        "text": "栄養指導　"
                       },
                       {
                         "type": "checkbox",
@@ -1135,7 +2107,7 @@ const tableTemplate = {
                         "type": "text",
                         "id": 275,
                         "flexBasis": "auto",
-                        "text": "更衣"
+                        "text": "食事　"
                       },
                       {
                         "type": "checkbox",
@@ -1145,7 +2117,7 @@ const tableTemplate = {
                         "type": "text",
                         "id": 277,
                         "flexBasis": "auto",
-                        "text": "部分浴"
+                        "text": "飲水"
                       }
                     ],
                     "layout": "horizontal"
@@ -1219,9 +2191,49 @@ const tableTemplate = {
                         "type": "text",
                         "id": 285,
                         "flexBasis": "auto",
-                        "text": "褥瘡処置"
+                        "text": "褥瘡処置（部位"
+                      },
+                      {
+                        "type": "select",
+                        "id": 595,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 596,
+                        "flexBasis": "auto",
+                        "text": "薬剤"
+                      },
+                      {
+                        "type": "select",
+                        "id": 597,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 598,
+                        "flexBasis": "auto",
+                        "text": "方法"
+                      },
+                      {
+                        "type": "select",
+                        "id": 599,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 600,
+                        "flexBasis": "auto",
+                        "text": ")"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -1238,20 +2250,60 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 280,
+                    "id": 601,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 286
+                        "id": 602
                       },
                       {
                         "type": "text",
-                        "id": 287,
+                        "id": 603,
                         "flexBasis": "auto",
-                        "text": "創処置"
+                        "text": "創処置（部位"
+                      },
+                      {
+                        "type": "select",
+                        "id": 604,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 605,
+                        "flexBasis": "auto",
+                        "text": "薬剤"
+                      },
+                      {
+                        "type": "select",
+                        "id": 606,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 607,
+                        "flexBasis": "auto",
+                        "text": "方法"
+                      },
+                      {
+                        "type": "select",
+                        "id": 608,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 609,
+                        "flexBasis": "auto",
+                        "text": ")"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -1268,20 +2320,34 @@ const tableTemplate = {
                 "contents": [
                   {
                     "type": "box",
-                    "id": 281,
+                    "id": 610,
                     "layout": "horizontal",
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 288
+                        "id": 611
                       },
                       {
                         "type": "text",
-                        "id": 289,
+                        "id": 612,
                         "flexBasis": "auto",
-                        "text": "外用薬塗布"
+                        "text": "外用薬塗布（薬剤"
+                      },
+                      {
+                        "type": "select",
+                        "id": 613,
+                        "dense": true,
+                        "width": "50px",
+                        "flexBasis": ""
+                      },
+                      {
+                        "type": "text",
+                        "id": 618,
+                        "flexBasis": "auto",
+                        "text": ")"
                       }
-                    ]
+                    ],
+                    "wrap": "wrap"
                   }
                 ]
               }
@@ -1328,8 +2394,91 @@ const tableTemplate = {
                             "id": 295,
                             "flexBasis": "auto",
                             "text": "残薬確認 "
+                          },
+                          {
+                            "type": "checkbox",
+                            "id": 619
+                          },
+                          {
+                            "type": "text",
+                            "id": 620,
+                            "flexBasis": "auto",
+                            "text": "服薬介助"
+                          },
+                          {
+                            "type": "checkbox",
+                            "id": 621
+                          },
+                          {
+                            "type": "text",
+                            "id": 622,
+                            "flexBasis": "auto",
+                            "text": "内服セット("
+                          },
+                          {
+                            "type": "text",
+                            "id": 623,
+                            "flexBasis": "auto",
+                            "text": "期間"
+                          },
+                          {
+                            "type": "select",
+                            "id": 624,
+                            "dense": true,
+                            "width": "50px",
+                            "flexBasis": ""
+                          },
+                          {
+                            "type": "text",
+                            "id": 625,
+                            "flexBasis": "auto",
+                            "text": ")　"
+                          },
+                          {
+                            "type": "checkbox",
+                            "id": 626
+                          },
+                          {
+                            "type": "text",
+                            "id": 627,
+                            "flexBasis": "auto",
+                            "text": "点眼"
+                          },
+                          {
+                            "type": "checkbox",
+                            "id": 628
+                          },
+                          {
+                            "type": "text",
+                            "id": 629,
+                            "flexBasis": "auto",
+                            "text": "吸入("
+                          },
+                          {
+                            "type": "select",
+                            "id": 630,
+                            "dense": true,
+                            "width": "50px",
+                            "flexBasis": ""
+                          },
+                          {
+                            "type": "text",
+                            "id": 631,
+                            "flexBasis": "auto",
+                            "text": ")　"
+                          },
+                          {
+                            "type": "checkbox",
+                            "id": 632
+                          },
+                          {
+                            "type": "text",
+                            "id": 633,
+                            "flexBasis": "auto",
+                            "text": "座薬 "
                           }
-                        ]
+                        ],
+                        "wrap": "wrap"
                       },
                       {
                         "type": "box",

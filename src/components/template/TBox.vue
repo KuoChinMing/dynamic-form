@@ -41,6 +41,7 @@ export default {
       alignItems: data.alignItems,
       flexWrap: data.wrap ?? "nowrap",
       flexDirection: layout[data.layout] ?? "row",
+      justifyContent: data.justifyContent,
     };
 
     return (

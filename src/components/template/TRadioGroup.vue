@@ -3,6 +3,7 @@
     class="mt-0"
     dense
     hide-details
+    :style="style"
     :row="data['direction'] === 'row'"
     :column="data['direction'] === 'column'"
   >
@@ -26,6 +27,14 @@ export default {
       type: [Object, null],
       default: null,
     },
+  },
+
+  data() {
+    return {
+      style: {
+        width: this.data.width,
+      },
+    };
   },
 };
 </script>
