@@ -21,6 +21,7 @@
     ></element-setting-input-box>
 
     <binding-key-input-box
+     :key="element.id"
       :element="element"
       :binding-data="bindingData"
     ></binding-key-input-box>

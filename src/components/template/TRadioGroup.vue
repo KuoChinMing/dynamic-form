@@ -8,6 +8,7 @@
     :row="data['direction'] === 'row'"
     :column="data['direction'] === 'column'"
   >
+ 
     <v-radio
       v-for="(radio, index) in radioItems"
       :key="index"

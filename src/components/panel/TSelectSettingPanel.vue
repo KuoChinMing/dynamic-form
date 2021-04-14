@@ -21,6 +21,7 @@
     ></element-setting-input-box>
 
     <binding-key-input-box
+      :key="element.id"
       :element="element"
       :binding-data="bindingData"
     ></binding-key-input-box>
@@ -164,7 +165,7 @@
         >
           <v-icon small>mdi-close</v-icon>
         </v-btn>
-        <label>{{ `option${index+1}` }}</label>
+        <label>{{ `option${index + 1}` }}</label>
       </v-col>
       <v-col cols="9">
         <v-text-field

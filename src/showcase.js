@@ -268,7 +268,7 @@ const tableTemplate = {
                     "type": "textField",
                     "id": 189,
                     "width": "auto",
-                    "bindingKey": "qwer"
+                    "bindingKey": "bodyTemperature"
                   }
                 ]
               },
@@ -289,7 +289,8 @@ const tableTemplate = {
                           {
                             "type": "textField",
                             "id": 368,
-                            "bindingKey": "1234"
+                            "bindingKey": "pulseInput",
+                            "width": "140px"
                           }
                         ],
                         "justifyContent": "center"
@@ -322,7 +323,7 @@ const tableTemplate = {
                             "id": 366,
                             "style": "",
                             "dense": true,
-                            "width": "100px",
+                            "width": "140px",
                             "flexBasis": "auto",
                             "flexGrow": 0,
                             "bindingKey": "pulseSelection",
@@ -342,7 +343,8 @@ const tableTemplate = {
                         "contents": [
                           {
                             "type": "checkbox",
-                            "id": 370
+                            "id": 370,
+                            "bindingKey": "pulsePressure"
                           },
                           {
                             "type": "text",
@@ -369,7 +371,7 @@ const tableTemplate = {
                               "良好",
                               "不良"
                             ],
-                            "bindingKey": "pulseRadio"
+                            "bindingKey": "pulsePressureRadio"
                           },
                           {
                             "type": "text",
@@ -410,7 +412,7 @@ const tableTemplate = {
                             "flex": "1",
                             "flexBasis": "",
                             "width": "auto",
-                            "bindingKey": "1234"
+                            "bindingKey": "bloodPressureHighValue"
                           }
                         ],
                         "wrap": ""
@@ -433,7 +435,7 @@ const tableTemplate = {
                             "shrink": "1",
                             "width": "auto",
                             "flexBasis": "",
-                            "bindingKey": "qwer"
+                            "bindingKey": "bloodPressureLowValue"
                           }
                         ]
                       }
@@ -457,7 +459,8 @@ const tableTemplate = {
                         "contents": [
                           {
                             "type": "textField",
-                            "id": 380
+                            "id": 380,
+                            "bindingKey": "breatheInputValue"
                           }
                         ],
                         "justifyContent": "center"
@@ -469,8 +472,12 @@ const tableTemplate = {
                         "contents": [
                           {
                             "type": "radioGroup",
-                            "id": 382,
-                            "bindingKey": "breathNoise"
+                            "id": 635,
+                            "radioItems": [
+                              "副雑音あり",
+                              "なし"
+                            ],
+                            "bindingKey": "breathNoiseRadioValue"
                           }
                         ],
                         "wrap": "wrap",
@@ -486,9 +493,17 @@ const tableTemplate = {
                             "id": 384,
                             "style": "",
                             "dense": true,
-                            "width": "100px",
+                            "width": "140px",
                             "flexBasis": "auto",
-                            "flexGrow": 0
+                            "flexGrow": 0,
+                            "options": [
+                              "選択",
+                              "連続性高調整副雑音",
+                              "連続性低調性副雑音",
+                              "断続性粗い副雑音",
+                              "断続性細かい副雑音"
+                            ],
+                            "bindingKey": "breathNoiseSelectionValue"
                           }
                         ],
                         "justifyContent": "flex-start"
@@ -500,7 +515,8 @@ const tableTemplate = {
                         "contents": [
                           {
                             "type": "checkbox",
-                            "id": 386
+                            "id": 386,
+                            "bindingKey": "airCheckbox"
                           },
                           {
                             "type": "text",
@@ -522,7 +538,12 @@ const tableTemplate = {
                           },
                           {
                             "type": "radioGroup",
-                            "id": 390
+                            "id": 390,
+                            "radioItems": [
+                              "良好",
+                              "不良"
+                            ],
+                            "bindingKey": "airRadio"
                           },
                           {
                             "type": "text",
@@ -547,7 +568,8 @@ const tableTemplate = {
                         "type": "textField",
                         "id": 344,
                         "width": "100%",
-                        "flexBasis": "auto"
+                        "flexBasis": "auto",
+                        "bindingKey": "spO2Value"
                       }
                     ]
                   }
@@ -604,7 +626,16 @@ const tableTemplate = {
                         "id": 392,
                         "dense": true,
                         "style": "",
-                        "flexBasis": "auto"
+                        "flexBasis": "auto",
+                        "bindingKey": "urineAmount",
+                        "options": [
+                          "<100",
+                          "100",
+                          "200",
+                          "300",
+                          "400",
+                          ">400"
+                        ]
                       },
                       {
                         "type": "text",
@@ -624,7 +655,16 @@ const tableTemplate = {
                       {
                         "type": "select",
                         "id": 396,
-                        "dense": true
+                        "dense": true,
+                        "options": [
+                          "選択",
+                          "クリア",
+                          "混濁",
+                          "浮遊物"
+                        ],
+                        "bindingKey": "urineSituationSelection",
+                        "width": "140px",
+                        "flexGrow": 0
                       },
                       {
                         "type": "text",
@@ -667,7 +707,18 @@ const tableTemplate = {
                         "id": 401,
                         "dense": true,
                         "style": "",
-                        "flexBasis": "auto"
+                        "flexBasis": "auto",
+                        "options": [
+                          "<100",
+                          "100",
+                          "200",
+                          "300",
+                          "400",
+                          ">400"
+                        ],
+                        "bindingKey": "pathSelection",
+                        "flexGrow": 0,
+                        "width": "140px"
                       },
                       {
                         "type": "text",
@@ -687,7 +738,16 @@ const tableTemplate = {
                       {
                         "type": "select",
                         "id": 405,
-                        "dense": true
+                        "dense": true,
+                        "options": [
+                          "選択",
+                          "クリア",
+                          "混濁",
+                          "浮遊物"
+                        ],
+                        "bindingKey": "pathSituationSelection",
+                        "flexGrow": 0,
+                        "width": "140px"
                       },
                       {
                         "type": "text",
@@ -738,7 +798,17 @@ const tableTemplate = {
                         "type": "select",
                         "id": 412,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "12Fr",
+                          "14Fr",
+                          "16Fr",
+                          "18Fr",
+                          "20Fr"
+                        ],
+                        "bindingKey": "tubeSelection",
+                        "flexGrow": 0
                       },
                       {
                         "type": "text",
@@ -753,14 +823,25 @@ const tableTemplate = {
                         "type": "text",
                         "id": 415,
                         "flexBasis": "auto",
-                        "text": "カフ水"
+                        "text": "カフ水",
+                        "contents": []
                       },
                       {
                         "type": "select",
                         "id": 416,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "bindingKey": "waterSelection",
+                        "options": [
+                          "選択",
+                          "5ml",
+                          "10ml",
+                          "15ml",
+                          "20ml",
+                          "30ml"
+                        ],
+                        "flexGrow": 0
                       },
                       {
                         "type": "text",
@@ -809,12 +890,6 @@ const tableTemplate = {
                         "text": "膀胱洗浄　"
                       },
                       {
-                        "type": "select",
-                        "id": 423,
-                        "dense": true,
-                        "width": "50px"
-                      },
-                      {
                         "type": "checkbox",
                         "id": 425
                       },
@@ -828,8 +903,15 @@ const tableTemplate = {
                         "type": "select",
                         "id": 427,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "実施",
+                          "指導"
+                        ],
+                        "bindingKey": "urinaryCleanSelection",
+                        "flexGrow": 0
                       },
                       {
                         "type": "checkbox",
@@ -897,7 +979,16 @@ const tableTemplate = {
                         "type": "select",
                         "id": 430,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "bindingKey": "intestinalSound",
+                        "flexGrow": 0,
+                        "options": [
+                          "選択",
+                          "聞かれず",
+                          "弱め",
+                          "良好",
+                          "更新"
+                        ]
                       },
                       {
                         "type": "text",
@@ -978,7 +1069,19 @@ const tableTemplate = {
                         "type": "select",
                         "id": 437,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "無し",
+                          "付着",
+                          "母指大",
+                          "片手半分",
+                          "片手",
+                          "両手",
+                          "両手山盛り"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "daySelection"
                       },
                       {
                         "type": "text",
@@ -999,8 +1102,20 @@ const tableTemplate = {
                         "type": "select",
                         "id": 441,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "ブリストルスケール①",
+                          "ブリストルスケール②",
+                          "ブリストルスケール③",
+                          "ブリストルスケール④",
+                          "ブリストルスケール⑤",
+                          "ブリストルスケール⑥",
+                          "ブリストルスケール⑦"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "daySituation"
                       },
                       {
                         "type": "text",
@@ -1044,9 +1159,21 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 448,
+                        "id": 636,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "無し",
+                          "付着",
+                          "母指大",
+                          "片手半分",
+                          "片手",
+                          "両手",
+                          "両手山盛り"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "moonSelection"
                       },
                       {
                         "type": "text",
@@ -1065,10 +1192,22 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 452,
+                        "id": 642,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "ブリストルスケール①",
+                          "ブリストルスケール②",
+                          "ブリストルスケール③",
+                          "ブリストルスケール④",
+                          "ブリストルスケール⑤",
+                          "ブリストルスケール⑥",
+                          "ブリストルスケール⑦"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "moonSituation"
                       },
                       {
                         "type": "text",
@@ -1118,9 +1257,21 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 459,
+                        "id": 637,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "無し",
+                          "付着",
+                          "母指大",
+                          "片手半分",
+                          "片手",
+                          "両手",
+                          "両手山盛り"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "fireSelection"
                       },
                       {
                         "type": "text",
@@ -1139,10 +1290,22 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 463,
+                        "id": 643,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "ブリストルスケール①",
+                          "ブリストルスケール②",
+                          "ブリストルスケール③",
+                          "ブリストルスケール④",
+                          "ブリストルスケール⑤",
+                          "ブリストルスケール⑥",
+                          "ブリストルスケール⑦"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "fireSituation"
                       },
                       {
                         "type": "text",
@@ -1186,9 +1349,21 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 470,
+                        "id": 638,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "無し",
+                          "付着",
+                          "母指大",
+                          "片手半分",
+                          "片手",
+                          "両手",
+                          "両手山盛り"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "waterPSelection"
                       },
                       {
                         "type": "text",
@@ -1207,10 +1382,22 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 474,
+                        "id": 644,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "ブリストルスケール①",
+                          "ブリストルスケール②",
+                          "ブリストルスケール③",
+                          "ブリストルスケール④",
+                          "ブリストルスケール⑤",
+                          "ブリストルスケール⑥",
+                          "ブリストルスケール⑦"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "waterPSituation"
                       },
                       {
                         "type": "text",
@@ -1260,9 +1447,21 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 481,
+                        "id": 639,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "無し",
+                          "付着",
+                          "母指大",
+                          "片手半分",
+                          "片手",
+                          "両手",
+                          "両手山盛り"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "woodSelection"
                       },
                       {
                         "type": "text",
@@ -1281,10 +1480,22 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 485,
+                        "id": 645,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "ブリストルスケール①",
+                          "ブリストルスケール②",
+                          "ブリストルスケール③",
+                          "ブリストルスケール④",
+                          "ブリストルスケール⑤",
+                          "ブリストルスケール⑥",
+                          "ブリストルスケール⑦"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "woodSituation"
                       },
                       {
                         "type": "text",
@@ -1328,9 +1539,21 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 492,
+                        "id": 640,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "無し",
+                          "付着",
+                          "母指大",
+                          "片手半分",
+                          "片手",
+                          "両手",
+                          "両手山盛り"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "goldSelection"
                       },
                       {
                         "type": "text",
@@ -1349,10 +1572,22 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 496,
+                        "id": 646,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "ブリストルスケール①",
+                          "ブリストルスケール②",
+                          "ブリストルスケール③",
+                          "ブリストルスケール④",
+                          "ブリストルスケール⑤",
+                          "ブリストルスケール⑥",
+                          "ブリストルスケール⑦"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "goldSituation"
                       },
                       {
                         "type": "text",
@@ -1402,9 +1637,21 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 503,
+                        "id": 641,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "options": [
+                          "選択",
+                          "無し",
+                          "付着",
+                          "母指大",
+                          "片手半分",
+                          "片手",
+                          "両手",
+                          "両手山盛り"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "terraSelection"
                       },
                       {
                         "type": "text",
@@ -1423,10 +1670,22 @@ const tableTemplate = {
                       },
                       {
                         "type": "select",
-                        "id": 507,
+                        "id": 647,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "options": [
+                          "選択",
+                          "ブリストルスケール①",
+                          "ブリストルスケール②",
+                          "ブリストルスケール③",
+                          "ブリストルスケール④",
+                          "ブリストルスケール⑤",
+                          "ブリストルスケール⑥",
+                          "ブリストルスケール⑦"
+                        ],
+                        "flexGrow": 0,
+                        "bindingKey": "terraSituation"
                       },
                       {
                         "type": "text",
@@ -1565,7 +1824,9 @@ const tableTemplate = {
                         "type": "select",
                         "id": 531,
                         "dense": true,
-                        "width": "50px"
+                        "width": "140px",
+                        "flexGrow": 0,
+                        "options": []
                       },
                       {
                         "type": "text",
@@ -1586,8 +1847,9 @@ const tableTemplate = {
                         "type": "select",
                         "id": 535,
                         "dense": true,
-                        "width": "50px",
-                        "flexBasis": ""
+                        "width": "140px",
+                        "flexBasis": "",
+                        "flexGrow": 0
                       },
                       {
                         "type": "text",
@@ -3167,7 +3429,45 @@ const tableTemplate = {
       }
     ]
   },
-  bindingData: {a:1, b:2}
+  bindingData: {
+    "bodyTemperature": null,
+    "pulseInput": null,
+    "pulsePressure": null,
+    "pulsePressureRadio": "良好",
+    "pulseRadio": "整脈",
+    "pulseSelection": "選択",
+    "bloodPressureHighValue": null,
+    "bloodPressureLowValue": null,
+    "breatheInputValue": null,
+    "breathNoiseRadioValue": null,
+    "breathNoiseSelectionValue": "選択",
+    "airCheckbox": null,
+    "airRadio": "良好",
+    "spO2Value": null,
+    "urineAmount": "<100",
+    "urineSituationSelection": "選択",
+    "pathSelection": "<100",
+    "pathSituationSelection": "選択",
+    "water1234": null,
+    "waterSelection": "選択",
+    "tubeSelection": "選択",
+    "urinaryCleanSelection": "選択",
+    "intestinalSound": "選択",
+    "daySelection": "選択",
+    "daySituation": "選択",
+    "moonSelection": "選択",
+    "moonSituation": "選択",
+    "fireSelection": "選択",
+    "fireSituation": "選択",
+    "waterPSelection": "選択",
+    "waterPSituation": "選択",
+    "woodSelection": "選択",
+    "woodSituation": "選択",
+    "goldSelection": "選択",
+    "goldSituation": "選択",
+    "terraSelection": "選択",
+    "terraSituation": "選択"
+  }
 };
 
 const diagnosisTemplate = {

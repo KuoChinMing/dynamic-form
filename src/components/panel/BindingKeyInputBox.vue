@@ -44,7 +44,7 @@ export default {
       if (!newKey) {
         const defaultValue = this.bindingData[oldKey];
         await this.$nextTick();
-        this.changeBindingKey(oldKey);
+        this.changeBindingKey(oldKey || this.element.id);
         await this.$nextTick();
         this.$set(this.bindingData, oldKey, defaultValue);
         alert("please setting the binding key.");
