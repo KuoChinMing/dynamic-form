@@ -44,12 +44,12 @@
 
     <v-snackbar
       v-model="showNotification"
-      :timeout="1000"
+      :timeout="1500"
       text
       outlined
       absolute
       centered
-      color="primary"
+      :color="snackbarColor"
       class="text-capitalize text-center"
     >
       {{ notificationMessage }}
@@ -75,6 +75,20 @@ export default {
       notificationMessage: "",
       showNotification: false,
       isOpen: false,
+      snackbarColor: "grey",
+
+      notify: {
+        normal: (message) => {
+          this.snackbarColor = "primary";
+          this.notificationMessage = message;
+          this.showNotification = true;
+        },
+        error: (message) => {
+          this.snackbarColor = "red";
+          this.notificationMessage = message;
+          this.showNotification = true;
+        },
+      },
     };
   },
 
@@ -114,16 +128,16 @@ export default {
       this.$refs.templateInput.select();
       document.execCommand("copy");
       this.$refs.templateInput.blur();
-      this.notify("copied");
-    },
-    notify(message) {
-      this.notificationMessage = message;
-      this.showNotification = true;
+      this.notify.normal("copied");
     },
     applyTemplate() {
-      const template = JSON.parse(this.inputTemplateString);
-      this.$store.commit("template", template);
-      this.closeDialog();
+      try {
+        const template = JSON.parse(this.inputTemplateString);
+        this.$store.commit("template", template);
+        this.closeDialog();
+      } catch (error) {
+        this.notify.error(error);
+      }
     },
   },
 };
