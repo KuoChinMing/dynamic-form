@@ -12,6 +12,7 @@ import TTextarea from "@/components/template/TTextarea.vue";
 import TImageUploader from "@/components/template/TImageUploader.vue";
 import TIcon from "@/components/template/TIcon.vue";
 import TSelect from "@/components/template/TSelect.vue";
+import TDatePicker from "@/components/template/TDatePicker.vue";
 
 export default {
   name: "TForm",
@@ -41,6 +42,7 @@ export default {
     TImageUploader,
     TIcon,
     TSelect,
+    TDatePicker,
   },
 
   data() {
@@ -59,11 +61,24 @@ export default {
         textarea: this.renderTextarea,
         radioGroup: this.renderRadioGroup,
         imageUploader: this.renderImageUploader,
+        datePicker: this.renderDatePicker,
       },
     };
   },
 
   methods: {
+    renderDatePicker(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-date-picker
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-date-picker>
+        );
+      }
+
+      return <t-date-picker data={el}></t-date-picker>;
+    },
     renderImageUploader(el) {
       return <t-image-uploader data={el}></t-image-uploader>;
     },

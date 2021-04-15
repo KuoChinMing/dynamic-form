@@ -7,6 +7,7 @@ export const elementsNeedBindingKey = [
   "textarea",
   "imageUploader",
   "radioGroup",
+  "datePicker",
 ];
 
 export default [
@@ -16,4 +17,5 @@ export default [
   "textarea",
   "imageUploader",
   "radioGroup",
+  "datePicker",
 ];

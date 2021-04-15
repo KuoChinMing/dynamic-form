@@ -22,6 +22,7 @@ import TImageUploaderSettingPanel from "@/components/panel/TImageUploaderSetting
 import TCheckboxSettingPanel from "@/components/panel/TCheckboxSettingPanel.vue";
 import TIconSettingPanel from "@/components/panel/TIconSettingPanel.vue";
 import TSelectSettingPanel from "@/components/panel/TSelectSettingPanel.vue";
+import TDatePickerSettingPanel from "@/components/panel/TDatePickerSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
@@ -36,6 +37,7 @@ export default {
     TCheckboxSettingPanel,
     TIconSettingPanel,
     TSelectSettingPanel,
+    TDatePickerSettingPanel,
   },
 
   props: {
@@ -62,6 +64,7 @@ export default {
         checkbox: "t-checkbox-setting-panel",
         icon: "t-icon-setting-panel",
         select: "t-select-setting-panel",
+        datePicker: "t-date-picker-setting-panel",
       };
       const type = this.element?.type;
 

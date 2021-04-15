@@ -6,6 +6,8 @@ export const iconMap = {
   textField: "mdi-keyboard",
   icon: "mdi-star",
   select: "mdi-arrow-down-drop-circle",
+  datePicker: "mdi-calendar",
+  textarea: 'mdi-card-text'
 };
 
 export default {
@@ -14,4 +16,6 @@ export default {
   textField: "mdi-keyboard",
   icon: "mdi-star",
   select: "mdi-arrow-down-drop-circle",
+  datePicker: "mdi-calendar",
+  textarea: 'mdi-card-text'
 };

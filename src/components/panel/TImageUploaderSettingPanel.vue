@@ -71,8 +71,10 @@ export default {
   },
 
   props: {
-    element: Object,
-    default: () => {},
+    element: {
+      type: Object,
+      default: () => {},
+    },
   },
 };
 </script>

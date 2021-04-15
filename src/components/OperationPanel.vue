@@ -102,6 +102,7 @@
         item-children="contents"
         selected-color="primary"
         selection-type="independent"
+        item-disabled="locked"
       >
         <!-- :color="selectedNode && active ? 'primary' : ''" -->
         <template v-slot:label="{ item, active }">
@@ -223,6 +224,10 @@ export default {
       {
         type: "select",
         name: "select",
+      },
+      {
+        type: "datePicker",
+        name: "datePicker",
       },
     ];
   },
