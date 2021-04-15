@@ -8,7 +8,6 @@
     :row="data['direction'] === 'row'"
     :column="data['direction'] === 'column'"
   >
- 
     <v-radio
       v-for="(radio, index) in radioItems"
       :key="index"
@@ -35,16 +34,27 @@ export default {
 
   data() {
     return {
-      style: {
-        width: this.data.width,
-        padding: 0,
-      },
-      radioItems: this.data.radioItems,
+      style: {},
+      radioItems: [],
       innerValue: "",
     };
   },
 
   watch: {
+    data: {
+      handler() {
+        this.style = {
+          paddingTop: this.data.paddingTop,
+          paddingRight: this.data.paddingRight,
+          paddingBottom: this.data.paddingBottom,
+          paddingLeft: this.data.paddingLeft,
+          fontSize: this.data.fontSize,
+        };
+        this.radioItems = this.data.radioItems;
+      },
+      immediate: true,
+      deep: true,
+    },
     value(newValue) {
       this.innerValue = newValue;
     },

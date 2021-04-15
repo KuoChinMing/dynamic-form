@@ -76,7 +76,7 @@ export default {
           ></t-radio-group>
         );
       }
-      return <t-radio-group data={el} key={el.radioItems}></t-radio-group>;
+      return <t-radio-group data={el}></t-radio-group>;
     },
     renderTextarea(el) {
       return <t-textarea data={el}></t-textarea>;

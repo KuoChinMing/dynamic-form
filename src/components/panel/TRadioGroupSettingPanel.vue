@@ -3,6 +3,8 @@
     <element-setting-input-box
       v-model="element['direction']"
       input-class="white"
+      type="select"
+      :items="['row', 'column']"
       label="layout"
       hide-details
       dense
@@ -27,6 +29,48 @@
       outlined
     ></element-setting-input-box>
 
+    <!-- padding -->
+    <v-row class="align-center">
+      <span class="text-h5 font-weight-bold">Padding</span>
+    </v-row>
+    <element-setting-input-box
+      v-model="element['paddingTop']"
+      input-class="white"
+      type="textField"
+      label="paddingTop"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+    <element-setting-input-box
+      v-model="element['paddingRight']"
+      input-class="white"
+      type="textField"
+      label="paddingRight"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+    <element-setting-input-box
+      v-model="element['paddingBottom']"
+      input-class="white"
+      type="textField"
+      label="paddingBottom"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+    <element-setting-input-box
+      v-model="element['paddingLeft']"
+      input-class="white"
+      type="textField"
+      label="paddingLeft"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <!-- radio items -->
     <v-row class="align-center">
       <span class="text-h5 font-weight-bold">Radios</span>
       <v-btn
@@ -35,13 +79,12 @@
         class="ml-2"
         depressed
         color="primary"
-        @click="addOptions"
+        @click="addRadioItem"
       >
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </v-row>
-
-    <v-row align="center" v-for="(_, index) in options" :key="index">
+    <v-row align="center" v-for="(_, index) in radioItems" :key="index">
       <v-col cols="3" class="text-right" style="white-space: nowrap">
         <v-btn
           depressed
@@ -52,7 +95,7 @@
           color="grey darken-1"
           class="mr-1"
           :ripple="false"
-          @click="removeOptions(index)"
+          @click="removeRadioItem(index)"
         >
           <v-icon small>mdi-close</v-icon>
         </v-btn>
@@ -60,7 +103,7 @@
       </v-col>
       <v-col cols="9">
         <v-text-field
-          v-model="options[index]"
+          v-model="radioItems[index]"
           class="white"
           dense
           outlined
@@ -96,7 +139,7 @@ export default {
 
   data() {
     return {
-      options: [],
+      radioItems: [],
     };
   },
 
@@ -107,17 +150,17 @@ export default {
       },
       immediate: true,
     },
-    options(newVal) {
+    radioItems(newVal) {
       this.$set(this.element, "radioItems", newVal);
     },
   },
 
   methods: {
-    addOptions() {
-      this.options.push("");
+    addRadioItem() {
+      this.radioItems.push("");
     },
-    removeOptions(index) {
-      this.options = this.options.splice(index, 1);
+    removeRadioItem(index) {
+      this.radioItems.splice(index, 1);
     },
   },
 };

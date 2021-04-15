@@ -226,7 +226,7 @@ export default {
       this.options.push("");
     },
     removeOptions(index) {
-      this.options = this.options.splice(index, 1);
+      this.options.splice(index, 1);
     },
   },
 };
