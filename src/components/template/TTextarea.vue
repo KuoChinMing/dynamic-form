@@ -4,6 +4,8 @@
 
 <script>
 export default {
+  name: "TTextarea",
+
   props: {
     data: {
       type: [Object, null],
@@ -15,7 +17,6 @@ export default {
     return {
       style: {
         height: this.data.height,
-        // ...
       },
     };
   },

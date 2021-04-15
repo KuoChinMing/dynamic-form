@@ -2,7 +2,7 @@
 import { VDivider } from "vuetify/lib";
 
 export default {
-  name: "TemplateSeparator",
+  name: "TSeparator",
 
   props: {
     data: {

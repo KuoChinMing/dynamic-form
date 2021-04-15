@@ -2,7 +2,7 @@
 import { VLayout, VFlex } from "vuetify/lib";
 
 export default {
-  name: "TemplateBox",
+  name: "TBox",
 
   props: {
     data: {

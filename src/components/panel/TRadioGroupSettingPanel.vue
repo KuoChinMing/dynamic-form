@@ -29,6 +29,16 @@
       outlined
     ></element-setting-input-box>
 
+    <element-setting-input-box
+      v-model="element['color']"
+      input-class="white"
+      type="textField"
+      label="color"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
     <!-- padding -->
     <v-row class="align-center">
       <span class="text-h5 font-weight-bold">Padding</span>

@@ -2,7 +2,7 @@
 import { VLayout, VFlex, VTextField } from "vuetify/lib";
 
 export default {
-  name: "TemplateTextField",
+  name: "TTextField",
 
   props: {
     data: {

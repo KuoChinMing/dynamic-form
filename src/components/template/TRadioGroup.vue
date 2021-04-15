@@ -13,7 +13,7 @@
       :key="index"
       :label="radio"
       :value="radio"
-      class=""
+      v-bind="radioItemAttrs"
     ></v-radio>
   </v-radio-group>
 </template>
@@ -36,6 +36,7 @@ export default {
     return {
       style: {},
       radioItems: [],
+      radioItemAttrs: {},
       innerValue: "",
     };
   },
@@ -51,6 +52,9 @@ export default {
           fontSize: this.data.fontSize,
         };
         this.radioItems = this.data.radioItems;
+        this.radioItemAttrs = {
+          color: this.data.color,
+        };
       },
       immediate: true,
       deep: true,
