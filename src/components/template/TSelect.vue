@@ -43,6 +43,7 @@ export default {
       flexShrink: this.data.flexShrink,
       flexGrow: this.data.flexGrow,
       width: this.data.width,
+      backgroundColor: this.data.backgroundColor,
     };
     const props = {
       [this.data.style]: true,

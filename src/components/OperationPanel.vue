@@ -349,15 +349,18 @@ export default {
         this.$set(this.selectedNode, "contents", [element]);
       }
     },
+    deleteBindingData() {
+      const bindingKey = this.selectedNode["bindingKey"];
+      if (bindingKey && bindingKey in this.bindingData) {
+        this.$delete(this.bindingData, bindingKey);
+      }
+    },
     deleteNode() {
       const parentNode = this.findParentNode(this.selectedNode);
       const parentNodeContents = parentNode.contents.filter(
         (elment) => elment !== this.selectedNode
       );
-      const bindingKey = this.selectedNode["bindingKey"];
-      if (bindingKey && bindingKey in this.bindingData) {
-        this.$delete(this.bindingData, bindingKey);
-      }
+      this.deleteBindingData();
       this.$set(parentNode, "contents", parentNodeContents);
     },
     cutNode() {

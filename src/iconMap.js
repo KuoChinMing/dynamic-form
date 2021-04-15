@@ -7,7 +7,8 @@ export const iconMap = {
   icon: "mdi-star",
   select: "mdi-arrow-down-drop-circle",
   datePicker: "mdi-calendar",
-  textarea: 'mdi-card-text'
+  textarea: "mdi-card-text",
+  radioGroup: "mdi-radiobox-marked",
 };
 
 export default {
@@ -17,5 +18,6 @@ export default {
   icon: "mdi-star",
   select: "mdi-arrow-down-drop-circle",
   datePicker: "mdi-calendar",
-  textarea: 'mdi-card-text'
+  textarea: "mdi-card-text",
+  radioGroup: "mdi-radiobox-marked",
 };

@@ -50,6 +50,7 @@ export default {
           paddingBottom: this.data.paddingBottom,
           paddingLeft: this.data.paddingLeft,
           fontSize: this.data.fontSize,
+          backgroundColor: this.data.backgroundColor,
         };
         this.radioItems = this.data.radioItems;
         this.radioItemAttrs = {
