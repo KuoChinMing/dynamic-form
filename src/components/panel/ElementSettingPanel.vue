@@ -23,6 +23,7 @@ import TCheckboxSettingPanel from "@/components/panel/TCheckboxSettingPanel.vue"
 import TIconSettingPanel from "@/components/panel/TIconSettingPanel.vue";
 import TSelectSettingPanel from "@/components/panel/TSelectSettingPanel.vue";
 import TDatePickerSettingPanel from "@/components/panel/TDatePickerSettingPanel.vue";
+import TMultiSelectSettingPanel from "@/components/panel/TMultiSelectSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
@@ -38,6 +39,7 @@ export default {
     TIconSettingPanel,
     TSelectSettingPanel,
     TDatePickerSettingPanel,
+    TMultiSelectSettingPanel,
   },
 
   props: {
@@ -65,6 +67,7 @@ export default {
         icon: "t-icon-setting-panel",
         select: "t-select-setting-panel",
         datePicker: "t-date-picker-setting-panel",
+        multiSelect: "t-multi-select-setting-panel",
       };
       const type = this.element?.type;
 

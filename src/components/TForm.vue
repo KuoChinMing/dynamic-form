@@ -13,6 +13,7 @@ import TImageUploader from "@/components/template/TImageUploader.vue";
 import TIcon from "@/components/template/TIcon.vue";
 import TSelect from "@/components/template/TSelect.vue";
 import TDatePicker from "@/components/template/TDatePicker.vue";
+import TMultiSelect from "@/components/template/TMultiSelect.vue";
 
 export default {
   name: "TForm",
@@ -43,6 +44,7 @@ export default {
     TIcon,
     TSelect,
     TDatePicker,
+    TMultiSelect,
   },
 
   data() {
@@ -62,11 +64,24 @@ export default {
         radioGroup: this.renderRadioGroup,
         imageUploader: this.renderImageUploader,
         datePicker: this.renderDatePicker,
+        multiSelect: this.renderMutilSelect,
       },
     };
   },
 
   methods: {
+    renderMutilSelect(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-multi-select
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-multi-select>
+        );
+      }
+
+      return <t-multi-select data={el}></t-multi-select>;
+    },
     renderDatePicker(el) {
       if (el.bindingKey in this.bindingData) {
         return (

@@ -11,8 +11,6 @@
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
           v-model="date"
-          readonly
-          hide-details
           v-bind="{ ...attrs, ...inputAttrs }"
           v-on="on"
         ></v-text-field>
@@ -20,8 +18,6 @@
       <v-date-picker
         v-model="date"
         v-bind="datePickerAttrs"
-        no-title
-        scrollable
         @click:date="[setDate($event), closeDatePicker()]"
       >
       </v-date-picker>
@@ -70,11 +66,15 @@ export default {
         this.inputAttrs = {
           disabled: data.disabled,
           label: data.label,
-          [data.style]: true,
           dense: data.dense,
+          [data.style]: true,
+          readonly: true,
+          hideDetails: true,
         };
         this.datePickerAttrs = {
           locale: data.locale,
+          noTitle: true,
+          scrollable: true,
         };
       },
       immediate: true,

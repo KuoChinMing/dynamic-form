@@ -234,6 +234,10 @@ export default {
         type: "datePicker",
         name: "datePicker",
       },
+      {
+        type: "multiSelect",
+        name: "multiSelect",
+      },
     ];
   },
 

@@ -9,6 +9,7 @@ export const iconMap = {
   datePicker: "mdi-calendar",
   textarea: "mdi-card-text",
   radioGroup: "mdi-radiobox-marked",
+  multiSelect: "mdi-checkbox-multiple-marked",
 };
 
 export default {
@@ -20,4 +21,5 @@ export default {
   datePicker: "mdi-calendar",
   textarea: "mdi-card-text",
   radioGroup: "mdi-radiobox-marked",
+  multiSelect: "mdi-checkbox-multiple-marked",
 };

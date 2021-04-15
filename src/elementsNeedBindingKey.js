@@ -8,6 +8,7 @@ export const elementsNeedBindingKey = [
   "imageUploader",
   "radioGroup",
   "datePicker",
+  "multiSelect",
 ];
 
 export default [
@@ -18,4 +19,5 @@ export default [
   "imageUploader",
   "radioGroup",
   "datePicker",
+  "multiSelect",
 ];

@@ -26,63 +26,29 @@
       :binding-data="bindingData"
     ></binding-key-input-box>
 
-    <element-setting-input-box
-      v-model="bindingData[element['bindingKey']]"
-      :disabled="!element['bindingKey']"
-      :input-class="{ white: element['bindingKey'] }"
-      type="select"
-      :items="element['options']"
-      label="defaultValue"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
+    <v-row align="center">
+      <v-col cols="3" class="text-right">
+        <label>defaultValue</label>
+      </v-col>
+      <v-col cols="9">
+        <v-combobox
+          v-model="bindingData[element['bindingKey']]"
+          :disabled="!element['bindingKey']"
+          :class="{ white: element['bindingKey'] }"
+          :items="element['options']"
+          hide-details
+          dense
+          outlined
+          multiple
+        ></v-combobox>
+      </v-col>
+    </v-row>
 
     <element-setting-input-box
       v-model="element['margin']"
       type="textField"
       input-class="white"
       label="margin"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexShrink']"
-      type="select"
-      input-class="white"
-      label="shrink"
-      :items="[
-        { text: '', value: '' },
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexGrow']"
-      type="select"
-      input-class="white"
-      label="grow"
-      :items="[
-        { text: '', value: '' },
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      type="textField"
-      input-class="white"
-      label="flexBasis"
       dense
       outlined
       hide-details
