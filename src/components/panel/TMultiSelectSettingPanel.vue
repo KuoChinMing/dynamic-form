@@ -31,16 +31,17 @@
         <label>defaultValue</label>
       </v-col>
       <v-col cols="9">
-        <v-combobox
+        <v-autocomplete
           v-model="bindingData[element['bindingKey']]"
           :disabled="!element['bindingKey']"
           :class="{ white: element['bindingKey'] }"
           :items="element['options']"
+          :key="element.id"
           hide-details
           dense
           outlined
           multiple
-        ></v-combobox>
+        ></v-autocomplete>
       </v-col>
     </v-row>
 
@@ -116,7 +117,7 @@
       </v-btn>
     </v-row>
 
-    <v-row align="center" v-for="(_, index) in options" :key="index">
+    <v-row align="center" v-for="(_, index) in options" :key="'option' + index">
       <v-col cols="3" class="text-right" style="white-space: nowrap">
         <v-btn
           depressed
@@ -151,7 +152,7 @@ import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vu
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
-  name: "TIconSettingPanel",
+  name: "TMultiSelectSettingPanel",
 
   components: {
     ElementSettingInputBox,

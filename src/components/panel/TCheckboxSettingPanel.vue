@@ -56,7 +56,7 @@ import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vu
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
-  name: "TTextFieldSettingPanel",
+  name: "TCheckBoxSettingPanel",
 
   components: {
     ElementSettingInputBox,

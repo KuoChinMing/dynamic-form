@@ -40,12 +40,13 @@ export default {
         this.comboboxAttrs = {
           dense: data.dense,
           [data.style]: true,
-          items: data.options,
-          multiple: true,
+          items: data.time,
+          multiple: data.multiple,
           hideDetails: true,
           // chips: true,
           // smallChips: true,
         };
+        console.log(data.items);
       },
       immediate: true,
       deep: true,

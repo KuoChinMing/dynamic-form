@@ -64,7 +64,7 @@
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 
 export default {
-  name: "TBoxSettingPanel",
+  name: "TImageUploaderSettingPanel",
 
   components: {
     ElementSettingInputBox,

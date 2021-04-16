@@ -9,6 +9,7 @@ export const elementsNeedBindingKey = [
   "radioGroup",
   "datePicker",
   "multiSelect",
+  "timeIntervalSelect",
 ];
 
 export default [
@@ -20,4 +21,5 @@ export default [
   "radioGroup",
   "datePicker",
   "multiSelect",
+  "timeIntervalSelect",
 ];

@@ -10,6 +10,9 @@ export const iconMap = {
   textarea: "mdi-card-text",
   radioGroup: "mdi-radiobox-marked",
   multiSelect: "mdi-checkbox-multiple-marked",
+  timeIntervalSelect: "mdi-clock-time-eight",
+  imageUploader: "mdi-image",
+  separator: "mdi-minus",
 };
 
 export default {
@@ -22,4 +25,7 @@ export default {
   textarea: "mdi-card-text",
   radioGroup: "mdi-radiobox-marked",
   multiSelect: "mdi-checkbox-multiple-marked",
+  timeIntervalSelect: "mdi-clock-time-eight",
+  imageUploader: "mdi-image",
+  separator: "mdi-minus",
 };

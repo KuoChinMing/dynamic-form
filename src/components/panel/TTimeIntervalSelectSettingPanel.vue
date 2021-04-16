@@ -26,17 +26,37 @@
       :binding-data="bindingData"
     ></binding-key-input-box>
 
+    <v-row align="center">
+      <v-col cols="3" class="text-right">
+        <label>defaultValue</label>
+      </v-col>
+      <v-col cols="9">
+        <v-autocomplete
+          v-model="bindingData[element['bindingKey']]"
+          :disabled="!element['bindingKey']"
+          :class="{ white: element['bindingKey'] }"
+          :items="element['time']"
+          :multiple="element['multiple']"
+          hide-details
+          dense
+          outlined
+        ></v-autocomplete>
+      </v-col>
+    </v-row>
+
     <element-setting-input-box
-      v-model="bindingData[element['bindingKey']]"
-      :disabled="!element['bindingKey']"
-      :input-class="{ white: element['bindingKey'] }"
+      v-model="element['multiple']"
       type="select"
-      :items="element['options']"
-      :key="element.id"
-      label="defaultValue"
-      hide-details
+      input-class="white"
+      label="multiple"
+      :items="[
+        { text: '', value: '' },
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+      ]"
       dense
       outlined
+      hide-details
     ></element-setting-input-box>
 
     <element-setting-input-box
@@ -44,46 +64,6 @@
       type="textField"
       input-class="white"
       label="margin"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexShrink']"
-      type="select"
-      input-class="white"
-      label="shrink"
-      :items="[
-        { text: '', value: '' },
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexGrow']"
-      type="select"
-      input-class="white"
-      label="grow"
-      :items="[
-        { text: '', value: '' },
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      type="textField"
-      input-class="white"
-      label="flexBasis"
       dense
       outlined
       hide-details
@@ -137,21 +117,58 @@
 
     <v-divider class="my-6"></v-divider>
 
-    <v-row class="align-center">
-      <span class="text-h5 font-weight-bold">Options</span>
+    <v-row>
+      <span class="text-h5 font-weight-bold">Time</span>
       <v-btn
         fab
         x-small
         class="ml-2"
         depressed
         color="primary"
-        @click="addOptions"
+        @click="addTime"
       >
         <v-icon>mdi-plus</v-icon>
       </v-btn>
+      <v-btn
+        fab
+        x-small
+        class="ml-2"
+        depressed
+        color="primary"
+        @click="showIntervalSetting = !showIntervalSetting"
+      >
+        <v-icon>mdi-alarm-plus</v-icon>
+      </v-btn>
+      <v-col class="py-0" v-show="showIntervalSetting">
+        <v-layout align-center>
+          <v-flex style="flex: 1 1 auto; width: 100%">
+            <v-sheet>
+              <v-text-field
+                v-model="timeInterval"
+                dense
+                class="without white"
+                outlined
+                hide-details
+                :rules="[(e) => !isNaN(e)]"
+                suffix="mins"
+                @keydown.enter="addTimeInterval"
+              ></v-text-field>
+            </v-sheet>
+          </v-flex>
+          <v-flex style="flex: 0 0 auto" class="ml-2">
+            <v-btn
+              depressed
+              color="primary"
+              @click="addTimeInterval"
+              :disabled="isNaN(timeInterval)"
+              >確定</v-btn
+            >
+          </v-flex>
+        </v-layout>
+      </v-col>
     </v-row>
 
-    <v-row align="center" v-for="(_, index) in options" :key="'option' + index">
+    <v-row align="center" v-for="(_, index) in time" :key="'time' + index">
       <v-col cols="3" class="text-right" style="white-space: nowrap">
         <v-btn
           depressed
@@ -162,15 +179,15 @@
           color="grey darken-1"
           class="mr-1"
           :ripple="false"
-          @click="removeOptions(index)"
+          @click="removeTime(index)"
         >
           <v-icon small>mdi-close</v-icon>
         </v-btn>
-        <label>{{ `option${index + 1}` }}</label>
+        <label>{{ `time${index + 1}` }}</label>
       </v-col>
       <v-col cols="9">
         <v-text-field
-          v-model="options[index]"
+          v-model="time[index]"
           class="white"
           dense
           outlined
@@ -186,7 +203,7 @@ import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vu
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
-  name: "TSelectSettingPanel",
+  name: "TIimeIntervalSelectSettingPanel",
 
   components: {
     ElementSettingInputBox,
@@ -206,28 +223,52 @@ export default {
 
   data() {
     return {
-      options: [],
+      timeInterval: "",
+      showIntervalSetting: false,
+      time: [],
     };
   },
 
   watch: {
-    "element.options": {
+    "element.time": {
       handler(newVal) {
-        this.options = newVal || [];
+        this.time = newVal || [];
       },
       immediate: true,
     },
-    options(newVal) {
-      this.$set(this.element, "options", newVal);
+    time(newVal) {
+      this.$set(this.element, "time", newVal);
     },
   },
 
   methods: {
-    addOptions() {
-      this.options.push("");
+    addTimeInterval() {
+      if (this.timeInterval === 0 || isNaN(this.timeInterval)) return;
+
+      const timeInterval = [];
+      const intervalMinute = this.timeInterval;
+      const today = new Date().toLocaleDateString();
+      let tempDayTime = new Date(today);
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      while (tempDayTime < tomorrow) {
+        const tempHours = String(tempDayTime.getHours()).padStart(2, "0");
+        const tempMinutes = String(tempDayTime.getMinutes()).padStart(2, "0");
+        timeInterval.push(`${tempHours}:${tempMinutes}`);
+        // convert minute to miliseconds
+        tempDayTime = tempDayTime.getTime() + intervalMinute * 60 * 1000;
+        tempDayTime = new Date(tempDayTime);
+      }
+
+      this.time = timeInterval;
+      this.showIntervalSetting = false;
     },
-    removeOptions(index) {
-      this.options.splice(index, 1);
+    addTime() {
+      this.time.push("");
+    },
+    removeTime(index) {
+      this.time.splice(index, 1);
     },
   },
 };

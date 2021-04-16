@@ -179,10 +179,6 @@ export default {
     // TODO: restrict element that can be added
     this.elements = [
       {
-        type: "radioGroup",
-        name: "radioGroup",
-      },
-      {
         type: "table",
         name: "table",
       },
@@ -219,8 +215,8 @@ export default {
         name: "textField",
       },
       {
-        type: "imageUploader",
-        name: "imageUploader",
+        type: "radioGroup",
+        name: "radioGroup",
       },
       {
         type: "icon",
@@ -237,6 +233,14 @@ export default {
       {
         type: "multiSelect",
         name: "multiSelect",
+      },
+      {
+        type: "timeIntervalSelect",
+        name: "timeIntervalSelect",
+      },
+      {
+        type: "imageUploader",
+        name: "imageUploader",
       },
     ];
   },

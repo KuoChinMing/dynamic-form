@@ -14,6 +14,7 @@ import TIcon from "@/components/template/TIcon.vue";
 import TSelect from "@/components/template/TSelect.vue";
 import TDatePicker from "@/components/template/TDatePicker.vue";
 import TMultiSelect from "@/components/template/TMultiSelect.vue";
+import TTimeIntervalSelect from "@/components/template/TTimeIntervalSelect.vue";
 
 export default {
   name: "TForm",
@@ -45,6 +46,7 @@ export default {
     TSelect,
     TDatePicker,
     TMultiSelect,
+    TTimeIntervalSelect,
   },
 
   data() {
@@ -65,11 +67,24 @@ export default {
         imageUploader: this.renderImageUploader,
         datePicker: this.renderDatePicker,
         multiSelect: this.renderMutilSelect,
+        timeIntervalSelect: this.renderTimeIntervalSelect,
       },
     };
   },
 
   methods: {
+    renderTimeIntervalSelect(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-time-interval-select
+            data={el}
+            v-model={this.bindingData[el.bindingKey]}
+          ></t-time-interval-select>
+        );
+      }
+
+      return <t-multi-select data={el}></t-multi-select>;
+    },
     renderMutilSelect(el) {
       if (el.bindingKey in this.bindingData) {
         return (
