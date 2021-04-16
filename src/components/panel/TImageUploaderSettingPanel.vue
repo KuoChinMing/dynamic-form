@@ -8,7 +8,6 @@
         <v-select
           v-model="element['layout']"
           :items="[
-            { text: '', value: '' },
             { text: 'horizontal', value: 'horizontal' },
             { text: 'vertical', value: 'vertical' },
           ]"
@@ -28,7 +27,6 @@
         <v-select
           v-model="element['wrap']"
           :items="[
-            { text: '', value: '' },
             { text: 'wrap', value: 'wrap' },
             { text: 'nowrap', value: 'nowrap' },
           ]"

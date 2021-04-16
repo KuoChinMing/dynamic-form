@@ -93,7 +93,6 @@
     <element-setting-input-box
       v-model="element['fontWeight']"
       :items="[
-        { text: '', value: '' },
         { text: 'bold', value: 'bold' },
         { text: 'regular', value: 'normal' },
         { text: 'lighter', value: 'lighter' },
@@ -109,7 +108,6 @@
     <element-setting-input-box
       v-model="element['fontStyle']"
       :items="[
-        { text: '', value: '' },
         { text: 'normal', value: 'normal' },
         { text: 'italic', value: 'italic' },
       ]"
@@ -124,7 +122,6 @@
     <element-setting-input-box
       v-model="element['textDecoration']"
       :items="[
-        { text: '', value: '' },
         { text: 'none', value: 'none' },
         { text: 'line-through', value: 'line-through' },
         { text: 'underline', value: 'underline' },
@@ -140,7 +137,6 @@
     <element-setting-input-box
       v-model="element['position']"
       :items="[
-        { text: '', value: '' },
         { text: 'relative', value: 'relative' },
         { text: 'absolute', value: 'absolute' },
       ]"
@@ -155,7 +151,6 @@
     <element-setting-input-box
       v-model="element['textAlign']"
       :items="[
-        { text: '', value: '' },
         { text: 'center', value: 'center' },
         { text: 'left', value: 'left' },
         { text: 'right', value: 'right' },
@@ -172,7 +167,6 @@
     <element-setting-input-box
       v-model="element['whiteSpace']"
       :items="[
-        { text: '', value: '' },
         { text: 'true', value: 'normal' },
         { text: 'false', value: 'nowrap' },
       ]"

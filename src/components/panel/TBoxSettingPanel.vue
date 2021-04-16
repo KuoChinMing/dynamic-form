@@ -36,7 +36,6 @@
       type="select"
       label="wrap"
       :items="[
-        { text: '', value: '' },
         { text: 'wrap', value: 'wrap' },
         { text: 'nowrap', value: 'nowrap' },
       ]"
@@ -51,7 +50,6 @@
       type="select"
       label="justifyContent"
       :items="[
-        { text: '', value: '' },
         { text: 'start', value: 'flex-start' },
         { text: 'end', value: 'flex-end' },
         { text: 'center', value: 'center' },

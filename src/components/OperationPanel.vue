@@ -242,6 +242,14 @@ export default {
         type: "imageUploader",
         name: "imageUploader",
       },
+      {
+        type: "chipGroup",
+        name: "chipGroup",
+      },
+      {
+        type: "chip",
+        name: "chip",
+      },
     ];
   },
 

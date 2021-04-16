@@ -50,7 +50,6 @@
       input-class="white"
       label="multiple"
       :items="[
-        { text: '', value: '' },
         { text: 'true', value: true },
         { text: 'false', value: false },
       ]"
@@ -238,6 +237,9 @@ export default {
     },
     time(newVal) {
       this.$set(this.element, "time", newVal);
+    },
+    "element.multiple"() {
+      this.bindingData[this.element["bindingKey"]] = null;
     },
   },
 

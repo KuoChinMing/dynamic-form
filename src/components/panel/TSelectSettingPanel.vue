@@ -32,7 +32,6 @@
       :input-class="{ white: element['bindingKey'] }"
       type="select"
       :items="element['options']"
-      :key="element.id"
       label="defaultValue"
       hide-details
       dense
@@ -55,7 +54,6 @@
       input-class="white"
       label="shrink"
       :items="[
-        { text: '', value: '' },
         { text: 'false', value: 0 },
         { text: 'true', value: 1 },
       ]"
@@ -70,7 +68,6 @@
       input-class="white"
       label="grow"
       :items="[
-        { text: '', value: '' },
         { text: 'false', value: 0 },
         { text: 'true', value: 1 },
       ]"

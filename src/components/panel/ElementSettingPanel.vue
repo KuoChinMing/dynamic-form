@@ -26,6 +26,8 @@ import TDatePickerSettingPanel from "@/components/panel/TDatePickerSettingPanel.
 import TMultiSelectSettingPanel from "@/components/panel/TMultiSelectSettingPanel.vue";
 import TTimeIntervalSelectSettingPanel from "@/components/panel/TTimeIntervalSelectSettingPanel.vue";
 import TSeparatorSettingPanel from "@/components/panel/TSeparatorSettingPanel.vue";
+import TChipGroupSettingPanel from "@/components/panel/TChipGroupSettingPanel.vue";
+import TChipSettingPanel from "@/components/panel/TChipSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
@@ -44,6 +46,8 @@ export default {
     TMultiSelectSettingPanel,
     TTimeIntervalSelectSettingPanel,
     TSeparatorSettingPanel,
+    TChipGroupSettingPanel,
+    TChipSettingPanel,
   },
 
   props: {
@@ -74,6 +78,8 @@ export default {
         multiSelect: "t-multi-select-setting-panel",
         timeIntervalSelect: "t-time-interval-select-setting-panel",
         separator: "t-separator-setting-panel",
+        chipGroup: "t-chip-group-setting-panel",
+        chip: "t-chip-setting-panel",
       };
       const type = this.element?.type;
 

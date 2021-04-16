@@ -15,6 +15,8 @@ import TSelect from "@/components/template/TSelect.vue";
 import TDatePicker from "@/components/template/TDatePicker.vue";
 import TMultiSelect from "@/components/template/TMultiSelect.vue";
 import TTimeIntervalSelect from "@/components/template/TTimeIntervalSelect.vue";
+import TChipGroup from "@/components/template/TChipGroup.vue";
+import TChip from "@/components/template/TChip.vue";
 
 export default {
   name: "TForm",
@@ -47,6 +49,8 @@ export default {
     TDatePicker,
     TMultiSelect,
     TTimeIntervalSelect,
+    TChipGroup,
+    TChip,
   },
 
   data() {
@@ -68,11 +72,31 @@ export default {
         datePicker: this.renderDatePicker,
         multiSelect: this.renderMutilSelect,
         timeIntervalSelect: this.renderTimeIntervalSelect,
+        chipGroup: this.renderChipGroup,
+        chip: this.renderChip,
       },
     };
   },
 
   methods: {
+    renderChip(el) {
+      return <t-chip data={el}></t-chip>;
+    },
+    renderChipGroup(el) {
+      if (el.bindingKey in this.bindingData) {
+        return (
+          <t-chip-group data={el} v-model={this.bindingData[el.bindingKey]}>
+            {el.contents?.map((el) => this.renderElement(el))}
+          </t-chip-group>
+        );
+      }
+
+      return (
+        <t-chip-group data={el}>
+          {el.contents?.map((el) => this.renderElement(el))}
+        </t-chip-group>
+      );
+    },
     renderTimeIntervalSelect(el) {
       if (el.bindingKey in this.bindingData) {
         return (

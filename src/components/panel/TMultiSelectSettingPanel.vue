@@ -36,7 +36,6 @@
           :disabled="!element['bindingKey']"
           :class="{ white: element['bindingKey'] }"
           :items="element['options']"
-          :key="element.id"
           hide-details
           dense
           outlined
