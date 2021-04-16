@@ -1,6 +1,10 @@
 // operation panel will show the element icon in add-element list and treeview
 
 export const iconMap = {
+  box: "mdi-square-rounded-outline",
+  table: "mdi-table",
+  tcol: "mdi-view-column-outline",
+  trow: "mdi-table-column",
   text: "mdi-alpha-t-box",
   checkbox: "mdi-checkbox-marked",
   textField: "mdi-keyboard",
@@ -12,10 +16,16 @@ export const iconMap = {
   multiSelect: "mdi-checkbox-multiple-marked",
   timeIntervalSelect: "mdi-clock-time-eight",
   imageUploader: "mdi-image",
-  separator: "mdi-minus",
+  separator: "mdi-minus-thick",
+  chipGroup: "mdi-checkbox-multiple-blank",
+  chip: "mdi-square-rounded",
 };
 
 export default {
+  box: "mdi-square-rounded-outline",
+  table: "mdi-table",
+  tcol: "mdi-view-column-outline",
+  trow: "mdi-table-column",
   text: "mdi-alpha-t-box",
   checkbox: "mdi-checkbox-marked",
   textField: "mdi-keyboard",
@@ -27,5 +37,7 @@ export default {
   multiSelect: "mdi-checkbox-multiple-marked",
   timeIntervalSelect: "mdi-clock-time-eight",
   imageUploader: "mdi-image",
-  separator: "mdi-minus",
+  separator: "mdi-minus-thick",
+  chipGroup: "mdi-checkbox-multiple-blank",
+  chip: "mdi-square-rounded",
 };

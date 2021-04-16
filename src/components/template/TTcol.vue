@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "TTCol",
+  name: "TTcol",
 
   props: {
     data: {

@@ -147,6 +147,7 @@
 <script>
 import ToolbarBtn from "@/components/ToolbarBtn.vue";
 import icons from "@/iconMap.js";
+import elements from "@/formElements.js";
 import elementsNeedBindingKey from "@/elementsNeedBindingKey.js";
 
 export default {
@@ -177,80 +178,7 @@ export default {
 
   created() {
     // TODO: restrict element that can be added
-    this.elements = [
-      {
-        type: "table",
-        name: "table",
-      },
-      {
-        type: "trow",
-        name: "trow",
-      },
-      {
-        type: "tcol",
-        name: "tcol",
-      },
-      {
-        type: "box",
-        name: "box",
-      },
-      {
-        type: "separator",
-        name: "separator",
-      },
-      {
-        type: "text",
-        name: "text",
-      },
-      {
-        type: "textarea",
-        name: "textarea",
-      },
-      {
-        type: "checkbox",
-        name: "checkbox",
-      },
-      {
-        type: "textField",
-        name: "textField",
-      },
-      {
-        type: "radioGroup",
-        name: "radioGroup",
-      },
-      {
-        type: "icon",
-        name: "icon",
-      },
-      {
-        type: "select",
-        name: "select",
-      },
-      {
-        type: "datePicker",
-        name: "datePicker",
-      },
-      {
-        type: "multiSelect",
-        name: "multiSelect",
-      },
-      {
-        type: "timeIntervalSelect",
-        name: "timeIntervalSelect",
-      },
-      {
-        type: "imageUploader",
-        name: "imageUploader",
-      },
-      {
-        type: "chipGroup",
-        name: "chipGroup",
-      },
-      {
-        type: "chip",
-        name: "chip",
-      },
-    ];
+    this.elements = elements;
   },
 
   methods: {

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "TTRow",
+  name: "TTrow",
 
   props: {
     data: {

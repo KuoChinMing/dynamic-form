@@ -14,6 +14,8 @@
 
 <script>
 import TTextSettingPanel from "@/components/panel/TTextSettingPanel.vue";
+import TTableSettingPanel from "@/components/panel/TTableSettingPanel.vue";
+import TTrowSettingPanel from "@/components/panel/TTrowSettingPanel.vue";
 import TTcolSettingPanel from "@/components/panel/TTcolSettingPanel.vue";
 import TBoxSettingPanel from "@/components/panel/TBoxSettingPanel.vue";
 import TRadioGroupSettingPanel from "@/components/panel/TRadioGroupSettingPanel.vue";
@@ -34,6 +36,8 @@ export default {
 
   components: {
     TTextSettingPanel,
+    TTableSettingPanel,
+    TTrowSettingPanel,
     TTcolSettingPanel,
     TBoxSettingPanel,
     TRadioGroupSettingPanel,
@@ -51,7 +55,6 @@ export default {
   },
 
   props: {
-    // bindingData and element is mutating
     bindingData: {
       type: [Object, null],
       default: null,
@@ -64,26 +67,17 @@ export default {
 
   computed: {
     elementSettingPanel() {
-      const settingPanel = {
-        text: "t-text-setting-panel",
-        tcol: "t-tcol-setting-panel",
-        box: "t-box-setting-panel",
-        radioGroup: "t-radio-group-setting-panel",
-        textField: "t-text-field-setting-panel",
-        imageUpader: "t-image-uploader-setting-panel",
-        checkbox: "t-checkbox-setting-panel",
-        icon: "t-icon-setting-panel",
-        select: "t-select-setting-panel",
-        datePicker: "t-date-picker-setting-panel",
-        multiSelect: "t-multi-select-setting-panel",
-        timeIntervalSelect: "t-time-interval-select-setting-panel",
-        separator: "t-separator-setting-panel",
-        chipGroup: "t-chip-group-setting-panel",
-        chip: "t-chip-setting-panel",
-      };
-      const type = this.element?.type;
+      if (!this.element) return;
 
-      return settingPanel[type];
+      const type = this.camelToDash(this.element?.type);
+
+      return `t-${type}-setting-panel`;
+    },
+  },
+
+  methods: {
+    camelToDash(camel) {
+      return camel.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase());
     },
   },
 };
