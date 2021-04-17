@@ -98,6 +98,7 @@
         dense
         activatable
         :items="[template]"
+        :key="treeviewKey"
         item-text="type"
         item-children="contents"
         selected-color="primary"
@@ -168,10 +169,18 @@ export default {
 
   data() {
     return {
+      // treeview key prevent treeview incorrectly highlight the selected item when template changed
+      treeviewKey: 0,
       elements: [],
       selectedNode: null,
       copiedNode: null,
     };
+  },
+
+  watch: {
+    template() {
+      this.treeviewKey++;
+    },
   },
 
   created() {

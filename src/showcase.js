@@ -316,6 +316,7 @@ const tableTemplate = {
       },
     ],
   },
+  bindingData: {},
 };
 
 const diagnosisTemplate = {
@@ -591,6 +592,7 @@ const textFieldTemplate = {
       },
     ],
   },
+  bindingData: {},
 };
 
 const newElementTemplate = {
