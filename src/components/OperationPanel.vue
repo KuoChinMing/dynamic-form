@@ -9,7 +9,7 @@
             dark
             class="mr-1"
             color="primary"
-            :disabled="!selectedNode"
+            :disabled="!selectedNode || elementsCanBeAdded.length === 0"
           >
             <v-icon small>mdi-plus</v-icon>
             <v-icon small>mdi-menu-down</v-icon>
@@ -18,7 +18,7 @@
         <v-list dense>
           <v-list-item
             @click="addNode(element)"
-            v-for="(element, index) in elements"
+            v-for="(element, index) in elementsCanBeAdded"
             :key="index"
           >
             <v-list-item-title>
@@ -147,8 +147,8 @@
 <script>
 import ToolbarBtn from "@/components/ToolbarBtn.vue";
 import icons from "@/iconMap.js";
-import elements from "@/formElements.js";
 import elementsNeedBindingKey from "@/elementsNeedBindingKey.js";
+import childElementsMap from "@/childElementsMap.js";
 import camelToSentence from "@/utils/camelCaseToSentenceCase.js";
 
 export default {
@@ -173,11 +173,18 @@ export default {
     },
   },
 
+  computed: {
+    elementsCanBeAdded() {
+      if (!this.selectedNode?.type) return [];
+
+      return childElementsMap[this.selectedNode.type] || [];
+    },
+  },
+
   data() {
     return {
       // treeview key prevent treeview incorrectly highlight the selected item when template changed
       treeviewKey: 0,
-      elements: [],
       selectedNode: null,
       copiedNode: null,
     };
@@ -189,11 +196,6 @@ export default {
       this.treeviewKey++;
       this.selectedNode = null;
     },
-  },
-
-  created() {
-    // TODO: restrict element that can be added
-    this.elements = elements;
   },
 
   methods: {
