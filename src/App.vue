@@ -28,6 +28,29 @@
         <span>{{ isViewExpanded ? "並排" : "展開" }}</span>
       </v-tooltip>
 
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            depressed
+            color="primary"
+            class="text-capitalize ml-2"
+            v-bind="attrs"
+            v-on="on"
+            >new
+            <v-icon small>mdi-menu-down</v-icon>
+          </v-btn>
+        </template>
+        <v-list dense>
+          <v-list-item
+            @click="addTemplate(root)"
+            v-for="(root, index) in templateRoot"
+            :key="index"
+          >
+            <v-list-item-title>{{ root }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
       <v-btn
         @click="openShowcaseDialog"
         depressed
@@ -83,10 +106,15 @@ export default {
       isDataJsonDialogOpen: false,
       isFormJsonDialogOpen: false,
       isViewExpanded: false,
+      templateRoot: ["box", "table"],
+      selectedTemplateRoot: null,
     };
   },
 
   methods: {
+    addTemplate(root) {
+      this.$store.commit("template", { type: root, id: 0 });
+    },
     openShowcaseDialog() {
       this.isShowcaseDialogOpen = true;
     },

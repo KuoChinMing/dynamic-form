@@ -179,7 +179,9 @@ export default {
 
   watch: {
     template() {
+      // refresh treeview when template changed
       this.treeviewKey++;
+      this.selectedNode = null;
     },
   },
 
