@@ -3886,5 +3886,5 @@ export const templates = {
   newElementTemplate,
 };
 
-export const defaultBindingData = tableTemplate.bindingData;
-export const defaultTemplate = tableTemplate.template;
+export const defaultBindingData = newElementTemplate.bindingData;
+export const defaultTemplate = newElementTemplate.template;

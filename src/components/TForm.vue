@@ -69,6 +69,7 @@ export default {
           <Component
             data={element}
             v-model={this.bindingData[element.bindingKey]}
+            id={`form-element-${element.id}`}
           >
             {element.contents?.map((el) => this.renderElement(el))}
           </Component>
@@ -76,7 +77,7 @@ export default {
       }
 
       return (
-        <Component data={element}>
+        <Component data={element} id={`form-element-${element.id}`}>
           {element.contents?.map((el) => this.renderElement(el))}
         </Component>
       );

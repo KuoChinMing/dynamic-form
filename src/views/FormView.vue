@@ -14,6 +14,12 @@
             <!-- warning: template is mutating -->
             <!-- warning: binding data is mutating -->
             <t-form :template="template" :binding-data="bindingData"></t-form>
+            <div
+              ref="overlay"
+              style="position: absolute; z-index: 9999; opacity: 0.4"
+              class="grey"
+              :class="{ 'd-none': !highlight }"
+            ></div>
           </v-sheet>
         </div>
       </v-layout>
@@ -24,6 +30,8 @@
         :template="template"
         :binding-data="bindingData"
         @select-node="selectNode"
+        @hover-node="highLightElement"
+        @unhover-node="removeHighLight"
       ></operation-panel>
     </v-flex>
     <v-flex style="flex: 0 0 auto" :style="{ width: expanded ? '50%' : '30%' }">
@@ -62,6 +70,7 @@ export default {
 
   data() {
     return {
+      highlight: false,
       selectedNode: null,
     };
   },
@@ -79,6 +88,26 @@ export default {
   },
 
   methods: {
+    highLightElement({ id }) {
+      let el = document.getElementById(`form-element-${id}`);
+      // form-element is not generated yet.
+      if (!el) return;
+      // offsetTop() will return integer value,
+      // so use getBoundingClientRect() to prevent precision problem.
+      const { top, left, width, height } = el.getBoundingClientRect();
+
+      this.$refs.overlay.style.top = top + "px";
+      this.$refs.overlay.style.left = left + "px";
+      this.$refs.overlay.style.width = width + "px";
+      this.$refs.overlay.style.height = height + "px";
+      // getBoundingClientRect() is relative to the viewport, so overlay needed to directly under the app element
+      document.getElementById("app").appendChild(this.$refs.overlay);
+
+      this.highlight = true;
+    },
+    removeHighLight() {
+      this.highlight = false;
+    },
     selectNode(selectedNode) {
       this.selectedNode = selectedNode;
     },

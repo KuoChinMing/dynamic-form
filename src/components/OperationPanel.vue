@@ -105,26 +105,26 @@
         item-disabled="locked"
       >
         <!-- :color="selectedNode && active ? 'primary' : ''" -->
-        <template v-slot:label="{ item, active }">
+        <template v-slot:label="{ item: element, active }">
           <v-layout
             align-center
-            @mouseenter="hightLightElement(item)"
-            @mouseleave="removeHightLighting(item)"
+            @mouseenter="hoverNode(element)"
+            @mouseleave="unhoverNode(element)"
           >
             <v-icon
-              v-if="typeIcon(item.type)"
+              v-if="typeIcon(element.type)"
               small
               class="mr-1"
               :color="selectedNode && active ? 'primary' : ''"
-              v-text="typeIcon(item.type)"
+              v-text="typeIcon(element.type)"
             ></v-icon>
 
-            <span>{{ item.type | camelToSentence }}</span>
+            <span>{{ element.type | camelToSentence }}</span>
 
             <v-layout
               v-if="
-                elementNeedsBindingKey(item.type) &&
-                bindingKeyInBindingData(item.bindingKey)
+                elementNeedsBindingKey(element.type) &&
+                bindingKeyInBindingData(element.bindingKey)
               "
               class="caption red--text"
             >
@@ -205,20 +205,11 @@ export default {
     elementNeedsBindingKey(element) {
       return elementsNeedBindingKey.includes(element);
     },
-    removeHightLighting(element) {
-      this.$set(element, "backgroundColor", undefined);
-      // const selectedEl = document.getElementById(element.id);
-      // if (selectedEl) {
-      //   selectedEl.style.backgroundColor = null;
-      // }
+    unhoverNode(element) {
+      this.$emit("unhover-node", element);
     },
-    hightLightElement(element) {
-      // TODO 元件其實不可直接設定 backgroundColor，不然 mouseLeave 時會把使用者設定的 backgroundColor 取代 (建立元素仿製 overlay)
-      this.$set(element, "backgroundColor", "#E0E0E0");
-      // const selectedEl = document.getElementById(element.id);
-      // if (selectedEl) {
-      //   selectedEl.style.backgroundColor = "#E0E0E0";
-      // }
+    hoverNode(element) {
+      this.$emit("hover-node", element);
     },
     typeIcon(type) {
       return icons[type];
