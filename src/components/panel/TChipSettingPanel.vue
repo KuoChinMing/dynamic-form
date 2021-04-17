@@ -4,10 +4,10 @@
       :value="element['type']"
       type="textField"
       label="type"
-      disabled
+      hide-details
       dense
       outlined
-      hide-details
+      disabled
     ></element-setting-input-box>
 
     <element-setting-input-box
@@ -21,43 +21,40 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['layout']"
+      v-model="element['value']"
+      input-class="white"
+      label="value"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['color']"
+      input-class="white"
+      label="color"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['textColor']"
+      input-class="white"
+      label="textColor"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['filter']"
       input-class="white"
       type="select"
-      label="layout"
-      :items="['', 'horizontal', 'vertical']"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flex']"
-      input-class="white"
-      label="flex"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      input-class="white"
-      type="textField"
-      label="flexBasis"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['wrap']"
-      input-class="white"
-      type="select"
-      label="wrap"
+      label="filter"
       :items="[
-        { text: 'wrap', value: 'wrap' },
-        { text: 'nowrap', value: 'nowrap' },
+        { text: 'true', value: true },
+        { text: 'false', value: false },
       ]"
       hide-details
       dense
@@ -65,17 +62,39 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['justifyContent']"
+      v-model="element['outlined']"
       input-class="white"
       type="select"
-      label="justifyContent"
+      label="outlined"
       :items="[
-        { text: 'start', value: 'flex-start' },
-        { text: 'end', value: 'flex-end' },
-        { text: 'center', value: 'center' },
-        { text: 'space between', value: 'space-between' },
-        { text: 'space around', value: 'space-around' },
+        { text: 'true', value: true },
+        { text: 'false', value: false },
       ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['tile']"
+      input-class="white"
+      type="select"
+      label="tile"
+      :items="[
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['size']"
+      input-class="white"
+      type="select"
+      label="size"
+      :items="['normal', 'small', 'x-small']"
       hide-details
       dense
       outlined
@@ -87,7 +106,7 @@
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 
 export default {
-  name: "TBoxSettingPanel",
+  name: "TChipSettingPanel",
 
   components: {
     ElementSettingInputBox,
@@ -97,6 +116,10 @@ export default {
     element: {
       type: Object,
       default: () => {},
+    },
+    bindingData: {
+      type: [Object, null],
+      default: null,
     },
   },
 };

@@ -44,13 +44,13 @@ export default {
       if (!newKey) {
         const defaultValue = this.bindingData[oldKey];
         await this.$nextTick();
-        this.changeBindingKey(oldKey);
+        this.changeBindingKey(oldKey || this.element.id);
         await this.$nextTick();
         this.$set(this.bindingData, oldKey, defaultValue);
         alert("please setting the binding key.");
       } else if (newKey in this.bindingData) {
         // TODO handling duplicated key
-        alert(`duplicated key: ${newKey}.`);
+        console.error(`duplicated key: ${newKey}.`);
       }
       // 第一次設置 key 時沒有 oldKey, bindingData 設為 null，或是已經設有 bindingKey 但是 bindingData 裡找不到這個 key
       else if (!oldKey || !(oldKey in this.bindingData)) {

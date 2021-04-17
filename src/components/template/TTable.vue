@@ -14,6 +14,7 @@ export default {
       borderCollapse: "collapse",
       borderSpacing: 0,
       width: "100%",
+      tableLayout: "fixed",
       backgroundColor: this.data.backgroundColor,
     };
 

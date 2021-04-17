@@ -103,6 +103,7 @@
         item-children="contents"
         selected-color="primary"
         selection-type="independent"
+        item-disabled="locked"
       >
         <!-- :color="selectedNode && active ? 'primary' : ''" -->
         <template v-slot:label="{ item, active }">
@@ -147,6 +148,7 @@
 <script>
 import ToolbarBtn from "@/components/ToolbarBtn.vue";
 import icons from "@/iconMap.js";
+import elements from "@/formElements.js";
 import elementsNeedBindingKey from "@/elementsNeedBindingKey.js";
 
 export default {
@@ -187,48 +189,7 @@ export default {
 
   created() {
     // TODO: restrict element that can be added
-    this.elements = [
-      {
-        type: "table",
-        name: "table",
-      },
-      {
-        type: "trow",
-        name: "trow",
-      },
-      {
-        type: "tcol",
-        name: "tcol",
-      },
-      {
-        type: "box",
-        name: "box",
-      },
-      {
-        type: "separator",
-        name: "separator",
-      },
-      {
-        type: "text",
-        name: "text",
-      },
-      {
-        type: "checkbox",
-        name: "checkbox",
-      },
-      {
-        type: "textField",
-        name: "textField",
-      },
-      {
-        type: "icon",
-        name: "icon",
-      },
-      {
-        type: "select",
-        name: "select",
-      },
-    ];
+    this.elements = elements;
   },
 
   methods: {
@@ -343,15 +304,18 @@ export default {
         this.$set(this.selectedNode, "contents", [element]);
       }
     },
+    deleteBindingData() {
+      const bindingKey = this.selectedNode["bindingKey"];
+      if (bindingKey && bindingKey in this.bindingData) {
+        this.$delete(this.bindingData, bindingKey);
+      }
+    },
     deleteNode() {
       const parentNode = this.findParentNode(this.selectedNode);
       const parentNodeContents = parentNode.contents.filter(
         (elment) => elment !== this.selectedNode
       );
-      const bindingKey = this.selectedNode["bindingKey"];
-      if (bindingKey && bindingKey in this.bindingData) {
-        this.$delete(this.bindingData, bindingKey);
-      }
+      this.deleteBindingData();
       this.$set(parentNode, "contents", parentNodeContents);
     },
     cutNode() {

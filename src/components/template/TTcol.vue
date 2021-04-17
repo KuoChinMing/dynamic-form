@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "TRow",
+  name: "TTcol",
 
   props: {
     data: {
@@ -13,6 +13,7 @@ export default {
     const style = {
       border: "1px solid #ddd",
       padding: "8px",
+      width: this.data.width || 0,
       backgroundColor: this.data.backgroundColor,
     };
 

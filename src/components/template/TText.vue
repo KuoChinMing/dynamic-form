@@ -2,7 +2,7 @@
 import { VFlex } from "vuetify/lib";
 
 export default {
-  name: "TemplateText",
+  name: "TText",
 
   props: {
     data: {

@@ -37,6 +37,24 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['flex']"
+      input-class="white"
+      label="flex"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['shrink']"
+      input-class="white"
+      label="shrink"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['flexBasis']"
       input-class="white"
       label="flexBasis"

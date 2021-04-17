@@ -14,28 +14,47 @@
 
 <script>
 import TTextSettingPanel from "@/components/panel/TTextSettingPanel.vue";
+import TTableSettingPanel from "@/components/panel/TTableSettingPanel.vue";
+import TTrowSettingPanel from "@/components/panel/TTrowSettingPanel.vue";
 import TTcolSettingPanel from "@/components/panel/TTcolSettingPanel.vue";
 import TBoxSettingPanel from "@/components/panel/TBoxSettingPanel.vue";
+import TRadioGroupSettingPanel from "@/components/panel/TRadioGroupSettingPanel.vue";
 import TTextFieldSettingPanel from "@/components/panel/TTextFieldSettingPanel.vue";
+import TImageUploaderSettingPanel from "@/components/panel/TImageUploaderSettingPanel.vue";
 import TCheckboxSettingPanel from "@/components/panel/TCheckboxSettingPanel.vue";
 import TIconSettingPanel from "@/components/panel/TIconSettingPanel.vue";
 import TSelectSettingPanel from "@/components/panel/TSelectSettingPanel.vue";
+import TDatePickerSettingPanel from "@/components/panel/TDatePickerSettingPanel.vue";
+import TMultiSelectSettingPanel from "@/components/panel/TMultiSelectSettingPanel.vue";
+import TTimeIntervalSelectSettingPanel from "@/components/panel/TTimeIntervalSelectSettingPanel.vue";
+import TSeparatorSettingPanel from "@/components/panel/TSeparatorSettingPanel.vue";
+import TChipGroupSettingPanel from "@/components/panel/TChipGroupSettingPanel.vue";
+import TChipSettingPanel from "@/components/panel/TChipSettingPanel.vue";
 
 export default {
   name: "ElementSettingPanel",
 
   components: {
     TTextSettingPanel,
+    TTableSettingPanel,
+    TTrowSettingPanel,
     TTcolSettingPanel,
     TBoxSettingPanel,
+    TRadioGroupSettingPanel,
     TTextFieldSettingPanel,
+    TImageUploaderSettingPanel,
     TCheckboxSettingPanel,
     TIconSettingPanel,
     TSelectSettingPanel,
+    TDatePickerSettingPanel,
+    TMultiSelectSettingPanel,
+    TTimeIntervalSelectSettingPanel,
+    TSeparatorSettingPanel,
+    TChipGroupSettingPanel,
+    TChipSettingPanel,
   },
 
   props: {
-    // bindingData and element is mutating
     bindingData: {
       type: [Object, null],
       default: null,
@@ -48,18 +67,17 @@ export default {
 
   computed: {
     elementSettingPanel() {
-      const settingPanel = {
-        text: "t-text-setting-panel",
-        tcol: "t-tcol-setting-panel",
-        box: "t-box-setting-panel",
-        textField: "t-text-field-setting-panel",
-        checkbox: "t-checkbox-setting-panel",
-        icon: "t-icon-setting-panel",
-        select: "t-select-setting-panel",
-      };
-      const type = this.element?.type;
+      if (!this.element) return;
 
-      return settingPanel[type];
+      const type = this.camelToDash(this.element?.type);
+
+      return `t-${type}-setting-panel`;
+    },
+  },
+
+  methods: {
+    camelToDash(camel) {
+      return camel.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase());
     },
   },
 };

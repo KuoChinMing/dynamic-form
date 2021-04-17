@@ -1,23 +1,14 @@
 <template>
   <v-container>
     <element-setting-input-box
-      :value="element['type']"
-      type="textField"
-      label="type"
+      v-model="element['direction']"
+      input-class="white"
+      type="select"
+      :items="['row', 'column']"
+      label="layout"
       hide-details
       dense
       outlined
-      disabled
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      :value="element['id']"
-      type="textField"
-      label="id"
-      disabled
-      dense
-      outlined
-      hide-details
     ></element-setting-input-box>
 
     <binding-key-input-box
@@ -31,7 +22,7 @@
       :disabled="!element['bindingKey']"
       :input-class="{ white: element['bindingKey'] }"
       type="select"
-      :items="element['options']"
+      :items="element['radioItems']"
       label="defaultValue"
       hide-details
       dense
@@ -39,116 +30,71 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['margin']"
+      v-model="element['color']"
+      input-class="white"
       type="textField"
-      input-class="white"
-      label="margin"
+      label="color"
+      hide-details
       dense
       outlined
-      hide-details
     ></element-setting-input-box>
 
-    <element-setting-input-box
-      v-model="element['flexShrink']"
-      type="select"
-      input-class="white"
-      label="shrink"
-      :items="[
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexGrow']"
-      type="select"
-      input-class="white"
-      label="grow"
-      :items="[
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      type="textField"
-      input-class="white"
-      label="flexBasis"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['width']"
-      type="textField"
-      input-class="white"
-      label="width"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['style']"
-      type="select"
-      input-class="white"
-      label="style"
-      :items="[
-        { text: 'standard', value: 'standard' },
-        {
-          text: 'filled',
-          value: 'filled',
-        },
-        {
-          text: 'outlined',
-          value: 'outlined',
-        },
-        {
-          text: 'solo',
-          value: 'solo',
-        },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['dense']"
-      type="select"
-      input-class="white"
-      label="dense"
-      :items="[false, true]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <v-divider class="my-6"></v-divider>
-
+    <!-- padding -->
     <v-row class="align-center">
-      <span class="text-h5 font-weight-bold">Options</span>
+      <span class="text-h5 font-weight-bold">Padding</span>
+    </v-row>
+    <element-setting-input-box
+      v-model="element['paddingTop']"
+      input-class="white"
+      type="textField"
+      label="paddingTop"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+    <element-setting-input-box
+      v-model="element['paddingRight']"
+      input-class="white"
+      type="textField"
+      label="paddingRight"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+    <element-setting-input-box
+      v-model="element['paddingBottom']"
+      input-class="white"
+      type="textField"
+      label="paddingBottom"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+    <element-setting-input-box
+      v-model="element['paddingLeft']"
+      input-class="white"
+      type="textField"
+      label="paddingLeft"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <!-- radio items -->
+    <v-row class="align-center">
+      <span class="text-h5 font-weight-bold">Radios</span>
       <v-btn
         fab
         x-small
         class="ml-2"
         depressed
         color="primary"
-        @click="addOptions"
+        @click="addRadioItem"
       >
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </v-row>
-
-    <v-row align="center" v-for="(_, index) in options" :key="'option' + index">
+    <v-row align="center" v-for="(_, index) in radioItems" :key="index">
       <v-col cols="3" class="text-right" style="white-space: nowrap">
         <v-btn
           depressed
@@ -159,15 +105,15 @@
           color="grey darken-1"
           class="mr-1"
           :ripple="false"
-          @click="removeOptions(index)"
+          @click="removeRadioItem(index)"
         >
           <v-icon small>mdi-close</v-icon>
         </v-btn>
-        <label>{{ `option${index + 1}` }}</label>
+        <label>{{ `radio${index + 1}` }}</label>
       </v-col>
       <v-col cols="9">
         <v-text-field
-          v-model="options[index]"
+          v-model="radioItems[index]"
           class="white"
           dense
           outlined
@@ -183,7 +129,7 @@ import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vu
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
-  name: "TSelectSettingPanel",
+  name: "TRadioGroupSettingPanel",
 
   components: {
     ElementSettingInputBox,
@@ -203,28 +149,28 @@ export default {
 
   data() {
     return {
-      options: [],
+      radioItems: [],
     };
   },
 
   watch: {
-    "element.options": {
+    "element.radioItems": {
       handler(newVal) {
         this.options = newVal || [];
       },
       immediate: true,
     },
-    options(newVal) {
-      this.$set(this.element, "options", newVal);
+    radioItems(newVal) {
+      this.$set(this.element, "radioItems", newVal);
     },
   },
 
   methods: {
-    addOptions() {
-      this.options.push("");
+    addRadioItem() {
+      this.radioItems.push("");
     },
-    removeOptions(index) {
-      this.options.splice(index, 1);
+    removeRadioItem(index) {
+      this.radioItems.splice(index, 1);
     },
   },
 };

@@ -4,10 +4,10 @@
       :value="element['type']"
       type="textField"
       label="type"
-      disabled
+      hide-details
       dense
       outlined
-      hide-details
+      disabled
     ></element-setting-input-box>
 
     <element-setting-input-box
@@ -26,27 +26,47 @@
       :binding-data="bindingData"
     ></binding-key-input-box>
 
-    <!-- bindingData[element['bindingKey']] can be null, 0, or "", disabled when it's undefined -->
+    <v-row align="center">
+      <v-col cols="3" class="text-right">
+        <label>defaultValue</label>
+      </v-col>
+      <v-col cols="9">
+        <v-autocomplete
+          v-model="bindingData[element['bindingKey']]"
+          :disabled="!element['bindingKey']"
+          :class="{ white: element['bindingKey'] }"
+          :items="element['contents']"
+          :multiple="element['multiple']"
+          item-text="value"
+          item-value="value"
+          hide-details
+          dense
+          outlined
+        ></v-autocomplete>
+      </v-col>
+    </v-row>
+
     <element-setting-input-box
-      v-model="bindingData[element['bindingKey']]"
-      :disabled="!element['bindingKey']"
-      :input-class="{ white: element['bindingKey'] }"
-      :items="[true, false]"
+      v-model="element['multiple']"
+      input-class="white"
+      label="multiple"
       type="select"
-      label="defaultValue"
+      :items="[
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+      ]"
       hide-details
       dense
       outlined
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['label']"
-      type="textField"
-      label="label"
+      v-model="element['color']"
       input-class="white"
+      label="color"
+      hide-details
       dense
       outlined
-      hide-details
     ></element-setting-input-box>
   </v-container>
 </template>
@@ -56,7 +76,7 @@ import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vu
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
-  name: "TCheckBoxSettingPanel",
+  name: "TChipGroupSettingPanel",
 
   components: {
     ElementSettingInputBox,
@@ -65,12 +85,18 @@ export default {
 
   props: {
     element: {
-      type: [Object, null],
-      default: null,
+      type: Object,
+      default: () => {},
     },
     bindingData: {
       type: [Object, null],
       default: null,
+    },
+  },
+
+  watch: {
+    "element.multiple"() {
+      this.bindingData[this.element["bindingKey"]] = null;
     },
   },
 };

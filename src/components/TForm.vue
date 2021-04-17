@@ -4,11 +4,19 @@ import TSeparator from "@/components/template/TSeparator.vue";
 import TBox from "@/components/template/TBox.vue";
 import TCheckbox from "@/components/template/TCheckbox.vue";
 import TTextField from "@/components/template/TTextField.vue";
+import TRadioGroup from "@/components/template/TRadioGroup.vue";
 import TTable from "@/components/template/TTable.vue";
-import TRow from "@/components/template/TRow.vue";
-import TCol from "@/components/template/TCol.vue";
+import TTrow from "@/components/template/TTrow.vue";
+import TTcol from "@/components/template/TTcol.vue";
+import TTextarea from "@/components/template/TTextarea.vue";
+import TImageUploader from "@/components/template/TImageUploader.vue";
 import TIcon from "@/components/template/TIcon.vue";
 import TSelect from "@/components/template/TSelect.vue";
+import TDatePicker from "@/components/template/TDatePicker.vue";
+import TMultiSelect from "@/components/template/TMultiSelect.vue";
+import TTimeIntervalSelect from "@/components/template/TTimeIntervalSelect.vue";
+import TChipGroup from "@/components/template/TChipGroup.vue";
+import TChip from "@/components/template/TChip.vue";
 
 export default {
   name: "TForm",
@@ -26,108 +34,51 @@ export default {
 
   components: {
     TText,
+    TTextarea,
     TSeparator,
     TBox,
     TCheckbox,
     TTextField,
     TTable,
-    TRow,
-    TCol,
+    TTrow,
+    TTcol,
+    TRadioGroup,
+    TImageUploader,
     TIcon,
     TSelect,
-  },
-
-  data() {
-    return {
-      elementMap: {
-        box: this.renderBox,
-        separator: this.renderSeparator,
-        text: this.renderText,
-        checkbox: this.renderCheckbox,
-        textField: this.renderTextField,
-        table: this.renderTable,
-        trow: this.renderTrow,
-        tcol: this.renderTcol,
-        icon: this.renderIcon,
-        select: this.renderSelect,
-      },
-    };
+    TDatePicker,
+    TMultiSelect,
+    TTimeIntervalSelect,
+    TChipGroup,
+    TChip,
   },
 
   methods: {
-    renderSelect(el) {
-      if (el.bindingKey in this.bindingData) {
-        return (
-          <t-select
-            data={el}
-            v-model={this.bindingData[el.bindingKey]}
-          ></t-select>
-        );
-      }
-      return <t-select data={el}></t-select>;
+    camelToDash(camel) {
+      return camel.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase());
     },
-    renderIcon(el) {
-      return <t-icon data={el}></t-icon>;
+    componentName(elementType) {
+      return "t-" + this.camelToDash(elementType);
     },
-    renderTcol(el) {
-      return (
-        <t-col data={el}>
-          {el.contents?.map((el) => this.renderElement(el))}
-        </t-col>
-      );
-    },
-    renderTrow(el) {
-      return (
-        <t-row data={el}>
-          {el.contents?.map((el) => this.renderElement(el))}
-        </t-row>
-      );
-    },
-    renderTable(el) {
-      return (
-        <t-table data={el}>
-          {el.contents?.map((el) => this.renderElement(el))}
-        </t-table>
-      );
-    },
-    renderTextField(el) {
-      if (el.bindingKey in this.bindingData) {
-        return (
-          <t-text-field
-            data={el}
-            v-model={this.bindingData[el.bindingKey]}
-          ></t-text-field>
-        );
-      }
-      return <t-text-field data={el}></t-text-field>;
-    },
-    renderCheckbox(el) {
-      if (el.bindingKey in this.bindingData) {
-        return (
-          <t-checkbox
-            data={el}
-            v-model={this.bindingData[el.bindingKey]}
-          ></t-checkbox>
-        );
-      }
-      return <t-checkbox data={el}></t-checkbox>;
-    },
-    renderText(el) {
-      return <t-text data={el}></t-text>;
-    },
-    renderSeparator(el) {
-      return <t-separator data={el}></t-separator>;
-    },
-    renderBox(el) {
-      return (
-        <t-box data={el}>
-          {el.contents?.map((el) => this.renderElement(el))}
-        </t-box>
-      );
-    },
-
     renderElement(element) {
-      return this.elementMap?.[element.type](element);
+      const Component = this.componentName(element.type);
+
+      if (this.bindingData && element.bindingKey in this.bindingData) {
+        return (
+          <Component
+            data={element}
+            v-model={this.bindingData[element.bindingKey]}
+          >
+            {element.contents?.map((el) => this.renderElement(el))}
+          </Component>
+        );
+      }
+
+      return (
+        <Component data={element}>
+          {element.contents?.map((el) => this.renderElement(el))}
+        </Component>
+      );
     },
   },
 

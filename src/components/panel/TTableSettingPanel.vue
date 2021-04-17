@@ -4,10 +4,10 @@
       :value="element['type']"
       type="textField"
       label="type"
-      hide-details
+      disabled
       dense
       outlined
-      disabled
+      hide-details
     ></element-setting-input-box>
 
     <element-setting-input-box
@@ -19,33 +19,6 @@
       outlined
       hide-details
     ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['colspan']"
-      input-class="white"
-      label="colspan"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['rowspan']"
-      input-class="white"
-      label="rowspan"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['width']"
-      input-class="white"
-      label="width"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
   </v-container>
 </template>
 
@@ -53,7 +26,7 @@
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 
 export default {
-  name: "TTcolSettingPanel",
+  name: "TTableSettingPanel",
 
   components: {
     ElementSettingInputBox,

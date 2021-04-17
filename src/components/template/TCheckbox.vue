@@ -2,7 +2,7 @@
 import { VLayout, VFlex, VCheckbox } from "vuetify/lib";
 
 export default {
-  name: "TemplateCheckBox",
+  name: "TCheckBox",
 
   props: {
     data: {

@@ -30,8 +30,7 @@
       v-model="bindingData[element['bindingKey']]"
       :disabled="!element['bindingKey']"
       :input-class="{ white: element['bindingKey'] }"
-      type="select"
-      :items="element['options']"
+      type="textField"
       label="defaultValue"
       hide-details
       dense
@@ -39,48 +38,25 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['margin']"
-      type="textField"
+      v-model="element['label']"
       input-class="white"
-      label="margin"
+      type="textField"
+      label="label"
+      hide-details
       dense
       outlined
-      hide-details
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['flexShrink']"
+      v-model="element['locale']"
       type="select"
       input-class="white"
-      label="shrink"
+      label="locale"
       :items="[
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
+        { text: 'Japanese', value: 'ja' },
+        { text: 'Chinese', value: 'zhHant' },
+        { text: 'English', value: 'en' },
       ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexGrow']"
-      type="select"
-      input-class="white"
-      label="grow"
-      :items="[
-        { text: 'false', value: 0 },
-        { text: 'true', value: 1 },
-      ]"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      type="textField"
-      input-class="white"
-      label="flexBasis"
       dense
       outlined
       hide-details
@@ -88,12 +64,12 @@
 
     <element-setting-input-box
       v-model="element['width']"
-      type="textField"
       input-class="white"
+      type="textField"
       label="width"
+      hide-details
       dense
       outlined
-      hide-details
     ></element-setting-input-box>
 
     <element-setting-input-box
@@ -126,55 +102,28 @@
       type="select"
       input-class="white"
       label="dense"
-      :items="[false, true]"
+      :items="[
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+      ]"
       dense
       outlined
       hide-details
     ></element-setting-input-box>
 
-    <v-divider class="my-6"></v-divider>
-
-    <v-row class="align-center">
-      <span class="text-h5 font-weight-bold">Options</span>
-      <v-btn
-        fab
-        x-small
-        class="ml-2"
-        depressed
-        color="primary"
-        @click="addOptions"
-      >
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
-    </v-row>
-
-    <v-row align="center" v-for="(_, index) in options" :key="'option' + index">
-      <v-col cols="3" class="text-right" style="white-space: nowrap">
-        <v-btn
-          depressed
-          icon
-          dark
-          width="24px"
-          height="24px"
-          color="grey darken-1"
-          class="mr-1"
-          :ripple="false"
-          @click="removeOptions(index)"
-        >
-          <v-icon small>mdi-close</v-icon>
-        </v-btn>
-        <label>{{ `option${index + 1}` }}</label>
-      </v-col>
-      <v-col cols="9">
-        <v-text-field
-          v-model="options[index]"
-          class="white"
-          dense
-          outlined
-          hide-details
-        ></v-text-field>
-      </v-col>
-    </v-row>
+    <element-setting-input-box
+      v-model="element['disabled']"
+      input-class="white"
+      type="select"
+      label="disabled"
+      :items="[
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
   </v-container>
 </template>
 
@@ -183,7 +132,7 @@ import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vu
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
 
 export default {
-  name: "TSelectSettingPanel",
+  name: "TDatePickerSettingPanel",
 
   components: {
     ElementSettingInputBox,
@@ -196,35 +145,8 @@ export default {
       default: () => {},
     },
     bindingData: {
-      type: [Object, null],
-      default: null,
-    },
-  },
-
-  data() {
-    return {
-      options: [],
-    };
-  },
-
-  watch: {
-    "element.options": {
-      handler(newVal) {
-        this.options = newVal || [];
-      },
-      immediate: true,
-    },
-    options(newVal) {
-      this.$set(this.element, "options", newVal);
-    },
-  },
-
-  methods: {
-    addOptions() {
-      this.options.push("");
-    },
-    removeOptions(index) {
-      this.options.splice(index, 1);
+      type: Object,
+      default: () => {},
     },
   },
 };

@@ -43,20 +43,17 @@ export default {
       flexShrink: this.data.flexShrink,
       flexGrow: this.data.flexGrow,
       width: this.data.width,
+      backgroundColor: this.data.backgroundColor,
     };
     const props = {
-      [this.data.style]: true,
       dense: this.data.dense,
       items: this.data.options,
+      [this.data.style]: true,
+      hideDetails: true,
     };
 
     return (
-      <v-select
-        v-model={this.innerValue}
-        style={style}
-        props={props}
-        hide-details
-      >
+      <v-select v-model={this.innerValue} style={style} props={props}>
         {this.$slots.default}
       </v-select>
     );

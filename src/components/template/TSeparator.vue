@@ -2,7 +2,7 @@
 import { VDivider } from "vuetify/lib";
 
 export default {
-  name: "TemplateSeparator",
+  name: "TSeparator",
 
   props: {
     data: {
@@ -19,6 +19,7 @@ export default {
     const data = this.data;
     const style = {
       // margin: data.marginAll,
+      borderColor: data.color,
       marginTop: data.marginTop,
       marginLeft: data.marginLeft,
       marginBottom: data.marginBottom,
