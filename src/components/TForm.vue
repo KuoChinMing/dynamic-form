@@ -1,25 +1,50 @@
 <script>
-import TText from "@/components/template/TText.vue";
-import TSeparator from "@/components/template/TSeparator.vue";
-import TBox from "@/components/template/TBox.vue";
-import TCheckbox from "@/components/template/TCheckbox.vue";
-import TTextField from "@/components/template/TTextField.vue";
-import TRadioGroup from "@/components/template/TRadioGroup.vue";
-import TTable from "@/components/template/TTable.vue";
-import TTrow from "@/components/template/TTrow.vue";
-import TTcol from "@/components/template/TTcol.vue";
-import TTextarea from "@/components/template/TTextarea.vue";
-import TImageUploader from "@/components/template/TImageUploader.vue";
-import TIcon from "@/components/template/TIcon.vue";
-import TSelect from "@/components/template/TSelect.vue";
-import TDatePicker from "@/components/template/TDatePicker.vue";
-import TMultiSelect from "@/components/template/TMultiSelect.vue";
-import TTimeIntervalSelect from "@/components/template/TTimeIntervalSelect.vue";
-import TChipGroup from "@/components/template/TChipGroup.vue";
-import TChip from "@/components/template/TChip.vue";
+import LoadingComponent from "@/components/Loading.vue";
+import ErrorComponent from "@/components/Error.vue";
+import camelToDash from "@/utils/camelCaseToDashCase.js";
+
+const handleAsyncImport = (component) => ({
+  component,
+  loading: LoadingComponent,
+  error: ErrorComponent,
+});
 
 export default {
   name: "TForm",
+
+  components: {
+    TText: () => handleAsyncImport(import("@/components/template/TText.vue")),
+    TTextarea: () =>
+      handleAsyncImport(import("@/components/template/TTextarea.vue")),
+    TSeparator: () =>
+      handleAsyncImport(import("@/components/template/TSeparator.vue")),
+    TBox: () => handleAsyncImport(import("@/components/template/TBox.vue")),
+    TCheckbox: () =>
+      handleAsyncImport(import("@/components/template/TCheckbox.vue")),
+    TTextField: () =>
+      handleAsyncImport(import("@/components/template/TTextField.vue")),
+    TTable: () => handleAsyncImport(import("@/components/template/TTable.vue")),
+    TTrow: () => handleAsyncImport(import("@/components/template/TTrow.vue")),
+    TTcol: () => handleAsyncImport(import("@/components/template/TTcol.vue")),
+    TRadioGroup: () =>
+      handleAsyncImport(import("@/components/template/TRadioGroup.vue")),
+    TIcon: () => handleAsyncImport(import("@/components/template/TIcon.vue")),
+    TSelect: () =>
+      handleAsyncImport(import("@/components/template/TSelect.vue")),
+    TDatePicker: () =>
+      handleAsyncImport(import("@/components/template/TDatePicker.vue")),
+    TMultiSelect: () =>
+      handleAsyncImport(import("@/components/template/TMultiSelect.vue")),
+    TTimeIntervalSelect: () =>
+      handleAsyncImport(
+        import("@/components/template/TTimeIntervalSelect.vue")
+      ),
+    TChipGroup: () =>
+      handleAsyncImport(import("@/components/template/TChipGroup.vue")),
+    TChip: () => handleAsyncImport(import("@/components/template/TChip.vue")),
+    TImageUploader: () =>
+      handleAsyncImport(import("@/components/template/TImageUploader.vue")),
+  },
 
   props: {
     template: {
@@ -32,33 +57,9 @@ export default {
     },
   },
 
-  components: {
-    TText,
-    TTextarea,
-    TSeparator,
-    TBox,
-    TCheckbox,
-    TTextField,
-    TTable,
-    TTrow,
-    TTcol,
-    TRadioGroup,
-    TImageUploader,
-    TIcon,
-    TSelect,
-    TDatePicker,
-    TMultiSelect,
-    TTimeIntervalSelect,
-    TChipGroup,
-    TChip,
-  },
-
   methods: {
-    camelToDash(camel) {
-      return camel.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase());
-    },
     componentName(elementType) {
-      return "t-" + this.camelToDash(elementType);
+      return "t-" + camelToDash(elementType);
     },
     renderElement(element) {
       const Component = this.componentName(element.type);

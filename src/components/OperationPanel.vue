@@ -1,7 +1,7 @@
 <template>
   <v-layout column fill-height>
     <v-layout style="flex: 0 0 0" class="py-2 px-4 grey lighten-2 flex-wrap">
-      <v-menu close-on-click offset-y min-width="120">
+      <v-menu close-on-click offset-y min-width="120" max-height="300">
         <template v-slot:activator="{ on, attrs }">
           <toolbar-btn
             v-bind="attrs"
@@ -17,20 +17,20 @@
         </template>
         <v-list dense>
           <v-list-item
-            @click="addNode(element.type)"
+            @click="addNode(element)"
             v-for="(element, index) in elements"
             :key="index"
           >
             <v-list-item-title>
               <v-icon
-                v-if="typeIcon(element.type)"
+                v-if="typeIcon(element)"
                 small
                 class="mr-1"
                 style="width: 16px; height: 16px"
               >
-                {{ typeIcon(element.type) }}
+                {{ typeIcon(element) }}
               </v-icon>
-              <span>{{ element.name }}</span>
+              <span>{{ element | camelToSentence }}</span>
             </v-list-item-title>
           </v-list-item>
         </v-list>
@@ -99,7 +99,6 @@
         activatable
         :items="[template]"
         :key="treeviewKey"
-        item-text="type"
         item-children="contents"
         selected-color="primary"
         selection-type="independent"
@@ -120,7 +119,7 @@
               v-text="typeIcon(item.type)"
             ></v-icon>
 
-            <span>{{ item.type }}</span>
+            <span>{{ item.type | camelToSentence }}</span>
 
             <v-layout
               v-if="
@@ -150,12 +149,17 @@ import ToolbarBtn from "@/components/ToolbarBtn.vue";
 import icons from "@/iconMap.js";
 import elements from "@/formElements.js";
 import elementsNeedBindingKey from "@/elementsNeedBindingKey.js";
+import camelToSentence from "@/utils/camelCaseToSentenceCase.js";
 
 export default {
   name: "OperationPanel",
 
   components: {
     ToolbarBtn,
+  },
+
+  filters: {
+    camelToSentence,
   },
 
   props: {

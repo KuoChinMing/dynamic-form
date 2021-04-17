@@ -1,8 +1,6 @@
 <template>
   <v-layout column fill-height>
-    <v-flex class="pa-4" style="flex: 1 0 0; overflow: auto" v-if="element">
-      <div class="text-h4 font-weight-bold">{{ element.type }}</div>
-
+    <v-flex class="pa-4" style="flex: 1 0 0; overflow: auto">
       <component
         :is="elementSettingPanel"
         :element="element"
@@ -13,45 +11,70 @@
 </template>
 
 <script>
-import TTextSettingPanel from "@/components/panel/TTextSettingPanel.vue";
-import TTableSettingPanel from "@/components/panel/TTableSettingPanel.vue";
-import TTrowSettingPanel from "@/components/panel/TTrowSettingPanel.vue";
-import TTcolSettingPanel from "@/components/panel/TTcolSettingPanel.vue";
-import TBoxSettingPanel from "@/components/panel/TBoxSettingPanel.vue";
-import TRadioGroupSettingPanel from "@/components/panel/TRadioGroupSettingPanel.vue";
-import TTextFieldSettingPanel from "@/components/panel/TTextFieldSettingPanel.vue";
-import TImageUploaderSettingPanel from "@/components/panel/TImageUploaderSettingPanel.vue";
-import TCheckboxSettingPanel from "@/components/panel/TCheckboxSettingPanel.vue";
-import TIconSettingPanel from "@/components/panel/TIconSettingPanel.vue";
-import TSelectSettingPanel from "@/components/panel/TSelectSettingPanel.vue";
-import TDatePickerSettingPanel from "@/components/panel/TDatePickerSettingPanel.vue";
-import TMultiSelectSettingPanel from "@/components/panel/TMultiSelectSettingPanel.vue";
-import TTimeIntervalSelectSettingPanel from "@/components/panel/TTimeIntervalSelectSettingPanel.vue";
-import TSeparatorSettingPanel from "@/components/panel/TSeparatorSettingPanel.vue";
-import TChipGroupSettingPanel from "@/components/panel/TChipGroupSettingPanel.vue";
-import TChipSettingPanel from "@/components/panel/TChipSettingPanel.vue";
+import LoadingComponent from "@/components/Loading.vue";
+import ErrorComponent from "@/components/Error.vue";
+import camelToDash from "@/utils/camelCaseToDashCase.js";
+
+const handleAsyncImport = (component) => ({
+  component,
+  loading: LoadingComponent,
+  error: ErrorComponent,
+});
 
 export default {
   name: "ElementSettingPanel",
 
   components: {
-    TTextSettingPanel,
-    TTableSettingPanel,
-    TTrowSettingPanel,
-    TTcolSettingPanel,
-    TBoxSettingPanel,
-    TRadioGroupSettingPanel,
-    TTextFieldSettingPanel,
-    TImageUploaderSettingPanel,
-    TCheckboxSettingPanel,
-    TIconSettingPanel,
-    TSelectSettingPanel,
-    TDatePickerSettingPanel,
-    TMultiSelectSettingPanel,
-    TTimeIntervalSelectSettingPanel,
-    TSeparatorSettingPanel,
-    TChipGroupSettingPanel,
-    TChipSettingPanel,
+    TTextSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TTextSettingPanel.vue")),
+    TTableSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TTableSettingPanel.vue")),
+    TTrowSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TTrowSettingPanel.vue")),
+    TTcolSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TTcolSettingPanel.vue")),
+    TBoxSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TBoxSettingPanel.vue")),
+    TRadioGroupSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TRadioGroupSettingPanel.vue")
+      ),
+    TTextFieldSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TTextFieldSettingPanel.vue")
+      ),
+    TCheckboxSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TCheckboxSettingPanel.vue")),
+    TIconSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TIconSettingPanel.vue")),
+    TSelectSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TSelectSettingPanel.vue")),
+    TDatePickerSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TDatePickerSettingPanel.vue")
+      ),
+    TMultiSelectSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TMultiSelectSettingPanel.vue")
+      ),
+    TTimeIntervalSelectSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TTimeIntervalSelectSettingPanel.vue")
+      ),
+    TSeparatorSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TSeparatorSettingPanel.vue")
+      ),
+    TChipGroupSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TChipGroupSettingPanel.vue")
+      ),
+    TChipSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TChipSettingPanel.vue")),
+    TImageUploaderSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TImageUploaderSettingPanel.vue")
+      ),
   },
 
   props: {
@@ -69,15 +92,9 @@ export default {
     elementSettingPanel() {
       if (!this.element) return;
 
-      const type = this.camelToDash(this.element?.type);
+      const type = camelToDash(this.element?.type);
 
       return `t-${type}-setting-panel`;
-    },
-  },
-
-  methods: {
-    camelToDash(camel) {
-      return camel.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase());
     },
   },
 };

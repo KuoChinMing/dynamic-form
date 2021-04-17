@@ -1,5 +1,9 @@
 <template>
   <v-container>
+    <div class="text-h4 font-weight-bold">
+      {{ element.type | camelToSentence }}
+    </div>
+
     <element-setting-input-box
       :value="element['type']"
       type="textField"
@@ -225,6 +229,7 @@
 </template>
 
 <script>
+import camelToSentence from "@/utils/camelCaseToSentenceCase.js";
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 
 export default {
@@ -232,6 +237,10 @@ export default {
 
   components: {
     ElementSettingInputBox,
+  },
+
+  filters: {
+    camelToSentence,
   },
 
   props: {
