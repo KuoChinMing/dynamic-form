@@ -7,7 +7,7 @@
             v-model="bindingDataString"
             ref="bindingDataInput"
             style="scroll: auto; border: 1px solid grey; width: 100%"
-            class="rounded"
+            class="rounded body-1"
             rows="20"
           ></textarea>
         </v-sheet>

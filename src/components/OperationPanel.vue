@@ -90,6 +90,7 @@
 
     <v-layout style="flex: 1 0 0; overflow: auto">
       <v-treeview
+        ref="treeview"
         hoverable
         style="flex-grow: 1"
         open-all
@@ -104,7 +105,6 @@
         selection-type="independent"
         item-disabled="locked"
       >
-        <!-- :color="selectedNode && active ? 'primary' : ''" -->
         <template v-slot:label="{ item: element, active }">
           <v-layout
             align-center
@@ -192,9 +192,9 @@ export default {
 
   watch: {
     template() {
-      // refresh treeview when template changed
+      // refresh treeview when template changed.
+      this.removeTreeviewActive();
       this.treeviewKey++;
-      this.selectedNode = null;
     },
   },
 
@@ -315,12 +315,19 @@ export default {
         this.$delete(this.bindingData, bindingKey);
       }
     },
+    removeTreeviewActive() {
+      // console.log(this.$refs.treeview);
+      // will trigger treeview component @update:active event, and update the selectedNode to undefined.
+      this.$refs.treeview.updateActive(this.selectedNode.id, false);
+      this.$refs.treeview.emitActive();
+    },
     deleteNode() {
       const parentNode = this.findParentNode(this.selectedNode);
       const parentNodeContents = parentNode.contents.filter(
         (elment) => elment !== this.selectedNode
       );
       this.deleteBindingData();
+      this.removeTreeviewActive();
       this.$set(parentNode, "contents", parentNodeContents);
     },
     unhoverNode(element) {

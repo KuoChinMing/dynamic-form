@@ -15,7 +15,7 @@
             v-bind="attrs"
             v-on="on"
             fab
-            small
+            x-small
             dark
             depressed
             class="secondary"

@@ -4,8 +4,6 @@
       <v-card-text class="pa-4">
         <v-chip-group
           v-model="selectedTemplate"
-          mandatory
-          return
           active-class="primary--text text--accent-4"
         >
           <v-chip
@@ -35,6 +33,7 @@
           class="text-capitalize"
           depressed
           color="primary"
+          :disabled="!selectedTemplate"
           >create</v-btn
         >
       </v-card-actions>
