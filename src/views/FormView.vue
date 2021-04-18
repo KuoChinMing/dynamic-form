@@ -9,7 +9,8 @@
           <v-sheet
             class="pa-2"
             elevation="6"
-            style="overflow-x: auto; overflow-y: hidden"
+            style="overflow-x: auto; overflow-y: hidden; position: relative"
+            ref="formSheet"
           >
             <!-- warning: template is mutating -->
             <!-- warning: binding data is mutating -->
@@ -89,19 +90,38 @@ export default {
 
   methods: {
     highLightElement({ id }) {
-      let el = document.getElementById(`form-element-${id}`);
+      const el = document.getElementById(`form-element-${id}`);
+
       // form-element is not generated yet.
       if (!el) return;
+
+      const formSheet = this.$refs.formSheet.$el;
+      const {
+        scrollTop: formSheetScrollTop,
+        scrollLeft: formSheetScrollLeft,
+      } = formSheet;
+
       // offsetTop() will return integer value,
       // so use getBoundingClientRect() to prevent precision problem.
-      const { top, left, width, height } = el.getBoundingClientRect();
+      // getBoundingClientRect() 是元素距離視窗可視範圍左上角 (0, 0) 的相對位置
+      const {
+        top: formSheetTop,
+        left: formSheetLeft,
+      } = formSheet.getBoundingClientRect();
+      const {
+        top: elmentTop,
+        left: elementLeft,
+        width,
+        height,
+      } = el.getBoundingClientRect();
 
-      this.$refs.overlay.style.top = top + "px";
-      this.$refs.overlay.style.left = left + "px";
+      // overlay 元素距離 form sheet 位置 = for sheet scroll 偏移量 + (hover 元素距離可視視窗相對位置 - form sheet 距離可視視窗相對位置)
+      this.$refs.overlay.style.top =
+        formSheetScrollTop + (elmentTop - formSheetTop) + "px";
+      this.$refs.overlay.style.left =
+        formSheetScrollLeft + (elementLeft - formSheetLeft) + "px";
       this.$refs.overlay.style.width = width + "px";
       this.$refs.overlay.style.height = height + "px";
-      // getBoundingClientRect() is relative to the viewport, so overlay needed to directly under the app element
-      document.getElementById("app").appendChild(this.$refs.overlay);
 
       this.highlight = true;
     },
