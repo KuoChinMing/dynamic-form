@@ -40,22 +40,64 @@ export default {
 
   watch: {
     async bindingKey(newKey, oldKey) {
-      // 沒有設置 bindingKey (bindingKey = "") 時，reset 成上一次的 key，並所設置的保留 defaultValue
+      // 沒有設置 bindingKey (bindingKey = "") 時，
+      // step1: 保留舊有的 bindingData (defaultValue)，
+      // step2: 並將此次設定的 key 還原成舊有的 key 或重新 assign random key，
+      // step3: 再將其 bindingData 還原成 step1. 所保留的 bindindData
       if (!newKey) {
-        const defaultValue = this.bindingData[oldKey];
         await this.$nextTick();
-        this.changeBindingKey(oldKey || this.element.id);
-        await this.$nextTick();
-        this.$set(this.bindingData, oldKey, defaultValue);
+
+        if (oldKey) {
+          const defaultValue = this.bindingData[oldKey];
+          this.$delete(this.bindingData, oldKey);
+          this.changeBindingKey(oldKey);
+          await this.$nextTick();
+          this.$set(this.bindingData, oldKey, defaultValue);
+        } else {
+          const randomKey = `random-key-${+new Date()}`;
+          this.changeBindingKey(randomKey);
+        }
+
         alert("please setting the binding key.");
-      } else if (newKey in this.bindingData) {
-        // TODO handling duplicated key
-        console.error(`duplicated key: ${newKey}.`);
       }
-      // 第一次設置 key 時沒有 oldKey, bindingData 設為 null，或是已經設有 bindingKey 但是 bindingData 裡找不到這個 key
+
+      // 設置的 newKey 已經重複時，
+      // step1: 保留重複的 key 所設置的 bindingData (defaultValueOfDuplicatedKey)，
+      //  與此次設定時舊有的 bindingData (defaultValue)，
+      // step2: 並將此次設定的 key 還原成舊有的 key 或重新 assign random key，
+      // step3: 再將其二的 binindData 還原成 step1. 所保留的 bindingData
+      else if (newKey in this.bindingData) {
+        const duplicatedKey = newKey;
+        const defaultValueOfDuplicatedKey = this.bindingData[duplicatedKey];
+
+        await this.$nextTick();
+        if (oldKey) {
+          const defaultValue = this.bindingData[oldKey];
+          this.$delete(this.bindingData, oldKey);
+          this.changeBindingKey(oldKey);
+          await this.$nextTick();
+          this.$set(this.bindingData, oldKey, defaultValue);
+        } else {
+          const randomKey = `random-key-${+new Date()}`;
+          this.changeBindingKey(randomKey);
+          await this.$nextTick();
+          this.$set(this.bindingData, randomKey, null);
+        }
+
+        this.$set(this.bindingData, duplicatedKey, defaultValueOfDuplicatedKey);
+
+        alert(`duplicated key: ${newKey}.`);
+      }
+
+      // newKey 合法，但無 oldKey 或已經設有 bindingKey 但是 bindingData 裡找不到這個 key 時，
+      // 將 bindingData 初始設為 null
       else if (!oldKey || !(oldKey in this.bindingData)) {
         this.$set(this.bindingData, newKey, null);
-      } else {
+      }
+
+      // newkey 合法，且有 oldKey 時，
+      // assign 成新的 key，並將舊有的 key 刪除
+      else {
         this.$set(this.bindingData, newKey, this.bindingData[oldKey]);
         this.$delete(this.bindingData, oldKey);
       }

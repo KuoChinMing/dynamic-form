@@ -3875,7 +3875,7 @@ const newElementTemplate = {
     timeInterval: ["21:30", "22:00"],
     datePicker: "2020-10-02",
     multiSelect: ["zxcv", "asdf", "qwer"],
-    asdf: [],
+    chipGroup: [],
   },
 };
 
