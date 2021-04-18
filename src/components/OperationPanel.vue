@@ -208,6 +208,42 @@ export default {
     deepCopy(obj) {
       return JSON.parse(JSON.stringify(obj));
     },
+    // 確認傳入的 bindingKey 是否有與整個 template 內所有元素的 bindingKey 重複
+    bindingKeyInTemplate(bindingKey, element = this.template) {
+      const elementBindingKey = element["bindingKey"];
+
+      if (elementBindingKey && elementBindingKey === bindingKey) return true;
+
+      if ("contents" in element) {
+        for (const childElement of element.contents) {
+          if (this.bindingKeyInTemplate(bindingKey, childElement)) return true;
+        }
+      }
+
+      return false;
+    },
+    // 遍歷傳入的結構確認其內元素的 bindingKey 是否有與整個 template 內元素的 bindingKey 重複，如果有則將其 biningKey 刪除
+    resetBindingKey(element) {
+      const bindingKey = element.bindingKey;
+
+      if (bindingKey && this.bindingKeyInTemplate(bindingKey)) {
+        delete element.bindingKey;
+      }
+
+      if ("contents" in element) {
+        for (const childElement of element.contents) {
+          const childElementBindingKey = childElement.bindingKey;
+          if (
+            childElementBindingKey &&
+            this.bindingKeyInTemplate(childElementBindingKey)
+          ) {
+            delete childElement.bindingKey;
+          }
+        }
+      }
+
+      return element;
+    },
     findMaxId(element) {
       let currentId = element.id || 0;
 
@@ -300,8 +336,10 @@ export default {
       this.copiedNode = this.deepCopy(this.selectedNode);
     },
     pasteNode() {
-      // 深拷貝，防止兩次以上的貼上 replaceNodeId() 參考到相同的 node
-      const newNode = this.deepCopy(this.replaceNodeId(this.copiedNode));
+      // 深拷貝，防止兩次以上的貼上參考到相同的 copiedNode
+      let newNode = this.deepCopy(this.copiedNode);
+      newNode = this.resetBindingKey(newNode);
+      newNode = this.replaceNodeId(newNode);
 
       if ("contents" in this.selectedNode) {
         this.selectedNode.contents.push(newNode);
