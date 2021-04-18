@@ -124,7 +124,7 @@
             <v-layout
               v-if="
                 elementNeedsBindingKey(element.type) &&
-                bindingKeyInBindingData(element.bindingKey)
+                !(element.bindingKey in bindingData)
               "
               class="caption red--text"
             >
@@ -199,17 +199,8 @@ export default {
   },
 
   methods: {
-    bindingKeyInBindingData(key) {
-      return !(key in this.bindingData);
-    },
     elementNeedsBindingKey(element) {
       return elementsNeedBindingKey.includes(element);
-    },
-    unhoverNode(element) {
-      this.$emit("unhover-node", element);
-    },
-    hoverNode(element) {
-      this.$emit("hover-node", element);
     },
     typeIcon(type) {
       return icons[type];
@@ -269,6 +260,20 @@ export default {
 
       return null;
     },
+    selectNode([selectedNode]) {
+      this.selectedNode = selectedNode;
+      this.$emit("select-node", selectedNode);
+    },
+    addNode(type) {
+      const id = this.genUniqueId();
+      const element = { type, id };
+
+      if ("contents" in this.selectedNode) {
+        this.selectedNode.contents.push(element);
+      } else {
+        this.$set(this.selectedNode, "contents", [element]);
+      }
+    },
     moveUpNode() {
       const parentNode = this.findParentNode(this.selectedNode);
       const index = parentNode.contents.indexOf(this.selectedNode);
@@ -287,34 +292,6 @@ export default {
       this.$set(parentNode.contents, index, parentNode.contents[index + 1]);
       this.$set(parentNode.contents, index + 1, this.selectedNode);
     },
-    selectNode([selectedNode]) {
-      this.selectedNode = selectedNode;
-      this.$emit("select-node", selectedNode);
-    },
-    addNode(type) {
-      const id = this.genUniqueId();
-      const element = { type, id };
-
-      if ("contents" in this.selectedNode) {
-        this.selectedNode.contents.push(element);
-      } else {
-        this.$set(this.selectedNode, "contents", [element]);
-      }
-    },
-    deleteBindingData() {
-      const bindingKey = this.selectedNode["bindingKey"];
-      if (bindingKey && bindingKey in this.bindingData) {
-        this.$delete(this.bindingData, bindingKey);
-      }
-    },
-    deleteNode() {
-      const parentNode = this.findParentNode(this.selectedNode);
-      const parentNodeContents = parentNode.contents.filter(
-        (elment) => elment !== this.selectedNode
-      );
-      this.deleteBindingData();
-      this.$set(parentNode, "contents", parentNodeContents);
-    },
     cutNode() {
       this.copyNode();
       this.deleteNode();
@@ -331,6 +308,26 @@ export default {
       } else {
         this.$set(this.selectedNode, "contents", [newNode]);
       }
+    },
+    deleteBindingData() {
+      const bindingKey = this.selectedNode["bindingKey"];
+      if (bindingKey && bindingKey in this.bindingData) {
+        this.$delete(this.bindingData, bindingKey);
+      }
+    },
+    deleteNode() {
+      const parentNode = this.findParentNode(this.selectedNode);
+      const parentNodeContents = parentNode.contents.filter(
+        (elment) => elment !== this.selectedNode
+      );
+      this.deleteBindingData();
+      this.$set(parentNode, "contents", parentNodeContents);
+    },
+    unhoverNode(element) {
+      this.$emit("unhover-node", element);
+    },
+    hoverNode(element) {
+      this.$emit("hover-node", element);
     },
   },
 };
