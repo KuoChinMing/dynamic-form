@@ -1,6 +1,9 @@
 <template>
   <v-layout column fill-height>
-    <v-layout style="flex: 0 0 0" class="py-2 px-4 grey lighten-2 flex-wrap">
+    <v-layout
+      style="flex: 0 0 0"
+      class="operation-toolbar py-2 px-4 grey lighten-2 flex-wrap"
+    >
       <v-menu close-on-click offset-y min-width="120" max-height="300">
         <template v-slot:activator="{ on, attrs }">
           <toolbar-btn
@@ -77,6 +80,13 @@
           <v-icon small>mdi-redo</v-icon>
         </toolbar-btn>
       </v-btn-toggle>
+
+      <toolbar-btn color="secondary" dark class="mr-1" @click="openTreeviewAll" >
+        <v-icon small v-if="!isTreeviewAllOpen"
+          >mdi-unfold-more-horizontal</v-icon
+        >
+        <v-icon small v-else>mdi-unfold-less-horizontal</v-icon>
+      </toolbar-btn>
 
       <toolbar-btn
         color="red"
@@ -187,18 +197,25 @@ export default {
       treeviewKey: 0,
       selectedNode: null,
       copiedNode: null,
+      isTreeviewAllOpen: true,
     };
   },
 
   watch: {
     template() {
       // refresh treeview when template changed.
+      // TODO: 改變 root 時，panel 會一起消失，但是 apply JSON 時 panel 應該消失，兩者會互相衝突
       this.removeTreeviewActive();
       this.treeviewKey++;
+      this.isTreeviewAllOpen = this.$refs.treeview.openAll;
     },
   },
 
   methods: {
+    openTreeviewAll() {
+      this.isTreeviewAllOpen = !this.isTreeviewAllOpen;
+      this.$refs.treeview.updateAll(this.isTreeviewAllOpen);
+    },
     elementNeedsBindingKey(element) {
       return elementsNeedBindingKey.includes(element);
     },
@@ -356,6 +373,8 @@ export default {
     removeTreeviewActive() {
       // console.log(this.$refs.treeview);
       // will trigger treeview component @update:active event, and update the selectedNode to undefined.
+      if (!this.selectedNode) return;
+
       this.$refs.treeview.updateActive(this.selectedNode.id, false);
       this.$refs.treeview.emitActive();
     },
@@ -377,3 +396,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.operation-toolbar .v-btn {
+  padding: 0 8px !important;
+}
+</style>
