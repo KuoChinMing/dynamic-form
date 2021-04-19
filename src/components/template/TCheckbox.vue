@@ -51,6 +51,7 @@ export default {
     const props = {
       attrs: {
         label: data.label,
+        hideDetails: true,
       },
     };
 

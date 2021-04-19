@@ -45,7 +45,7 @@ export default {
           [data.alignItems]: true,
           wrap: data.wrap,
           [data.justifyContent]: true,
-          fillHeight: data.fillHeight
+          fillHeight: data.fillHeight,
         };
       },
       immediate: true,

@@ -388,12 +388,13 @@ const tableTemplate = {
                                 "label": "不整脈"
                               }
                             ],
-                            "direction": "row"
+                            "direction": "row",
+                            "dense": true
                           },
                           {
-                            "type": "textField",
-                            "id": 673,
-                            "width": ""
+                            "type": "select",
+                            "id": 689,
+                            "dense": true
                           }
                         ],
                         "layout": "column",
@@ -410,7 +411,8 @@ const tableTemplate = {
                         "contents": [
                           {
                             "type": "checkbox",
-                            "id": 682
+                            "id": 682,
+                            "label": "脈圧"
                           },
                           {
                             "type": "radioGroup",
@@ -431,7 +433,7 @@ const tableTemplate = {
                             "direction": "row"
                           }
                         ],
-                        "alignItems": "align-center"
+                        "alignItems": "align-end"
                       }
                     ],
                     "justifyContent": "center",
@@ -502,61 +504,72 @@ const tableTemplate = {
                 "id": 29,
                 "contents": [
                   {
-                    "type": "box",
-                    "id": 378,
-                    "layout": "column",
+                    "type": "textField",
+                    "id": 688
+                  },
+                  {
+                    "type": "radioGroup",
+                    "id": 675,
                     "contents": [
                       {
-                        "type": "box",
-                        "id": 379,
-                        "layout": "horizontal",
-                        "contents": [
-                          {
-                            "type": "radioGroup",
-                            "id": 675,
-                            "contents": [
-                              {
-                                "type": "radio",
-                                "id": 676,
-                                "label": "副雑音あり"
-                              },
-                              {
-                                "type": "radio",
-                                "id": 677,
-                                "label": "なし"
-                              }
-                            ],
-                            "direction": "row"
-                          }
-                        ],
-                        "justifyContent": "center"
+                        "type": "radio",
+                        "id": 676,
+                        "label": "副雑音あり"
                       },
                       {
-                        "type": "box",
-                        "id": 383,
-                        "layout": "horizontal",
+                        "type": "radio",
+                        "id": 677,
+                        "label": "なし"
+                      }
+                    ],
+                    "direction": "row"
+                  },
+                  {
+                    "type": "select",
+                    "id": 384,
+                    "style": "",
+                    "dense": true,
+                    "width": "",
+                    "flexBasis": "",
+                    "flexGrow": 1,
+                    "options": [
+                      "選択",
+                      "連続性高調整副雑音",
+                      "連続性低調性副雑音",
+                      "断続性粗い副雑音",
+                      "断続性細かい副雑音"
+                    ],
+                    "bindingKey": "breathNoiseSelectionValue"
+                  },
+                  {
+                    "type": "box",
+                    "id": 683,
+                    "contents": [
+                      {
+                        "type": "checkbox",
+                        "id": 684,
+                        "label": "air入り"
+                      },
+                      {
+                        "type": "radioGroup",
+                        "id": 685,
                         "contents": [
                           {
-                            "type": "select",
-                            "id": 384,
-                            "style": "",
-                            "dense": true,
-                            "width": "",
-                            "flexBasis": "",
-                            "flexGrow": 1,
-                            "options": [
-                              "選択",
-                              "連続性高調整副雑音",
-                              "連続性低調性副雑音",
-                              "断続性粗い副雑音",
-                              "断続性細かい副雑音"
-                            ],
-                            "bindingKey": "breathNoiseSelectionValue"
+                            "type": "radio",
+                            "id": 686,
+                            "label": "良好"
+                          },
+                          {
+                            "type": "radio",
+                            "id": 687,
+                            "label": "不良"
                           }
                         ],
-                        "justifyContent": "flex-start"
+                        "direction": "row",
+                        "dense": true
                       }
-                    ]
+                    ],
+                    "alignItems": "align-end"
                   }
                 ]
               },
@@ -608,13 +621,8 @@ const tableTemplate = {
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 200
-                      },
-                      {
-                        "type": "text",
-                        "id": 201,
-                        "text": "尿量(",
-                        "flexBasis": "auto"
+                        "id": 200,
+                        "label": "尿量"
                       },
                       {
                         "type": "select",
@@ -624,50 +632,43 @@ const tableTemplate = {
                         "flexBasis": "auto",
                         "bindingKey": "urineAmount",
                         "options": [
-                          "<100",
+                          "< 100",
                           "100",
                           "200",
                           "300",
                           "400",
-                          ">400"
+                          "> 400"
                         ]
                       },
                       {
                         "type": "text",
                         "id": 393,
-                        "text": "ml）　"
-                      },
+                        "text": "ml"
+                      }
+                    ],
+                    "wrap": "nowrap",
+                    "justifyContent": "justify-start",
+                    "alignItems": "align-center"
+                  },
+                  {
+                    "type": "box",
+                    "id": 690,
+                    "contents": [
                       {
                         "type": "checkbox",
-                        "id": 394
-                      },
-                      {
-                        "type": "text",
-                        "id": 395,
-                        "text": "性状(",
-                        "flexBasis": "auto"
+                        "id": 394,
+                        "label": "性状"
                       },
                       {
                         "type": "select",
-                        "id": 396,
-                        "dense": true,
-                        "options": [
-                          "選択",
-                          "クリア",
-                          "混濁",
-                          "浮遊物"
-                        ],
+                        "id": 691,
                         "bindingKey": "urineSituationSelection",
-                        "width": "140px",
-                        "flexGrow": 0
-                      },
-                      {
-                        "type": "text",
-                        "id": 397,
-                        "text": "）"
+                        "dense": true
                       }
                     ],
-                    "wrap": "nowrap"
+                    "alignItems": "align-center",
+                    "justifyContent": "justify-start",
+                    "layout": ""
                   }
                 ]
               }
