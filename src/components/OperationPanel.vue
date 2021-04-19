@@ -2,7 +2,7 @@
   <v-layout column fill-height>
     <v-layout
       style="flex: 0 0 0"
-      class="operation-toolbar py-2 px-4 grey lighten-2 flex-wrap"
+      class="operation-toolbar py-2 px-3 grey lighten-2 flex-wrap"
     >
       <v-menu close-on-click offset-y min-width="120" max-height="300">
         <template v-slot:activator="{ on, attrs }">

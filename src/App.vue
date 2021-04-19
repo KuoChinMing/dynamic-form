@@ -25,7 +25,7 @@
             <v-icon v-show="!isViewExpanded">mdi-unfold-more-vertical</v-icon>
           </v-btn>
         </template>
-        <span>{{ isViewExpanded ? "並排" : "展開" }}</span>
+        <span>{{ isViewExpanded ? "收合" : "展開" }}</span>
       </v-tooltip>
 
       <v-menu offset-y>

@@ -1,53 +1,56 @@
 <template>
-  <v-layout fill-height style="overflow: auto">
-    <v-flex
-      style="flex: 0 0 auto"
-      :style="{ width: expanded ? '100%' : '40%' }"
-    >
-      <v-layout column fill-height>
-        <div class="grey lighten-3 pa-6" style="flex: 1 0 0; overflow: auto">
-          <v-sheet
-            class="pa-2"
-            elevation="6"
-            style="overflow-x: auto; overflow-y: hidden; position: relative"
-            ref="formSheet"
-          >
-            <!-- warning: template is mutating -->
-            <!-- warning: binding data is mutating -->
-            <t-form :template="template" :binding-data="bindingData"></t-form>
-            <div
-              ref="overlay"
-              style="position: absolute; z-index: 9999; opacity: 0.4"
-              class="grey"
-              :class="{ 'd-none': !highlight }"
-            ></div>
-          </v-sheet>
-        </div>
-      </v-layout>
-    </v-flex>
-    <v-flex style="flex: 0 0 auto" :style="{ width: expanded ? '50%' : '30%' }">
-      <!-- warning: template is mutating -->
-      <operation-panel
-        :template="template"
-        :binding-data="bindingData"
-        @select-node="selectNode"
-        @hover-node="highLightElement"
-        @unhover-node="removeHighLight"
-      ></operation-panel>
-    </v-flex>
-    <v-flex style="flex: 0 0 auto" :style="{ width: expanded ? '50%' : '30%' }">
-      <!-- warning: template is mutating -->
-      <!-- warning: binding data is mutating -->
-      <element-setting-panel
-        class="grey lighten-3"
-        :element="selectedNode"
-        :binding-data="bindingData"
-      ></element-setting-panel>
-    </v-flex>
-  </v-layout>
+  <v-sheet height="100%" style="overflow: auto">
+    <v-layout fill-height :style="{ width: expanded ? '160%' : '100%' }">
+      <v-flex id="form-panel-wrapper">
+        <v-layout column fill-height>
+          <div class="grey lighten-3 pa-6" style="flex: 1 0 0; overflow: auto">
+            <v-sheet
+              class="pa-2"
+              elevation="6"
+              style="overflow-x: auto; overflow-y: hidden; position: relative"
+              ref="formSheet"
+            >
+              <!-- warning: template is mutating -->
+              <!-- warning: binding data is mutating -->
+              <t-form :template="template" :binding-data="bindingData"></t-form>
+              <div
+                ref="overlay"
+                style="position: absolute; z-index: 9999; opacity: 0.4"
+                class="grey"
+                :class="{ 'd-none': !highlight }"
+              ></div>
+            </v-sheet>
+          </div>
+        </v-layout>
+      </v-flex>
+      <v-flex id="operation-panel-wrapper" style="overflow: hidden">
+        <!-- warning: template is mutating -->
+        <!-- warning: binding data is mutating -->
+        <operation-panel
+          :template="template"
+          :binding-data="bindingData"
+          @select-node="selectNode"
+          @hover-node="highLightElement"
+          @unhover-node="removeHighLight"
+        ></operation-panel>
+      </v-flex>
+      <v-flex id="element-setting-panel-wrapper">
+        <!-- warning: template is mutating -->
+        <!-- warning: binding data is mutating -->
+        <element-setting-panel
+          class="grey lighten-3"
+          :element="selectedNode"
+          :binding-data="bindingData"
+        ></element-setting-panel>
+      </v-flex>
+    </v-layout>
+  </v-sheet>
 </template>
 
 <script>
+// https://github.com/nathancahill/split/tree/master/packages/splitjs
+import Split from "split.js";
+
 import TForm from "@/components/TForm.vue";
 import OperationPanel from "@/components/OperationPanel.vue";
 import ElementSettingPanel from "@/components/panel/ElementSettingPanel.vue";
@@ -69,15 +72,44 @@ export default {
     },
   },
 
+  computed: {
+    ...mapState(["template", "bindingData"]),
+  },
+
   data() {
     return {
       highlight: false,
       selectedNode: null,
+      split: null,
     };
   },
 
-  computed: {
-    ...mapState(["template", "bindingData"]),
+  watch: {
+    async expanded(expanded) {
+      if (expanded) {
+        // 40%, 30%, 30% to 100%, 30%, 30%
+        this.split.setSizes([62.5, 18.75, 18.75]);
+      } else {
+        this.split.setSizes([40, 30, 30]);
+      }
+    },
+  },
+
+  async created() {
+    await this.$nextTick();
+
+    this.split = Split(
+      [
+        "#form-panel-wrapper",
+        "#operation-panel-wrapper",
+        "#element-setting-panel-wrapper",
+      ],
+      {
+        sizes: [40, 30, 30],
+        minSize: [100, 0, 0],
+        gutterSize: 10,
+      }
+    );
   },
 
   methods: {
@@ -126,3 +158,16 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.gutter {
+  background-color: #fafafa;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+  z-index: 10;
+
+  &.gutter-horizontal {
+    cursor: col-resize;
+  }
+}
+</style>
