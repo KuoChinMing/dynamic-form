@@ -81,7 +81,7 @@
         </toolbar-btn>
       </v-btn-toggle>
 
-      <toolbar-btn color="secondary" dark class="mr-1" @click="openTreeviewAll" >
+      <toolbar-btn color="secondary" dark class="mr-1" @click="openTreeviewAll">
         <v-icon small v-if="!isTreeviewAllOpen"
           >mdi-unfold-more-horizontal</v-icon
         >

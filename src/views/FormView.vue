@@ -80,14 +80,6 @@ export default {
     ...mapState(["template", "bindingData"]),
   },
 
-  // TODO for testing
-  created() {
-    setInterval(() => {
-      localStorage.setItem("template", JSON.stringify(this.template));
-      localStorage.setItem("bindingData", JSON.stringify(this.bindingData));
-    }, 5000);
-  },
-
   methods: {
     highLightElement({ id }) {
       const el = document.getElementById(`form-element-${id}`);

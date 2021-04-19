@@ -43,6 +43,10 @@ export default {
       handleAsyncImport(
         import("@/components/panel/TTextFieldSettingPanel.vue")
       ),
+    TTextareaSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TTextareaSettingPanel.vue")
+      ),
     TCheckboxSettingPanel: () =>
       handleAsyncImport(import("@/components/panel/TCheckboxSettingPanel.vue")),
     TIconSettingPanel: () =>
