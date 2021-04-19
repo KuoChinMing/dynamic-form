@@ -20,9 +20,9 @@ export default {
     const data = this.data;
     const style = {
       width: "100%",
-      flexGrow: data.flex ?? 0,
-      flexShrink: 0,
-      flexBasis: data.flexBasis ?? 0,
+      flexGrow: data.flexGrow,
+      flexShrink: data.flexShrink,
+      flexBasis: data.flexBasis,
       // TODO: paddingAll
       // padding: data.paddingAll,
       paddingTop: data.paddingTop,
@@ -39,8 +39,8 @@ export default {
 
     const layoutStyle = {
       alignItems: data.alignItems,
-      flexWrap: data.wrap ?? "nowrap",
-      flexDirection: layout[data.layout] ?? "row",
+      flexWrap: data.wrap,
+      flexDirection: layout[data.layout],
       justifyContent: data.justifyContent,
     };
 

@@ -32,9 +32,28 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['flex']"
+      v-model="element['flexGrow']"
       input-class="white"
-      label="flex"
+      type="select"
+      label="grow"
+      :items="[
+        { text: 'true', value: 1 },
+        { text: 'false', value: 0 },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['flexShrink']"
+      input-class="white"
+      type="select"
+      label="shrink"
+      :items="[
+        { text: 'true', value: 1 },
+        { text: 'false', value: 0 },
+      ]"
       hide-details
       dense
       outlined
@@ -44,7 +63,7 @@
       v-model="element['flexBasis']"
       input-class="white"
       type="textField"
-      label="flexBasis"
+      label="basis"
       hide-details
       dense
       outlined

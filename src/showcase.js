@@ -4003,11 +4003,13 @@ const newElementTemplate = {
                 ]
               }
             ],
-            "layout": "vertical"
+            "layout": "vertical",
+            "flexGrow": 1
           }
         ],
         "layout": "",
-        "wrap": "wrap"
+        "wrap": "wrap",
+        "flexGrow": 1
       }
     ],
     "layout": "",
