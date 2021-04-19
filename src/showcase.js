@@ -3699,231 +3699,321 @@ const textFieldTemplate = {
 const newElementTemplate = {
   name: "new element template",
   template: {
-    type: "box",
-    id: 0,
-    contents: [
+    "type": "box",
+    "id": 0,
+    "contents": [
       {
-        type: "radioGroup",
-        id: 36,
-        contents: [
+        "type": "box",
+        "id": 1,
+        "contents": [
           {
-            type: "radio",
-            id: 37,
-            label: "radio item 1",
-            color: "red",
-          },
-          {
-            type: "radio",
-            id: 38,
-            label: "radio item 2",
-            color: "red",
-          },
-          {
-            type: "radio",
-            id: 39,
-            label: "radio item 3",
-            color: "blue",
-          },
-          {
-            type: "radio",
-            id: 40,
-            label: "radio item 4",
-            color: "purple",
-          },
+            "type": "box",
+            "id": 2,
+            "contents": [
+              {
+                "type": "box",
+                "id": 3,
+                "contents": [
+                  {
+                    "type": "radioGroup",
+                    "id": 4,
+                    "contents": [
+                      {
+                        "type": "radio",
+                        "id": 5,
+                        "label": "radio item 1",
+                        "color": "red"
+                      },
+                      {
+                        "type": "radio",
+                        "id": 6,
+                        "label": "radio item 2",
+                        "color": "red"
+                      },
+                      {
+                        "type": "radio",
+                        "id": 7,
+                        "label": "radio item 3",
+                        "color": "blue"
+                      },
+                      {
+                        "type": "radio",
+                        "id": 8,
+                        "label": "radio item 4",
+                        "color": "purple"
+                      }
+                    ],
+                    "bindingKey": "radioGroup",
+                    "label": "this is radio group label",
+                    "dense": true
+                  },
+                  {
+                    "type": "separator",
+                    "id": 9,
+                    "marginTop": "20px",
+                    "marginBottom": "20px"
+                  }
+                ],
+                "layout": "vertical"
+              },
+              {
+                "type": "box",
+                "id": 10,
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "select",
+                    "id": 11,
+                    "options": [
+                      "this-is-select",
+                      "this-is-textarea",
+                      "this-is-text-field"
+                    ],
+                    "style": "outlined",
+                    "dense": true,
+                    "bindingKey": "select"
+                  },
+                  {
+                    "type": "separator",
+                    "id": 12,
+                    "marginTop": "20px",
+                    "marginBottom": "20px"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "id": 13,
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "multiSelect",
+                    "id": 14,
+                    "dense": true,
+                    "style": "outlined",
+                    "bindingKey": "multiSelect",
+                    "options": [
+                      "this",
+                      "is",
+                      "mutil",
+                      "select"
+                    ]
+                  },
+                  {
+                    "type": "separator",
+                    "id": 15,
+                    "marginTop": "20px",
+                    "marginBottom": "20px"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "id": 16,
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "datePicker",
+                    "id": 17,
+                    "disabled": false,
+                    "dense": true,
+                    "style": "outlined",
+                    "bindingKey": "datePicker"
+                  },
+                  {
+                    "type": "separator",
+                    "id": 18,
+                    "marginTop": "20px",
+                    "marginBottom": "20px"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "id": 19,
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "timeIntervalSelect",
+                    "id": 20,
+                    "time": [
+                      "21:00",
+                      "21:30",
+                      "22:00",
+                      "22:30",
+                      "23:00",
+                      "23:30"
+                    ],
+                    "bindingKey": "timeInterval",
+                    "style": "outlined",
+                    "dense": true,
+                    "multiple": ""
+                  },
+                  {
+                    "type": "separator",
+                    "id": 21,
+                    "marginTop": "20px",
+                    "marginBottom": "20px"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "id": 22,
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "textarea",
+                    "id": 23,
+                    "bindingKey": "textarea",
+                    "rows": "3",
+                    "autoGrow": false,
+                    "noResize": false,
+                    "style": "outlined",
+                    "dense": true
+                  },
+                  {
+                    "type": "separator",
+                    "id": 24,
+                    "marginTop": "20px",
+                    "marginBottom": "20px"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "id": 25,
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "chipGroup",
+                    "id": 26,
+                    "contents": [
+                      {
+                        "type": "chip",
+                        "id": 27,
+                        "color": "red",
+                        "value": "small",
+                        "filter": true,
+                        "outlined": true,
+                        "textColor": "",
+                        "size": "small"
+                      },
+                      {
+                        "type": "chip",
+                        "id": 28,
+                        "color": "",
+                        "value": "normal",
+                        "filter": false,
+                        "outlined": ""
+                      },
+                      {
+                        "type": "chip",
+                        "id": 29,
+                        "color": "red",
+                        "value": "tile ",
+                        "outlined": false,
+                        "filter": true,
+                        "textColor": "white",
+                        "tile": true,
+                        "size": "normal"
+                      },
+                      {
+                        "type": "chip",
+                        "id": 30,
+                        "color": "blue",
+                        "value": "blue-outlined",
+                        "filter": true,
+                        "outlined": true
+                      }
+                    ],
+                    "color": "primary",
+                    "bindingKey": "chipGroup",
+                    "multiple": true
+                  },
+                  {
+                    "type": "separator",
+                    "id": 31,
+                    "marginTop": "20px",
+                    "marginBottom": "20px"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "id": 32,
+                "contents": [
+                  {
+                    "type": "box",
+                    "id": 33,
+                    "contents": [
+                      {
+                        "type": "icon",
+                        "id": 34,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 35,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 36,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 37,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 38,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 39,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 40,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 41,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 42,
+                        "contents": []
+                      },
+                      {
+                        "type": "icon",
+                        "id": 43,
+                        "contents": []
+                      }
+                    ],
+                    "layout": ""
+                  }
+                ]
+              }
+            ],
+            "layout": "vertical"
+          }
         ],
-        bindingKey: "radioGroup",
-        label: "this is radio group label",
-        dense: true,
-      },
-      {
-        type: "separator",
-        id: 35,
-        marginTop: "20px",
-        marginBottom: "20px",
-      },
-      {
-        type: "select",
-        id: 1,
-        options: ["this-is-select", "this-is-textarea", "this-is-text-field"],
-        style: "outlined",
-        dense: true,
-        bindingKey: "select",
-      },
-      {
-        type: "separator",
-        id: 5,
-        marginTop: "20px",
-        marginBottom: "20px",
-      },
-      {
-        type: "multiSelect",
-        id: 2,
-        dense: true,
-        style: "outlined",
-        bindingKey: "multiSelect",
-        options: ["this", "is", "mutil", "select"],
-      },
-      {
-        type: "separator",
-        id: 6,
-        marginTop: "20px",
-        marginBottom: "20px",
-      },
-      {
-        type: "datePicker",
-        id: 3,
-        disabled: false,
-        dense: true,
-        style: "outlined",
-        bindingKey: "datePicker",
-      },
-      {
-        type: "separator",
-        id: 7,
-        marginTop: "20px",
-        marginBottom: "20px",
-      },
-      {
-        type: "timeIntervalSelect",
-        id: 4,
-        time: ["21:00", "21:30", "22:00", "22:30", "23:00", "23:30"],
-        bindingKey: "timeInterval",
-        style: "outlined",
-        dense: true,
-        multiple: "",
-      },
-      {
-        type: "separator",
-        id: 9,
-        marginTop: "20px",
-        marginBottom: "20px",
-      },
-      {
-        type: "textarea",
-        id: 29,
-        bindingKey: "textarea",
-        rows: "3",
-        autoGrow: false,
-        noResize: false,
-        style: "outlined",
-        dense: true,
-      },
-      {
-        type: "separator",
-        id: 30,
-        marginTop: "20px",
-        marginBottom: "20px",
-      },
-      {
-        type: "chipGroup",
-        id: 24,
-        contents: [
-          {
-            type: "chip",
-            id: 26,
-            color: "red",
-            value: "small",
-            filter: true,
-            outlined: true,
-            textColor: "",
-            size: "small",
-          },
-          {
-            type: "chip",
-            id: 28,
-            color: "",
-            value: "normal",
-            filter: false,
-            outlined: "",
-          },
-          {
-            type: "chip",
-            id: 25,
-            color: "red",
-            value: "tile ",
-            outlined: false,
-            filter: true,
-            textColor: "white",
-            tile: true,
-            size: "normal",
-          },
-          {
-            type: "chip",
-            id: 27,
-            color: "blue",
-            value: "blue-outlined",
-            filter: true,
-            outlined: true,
-          },
-        ],
-        color: "primary",
-        bindingKey: "chipGroup",
-        multiple: true,
-      },
-      {
-        type: "separator",
-        id: 23,
-        marginTop: "20px",
-        marginBottom: "20px",
-      },
-      {
-        type: "box",
-        id: 11,
-        contents: [
-          {
-            type: "icon",
-            id: 13,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 14,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 15,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 16,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 17,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 18,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 19,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 20,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 21,
-            contents: [],
-          },
-          {
-            type: "icon",
-            id: 22,
-            contents: [],
-          },
-        ],
-      },
+        "layout": "",
+        "wrap": "wrap"
+      }
     ],
-    layout: "vertical",
+    "layout": "",
+    "flex": "1",
+    "flexBasis": "100%",
+    "wrap": "wrap"
   },
   bindingData: {
     select: "this-is-select",

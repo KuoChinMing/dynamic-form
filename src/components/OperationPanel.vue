@@ -197,6 +197,8 @@ export default {
       treeviewKey: 0,
       selectedNode: null,
       copiedNode: null,
+      copiedNodeBindingData: {},
+      firstPasteAfterCut: false,
       isTreeviewAllOpen: true,
     };
   },
@@ -226,48 +228,42 @@ export default {
       return JSON.parse(JSON.stringify(obj));
     },
     // 確認傳入的 bindingKey 是否有與整個 template 內所有元素的 bindingKey 重複
-    bindingKeyInTemplate(bindingKey, element = this.template) {
-      const elementBindingKey = element["bindingKey"];
+    bindingKeyInTemplate(bindingKey, node = this.template) {
+      if ("bindingKey" in node && node["bindingKey"] === bindingKey) {
+        return true;
+      }
 
-      if (elementBindingKey && elementBindingKey === bindingKey) return true;
-
-      if ("contents" in element) {
-        for (const childElement of element.contents) {
-          if (this.bindingKeyInTemplate(bindingKey, childElement)) return true;
+      if ("contents" in node) {
+        for (const childNode of node.contents) {
+          if (this.bindingKeyInTemplate(bindingKey, childNode)) return true;
         }
       }
 
       return false;
     },
     // 遍歷傳入的結構確認其內元素的 bindingKey 是否有與整個 template 內元素的 bindingKey 重複，如果有則將其 biningKey 刪除
-    resetBindingKey(element) {
-      const bindingKey = element.bindingKey;
+    resetBindingKey(node) {
+      const bindingKey = node.bindingKey;
 
       if (bindingKey && this.bindingKeyInTemplate(bindingKey)) {
-        delete element.bindingKey;
+        delete node.bindingKey;
       }
 
-      if ("contents" in element) {
-        for (const childElement of element.contents) {
-          const childElementBindingKey = childElement.bindingKey;
-          if (
-            childElementBindingKey &&
-            this.bindingKeyInTemplate(childElementBindingKey)
-          ) {
-            delete childElement.bindingKey;
-          }
+      if ("contents" in node) {
+        for (const childNode of node.contents) {
+          this.resetBindingKey(childNode);
         }
       }
 
-      return element;
+      return node;
     },
-    findMaxId(element) {
-      let currentId = element.id || 0;
+    findMaxId(node) {
+      let currentId = node.id || 0;
 
       let childMaxId = 0;
-      if ("contents" in element) {
-        for (const childElement of element.contents) {
-          const grandChildMaxId = this.findMaxId(childElement);
+      if ("contents" in node) {
+        for (const childNode of node.contents) {
+          const grandChildMaxId = this.findMaxId(childNode);
           if (grandChildMaxId > childMaxId) {
             childMaxId = grandChildMaxId;
           }
@@ -280,32 +276,29 @@ export default {
     genUniqueId() {
       return this.findMaxId(this.template) + 1;
     },
-    replaceNodeId(element, uniqueId = this.genUniqueId()) {
-      element.id = uniqueId;
-      if ("contents" in element) {
-        let previosChildElement = null;
-        for (const childElement of element.contents) {
-          if (!previosChildElement) {
-            this.replaceNodeId(childElement, uniqueId + 1);
+    replaceNodeId(node, uniqueId = this.genUniqueId()) {
+      node.id = uniqueId;
+      if ("contents" in node) {
+        let previosChildNode = null;
+        for (const childNode of node.contents) {
+          if (!previosChildNode) {
+            this.replaceNodeId(childNode, uniqueId + 1);
           } else {
-            this.replaceNodeId(
-              childElement,
-              this.findMaxId(previosChildElement) + 1
-            );
+            this.replaceNodeId(childNode, this.findMaxId(previosChildNode) + 1);
           }
-          previosChildElement = childElement;
+          previosChildNode = childNode;
         }
       }
 
-      return element;
+      return node;
     },
-    findParentNode(element, parentElement = this.template) {
-      if ("contents" in parentElement) {
-        for (const childElement of parentElement.contents) {
-          if (childElement === element) {
-            return parentElement;
+    findParentNode(node, parentNode = this.template) {
+      if ("contents" in parentNode) {
+        for (const childNode of parentNode.contents) {
+          if (childNode === node) {
+            return parentNode;
           } else {
-            const parentNode = this.findParentNode(element, childElement);
+            const parentNode = this.findParentNode(node, childNode);
             if (parentNode) return parentNode;
           }
         }
@@ -319,12 +312,12 @@ export default {
     },
     addNode(type) {
       const id = this.genUniqueId();
-      const element = { type, id };
+      const newNode = { type, id };
 
       if ("contents" in this.selectedNode) {
-        this.selectedNode.contents.push(element);
+        this.selectedNode.contents.push(newNode);
       } else {
-        this.$set(this.selectedNode, "contents", [element]);
+        this.$set(this.selectedNode, "contents", [newNode]);
       }
     },
     moveUpNode() {
@@ -345,9 +338,33 @@ export default {
       this.$set(parentNode.contents, index, parentNode.contents[index + 1]);
       this.$set(parentNode.contents, index + 1, this.selectedNode);
     },
+    restoreCopiedNodeBindingData() {
+      for (const [bindingKey, bindingData] of Object.entries(
+        this.copiedNodeBindingData
+      )) {
+        this.$set(this.bindingData, bindingKey, bindingData);
+      }
+    },
+    storeCopiedNodeBindingData(node = this.copiedNode) {
+      if ("bindingKey" in node && node["bindingKey"] in this.bindingData) {
+        this.$set(
+          this.copiedNodeBindingData,
+          node.bindingKey,
+          this.bindingData[node.bindingKey]
+        );
+      }
+
+      if ("contents" in node) {
+        for (const childNode of node.contents) {
+          this.storeCopiedNodeBindingData(childNode);
+        }
+      }
+    },
     cutNode() {
       this.copyNode();
+      this.storeCopiedNodeBindingData();
       this.deleteNode();
+      this.firstPasteAfterCut = true;
     },
     copyNode() {
       this.copiedNode = this.deepCopy(this.selectedNode);
@@ -355,19 +372,30 @@ export default {
     pasteNode() {
       // 深拷貝，防止兩次以上的貼上參考到相同的 copiedNode
       let newNode = this.deepCopy(this.copiedNode);
-      newNode = this.resetBindingKey(newNode);
-      newNode = this.replaceNodeId(newNode);
+      if (this.firstPasteAfterCut) {
+        this.restoreCopiedNodeBindingData();
+      } else {
+        newNode = this.resetBindingKey(newNode);
+        newNode = this.replaceNodeId(newNode);
+      }
 
       if ("contents" in this.selectedNode) {
         this.selectedNode.contents.push(newNode);
       } else {
         this.$set(this.selectedNode, "contents", [newNode]);
       }
+
+      this.firstPasteAfterCut = false;
     },
-    deleteBindingData() {
-      const bindingKey = this.selectedNode["bindingKey"];
-      if (bindingKey && bindingKey in this.bindingData) {
-        this.$delete(this.bindingData, bindingKey);
+    deleteBindingData(node = this.selectedNode) {
+      if ("bindingKey" in node && node["bindingKey"] in this.bindingData) {
+        this.$delete(this.bindingData, node["bindingKey"]);
+      }
+
+      if ("contents" in node) {
+        for (const childNode of node.contents) {
+          this.storeCopiedNodeBindingData(childNode);
+        }
       }
     },
     removeTreeviewActive() {
@@ -381,17 +409,17 @@ export default {
     deleteNode() {
       const parentNode = this.findParentNode(this.selectedNode);
       const parentNodeContents = parentNode.contents.filter(
-        (elment) => elment !== this.selectedNode
+        (node) => node !== this.selectedNode
       );
       this.deleteBindingData();
       this.removeTreeviewActive();
       this.$set(parentNode, "contents", parentNodeContents);
     },
-    unhoverNode(element) {
-      this.$emit("unhover-node", element);
+    unhoverNode(node) {
+      this.$emit("unhover-node", node);
     },
-    hoverNode(element) {
-      this.$emit("hover-node", element);
+    hoverNode(node) {
+      this.$emit("hover-node", node);
     },
   },
 };
