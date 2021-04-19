@@ -32,6 +32,7 @@ export default {
           color: data.color,
           multiple: data.multiple,
           column: true,
+          hideDetails: true,
         };
       },
       immediate: true,

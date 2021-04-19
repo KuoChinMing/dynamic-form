@@ -25,7 +25,11 @@
       input-class="white"
       type="select"
       label="layout"
-      :items="['', 'horizontal', 'vertical']"
+      :items="[
+        { text: '', value: '' },
+        { text: 'horizontal', value: 'row' },
+        { text: 'vertical', value: 'column' },
+      ]"
       hide-details
       dense
       outlined
@@ -70,13 +74,44 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['fillHeight']"
+      input-class="white"
+      type="select"
+      label="fillHeight"
+      :items="[
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['alignItems']"
+      input-class="white"
+      type="select"
+      label="alignItems"
+      :items="[
+        { text: 'start', value: 'align-start' },
+        { text: 'center', value: 'align-center' },
+        { text: 'end', value: 'align-end' },
+        { text: 'baseline', value: 'align-baseline' },
+        { text: 'stretch', value: '' },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['wrap']"
       input-class="white"
       type="select"
       label="wrap"
       :items="[
-        { text: 'wrap', value: 'wrap' },
-        { text: 'nowrap', value: 'nowrap' },
+        { text: 'true', value: true },
+        { text: 'false', value: false },
       ]"
       hide-details
       dense
@@ -89,11 +124,11 @@
       type="select"
       label="justifyContent"
       :items="[
-        { text: 'start', value: 'flex-start' },
-        { text: 'end', value: 'flex-end' },
-        { text: 'center', value: 'center' },
-        { text: 'space between', value: 'space-between' },
-        { text: 'space around', value: 'space-around' },
+        { text: 'start', value: 'justify-start' },
+        { text: 'end', value: 'justify-end' },
+        { text: 'center', value: 'justify-center' },
+        { text: 'space between', value: 'justify-space-between' },
+        { text: 'space around', value: 'justify-space-around' },
       ]"
       hide-details
       dense

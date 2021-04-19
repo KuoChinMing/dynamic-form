@@ -42,14 +42,15 @@ export default {
   render() {
     const data = this.data;
     const style = {
-      flexGrow: data.flex || 0,
-      flexShrink: data.shrink || 0,
-      flexBasis: data.flexBasis || 0,
+      flexGrow: data.flex,
+      flexShrink: data.shrink,
+      flexBasis: data.flexBasis,
       backgroundColor: data.backgroundColor,
+      width: data.width,
     };
     // TODO data.width == "" ? data.width == 0 ? 的時候判斷
     const inputStyle = {
-      width: data.width ?? "140px",
+      // width: data.width ?? "140px",
     };
 
     return (

@@ -43,9 +43,9 @@ export default {
   render() {
     const data = this.data;
     const style = {
-      flexGrow: data.flex ?? 0,
-      flexShrink: 0,
-      flexBasis: data.flexBasis ?? 0,
+      flexGrow: data.flex,
+      flexShrink: data.flexShrink,
+      flexBasis: data.flexBasis,
       backgroundColor: data.backgroundColor,
     };
     const props = {
