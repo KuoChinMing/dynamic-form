@@ -41,31 +41,18 @@ export default {
   watch: {
     async bindingKey(newKey, oldKey) {
       // 沒有設置 bindingKey (bindingKey = "") 時，
-      // step1: 保留舊有的 bindingData (defaultValue)，
-      // step2: 並將此次設定的 key 還原成舊有的 key 或重新 assign random key，
-      // step3: 再將其 bindingData 還原成 step1. 所保留的 bindindData
+      // 檢查是否有 oldKey，有的話刪除 oldKey 的 bindingData
       if (!newKey) {
-        await this.$nextTick();
-
         if (oldKey) {
-          const defaultValue = this.bindingData[oldKey];
           this.$delete(this.bindingData, oldKey);
-          this.changeBindingKey(oldKey);
-          await this.$nextTick();
-          this.$set(this.bindingData, oldKey, defaultValue);
-        } else {
-          const randomKey = `random-key-${+new Date()}`;
-          this.changeBindingKey(randomKey);
         }
-
-        alert("please setting the binding key.");
       }
 
       // 設置的 newKey 已經重複時，
       // step1: 保留重複的 key 所設置的 bindingData (defaultValueOfDuplicatedKey)，
-      //  與此次設定時舊有的 bindingData (defaultValue)，
-      // step2: 並將此次設定的 key 還原成舊有的 key 或重新 assign random key，
-      // step3: 再將其二的 binindData 還原成 step1. 所保留的 bindingData
+      //  與此次設定時擁有的 bindingData (defaultValue)，
+      // step2: 並將此次設定的 key 還原成舊有的 key，
+      // step3: 再將它們的 binindData 還原成 step1. 所保留的 bindingData
       else if (newKey in this.bindingData) {
         const duplicatedKey = newKey;
         const defaultValueOfDuplicatedKey = this.bindingData[duplicatedKey];
@@ -78,12 +65,10 @@ export default {
           await this.$nextTick();
           this.$set(this.bindingData, oldKey, defaultValue);
         } else {
-          const randomKey = `random-key-${+new Date()}`;
-          this.changeBindingKey(randomKey);
-          await this.$nextTick();
-          this.$set(this.bindingData, randomKey, null);
+          this.changeBindingKey("");
         }
 
+        await this.$nextTick();
         this.$set(this.bindingData, duplicatedKey, defaultValueOfDuplicatedKey);
 
         alert(`duplicated key: ${newKey}.`);

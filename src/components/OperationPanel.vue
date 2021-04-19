@@ -103,7 +103,6 @@
         ref="treeview"
         hoverable
         style="flex-grow: 1"
-        open-all
         @update:active="selectNode"
         return-object
         dense
@@ -199,7 +198,7 @@ export default {
       copiedNode: null,
       copiedNodeBindingData: {},
       firstPasteAfterCut: false,
-      isTreeviewAllOpen: true,
+      isTreeviewAllOpen: false,
     };
   },
 
