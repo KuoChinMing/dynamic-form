@@ -39,14 +39,16 @@ export default {
       handleAsyncImport(
         import("@/components/panel/TRadioGroupSettingPanel.vue")
       ),
+    TRadioSettingPanel: () =>
+      handleAsyncImport(
+        import("@/components/panel/TRadioSettingPanel.vue")
+      ),
     TTextFieldSettingPanel: () =>
       handleAsyncImport(
         import("@/components/panel/TTextFieldSettingPanel.vue")
       ),
     TTextareaSettingPanel: () =>
-      handleAsyncImport(
-        import("@/components/panel/TTextareaSettingPanel.vue")
-      ),
+      handleAsyncImport(import("@/components/panel/TTextareaSettingPanel.vue")),
     TCheckboxSettingPanel: () =>
       handleAsyncImport(import("@/components/panel/TCheckboxSettingPanel.vue")),
     TIconSettingPanel: () =>

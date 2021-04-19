@@ -12,6 +12,7 @@ export default [
   "multiSelect",
   "checkbox",
   "radioGroup",
+  "radio",
   "chipGroup",
   "chip",
   "datePicker",

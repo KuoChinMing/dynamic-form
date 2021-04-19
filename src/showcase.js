@@ -3703,6 +3703,45 @@ const newElementTemplate = {
     id: 0,
     contents: [
       {
+        type: "radioGroup",
+        id: 36,
+        contents: [
+          {
+            type: "radio",
+            id: 37,
+            label: "radio item 1",
+            color: "red",
+          },
+          {
+            type: "radio",
+            id: 38,
+            label: "radio item 2",
+            color: "red",
+          },
+          {
+            type: "radio",
+            id: 39,
+            label: "radio item 3",
+            color: "blue",
+          },
+          {
+            type: "radio",
+            id: 40,
+            label: "radio item 4",
+            color: "purple",
+          },
+        ],
+        bindingKey: "radioGroup",
+        label: "this is radio group label",
+        dense: true,
+      },
+      {
+        type: "separator",
+        id: 35,
+        marginTop: "20px",
+        marginBottom: "20px",
+      },
+      {
         type: "select",
         id: 1,
         options: ["this-is-select", "this-is-textarea", "this-is-text-field"],
@@ -3891,8 +3930,9 @@ const newElementTemplate = {
     timeInterval: ["21:30", "22:00", "22:30", "23:00", "23:30", "21:00"],
     datePicker: "2020-10-02",
     multiSelect: ["zxcv", "asdf", "qwer", "this", "is", "mutil", "select"],
-    chipGroup: ["small", "tile "],
+    chipGroup: null,
     textarea: "Eureka!!\nthis is textarea!\n",
+    radioGroup: "radio item 4",
   },
 };
 

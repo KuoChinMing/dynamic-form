@@ -28,6 +28,7 @@ export default {
     TTcol: () => handleAsyncImport(import("@/components/template/TTcol.vue")),
     TRadioGroup: () =>
       handleAsyncImport(import("@/components/template/TRadioGroup.vue")),
+    TRadio: () => handleAsyncImport(import("@/components/template/TRadio.vue")),
     TIcon: () => handleAsyncImport(import("@/components/template/TIcon.vue")),
     TSelect: () =>
       handleAsyncImport(import("@/components/template/TSelect.vue")),

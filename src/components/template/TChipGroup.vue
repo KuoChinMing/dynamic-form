@@ -1,5 +1,5 @@
 <template>
-  <v-chip-group v-bind="attrs" v-model="innerValue">
+  <v-chip-group v-model="innerValue" v-bind="attrs">
     <slot></slot>
   </v-chip-group>
 </template>
@@ -46,7 +46,9 @@ export default {
   },
 
   created() {
-    this.innerValue = this.value;
+    if (this.vlaue) {
+      this.innerValue = this.value;
+    }
   },
 };
 </script>

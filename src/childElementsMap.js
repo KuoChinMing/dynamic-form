@@ -1,10 +1,13 @@
 import allElements from "@/formElements.js";
 
+const childElement = ["trow", "tcol", "radio", "chip"];
+const rootElement = allElements.filter((el) => !childElement.includes(el));
+
 export default {
-  box: allElements,
+  box: rootElement,
   table: ["trow"],
   trow: ["tcol"],
-  tcol: allElements,
+  tcol: rootElement,
   separator: [],
   icon: [],
   text: [],
@@ -13,7 +16,7 @@ export default {
   select: [],
   multiSelect: [],
   checkbox: [],
-  radioGroup: [],
+  radioGroup: ["radio"],
   chipGroup: ["chip"],
   chip: [],
   datePicker: [],

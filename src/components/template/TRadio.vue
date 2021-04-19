@@ -1,10 +1,10 @@
 <template>
-  <v-chip v-bind="attrs">{{ data.value }}</v-chip>
+  <v-radio v-bind="radioAttrs" :style="style"></v-radio>
 </template>
 
 <script>
 export default {
-  name: "TChip",
+  name: "TRadio",
 
   props: {
     data: {
@@ -15,21 +15,21 @@ export default {
 
   data() {
     return {
-      attrs: {},
+      style: {},
+      radioAttrs: {},
     };
   },
 
   watch: {
     data: {
       handler(data) {
-        this.attrs = {
-          value: data.value,
-          filter: data.filter,
-          outlined: data.outlined,
+        this.style = {
+          margin: data.margin,
+        };
+        this.radioAttrs = {
+          label: data.label,
           color: data.color,
-          textColor: data.textColor,
-          label: data.tile,
-          [data.size]: true,
+          value: data.label,
         };
       },
       immediate: true,

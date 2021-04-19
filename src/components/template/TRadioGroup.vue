@@ -1,20 +1,11 @@
 <template>
   <v-radio-group
     v-model="innerValue"
-    class="mt-0"
-    dense
-    hide-details
+    v-bind="radioGroupAttrs"
     :style="style"
-    :row="data['direction'] === 'row'"
-    :column="data['direction'] === 'column'"
+    class="mt-0"
   >
-    <v-radio
-      v-for="(radio, index) in radioItems"
-      :key="index"
-      :label="radio"
-      :value="radio"
-      v-bind="radioItemAttrs"
-    ></v-radio>
+    <slot></slot>
   </v-radio-group>
 </template>
 
@@ -35,26 +26,26 @@ export default {
   data() {
     return {
       style: {},
-      radioItems: [],
-      radioItemAttrs: {},
+      radioGroupAttrs: {},
       innerValue: "",
     };
   },
 
   watch: {
     data: {
-      handler() {
+      handler(data) {
         this.style = {
-          paddingTop: this.data.paddingTop,
-          paddingRight: this.data.paddingRight,
-          paddingBottom: this.data.paddingBottom,
-          paddingLeft: this.data.paddingLeft,
-          fontSize: this.data.fontSize,
-          backgroundColor: this.data.backgroundColor,
+          paddingTop: data.paddingTop,
+          paddingRight: data.paddingRight,
+          paddingBottom: data.paddingBottom,
+          paddingLeft: data.paddingLeft,
         };
-        this.radioItems = this.data.radioItems;
-        this.radioItemAttrs = {
-          color: this.data.color,
+        this.radioGroupAttrs = {
+          label: data.label,
+          dense: data.dense,
+          [data.direction]: true,
+          disabled: data.disabled,
+          hideDetails: true,
         };
       },
       immediate: true,
