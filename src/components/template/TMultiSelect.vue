@@ -19,6 +19,10 @@ export default {
     value: {
       type: undefined,
     },
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
   },
 
   data() {
@@ -30,6 +34,9 @@ export default {
   },
 
   watch: {
+    disabled(disabled) {
+      this.comboboxAttrs.disabled = disabled;
+    },
     data: {
       handler(data) {
         this.style = {
@@ -43,6 +50,7 @@ export default {
           items: data.options,
           multiple: true,
           hideDetails: true,
+          disabled: this.disabled ?? data.disabled,
           // chips: true,
           // smallChips: true,
         };

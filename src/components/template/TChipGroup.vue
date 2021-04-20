@@ -16,6 +16,10 @@ export default {
     value: {
       type: undefined,
     },
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
   },
 
   data() {
@@ -26,6 +30,9 @@ export default {
   },
 
   watch: {
+    disabled(disabled) {
+      this.attrs.disabled = disabled;
+    },
     data: {
       handler(data) {
         this.attrs = {
@@ -33,6 +40,7 @@ export default {
           multiple: data.multiple,
           column: true,
           hideDetails: true,
+          disabled: this.disabled ?? data.disabled,
         };
       },
       immediate: true,
