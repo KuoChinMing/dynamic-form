@@ -67,6 +67,8 @@ export default {
       return "t-" + camelToDash(elementType);
     },
     renderElement(element) {
+      if (!element) return;
+
       const Component = this.componentName(element.type);
 
       if (this.bindingData && element.bindingKey in this.bindingData) {
