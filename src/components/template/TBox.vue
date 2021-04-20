@@ -32,6 +32,10 @@ export default {
           flexGrow: data.flexGrow,
           flexShrink: data.flexShrink,
           flexBasis: data.flexBasis,
+          marginTop: data.marginTop,
+          marginLeft: data.marginLeft,
+          marginBottom: data.marginBottom,
+          marginRight: data.marginRight,
           // TODO: paddingAll
           // padding: data.paddingAll,
           paddingTop: data.paddingTop,

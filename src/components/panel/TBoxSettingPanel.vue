@@ -134,6 +134,42 @@
       dense
       outlined
     ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginTop']"
+      input-class="white"
+      label="marginTop"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginLeft']"
+      input-class="white"
+      label="marginLeft"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginBottom']"
+      input-class="white"
+      label="marginBottom"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginRight']"
+      input-class="white"
+      label="marginRight"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
   </v-container>
 </template>
 
