@@ -16,6 +16,10 @@ export default {
     value: {
       type: undefined,
     },
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
   },
 
   data() {
@@ -50,6 +54,7 @@ export default {
       items: this.data.options,
       [this.data.style]: true,
       hideDetails: true,
+      disabled: this.disabled ?? this.data.disabled,
     };
 
     return (

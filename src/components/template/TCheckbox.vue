@@ -9,9 +9,12 @@ export default {
       type: Object,
       default: () => {},
     },
-
     value: {
       type: undefined,
+    },
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
     },
   },
 
@@ -52,6 +55,7 @@ export default {
       attrs: {
         label: data.label,
         hideDetails: true,
+        disabled: this.disabled ?? data.disabled,
       },
     };
 

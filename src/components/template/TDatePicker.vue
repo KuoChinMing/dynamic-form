@@ -39,6 +39,10 @@ export default {
     value: {
       type: undefined,
     },
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
   },
 
   components: {
@@ -57,6 +61,9 @@ export default {
   },
 
   watch: {
+    disabled(disabled) {
+      this.inputAttrs.disabled = disabled;
+    },
     data: {
       handler(data) {
         this.style = {
@@ -64,7 +71,7 @@ export default {
           width: data.width,
         };
         this.inputAttrs = {
-          disabled: data.disabled,
+          disabled: this.disabled ?? data.disabled,
           label: data.label,
           dense: data.dense,
           [data.style]: true,

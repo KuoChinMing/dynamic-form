@@ -56,6 +56,10 @@ export default {
       type: Object,
       required: true,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   methods: {
@@ -71,6 +75,7 @@ export default {
             data={element}
             v-model={this.bindingData[element.bindingKey]}
             id={`form-element-${element.id}`}
+            disabled={this.disabled}
           >
             {element.contents?.map((el) => this.renderElement(el))}
           </Component>
@@ -78,7 +83,11 @@ export default {
       }
 
       return (
-        <Component data={element} id={`form-element-${element.id}`}>
+        <Component
+          data={element}
+          id={`form-element-${element.id}`}
+          disabled={this.disabled}
+        >
           {element.contents?.map((el) => this.renderElement(el))}
         </Component>
       );

@@ -652,7 +652,8 @@ const tableTemplate = {
                       {
                         "type": "checkbox",
                         "id": 200,
-                        "label": "尿量"
+                        "label": "尿量",
+                        "bindingKey": "urineVolume"
                       },
                       {
                         "type": "select",
@@ -668,7 +669,8 @@ const tableTemplate = {
                           "300",
                           "400",
                           "> 400"
-                        ]
+                        ],
+                        "width": "15%"
                       },
                       {
                         "type": "text",
@@ -687,13 +689,16 @@ const tableTemplate = {
                       {
                         "type": "checkbox",
                         "id": 394,
-                        "label": "性状"
+                        "label": "性状",
+                        "bindingKey": "urineSituation"
                       },
                       {
                         "type": "select",
                         "id": 691,
                         "bindingKey": "urineSituationSelection",
-                        "dense": true
+                        "dense": true,
+                        "options": [],
+                        "width": "15%"
                       }
                     ],
                     "alignItems": "align-center",
@@ -3468,7 +3473,7 @@ const tableTemplate = {
     "airCheckbox": null,
     "airRadio": "良好",
     "spO2Value": null,
-    "urineAmount": "<100",
+    "urineAmount": "< 100",
     "urineSituationSelection": "選択",
     "pathSelection": "<100",
     "pathSituationSelection": "選択",
@@ -3508,7 +3513,9 @@ const tableTemplate = {
     "breatheNoiseRadio": "副雑音あり",
     "breatheAir": null,
     "breatheAirRadio": "良好",
-    "spO2Input": null
+    "spO2Input": null,
+    "urineVolume": null,
+    "urineSituation": null
   },
 };
 

@@ -1,6 +1,16 @@
-<script>
-import { VLayout, VFlex, VTextField } from "vuetify/lib";
+<template>
+  <v-flex :style="style">
+    <v-text-field
+      v-model="innerValue"
+      v-bind="attrs"
+      class="mx-2"
+      dense
+      hide-details
+    ></v-text-field>
+  </v-flex>
+</template>
 
+<script>
 export default {
   name: "TTextField",
 
@@ -12,58 +22,47 @@ export default {
     value: {
       type: undefined,
     },
-  },
-
-  components: {
-    VTextField,
-    VFlex,
-    VLayout,
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
   },
 
   data() {
     return {
+      style: {},
+      attrs: {},
       innerValue: "",
     };
   },
 
   watch: {
+    disabled(disabled) {
+      this.attrs.disabled = disabled;
+    },
+    data: {
+      handler(data) {
+        this.style = {
+          flexGrow: data.flex,
+          flexShrink: data.shrink,
+          flexBasis: data.flexBasis,
+          backgroundColor: data.backgroundColor,
+          width: data.width,
+        };
+        this.attrs = {
+          disabled: this.disabled ?? data.disabled,
+        };
+        console.log(this.attrs);
+      },
+      immediate: true,
+      deep: true,
+    },
     value(newValue) {
       this.innerValue = newValue;
     },
     innerValue(newValue) {
       this.$emit("input", newValue);
     },
-  },
-
-  created() {
-    this.innerValue = this.value;
-  },
-
-  render() {
-    const data = this.data;
-    const style = {
-      flexGrow: data.flex,
-      flexShrink: data.shrink,
-      flexBasis: data.flexBasis,
-      backgroundColor: data.backgroundColor,
-      width: data.width,
-    };
-    // TODO data.width == "" ? data.width == 0 ? 的時候判斷
-    const inputStyle = {
-      // width: data.width ?? "140px",
-    };
-
-    return (
-      <v-flex style={style}>
-        <v-text-field
-          v-model={this.innerValue}
-          style={inputStyle}
-          class="mx-2"
-          dense
-          hide-details
-        ></v-text-field>
-      </v-flex>
-    );
   },
 };
 </script>

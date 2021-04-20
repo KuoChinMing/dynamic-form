@@ -16,6 +16,10 @@ export default {
     value: {
       type: undefined,
     },
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
   },
 
   data() {
@@ -27,6 +31,9 @@ export default {
   },
 
   watch: {
+    disabled(disabled) {
+      this.textareaAttrs.disabled = disabled;
+    },
     data: {
       handler(data) {
         this.style = {
@@ -43,6 +50,7 @@ export default {
           hint: data.hint,
           hideDetails: data.hideHint,
           rows: data.rows,
+          disabled: this.disabled ?? data.disabled,
         };
       },
       immediate: true,

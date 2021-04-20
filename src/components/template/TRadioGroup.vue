@@ -21,6 +21,10 @@ export default {
     value: {
       type: undefined,
     },
+    disabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
   },
 
   data() {
@@ -32,6 +36,9 @@ export default {
   },
 
   watch: {
+    disabled(disabled) {
+      this.radioGroupAttrs.disabled = disabled;
+    },
     data: {
       handler(data) {
         this.style = {
@@ -44,7 +51,7 @@ export default {
           label: data.label,
           dense: data.dense,
           [data.direction]: true,
-          disabled: data.disabled,
+          disabled: this.disabled ?? data.disabled,
           hideDetails: true,
         };
       },
