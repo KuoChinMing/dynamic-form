@@ -28,7 +28,7 @@ export default {
     data: {
       handler(data) {
         this.style = {
-          width: "100%",
+          // width: "100%",
           flexGrow: data.flexGrow,
           flexShrink: data.flexShrink,
           flexBasis: data.flexBasis,
