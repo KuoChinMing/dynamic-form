@@ -1,12 +1,9 @@
 <template>
-  <v-radio-group
-    v-model="innerValue"
-    v-bind="radioGroupAttrs"
-    :style="style"
-    class="mt-0"
-  >
-    <slot></slot>
-  </v-radio-group>
+  <v-flex :style="style">
+    <v-radio-group v-model="innerValue" v-bind="radioGroupAttrs" class="mt-0">
+      <slot></slot>
+    </v-radio-group>
+  </v-flex>
 </template>
 
 <script>
@@ -42,6 +39,15 @@ export default {
     data: {
       handler(data) {
         this.style = {
+          marginTop: data.marginTop,
+          marginLeft: data.marginLeft,
+          marginBottom: data.marginBottom,
+          marginRight: data.marginRight,
+
+          flexGrow: data.grow,
+          flexShrink: data.shrink,
+          flexBasis: data.flexBasis,
+
           paddingTop: data.paddingTop,
           paddingRight: data.paddingRight,
           paddingBottom: data.paddingBottom,

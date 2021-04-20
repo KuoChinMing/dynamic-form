@@ -18,11 +18,14 @@ export default {
   render() {
     const data = this.data;
     const style = {
-      flexGrow: data.flex || 0,
-      flexShrink: 0,
-      flexBasis: data.flexBasis || 0,
+      flexGrow: data.grow,
+      flexShrink: data.shrink,
+      flexBasis: data.flexBasis,
+      marginTop: data.marginTop,
+      marginLeft: data.marginLeft,
+      marginBottom: data.marginBottom,
+      marginRight: data.marginRight,
       width: data.width,
-      textAlign: data.textAlign,
       fontWeight: data.fontWeight,
       fontSize: data.fontSize,
       fontStyle: data.fontStyle,
@@ -30,7 +33,6 @@ export default {
       textDecoration: data.textDecoration,
       position: data.position,
       whiteSpace: data.whiteSpace,
-      margin: data.margin,
       top: data.top,
       bottom: data.bottom,
       left: data.left,

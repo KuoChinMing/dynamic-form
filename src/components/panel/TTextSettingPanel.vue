@@ -35,26 +35,6 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['flex']"
-      type="textField"
-      input-class="white"
-      label="flex"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['flexBasis']"
-      type="textField"
-      label="flexBasis"
-      input-class="white"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
       v-model="element['width']"
       type="textField"
       label="width"
@@ -65,13 +45,67 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['margin']"
-      type="textField"
-      label="margin"
+      v-model="element['grow']"
       input-class="white"
+      type="select"
+      label="grow"
+      :items="[
+        { text: 'true', value: 1 },
+        { text: 'false', value: 0 },
+      ]"
+      hide-details
       dense
       outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['shrink']"
+      input-class="white"
+      type="select"
+      label="shrink"
+      :items="[
+        { text: 'true', value: 1 },
+        { text: 'false', value: 0 },
+      ]"
       hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginTop']"
+      input-class="white"
+      label="marginTop"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginLeft']"
+      input-class="white"
+      label="marginLeft"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginBottom']"
+      input-class="white"
+      label="marginBottom"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginRight']"
+      input-class="white"
+      label="marginRight"
+      hide-details
+      dense
+      outlined
     ></element-setting-input-box>
 
     <element-setting-input-box

@@ -37,15 +37,6 @@
       dense
       outlined
     ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['margin']"
-      input-class="white"
-      label="margin"
-      hide-details
-      dense
-      outlined
-    ></element-setting-input-box>
   </v-container>
 </template>
 
