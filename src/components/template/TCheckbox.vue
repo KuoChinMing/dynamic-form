@@ -46,10 +46,14 @@ export default {
   render() {
     const data = this.data;
     const style = {
-      flexGrow: data.flex,
-      flexShrink: data.flexShrink,
+      flexGrow: data.grow,
+      flexShrink: data.shrink,
       flexBasis: data.flexBasis,
       backgroundColor: data.backgroundColor,
+      marginTop: data.marginTop,
+      marginLeft: data.marginLeft,
+      marginBottom: data.marginBottom,
+      marginRight: data.marginRight,
     };
     const props = {
       attrs: {

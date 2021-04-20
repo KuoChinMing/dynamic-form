@@ -28,10 +28,14 @@ export default {
     data: {
       handler(data) {
         this.style = {
-          width: "100%",
+          // width: "100%",
           flexGrow: data.flexGrow,
           flexShrink: data.flexShrink,
           flexBasis: data.flexBasis,
+          marginTop: data.marginTop,
+          marginLeft: data.marginLeft,
+          marginBottom: data.marginBottom,
+          marginRight: data.marginRight,
           // TODO: paddingAll
           // padding: data.paddingAll,
           paddingTop: data.paddingTop,

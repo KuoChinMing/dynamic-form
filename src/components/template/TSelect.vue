@@ -1,11 +1,12 @@
 <script>
-import { VSelect } from "vuetify/lib";
+import { VSelect, VFlex } from "vuetify/lib";
 
 export default {
   name: "TSelect",
 
   components: {
     VSelect,
+    VFlex,
   },
 
   props: {
@@ -42,25 +43,31 @@ export default {
   },
 
   render() {
+    const data = this.data;
     const style = {
-      margin: this.data.margin,
-      flexShrink: this.data.flexShrink,
-      flexGrow: this.data.flexGrow,
-      width: this.data.width,
-      backgroundColor: this.data.backgroundColor,
+      flexShrink: data.flexShrink,
+      flexGrow: data.flexGrow,
+      width: data.width,
+      backgroundColor: data.backgroundColor,
+      marginTop: data.marginTop,
+      marginLeft: data.marginLeft,
+      marginBottom: data.marginBottom,
+      marginRight: data.marginRight,
     };
     const props = {
-      dense: this.data.dense,
-      items: this.data.options,
-      [this.data.style]: true,
+      dense: data.dense,
+      items: data.options,
+      [data.style]: true,
       hideDetails: true,
-      disabled: this.disabled ?? this.data.disabled,
+      disabled: this.disabled ?? data.disabled,
     };
 
     return (
-      <v-select v-model={this.innerValue} style={style} props={props}>
-        {this.$slots.default}
-      </v-select>
+      <v-flex style={style}>
+        <v-select v-model={this.innerValue} props={props}>
+          {this.$slots.default}
+        </v-select>
+      </v-flex>
     );
   },
 };
