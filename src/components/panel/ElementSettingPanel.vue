@@ -40,9 +40,7 @@ export default {
         import("@/components/panel/TRadioGroupSettingPanel.vue")
       ),
     TRadioSettingPanel: () =>
-      handleAsyncImport(
-        import("@/components/panel/TRadioSettingPanel.vue")
-      ),
+      handleAsyncImport(import("@/components/panel/TRadioSettingPanel.vue")),
     TTextFieldSettingPanel: () =>
       handleAsyncImport(
         import("@/components/panel/TTextFieldSettingPanel.vue")
