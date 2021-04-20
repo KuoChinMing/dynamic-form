@@ -6,17 +6,25 @@
     >
       <v-menu close-on-click offset-y min-width="120" max-height="300">
         <template v-slot:activator="{ on, attrs }">
-          <toolbar-btn
-            v-bind="attrs"
-            v-on="on"
-            dark
+          <v-btn-toggle
             class="mr-1"
-            color="primary"
-            :disabled="!selectedNode || elementsCanBeAdded.length === 0"
+            :background-color="
+              !selectedNode || elementsCanBeAdded.length === 0
+                ? 'grey'
+                : 'primary'
+            "
+            dark
           >
-            <v-icon small>mdi-plus</v-icon>
-            <v-icon small>mdi-menu-down</v-icon>
-          </toolbar-btn>
+            <toolbar-btn
+              v-bind="attrs"
+              v-on="on"
+              color="primary"
+              :disabled="!selectedNode || elementsCanBeAdded.length === 0"
+            >
+              <v-icon small>mdi-plus</v-icon>
+              <v-icon small>mdi-menu-down</v-icon>
+            </toolbar-btn>
+          </v-btn-toggle>
         </template>
         <v-list dense>
           <v-list-item
@@ -81,21 +89,29 @@
         </toolbar-btn>
       </v-btn-toggle>
 
-      <toolbar-btn color="secondary" dark class="mr-1" @click="openTreeviewAll">
-        <v-icon small v-if="!isTreeviewAllOpen"
-          >mdi-unfold-more-horizontal</v-icon
-        >
-        <v-icon small v-else>mdi-unfold-less-horizontal</v-icon>
-      </toolbar-btn>
+      <v-btn-toggle dark background-color="secondary" class="mr-1">
+        <toolbar-btn color="secondary" @click="openTreeviewAll">
+          <v-icon small v-if="!isTreeviewAllOpen"
+            >mdi-unfold-more-horizontal</v-icon
+          >
+          <v-icon small v-else>mdi-unfold-less-horizontal</v-icon>
+        </toolbar-btn>
+      </v-btn-toggle>
 
-      <toolbar-btn
-        color="red"
+      <v-btn-toggle
+        :background-color="
+          !selectedNode || template === selectedNode ? 'grey' : 'red'
+        "
         dark
-        @click="deleteNode"
-        :disabled="!selectedNode || template === selectedNode"
       >
-        <v-icon small>mdi-close</v-icon>
-      </toolbar-btn>
+        <toolbar-btn
+          color="red"
+          @click="deleteNode"
+          :disabled="!selectedNode || template === selectedNode"
+        >
+          <v-icon small>mdi-close</v-icon>
+        </toolbar-btn>
+      </v-btn-toggle>
     </v-layout>
 
     <v-layout style="flex: 1 0 0; overflow: auto">
@@ -426,6 +442,6 @@ export default {
 
 <style lang="scss">
 .operation-toolbar .v-btn {
-  padding: 0 8px !important;
+  padding: 0 6px !important;
 }
 </style>

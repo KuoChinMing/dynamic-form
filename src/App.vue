@@ -111,6 +111,19 @@ export default {
     };
   },
 
+  created() {
+    this.isViewExpanded = localStorage.getItem("is-view-expanded");
+    this.isViewExpanded = this.isViewExpanded
+      ? JSON.parse(this.isViewExpanded)
+      : false;
+  },
+
+  watch: {
+    isViewExpanded(val) {
+      localStorage.setItem("is-view-expanded", JSON.stringify(val));
+    },
+  },
+
   methods: {
     addTemplate(root) {
       this.$store.commit("template", { type: root, id: 0 });

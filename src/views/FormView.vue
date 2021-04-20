@@ -86,18 +86,19 @@ export default {
 
   watch: {
     async expanded(expanded) {
-      if (expanded) {
-        // 40%, 30%, 30% to 100%, 30%, 30%
-        this.split.setSizes([62.5, 18.75, 18.75]);
-      } else {
-        this.split.setSizes([40, 30, 30]);
-      }
+      //100%, 30%, 30% = 62.5 : 18.75 : 18.75
+      const sizes = expanded ? [62.5, 18.75, 18.75] : [40, 30, 30];
+
+      this.split.setSizes(sizes);
+      localStorage.setItem("split-sizes", JSON.stringify(sizes));
     },
   },
 
   async created() {
     await this.$nextTick();
 
+    let sizes = localStorage.getItem("split-sizes");
+    sizes = sizes ? JSON.parse(sizes) : [40, 30, 30];
     this.split = Split(
       [
         "#form-panel-wrapper",
@@ -105,9 +106,12 @@ export default {
         "#element-setting-panel-wrapper",
       ],
       {
-        sizes: [40, 30, 30],
+        sizes,
         minSize: [100, 0, 0],
         gutterSize: 10,
+        onDragEnd(sizes) {
+          localStorage.setItem("split-sizes", JSON.stringify(sizes));
+        },
       }
     );
   },
