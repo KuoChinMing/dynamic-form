@@ -293,19 +293,15 @@ export default {
     },
     replaceNodeId(node, uniqueId = this.genUniqueId()) {
       node.id = uniqueId;
+
+      let uniqueNodeId = uniqueId;
       if ("contents" in node) {
-        let previosChildNode = null;
         for (const childNode of node.contents) {
-          if (!previosChildNode) {
-            this.replaceNodeId(childNode, uniqueId + 1);
-          } else {
-            this.replaceNodeId(childNode, this.findMaxId(previosChildNode) + 1);
-          }
-          previosChildNode = childNode;
+          uniqueNodeId = this.replaceNodeId(childNode, uniqueNodeId + 1);
         }
       }
 
-      return node;
+      return uniqueNodeId;
     },
     findParentNode(node, parentNode = this.template) {
       if ("contents" in parentNode) {
@@ -390,8 +386,7 @@ export default {
       if (this.firstPasteAfterCut) {
         this.restoreCopiedNodeBindingData();
       } else {
-        newNode = this.resetBindingKey(newNode);
-        newNode = this.replaceNodeId(newNode);
+        this.replaceNodeId(this.resetBindingKey(newNode));
       }
 
       if ("contents" in this.selectedNode) {
