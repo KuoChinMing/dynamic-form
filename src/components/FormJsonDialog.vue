@@ -59,7 +59,7 @@
       absolute
       centered
       :color="snackbarColor"
-      class="text-capitalize text-center"
+      class="text-center"
     >
       {{ notificationMessage }}
     </v-snackbar>
@@ -145,6 +145,7 @@ export default {
 
       tidy(template);
       this.templateString = JSON.stringify(template, null, 2);
+      this.notify.normal("id now is tidy");
     },
     closeDialog() {
       this.isOpen = false;
