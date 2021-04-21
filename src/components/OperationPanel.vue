@@ -50,13 +50,13 @@
       <v-btn-toggle class="mr-1" background-color="grey" dark>
         <toolbar-btn
           @click="moveUpNode"
-          :disabled="!selectedNode || template === selectedNode"
+          :disabled="!selectedNode || selectRootNode"
         >
           <v-icon size="16px">mdi-chevron-up</v-icon>
         </toolbar-btn>
         <toolbar-btn
           @click="moveDownNode"
-          :disabled="!selectedNode || template === selectedNode"
+          :disabled="!selectedNode || selectRootNode"
         >
           <v-icon small>mdi-chevron-down</v-icon>
         </toolbar-btn>
@@ -68,7 +68,7 @@
         </toolbar-btn>
         <toolbar-btn
           @click="cutNode"
-          :disabled="!selectedNode || template === selectedNode"
+          :disabled="!selectedNode || selectRootNode"
         >
           <v-icon small>mdi-content-cut</v-icon>
         </toolbar-btn>
@@ -99,15 +99,13 @@
       </v-btn-toggle>
 
       <v-btn-toggle
-        :background-color="
-          !selectedNode || template === selectedNode ? 'grey' : 'red'
-        "
+        :background-color="!selectedNode || selectRootNode ? 'grey' : 'red'"
         dark
       >
         <toolbar-btn
           color="red"
           @click="deleteNode"
-          :disabled="!selectedNode || template === selectedNode"
+          :disabled="!selectedNode || selectRootNode"
         >
           <v-icon small>mdi-close</v-icon>
         </toolbar-btn>
@@ -199,6 +197,9 @@ export default {
   },
 
   computed: {
+    selectRootNode() {
+      return this.selectedNode === this.template;
+    },
     elementsCanBeAdded() {
       if (!this.selectedNode?.type) return [];
 
