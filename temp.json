@@ -2491,21 +2491,24 @@
                       "id": 826,
                       "label": "栄養指導",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "nursingGuidanceCheck"
                     },
                     {
                       "type": "checkbox",
                       "id": 827,
                       "label": "食事",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "eatingCheck"
                     },
                     {
                       "type": "checkbox",
                       "id": 828,
                       "label": "飲水",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "drinkingCheck"
                     }
                   ],
                   "layout": "horizontal",
@@ -2548,7 +2551,8 @@
                       "id": 835,
                       "label": "褥瘡予防",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "preventionOfBedsoresCheck"
                     }
                   ],
                   "layout": "horizontal",
@@ -2579,7 +2583,8 @@
                       "label": "褥瘡処置",
                       "grow": 0,
                       "marginRight": "10px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "bedSoreTreatmentCheck"
                     },
                     {
                       "type": "box",
@@ -2601,7 +2606,11 @@
                           "type": "select",
                           "id": 842,
                           "flexGrow": 0,
-                          "dense": true
+                          "dense": true,
+                          "bindingKey": "locationSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2628,7 +2637,11 @@
                           "type": "select",
                           "id": 845,
                           "flexGrow": 0,
-                          "dense": true
+                          "dense": true,
+                          "options": [
+                            "選択"
+                          ],
+                          "bindingKey": "medicineSelect"
                         }
                       ],
                       "alignItems": "align-center",
@@ -2655,7 +2668,11 @@
                           "type": "select",
                           "id": 848,
                           "flexGrow": 0,
-                          "dense": true
+                          "dense": true,
+                          "options": [
+                            "選択"
+                          ],
+                          "bindingKey": "methodSelect"
                         }
                       ],
                       "alignItems": "align-center",
@@ -2690,7 +2707,8 @@
                       "label": "創処置",
                       "grow": 0,
                       "marginRight": "10px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "creativeDisposalCheck"
                     },
                     {
                       "type": "box",
@@ -2712,7 +2730,11 @@
                           "type": "select",
                           "id": 853,
                           "flexGrow": 0,
-                          "dense": true
+                          "dense": true,
+                          "bindingKey": "bodyLocationSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2739,7 +2761,11 @@
                           "type": "select",
                           "id": 856,
                           "flexGrow": 0,
-                          "dense": true
+                          "dense": true,
+                          "options": [
+                            "選択"
+                          ],
+                          "bindingKey": "treatmentSelect"
                         }
                       ],
                       "alignItems": "align-center",
@@ -2766,7 +2792,11 @@
                           "type": "select",
                           "id": 859,
                           "flexGrow": 0,
-                          "dense": true
+                          "dense": true,
+                          "options": [
+                            "選択"
+                          ],
+                          "bindingKey": "optionSelect"
                         }
                       ],
                       "alignItems": "align-center",
@@ -2800,7 +2830,8 @@
                       "label": "外用薬塗布",
                       "grow": 0,
                       "marginRight": "20px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "topicalDrugCoatingCheck"
                     },
                     {
                       "type": "box",
@@ -2822,7 +2853,11 @@
                           "type": "select",
                           "id": 867,
                           "flexGrow": 0,
-                          "dense": true
+                          "dense": true,
+                          "bindingKey": "coatingSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2869,14 +2904,16 @@
                       "id": 294,
                       "label": "残薬確認",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "residualMedicineConfirmationCheck"
                     },
                     {
                       "type": "checkbox",
                       "id": 619,
                       "label": "服薬介助",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "medicineAssistCheck"
                     },
                     {
                       "type": "box",
@@ -2888,7 +2925,8 @@
                           "label": "内服セット",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "oralSetCheck"
                         },
                         {
                           "type": "text",
@@ -2906,7 +2944,11 @@
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
-                          "flexShrink": 1
+                          "flexShrink": 1,
+                          "bindingKey": "periodSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2918,7 +2960,8 @@
                       "id": 626,
                       "label": "点眼",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "eyeDropsCheck"
                     },
                     {
                       "type": "box",
@@ -2930,7 +2973,8 @@
                           "label": "吸入",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "inhalationCheck"
                         },
                         {
                           "type": "select",
@@ -2939,7 +2983,11 @@
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
-                          "flexShrink": 1
+                          "flexShrink": 1,
+                          "bindingKey": "inhalationSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2951,7 +2999,8 @@
                       "id": 628,
                       "label": "座薬",
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "suppositoryCheck"
                     },
                     {
                       "type": "box",
@@ -2963,7 +3012,8 @@
                           "label": "点滴",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "intravenousCheck"
                         },
                         {
                           "type": "box",
@@ -2986,7 +3036,11 @@
                               "id": 875,
                               "flexGrow": 0,
                               "dense": true,
-                              "flexShrink": 1
+                              "flexShrink": 1,
+                              "bindingKey": "intravenousMedicineSelect",
+                              "options": [
+                                "選択"
+                              ]
                             }
                           ],
                           "alignItems": "align-center",
@@ -3001,7 +3055,7 @@
                             {
                               "type": "text",
                               "id": 879,
-                              "text": "速度",
+                              "text": "量",
                               "flex": "",
                               "grow": 0,
                               "marginRight": "10px",
@@ -3014,7 +3068,11 @@
                               "type": "select",
                               "id": 880,
                               "flexGrow": 0,
-                              "dense": true
+                              "dense": true,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "intravenousAmountSelect"
                             }
                           ],
                           "alignItems": "align-center",
@@ -3029,7 +3087,7 @@
                             {
                               "type": "text",
                               "id": 882,
-                              "text": "部位",
+                              "text": "速度",
                               "flex": "",
                               "grow": 0,
                               "marginRight": "10px",
@@ -3042,7 +3100,11 @@
                               "type": "select",
                               "id": 883,
                               "flexGrow": 0,
-                              "dense": true
+                              "dense": true,
+                              "bindingKey": "intravenousSpeedSelect",
+                              "options": [
+                                "選択"
+                              ]
                             }
                           ],
                           "alignItems": "align-center",
@@ -3065,7 +3127,8 @@
                           "label": "注射",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "injectionCheck"
                         },
                         {
                           "type": "box",
@@ -3088,7 +3151,11 @@
                               "id": 888,
                               "flexGrow": 0,
                               "dense": true,
-                              "flexShrink": 1
+                              "flexShrink": 1,
+                              "bindingKey": "injectionMedicineSelect",
+                              "options": [
+                                "選択"
+                              ]
                             }
                           ],
                           "alignItems": "align-center",
@@ -3116,7 +3183,11 @@
                               "type": "select",
                               "id": 891,
                               "flexGrow": 0,
-                              "dense": true
+                              "dense": true,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "injectionLocationSelect"
                             }
                           ],
                           "alignItems": "align-center",
@@ -3144,7 +3215,11 @@
                               "type": "select",
                               "id": 894,
                               "flexGrow": 0,
-                              "dense": true
+                              "dense": true,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "injectionMethodSelect"
                             }
                           ],
                           "alignItems": "align-center",
@@ -3162,7 +3237,8 @@
                       "id": 632,
                       "grow": 0,
                       "label": "外用薬貼付",
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "topicalMedicineAffixedCheck"
                     }
                   ],
                   "wrap": "wrap",
@@ -3208,7 +3284,8 @@
                           "label": "関節可動域",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "rangeOfMotionCheck"
                         },
                         {
                           "type": "select",
@@ -3217,7 +3294,11 @@
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
-                          "flexShrink": 1
+                          "flexShrink": 1,
+                          "bindingKey": "rangeOfMotionSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -3234,7 +3315,8 @@
                           "label": "マッサージ",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "massageCheck"
                         },
                         {
                           "type": "select",
@@ -3243,7 +3325,11 @@
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
-                          "flexShrink": 1
+                          "flexShrink": 1,
+                          "bindingKey": "massageSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -3260,7 +3346,8 @@
                           "label": "筋力",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "20px"
+                          "marginRight": "20px",
+                          "bindingKey": "muscleStrengthCheck"
                         },
                         {
                           "type": "box",
@@ -3272,7 +3359,8 @@
                               "label": "上肢",
                               "grow": 0,
                               "shrink": 0,
-                              "marginRight": "10px"
+                              "marginRight": "10px",
+                              "bindingKey": "upperLimbsCheck"
                             },
                             {
                               "type": "checkbox",
@@ -3280,7 +3368,8 @@
                               "label": "下肢",
                               "grow": 0,
                               "shrink": 0,
-                              "marginRight": "10px"
+                              "marginRight": "10px",
+                              "bindingKey": "lowerLimbsCheck"
                             },
                             {
                               "type": "checkbox",
@@ -3288,7 +3377,8 @@
                               "label": "体幹",
                               "grow": 0,
                               "shrink": 0,
-                              "marginRight": "10px"
+                              "marginRight": "10px",
+                              "bindingKey": "trunkCheck"
                             }
                           ],
                           "alignItems": "align-center",
@@ -3310,7 +3400,8 @@
                           "label": "座位",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "sittingPositionCheck"
                         },
                         {
                           "type": "checkbox",
@@ -3318,7 +3409,8 @@
                           "label": "立位",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "standingCheck"
                         },
                         {
                           "type": "checkbox",
@@ -3326,7 +3418,8 @@
                           "label": "歩行",
                           "grow": 0,
                           "shrink": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "walkingCheck"
                         }
                       ],
                       "flexGrow": 0,
@@ -3343,7 +3436,8 @@
                           "label": "呼吸リハ",
                           "marginRight": "20px",
                           "grow": 0,
-                          "shrink": 0
+                          "shrink": 0,
+                          "bindingKey": " breathingRehabilitationCheck"
                         },
                         {
                           "type": "box",
@@ -3375,7 +3469,8 @@
                                 }
                               ],
                               "direction": "row",
-                              "dense": true
+                              "dense": true,
+                              "bindingKey": " breathingRehabilitationRadio"
                             }
                           ],
                           "flexGrow": 0,
@@ -3395,7 +3490,8 @@
                           "id": 965,
                           "label": "口腔リハ",
                           "marginRight": "20px",
-                          "grow": 0
+                          "grow": 0,
+                          "bindingKey": "oralRehabilitationCheck"
                         },
                         {
                           "type": "box",
@@ -3417,7 +3513,8 @@
                                 }
                               ],
                               "direction": "row",
-                              "dense": true
+                              "dense": true,
+                              "bindingKey": "oralRehabilitationRadio"
                             }
                           ],
                           "flexGrow": 0,
@@ -3479,7 +3576,8 @@
                     }
                   ],
                   "direction": "row",
-                  "dense": true
+                  "dense": true,
+                  "bindingKey": "sputumCareRadio"
                 }
               ]
             }
@@ -3516,7 +3614,8 @@
                       "label": "酸素療法",
                       "grow": 0,
                       "marginRight": "20px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "oxygenTherapyCheck"
                     },
                     {
                       "type": "box",
@@ -3527,7 +3626,8 @@
                           "id": 975,
                           "label": "IVH・CVポート",
                           "grow": 0,
-                          "marginRight": "20px"
+                          "marginRight": "20px",
+                          "bindingKey": "IvhCvPortCheck"
                         },
                         {
                           "type": "radioGroup",
@@ -3545,7 +3645,8 @@
                               "label": "無"
                             }
                           ],
-                          "dense": true
+                          "dense": true,
+                          "bindingKey": "IvhCvPortRadio"
                         }
                       ],
                       "flexGrow": 0,
@@ -3562,7 +3663,8 @@
                           "id": 981,
                           "label": "針",
                           "grow": 0,
-                          "marginRight": "20px"
+                          "marginRight": "20px",
+                          "bindingKey": "needleCheck"
                         },
                         {
                           "type": "radioGroup",
@@ -3585,7 +3687,8 @@
                               "label": "ルート交換"
                             }
                           ],
-                          "dense": true
+                          "dense": true,
+                          "bindingKey": "needleRadio"
                         }
                       ],
                       "flexGrow": 0,
@@ -3599,7 +3702,8 @@
                       "label": "胃瘻",
                       "grow": 0,
                       "marginRight": "20px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "gastrostomyCheck"
                     },
                     {
                       "type": "checkbox",
@@ -3607,7 +3711,8 @@
                       "label": "腹膜透析",
                       "grow": 0,
                       "marginRight": "20px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "peritonealDialysisCheck"
                     },
                     {
                       "type": "checkbox",
@@ -3615,7 +3720,8 @@
                       "label": "出口部管理",
                       "grow": 0,
                       "marginRight": "20px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "exitManagementCheck"
                     },
                     {
                       "type": "checkbox",
@@ -3623,7 +3729,8 @@
                       "label": "ストマ処理",
                       "grow": 0,
                       "marginRight": "20px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "stomaProcessingCheck"
                     },
                     {
                       "type": "checkbox",
@@ -3631,7 +3738,8 @@
                       "label": "パウチ交換",
                       "grow": 0,
                       "marginRight": "20px",
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "pouchExchangeCheck"
                     },
                     {
                       "type": "box",
@@ -3643,31 +3751,89 @@
                           "label": "点滴",
                           "grow": 0,
                           "marginRight": "20px",
-                          "shrink": 0
+                          "shrink": 0,
+                          "bindingKey": "intravenousCheck1"
                         },
                         {
-                          "type": "select",
-                          "id": 993,
-                          "dense": true,
-                          "marginRight": "10px",
-                          "flexGrow": 0,
-                          "flexShrink": 1
+                          "type": "box",
+                          "id": 1111,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 1112,
+                              "text": "薬剤",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 993,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "bindingKey": "intravenousSelect",
+                              "options": [
+                                "選択"
+                              ]
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
                         },
                         {
-                          "type": "select",
-                          "id": 996,
-                          "dense": true,
-                          "marginRight": "10px",
-                          "flexGrow": 0,
-                          "flexShrink": 1
+                          "type": "box",
+                          "id": 1113,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 1114,
+                              "text": "量",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 1115,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "intravenousAmountSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
                         },
                         {
-                          "type": "select",
-                          "id": 997,
-                          "dense": true,
-                          "marginRight": "10px",
-                          "flexGrow": 0,
-                          "flexShrink": 1
+                          "type": "box",
+                          "id": 1116,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 1117,
+                              "text": "速度",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 1118,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "intravenousSpeedSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
                         }
                       ],
                       "flexGrow": 0,
@@ -3685,31 +3851,89 @@
                           "label": "注射",
                           "grow": 0,
                           "marginRight": "20px",
-                          "shrink": 0
+                          "shrink": 0,
+                          "bindingKey": "injectionCheck1"
                         },
                         {
-                          "type": "select",
-                          "id": 1000,
-                          "dense": true,
-                          "marginRight": "10px",
-                          "flexGrow": 0,
-                          "flexShrink": 1
+                          "type": "box",
+                          "id": 1119,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 1120,
+                              "text": "薬剤",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 1121,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "injectionMedicineSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
                         },
                         {
-                          "type": "select",
-                          "id": 1001,
-                          "dense": true,
-                          "marginRight": "10px",
-                          "flexGrow": 0,
-                          "flexShrink": 1
+                          "type": "box",
+                          "id": 1122,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 1123,
+                              "text": "部位",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 1124,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "injectionLocationSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
                         },
                         {
-                          "type": "select",
-                          "id": 1002,
-                          "dense": true,
-                          "marginRight": "10px",
-                          "flexGrow": 0,
-                          "flexShrink": 1
+                          "type": "box",
+                          "id": 1125,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 1126,
+                              "text": "方法",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 1127,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": [
+                                "選択"
+                              ],
+                              "bindingKey": "injectionMethodSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
                         }
                       ],
                       "flexGrow": 0,
@@ -3727,7 +3951,8 @@
                           "label": "その他",
                           "grow": 0,
                           "marginRight": "20px",
-                          "shrink": 0
+                          "shrink": 0,
+                          "bindingKey": "otherCheck"
                         },
                         {
                           "type": "select",
@@ -3735,7 +3960,11 @@
                           "dense": true,
                           "marginRight": "10px",
                           "flexGrow": 0,
-                          "flexShrink": 1
+                          "flexShrink": 1,
+                          "bindingKey": "otherSelect",
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "flexGrow": 0,
@@ -3784,7 +4013,8 @@
                       "shrink": 0,
                       "grow": 0,
                       "label": "入眠を促すマッサージ",
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "massageEncourageFallingAsleepCheck"
                     },
                     {
                       "type": "checkbox",
@@ -3792,7 +4022,8 @@
                       "label": "生活指導",
                       "grow": 0,
                       "shrink": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "lifeGuidanceCheck"
                     },
                     {
                       "type": "checkbox",
@@ -3800,7 +4031,8 @@
                       "label": "足浴",
                       "grow": 0,
                       "shrink": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "footBath"
                     }
                   ],
                   "wrap": "wrap"
@@ -3836,316 +4068,11 @@
                   "layout": "horizontal",
                   "contents": [
                     {
-                      "type": "select",
-                      "id": 1008,
-                      "flexGrow": 0,
-                      "flexShrink": 1,
-                      "dense": true,
-                      "marginRight": "5px",
-                      "options": [
-                        50,
-                        50.1,
-                        50.2,
-                        50.3,
-                        50.4,
-                        50.5,
-                        50.6,
-                        50.7,
-                        50.8,
-                        50.9,
-                        51,
-                        51.1,
-                        51.2,
-                        51.3,
-                        51.4,
-                        51.5,
-                        51.6,
-                        51.7,
-                        51.8,
-                        51.9,
-                        52,
-                        52.1,
-                        52.2,
-                        52.3,
-                        52.4,
-                        52.5,
-                        52.6,
-                        52.7,
-                        52.8,
-                        52.9,
-                        53,
-                        53.1,
-                        53.2,
-                        53.3,
-                        53.4,
-                        53.5,
-                        53.6,
-                        53.7,
-                        53.8,
-                        53.9,
-                        54,
-                        54.1,
-                        54.2,
-                        54.3,
-                        54.4,
-                        54.5,
-                        54.6,
-                        54.7,
-                        54.8,
-                        54.9,
-                        55,
-                        55.1,
-                        55.2,
-                        55.3,
-                        55.4,
-                        55.5,
-                        55.6,
-                        55.7,
-                        55.8,
-                        55.9,
-                        56,
-                        56.1,
-                        56.2,
-                        56.3,
-                        56.4,
-                        56.5,
-                        56.6,
-                        56.7,
-                        56.8,
-                        56.9,
-                        57,
-                        57.1,
-                        57.2,
-                        57.3,
-                        57.4,
-                        57.5,
-                        57.6,
-                        57.7,
-                        57.8,
-                        57.9,
-                        58,
-                        58.1,
-                        58.2,
-                        58.3,
-                        58.4,
-                        58.5,
-                        58.6,
-                        58.7,
-                        58.8,
-                        58.9,
-                        59,
-                        59.1,
-                        59.2,
-                        59.3,
-                        59.4,
-                        59.5,
-                        59.6,
-                        59.7,
-                        59.8,
-                        59.9,
-                        60,
-                        60.1,
-                        60.2,
-                        60.3,
-                        60.4,
-                        60.5,
-                        60.6,
-                        60.7,
-                        60.8,
-                        60.9,
-                        61,
-                        61.1,
-                        61.2,
-                        61.3,
-                        61.4,
-                        61.5,
-                        61.6,
-                        61.7,
-                        61.8,
-                        61.9,
-                        62,
-                        62.1,
-                        62.2,
-                        62.3,
-                        62.4,
-                        62.5,
-                        62.6,
-                        62.7,
-                        62.8,
-                        62.9,
-                        63,
-                        63.1,
-                        63.2,
-                        63.3,
-                        63.4,
-                        63.5,
-                        63.6,
-                        63.7,
-                        63.8,
-                        63.9,
-                        64,
-                        64.1,
-                        64.2,
-                        64.3,
-                        64.4,
-                        64.5,
-                        64.6,
-                        64.7,
-                        64.8,
-                        64.9,
-                        65,
-                        65.1,
-                        65.2,
-                        65.3,
-                        65.4,
-                        65.5,
-                        65.6,
-                        65.7,
-                        65.8,
-                        65.9,
-                        66,
-                        66.1,
-                        66.2,
-                        66.3,
-                        66.4,
-                        66.5,
-                        66.6,
-                        66.7,
-                        66.8,
-                        66.9,
-                        67,
-                        67.1,
-                        67.2,
-                        67.3,
-                        67.4,
-                        67.5,
-                        67.6,
-                        67.7,
-                        67.8,
-                        67.9,
-                        68,
-                        68.1,
-                        68.2,
-                        68.3,
-                        68.4,
-                        68.5,
-                        68.6,
-                        68.7,
-                        68.8,
-                        68.9,
-                        69,
-                        69.1,
-                        69.2,
-                        69.3,
-                        69.4,
-                        69.5,
-                        69.6,
-                        69.7,
-                        69.8,
-                        69.9,
-                        70,
-                        70.1,
-                        70.2,
-                        70.3,
-                        70.4,
-                        70.5,
-                        70.6,
-                        70.7,
-                        70.8,
-                        70.9,
-                        71,
-                        71.1,
-                        71.2,
-                        71.3,
-                        71.4,
-                        71.5,
-                        71.6,
-                        71.7,
-                        71.8,
-                        71.9,
-                        72,
-                        72.1,
-                        72.2,
-                        72.3,
-                        72.4,
-                        72.5,
-                        72.6,
-                        72.7,
-                        72.8,
-                        72.9,
-                        73,
-                        73.1,
-                        73.2,
-                        73.3,
-                        73.4,
-                        73.5,
-                        73.6,
-                        73.7,
-                        73.8,
-                        73.9,
-                        74,
-                        74.1,
-                        74.2,
-                        74.3,
-                        74.4,
-                        74.5,
-                        74.6,
-                        74.7,
-                        74.8,
-                        74.9,
-                        75,
-                        75.1,
-                        75.2,
-                        75.3,
-                        75.4,
-                        75.5,
-                        75.6,
-                        75.7,
-                        75.8,
-                        75.9,
-                        76,
-                        76.1,
-                        76.2,
-                        76.3,
-                        76.4,
-                        76.5,
-                        76.6,
-                        76.7,
-                        76.8,
-                        76.9,
-                        77,
-                        77.1,
-                        77.2,
-                        77.3,
-                        77.4,
-                        77.5,
-                        77.6,
-                        77.7,
-                        77.8,
-                        77.9,
-                        78,
-                        78.1,
-                        78.2,
-                        78.3,
-                        78.4,
-                        78.5,
-                        78.6,
-                        78.7,
-                        78.8,
-                        78.9,
-                        79,
-                        79.1,
-                        79.2,
-                        79.3,
-                        79.4,
-                        79.5,
-                        79.6,
-                        79.7,
-                        79.8,
-                        79.9,
-                        80
-                      ],
-                      "bindingKey": ""
+                      "type": "textField",
+                      "id": 1128,
+                      "shrink": 1,
+                      "grow": 0,
+                      "bindingKey": " bodyWeightText"
                     },
                     {
                       "type": "text",
@@ -4189,7 +4116,8 @@
                   "rows": "3",
                   "autoGrow": false,
                   "style": "standard",
-                  "dense": true
+                  "dense": true,
+                  "bindingKey": "pointsToRememberText"
                 }
               ]
             }
@@ -4241,7 +4169,7 @@
                         }
                       ],
                       "direction": "row",
-                      "bindingKey": "",
+                      "bindingKey": "nextVisitDateRadio",
                       "dense": true,
                       "grow": 0,
                       "shrink": 0,
@@ -4255,7 +4183,7 @@
                       "marginRight": "20px",
                       "grow": 0,
                       "shrink": 1,
-                      "bindingKey": ""
+                      "bindingKey": "nextVisitDatePicker"
                     },
                     {
                       "type": "timeIntervalSelect",
@@ -4313,7 +4241,8 @@
                       ],
                       "marginRight": "",
                       "grow": 0,
-                      "shrink": 1
+                      "shrink": 1,
+                      "bindingKey": "nextVisitDateSelect"
                     }
                   ],
                   "wrap": false,
@@ -4391,7 +4320,8 @@
                       "dense": true,
                       "grow": 0,
                       "shrink": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "basicMedicalExpensesRadio"
                     },
                     {
                       "type": "radioGroup",
@@ -4416,7 +4346,8 @@
                       "direction": "row",
                       "dense": true,
                       "grow": 0,
-                      "shrink": 0
+                      "shrink": 0,
+                      "bindingKey": "basicMedicalExpensesRadio1"
                     }
                   ],
                   "wrap": true
@@ -4474,7 +4405,8 @@
                       "dense": true,
                       "grow": 0,
                       "shrink": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "basicMentalHealthExpensesRadio"
                     }
                   ]
                 }
@@ -4532,7 +4464,8 @@
                   "dense": true,
                   "grow": 0,
                   "shrink": 0,
-                  "marginRight": "20px"
+                  "marginRight": "20px",
+                  "bindingKey": "emergencyHomeVisitNursingAdditionRadio"
                 }
               ]
             }
@@ -4583,7 +4516,8 @@
                       ],
                       "dense": true,
                       "grow": 0,
-                      "marginRight": "20px"
+                      "marginRight": "20px",
+                      "bindingKey": "specialManagementAdditionRadio"
                     },
                     {
                       "type": "box",
@@ -4616,7 +4550,8 @@
                           ],
                           "direction": "row",
                           "dense": true,
-                          "shrink": 0
+                          "shrink": 0,
+                          "bindingKey": "specialManagementAdditionRadio1"
                         },
                         {
                           "type": "radioGroup",
@@ -4645,7 +4580,8 @@
                           ],
                           "direction": "row",
                           "dense": true,
-                          "shrink": 0
+                          "shrink": 0,
+                          "bindingKey": "specialManagementAdditionRadio2"
                         }
                       ],
                       "layout": "column",
@@ -4683,7 +4619,8 @@
                       "label": "退院時共同指導管理加算",
                       "shrink": 0,
                       "marginRight": "20px",
-                      "grow": 0
+                      "grow": 0,
+                      "bindingKey": "jointGuidanceManagementAdditionAtDischargeCheck"
                     },
                     {
                       "type": "checkbox",
@@ -4691,7 +4628,8 @@
                       "label": "退院支援導管加算 (退院日)",
                       "shrink": 0,
                       "marginRight": "20px",
-                      "grow": 0
+                      "grow": 0,
+                      "bindingKey": "dischargeSupportConduitAdditionCheck"
                     },
                     {
                       "type": "checkbox",
@@ -4699,7 +4637,8 @@
                       "label": "複数名看護加算",
                       "shrink": 0,
                       "marginRight": "20px",
-                      "grow": 0
+                      "grow": 0,
+                      "bindingKey": "multipleNursingAdditionCheck"
                     },
                     {
                       "type": "checkbox",
@@ -4707,7 +4646,8 @@
                       "label": "長時間訪問看護加算",
                       "shrink": 1,
                       "marginRight": "20px",
-                      "grow": 0
+                      "grow": 0,
+                      "bindingKey": "longTermHomeVisitNursingAdditionCheck"
                     }
                   ],
                   "wrap": true,
@@ -4751,7 +4691,8 @@
                           "id": 1063,
                           "label": "交通費",
                           "grow": 0,
-                          "marginRight": "20px"
+                          "marginRight": "20px",
+                          "bindingKey": "transportationExpensesCheck"
                         },
                         {
                           "type": "radioGroup",
@@ -4770,7 +4711,8 @@
                           ],
                           "direction": "row",
                           "dense": true,
-                          "grow": 0
+                          "grow": 0,
+                          "bindingKey": "transportationExpensesRadio"
                         }
                       ],
                       "flexGrow": 0,
@@ -4785,14 +4727,19 @@
                           "id": 1073,
                           "label": "キャンセル料",
                           "grow": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "cancellationChargeCheck"
                         },
                         {
                           "type": "select",
                           "id": 1087,
                           "dense": true,
                           "flexGrow": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "cancellationChargeSelect",
+                          "options": [
+                            "選択"
+                          ]
                         },
                         {
                           "type": "text",
@@ -4813,14 +4760,19 @@
                           "id": 1078,
                           "label": "休日・時間外",
                           "grow": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "holidaysAfterHoursCheck"
                         },
                         {
                           "type": "select",
                           "id": 1089,
                           "dense": true,
                           "flexGrow": 0,
-                          "marginRight": "10px"
+                          "marginRight": "10px",
+                          "bindingKey": "holidaysAfterHoursSelect",
+                          "options": [
+                            "選択"
+                          ]
                         },
                         {
                           "type": "text",
@@ -4842,14 +4794,19 @@
                           "label": "超過時間利用料 ( 30 分 3,000 円 ×",
                           "grow": 0,
                           "marginRight": "10px",
-                          "shrink": 0
+                          "shrink": 0,
+                          "bindingKey": "overtimeUsageFeeCheck "
                         },
                         {
                           "type": "select",
                           "id": 1091,
                           "flexGrow": 0,
                           "dense": true,
-                          "flexShrink": 1
+                          "flexShrink": 1,
+                          "bindingKey": "overtimeUsageFeeSelect",
+                          "options": [
+                            "選択"
+                          ]
                         },
                         {
                           "type": "text",
@@ -4887,7 +4844,8 @@
                   "type": "textarea",
                   "id": 1097,
                   "rows": "4",
-                  "dense": true
+                  "dense": true,
+                  "bindingKey": "bottomtextarea1"
                 }
               ]
             },
@@ -4899,7 +4857,8 @@
                   "type": "textarea",
                   "id": 1098,
                   "rows": "4",
-                  "dense": true
+                  "dense": true,
+                  "bindingKey": "bottomtextarea2"
                 }
               ]
             }
@@ -4936,7 +4895,8 @@
                   "type": "textarea",
                   "id": 1099,
                   "rows": "4",
-                  "dense": true
+                  "dense": true,
+                  "bindingKey": "progressRecordText"
                 }
               ]
             }
