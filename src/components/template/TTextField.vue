@@ -67,5 +67,9 @@ export default {
       this.$emit("input", newValue);
     },
   },
+
+  created() {
+    this.innerValue = this.value;
+  },
 };
 </script>

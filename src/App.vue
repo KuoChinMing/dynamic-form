@@ -32,7 +32,7 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             depressed
-            color="primary"
+            color="secondary"
             class="text-capitalize ml-2"
             v-bind="attrs"
             v-on="on"
@@ -72,11 +72,31 @@
         class="text-none ml-2"
         >&lt;&sol;&gt; View Form as JSON</v-btn
       >
+      <v-btn
+        @click="saveJson"
+        depressed
+        color="primary"
+        class="text-capitalize ml-2"
+        >save</v-btn
+      >
     </v-app-bar>
 
     <v-main>
       <form-view :expanded="isViewExpanded"></form-view>
     </v-main>
+
+    <v-snackbar
+      v-model="showNotification"
+      :timeout="1500"
+      text
+      outlined
+      absolute
+      centered
+      color="primary"
+      class="text-capitalize text-center"
+    >
+      {{ notificationMessage }}
+    </v-snackbar>
 
     <showcase-dialog v-model="isShowcaseDialogOpen"></showcase-dialog>
     <data-json-dialog v-model="isDataJsonDialogOpen"></data-json-dialog>
@@ -89,6 +109,7 @@ import FormView from "@/views/FormView.vue";
 import ShowcaseDialog from "@/components/ShowcaseDialog.vue";
 import DataJsonDialog from "@/components/DataJsonDialog.vue";
 import FormJsonDialog from "@/components/FormJsonDialog.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "App",
@@ -100,6 +121,10 @@ export default {
     FormJsonDialog,
   },
 
+  computed: {
+    ...mapState(["template", "bindingData"]),
+  },
+
   data() {
     return {
       isShowcaseDialogOpen: false,
@@ -108,6 +133,8 @@ export default {
       isViewExpanded: false,
       templateRoot: ["box", "table"],
       selectedTemplateRoot: null,
+      showNotification: false,
+      notificationMessage: "",
     };
   },
 
@@ -125,6 +152,15 @@ export default {
   },
 
   methods: {
+    saveJson() {
+      localStorage.setItem("template", JSON.stringify(this.template));
+      localStorage.setItem("binding-data", JSON.stringify(this.bindingData));
+      this.notify("saved successfully");
+    },
+    notify(message) {
+      this.notificationMessage = message;
+      this.showNotification = true;
+    },
     addTemplate(root) {
       this.$store.commit("template", { type: root, id: 0 });
     },
