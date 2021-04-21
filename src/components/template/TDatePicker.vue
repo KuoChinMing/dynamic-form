@@ -67,6 +67,12 @@ export default {
     data: {
       handler(data) {
         this.style = {
+          flexGrow: data.grow,
+          flexShrink: data.shrink,
+          marginTop: data.marginTop,
+          marginLeft: data.marginLeft,
+          marginBottom: data.marginBottom,
+          marginRight: data.marginRight,
           backgroundColor: data.backgroundColor,
           width: data.width,
         };

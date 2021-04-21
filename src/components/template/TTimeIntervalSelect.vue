@@ -43,6 +43,12 @@ export default {
           width: data.width,
           margin: data.margin,
           backgroundColor: data.backgroundColor,
+          flexGrow: data.grow,
+          flexShrink: data.shrink,
+          marginTop: data.marginTop,
+          marginLeft: data.marginLeft,
+          marginBottom: data.marginBottom,
+          marginRight: data.marginRight,
         };
         this.comboboxAttrs = {
           dense: data.dense,
