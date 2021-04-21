@@ -36,7 +36,7 @@ const tableTemplate = {
                     "type": "textField",
                     "id": 356,
                     "width": "auto",
-                    "bindingKey": "patientName"
+                    "bindingKey": "patient"
                   }
                 ]
               },
@@ -147,7 +147,8 @@ const tableTemplate = {
                         "style": "standard",
                         "dense": true,
                         "bindingKey": "visitDatePicker",
-                        "width": "c"
+                        "width": "",
+                        "label": "日付の選択"
                       },
                       {
                         "type": "text",
@@ -158,6 +159,7 @@ const tableTemplate = {
                         "type": "timeIntervalSelect",
                         "id": 665,
                         "time": [
+                          "時間選択",
                           "00:00",
                           "00:30",
                           "01:00",
@@ -436,7 +438,7 @@ const tableTemplate = {
                             "type": "checkbox",
                             "id": 682,
                             "label": "脈圧",
-                            "bindingKey": "bloodPressure"
+                            "bindingKey": "bloodPressureCheckbox"
                           },
                           {
                             "type": "radioGroup",
@@ -483,7 +485,7 @@ const tableTemplate = {
                           {
                             "type": "text",
                             "id": 194,
-                            "text": "最高",
+                            "text": "最高/最低",
                             "flexBasis": "auto"
                           },
                           {
@@ -493,32 +495,10 @@ const tableTemplate = {
                             "flex": "",
                             "flexBasis": "",
                             "width": "15%",
-                            "bindingKey": "bloodPressureHighValue"
+                            "bindingKey": "bloodPressure"
                           }
                         ],
                         "wrap": ""
-                      },
-                      {
-                        "type": "box",
-                        "id": 196,
-                        "contents": [
-                          {
-                            "type": "text",
-                            "id": 197,
-                            "flexBasis": "auto",
-                            "text": "最低",
-                            "flex": ""
-                          },
-                          {
-                            "type": "textField",
-                            "id": 198,
-                            "flex": "",
-                            "shrink": "",
-                            "width": "15%",
-                            "flexBasis": "",
-                            "bindingKey": "bloodPressureLowValue"
-                          }
-                        ]
                       }
                     ]
                   }
@@ -653,7 +633,9 @@ const tableTemplate = {
                         "type": "checkbox",
                         "id": 200,
                         "label": "尿量",
-                        "bindingKey": "urineVolume"
+                        "bindingKey": "urineVolume",
+                        "grow": 0,
+                        "marginRight": "8px"
                       },
                       {
                         "type": "select",
@@ -663,47 +645,49 @@ const tableTemplate = {
                         "flexBasis": "auto",
                         "bindingKey": "urineAmount",
                         "options": [
-                          "< 100",
+                          "選択",
+                          "<100",
                           "100",
                           "200",
                           "300",
                           "400",
                           "> 400"
                         ],
-                        "width": "15%"
+                        "width": "100px",
+                        "flexGrow": 0
                       },
                       {
                         "type": "text",
                         "id": 393,
-                        "text": "ml"
-                      }
-                    ],
-                    "wrap": "nowrap",
-                    "justifyContent": "justify-start",
-                    "alignItems": "align-center"
-                  },
-                  {
-                    "type": "box",
-                    "id": 690,
-                    "contents": [
+                        "text": "ml",
+                        "margin": "0 8px 0 0"
+                      },
                       {
                         "type": "checkbox",
                         "id": 394,
                         "label": "性状",
-                        "bindingKey": "urineSituation"
+                        "bindingKey": "urineSituation",
+                        "grow": 0,
+                        "marginRight": "8px"
                       },
                       {
                         "type": "select",
                         "id": 691,
                         "bindingKey": "urineSituationSelection",
                         "dense": true,
-                        "options": [],
-                        "width": "15%"
+                        "options": [
+                          "選択",
+                          "クリア",
+                          "混濁",
+                          "浮遊物"
+                        ],
+                        "width": "100px",
+                        "flexGrow": 0
                       }
                     ],
-                    "alignItems": "align-center",
+                    "wrap": "nowrap",
                     "justifyContent": "justify-start",
-                    "layout": ""
+                    "alignItems": "align-center"
                   }
                 ]
               }
@@ -725,13 +709,16 @@ const tableTemplate = {
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 399
+                        "id": 399,
+                        "label": "道量",
+                        "bindingKey": "urinePathVolume",
+                        "grow": 0,
+                        "marginRight": "8px"
                       },
                       {
                         "type": "text",
-                        "id": 400,
-                        "text": "道量(",
-                        "flexBasis": "auto"
+                        "id": 693,
+                        "text": "("
                       },
                       {
                         "type": "select",
@@ -740,6 +727,7 @@ const tableTemplate = {
                         "style": "",
                         "flexBasis": "auto",
                         "options": [
+                          "選択",
                           "<100",
                           "100",
                           "200",
@@ -749,7 +737,8 @@ const tableTemplate = {
                         ],
                         "bindingKey": "pathSelection",
                         "flexGrow": 0,
-                        "width": "140px"
+                        "width": "100px",
+                        "flexShrink": 0
                       },
                       {
                         "type": "text",
@@ -758,12 +747,16 @@ const tableTemplate = {
                       },
                       {
                         "type": "checkbox",
-                        "id": 403
+                        "id": 403,
+                        "grow": 0,
+                        "marginRight": "8px",
+                        "label": "性状",
+                        "bindingKey": "urinePathSituation"
                       },
                       {
                         "type": "text",
                         "id": 404,
-                        "text": "性状(",
+                        "text": "(",
                         "flexBasis": "auto"
                       },
                       {
@@ -778,7 +771,7 @@ const tableTemplate = {
                         ],
                         "bindingKey": "pathSituationSelection",
                         "flexGrow": 0,
-                        "width": "140px"
+                        "width": "100px"
                       },
                       {
                         "type": "text",
@@ -807,29 +800,30 @@ const tableTemplate = {
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 408
+                        "id": 408,
+                        "bindingKey": "urineTubeCheckbox",
+                        "label": "尿管交換",
+                        "grow": 0,
+                        "marginRight": "8px"
                       },
                       {
                         "type": "text",
                         "id": 409,
-                        "text": "尿管交換(",
+                        "text": "(",
                         "flexBasis": "auto"
                       },
                       {
                         "type": "checkbox",
-                        "id": 410
-                      },
-                      {
-                        "type": "text",
-                        "id": 411,
-                        "flexBasis": "auto",
-                        "text": "管のサイズ"
+                        "id": 410,
+                        "grow": 0,
+                        "label": "管のサイズ",
+                        "bindingKey": "urineTubecheckbox1"
                       },
                       {
                         "type": "select",
                         "id": 412,
                         "dense": true,
-                        "width": "140px",
+                        "width": "100px",
                         "options": [
                           "選択",
                           "12Fr",
@@ -848,20 +842,16 @@ const tableTemplate = {
                       },
                       {
                         "type": "checkbox",
-                        "id": 414
-                      },
-                      {
-                        "type": "text",
-                        "id": 415,
-                        "flexBasis": "auto",
-                        "text": "カフ水",
-                        "contents": []
+                        "id": 414,
+                        "bindingKey": "urineTubeWaterCheckbox",
+                        "label": "カフ水",
+                        "grow": 0
                       },
                       {
                         "type": "select",
                         "id": 416,
                         "dense": true,
-                        "width": "140px",
+                        "width": "100px",
                         "flexBasis": "",
                         "bindingKey": "waterSelection",
                         "options": [
@@ -902,17 +892,22 @@ const tableTemplate = {
                     "contents": [
                       {
                         "type": "checkbox",
-                        "id": 419
+                        "id": 419,
+                        "label": "尿管管理",
+                        "bindingKey": "urineTubeExchange1",
+                        "grow": 0
                       },
                       {
                         "type": "text",
                         "id": 420,
-                        "text": "尿管管理(",
+                        "text": "(",
                         "flexBasis": "auto"
                       },
                       {
                         "type": "checkbox",
-                        "id": 421
+                        "id": 421,
+                        "grow": 0,
+                        "bindingKey": "bladderClean"
                       },
                       {
                         "type": "text",
@@ -922,19 +917,16 @@ const tableTemplate = {
                       },
                       {
                         "type": "checkbox",
-                        "id": 425
-                      },
-                      {
-                        "type": "text",
-                        "id": 426,
-                        "flexBasis": "auto",
-                        "text": "ミルキング"
+                        "id": 425,
+                        "grow": 0,
+                        "bindingKey": "bladderClean1",
+                        "label": "ミルキング"
                       },
                       {
                         "type": "select",
                         "id": 427,
                         "dense": true,
-                        "width": "140px",
+                        "width": "100px",
                         "flexBasis": "",
                         "options": [
                           "選択",
@@ -946,13 +938,10 @@ const tableTemplate = {
                       },
                       {
                         "type": "checkbox",
-                        "id": 428
-                      },
-                      {
-                        "type": "text",
-                        "id": 429,
-                        "flexBasis": "auto",
-                        "text": "パープルシンドローム)"
+                        "id": 428,
+                        "bindingKey": "bladderClean2",
+                        "label": "パープルシンドローム)",
+                        "grow": 0
                       }
                     ],
                     "wrap": "wrap"
@@ -3465,7 +3454,6 @@ const tableTemplate = {
     "pulsePressure": null,
     "pulsePressureRadio": "良好",
     "pulseSelection": "選択",
-    "bloodPressureHighValue": null,
     "bloodPressureLowValue": null,
     "breatheInputValue": null,
     "breathNoiseRadioValue": null,
@@ -3473,9 +3461,8 @@ const tableTemplate = {
     "airCheckbox": null,
     "airRadio": "良好",
     "spO2Value": null,
-    "urineAmount": "< 100",
-    "urineSituationSelection": "選択",
-    "pathSelection": "<100",
+    "urineAmount": "選択",
+    "pathSelection": "選択",
     "pathSituationSelection": "選択",
     "water1234": null,
     "waterSelection": "選択",
@@ -3496,17 +3483,15 @@ const tableTemplate = {
     "goldSituation": "選択",
     "terraSelection": "選択",
     "terraSituation": "選択",
-    "patientName": null,
     "visitorName": null,
     "partnerName": null,
     "visitDateRadio": "定期",
     "visitDatePicker": null,
-    "visitTimeInterval": "00:00",
+    "visitTimeInterval": "時間選択",
     "roomTemperature": null,
     "roomHumidity": null,
     "bodyTemperature": null,
     "pulseSelect": "選択",
-    "bloodPressure": null,
     "bloodPressureRadio": "良好",
     "pulseRadio": "整脈",
     "breatheInput": null,
@@ -3515,7 +3500,20 @@ const tableTemplate = {
     "breatheAirRadio": "良好",
     "spO2Input": null,
     "urineVolume": null,
-    "urineSituation": null
+    "urinePathVolume": null,
+    "urinePathSituation": null,
+    "urineTubeCheckbox": null,
+    "urineTubecheckbox1": null,
+    "urineTubeWaterCheckbox": null,
+    "urineTubeExchange1": null,
+    "bladderClean": null,
+    "bladderClean1": null,
+    "bladderClean2": null,
+    "urineSituation": null,
+    "urineSituationSelection": "選択",
+    "patient": null,
+    "bloodPressureCheckbox": null,
+    "bloodPressure": null
   },
 };
 
