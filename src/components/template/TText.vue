@@ -37,6 +37,7 @@ export default {
       bottom: data.bottom,
       left: data.left,
       right: data.right,
+      textAlign: data.textAlign,
       backgroundColor: data.backgroundColor,
     };
 
