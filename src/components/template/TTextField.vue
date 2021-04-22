@@ -4,7 +4,6 @@
       v-model="innerValue"
       v-bind="attrs"
       class="mx-2"
-      dense
       hide-details
     ></v-text-field>
   </v-flex>
@@ -55,6 +54,7 @@ export default {
         };
         this.attrs = {
           disabled: this.disabled ?? data.disabled,
+          dense: true,
         };
       },
       immediate: true,
