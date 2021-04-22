@@ -10,6 +10,16 @@
             class="rounded body-1"
             rows="20"
           ></textarea>
+          <div class="text-right">
+            <v-btn
+              @click="resetBindingData"
+              small
+              class="text-lowercase subtitle-1"
+              color="primary"
+              text
+              >reset binding data</v-btn
+            >
+          </div>
         </v-sheet>
       </v-card-text>
 
@@ -71,7 +81,7 @@ export default {
 
   data() {
     return {
-      inputBindingDataString: "",
+      bindingDataString: "",
       notificationMessage: "",
       showNotification: false,
       isOpen: false,
@@ -93,15 +103,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["bindingData"]),
-    bindingDataString: {
-      get: function () {
-        return JSON.stringify(this.bindingData, null, 2);
-      },
-      set: function (newValue) {
-        this.inputBindingDataString = newValue;
-      },
-    },
+    ...mapState(["template", "bindingData"]),
   },
 
   watch: {
@@ -111,16 +113,38 @@ export default {
     isOpen(newValue) {
       this.$emit("input", newValue);
     },
+    bindingData: {
+      handler() {
+        this.bindingDataString = JSON.stringify(this.bindingData, null, 2);
+      },
+      immediate: true,
+      deep: true,
+    },
   },
   created() {
     if (this.value) {
       this.value = this.isOpen;
     }
-
-    this.inputBindingDataString = this.bindingDataString;
   },
 
   methods: {
+    resetBindingData() {
+      const bindingData = JSON.parse(this.bindingDataString);
+
+      const reset = (node) => {
+        bindingData[node.bindingKey] = null;
+
+        if ("contents" in node) {
+          for (const childNode of node.contents) {
+            reset(childNode);
+          }
+        }
+      };
+
+      reset(this.template);
+      this.bindingDataString = JSON.stringify(bindingData, null, 2);
+      this.notify.normal("data now is reset");
+    },
     closeDialog() {
       this.isOpen = false;
     },
@@ -132,7 +156,7 @@ export default {
     },
     applyBindingData() {
       try {
-        const bindingData = JSON.parse(this.inputBindingDataString);
+        const bindingData = JSON.parse(this.bindingDataString);
         this.$store.commit("bindingData", bindingData);
         this.closeDialog();
       } catch (error) {
