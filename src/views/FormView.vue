@@ -17,7 +17,7 @@
                 ref="overlay"
                 style="position: absolute; z-index: 9999; opacity: 0.4"
                 class="grey"
-                :class="{ 'd-none': !highlight }"
+                :class="{ 'd-none': !highlightMask }"
               ></div>
             </v-sheet>
           </div>
@@ -78,7 +78,7 @@ export default {
 
   data() {
     return {
-      highlight: false,
+      highlightMask: false,
       selectedNode: null,
       split: null,
     };
@@ -86,18 +86,19 @@ export default {
 
   watch: {
     async expanded(expanded) {
-      if (expanded) {
-        // 40%, 30%, 30% to 100%, 30%, 30%
-        this.split.setSizes([62.5, 18.75, 18.75]);
-      } else {
-        this.split.setSizes([40, 30, 30]);
-      }
+      //100%, 30%, 30% = 62.5 : 18.75 : 18.75
+      const sizes = expanded ? [62.5, 18.75, 18.75] : [40, 30, 30];
+
+      this.split.setSizes(sizes);
+      localStorage.setItem("split-sizes", JSON.stringify(sizes));
     },
   },
 
   async created() {
     await this.$nextTick();
 
+    let sizes = localStorage.getItem("split-sizes");
+    sizes = sizes ? JSON.parse(sizes) : [40, 30, 30];
     this.split = Split(
       [
         "#form-panel-wrapper",
@@ -105,9 +106,12 @@ export default {
         "#element-setting-panel-wrapper",
       ],
       {
-        sizes: [40, 30, 30],
+        sizes,
         minSize: [100, 0, 0],
         gutterSize: 10,
+        onDragEnd(sizes) {
+          localStorage.setItem("split-sizes", JSON.stringify(sizes));
+        },
       }
     );
   },
@@ -147,10 +151,10 @@ export default {
       this.$refs.overlay.style.width = width + "px";
       this.$refs.overlay.style.height = height + "px";
 
-      this.highlight = true;
+      this.highlightMask = true;
     },
     removeHighLight() {
-      this.highlight = false;
+      this.highlightMask = false;
     },
     selectNode(selectedNode) {
       this.selectedNode = selectedNode;
@@ -164,7 +168,7 @@ export default {
   background-color: #fafafa;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
-  z-index: 10;
+  z-index: 1;
 
   &.gutter-horizontal {
     cursor: col-resize;

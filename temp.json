@@ -1,0 +1,3915 @@
+{
+  "type": "box",
+  "layout": "column",
+  "id": 0,
+  "contents": [
+    {
+      "type": "table",
+      "id": 1,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 2,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 3,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 4,
+                  "text": "排便",
+                  "textAlign": "center"
+                }
+              ],
+              "rowspan": "10",
+              "width": "20%"
+            },
+            {
+              "type": "tcol",
+              "id": 5,
+              "colspan": "2",
+              "width": "80%",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 6,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 7,
+                      "label": "腸蠕動音",
+                      "grow": 0,
+                      "bindingKey": "intestinalSoundsCheck"
+                    },
+                    {
+                      "type": "select",
+                      "id": 8,
+                      "dense": true,
+                      "width": "",
+                      "bindingKey": "intestinalSoundsSelect",
+                      "flexGrow": 0,
+                      "options": ["選択", "聞かれず", "弱め", "良好", "更新"],
+                      "marginLeft": "10px"
+                    }
+                  ],
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 9,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 10,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 11,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 12,
+                      "label": "排便状況",
+                      "bindingKey": "defecationCheck"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 13,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 14,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 15,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 16,
+                      "label": "日",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "defecationSundayCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 17,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 18,
+                          "label": "量",
+                          "grow": 0,
+                          "bindingKey": "defecationAmountSundayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 19,
+                          "dense": true,
+                          "width": "",
+                          "options": [
+                            "選択",
+                            "無し",
+                            "付着",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationAmountSundaySelect"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 20,
+                          "label": "性状",
+                          "marginLeft": "10px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": "defecationShapeSundayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 21,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationShapeSundaySelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexShrink": 1,
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center",
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "fillHeight": false
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 22,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 23,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 24,
+                      "label": "月",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "defecationMondayCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 25,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 26,
+                          "label": "量",
+                          "grow": 0,
+                          "bindingKey": "defecationAmountMondayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 27,
+                          "dense": true,
+                          "width": "",
+                          "options": [
+                            "選択",
+                            "無し",
+                            "付着",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationAmountMondaySelect"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 28,
+                          "label": "性状",
+                          "marginLeft": "10px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": "defecationShapeMondayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 29,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationShapeMondaySelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexShrink": 1,
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center",
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "fillHeight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 30,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 31,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 32,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 33,
+                      "label": "火",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "defecationTuesdayCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 34,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 35,
+                          "label": "量",
+                          "grow": 0,
+                          "bindingKey": "defecationAmountTuesdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 36,
+                          "dense": true,
+                          "width": "",
+                          "options": [
+                            "選択",
+                            "無し",
+                            "付着",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationAmountTuesdaySelect"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 37,
+                          "label": "性状",
+                          "marginLeft": "10px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": "defecationShapeTuesdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 38,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationShapeTuesdaySelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexShrink": 1,
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center",
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "fillHeight": false
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 39,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 40,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 41,
+                      "label": "水",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "defecationWednesdayCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 42,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 43,
+                          "label": "量",
+                          "grow": 0,
+                          "bindingKey": "defecationAmountWednesdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 44,
+                          "dense": true,
+                          "width": "",
+                          "options": [
+                            "選択",
+                            "無し",
+                            "付着",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationAmountWednesdaySelect"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 45,
+                          "label": "性状",
+                          "marginLeft": "10px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": "defecationShapeWednesdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 46,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationShapeWednesdaySelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexShrink": 1,
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center",
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "fillHeight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 47,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 48,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 49,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 50,
+                      "label": "木",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "defecationThursdayCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 51,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 52,
+                          "label": "量",
+                          "grow": 0,
+                          "bindingKey": "defecationAmountThursdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 53,
+                          "dense": true,
+                          "width": "",
+                          "options": [
+                            "選択",
+                            "無し",
+                            "付着",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationAmountThursdaySelect"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 54,
+                          "label": "性状",
+                          "marginLeft": "10px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": "defecationShapeThursdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 55,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationShapeThursdaySelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexShrink": 1,
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center",
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "fillHeight": false
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 56,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 57,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 58,
+                      "label": "金",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "defecationFridayCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 59,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 60,
+                          "label": "量",
+                          "grow": 0,
+                          "bindingKey": "defecationAmountFridayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 61,
+                          "dense": true,
+                          "width": "",
+                          "options": [
+                            "選択",
+                            "無し",
+                            "付着",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationAmountFridaySelect"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 62,
+                          "label": "性状",
+                          "marginLeft": "10px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": "defecationShapeFridayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 63,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationShapeFridaySelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexShrink": 1,
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center",
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "fillHeight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 64,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 65,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 66,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 67,
+                      "label": "土",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "defecationSaturdayCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 68,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 69,
+                          "label": "量",
+                          "grow": 0,
+                          "bindingKey": "defecationAmountSaturdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 70,
+                          "dense": true,
+                          "width": "",
+                          "options": [
+                            "選択",
+                            "無し",
+                            "付着",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationAmountSaturdaySelect"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 71,
+                          "label": "性状",
+                          "marginLeft": "10px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": "defecationShapeSaturdayCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 72,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ],
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "flexShrink": 1,
+                          "bindingKey": "defecationShapeSaturdaySelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexShrink": 1,
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center",
+                  "flexGrow": 0,
+                  "flexShrink": 1,
+                  "fillHeight": false
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 73,
+              "contents": []
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 74,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 75,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 76,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 77,
+                      "label": "指診",
+                      "grow": 0,
+                      "shrink": 0,
+                      "bindingKey": "touchExaminationCheck"
+                    },
+                    {
+                      "type": "radioGroup",
+                      "id": 78,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 79,
+                          "label": "触れず"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 80,
+                          "label": "触れる"
+                        }
+                      ],
+                      "direction": "row",
+                      "dense": true,
+                      "marginLeft": "10px",
+                      "grow": 0,
+                      "shrink": 0,
+                      "bindingKey": "touchExaminationRadios"
+                    },
+                    {
+                      "type": "select",
+                      "id": 81,
+                      "flexGrow": 0,
+                      "dense": true,
+                      "flexShrink": 1,
+                      "bindingKey": "touchExaminationSelect",
+                      "options": ["選択", "硬便", "普通便", "軟便"]
+                    }
+                  ],
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 82,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 83,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 84,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 85,
+                      "label": "浣腸",
+                      "grow": 0,
+                      "shrink": 0,
+                      "bindingKey": "enemaCheck"
+                    },
+                    {
+                      "type": "radioGroup",
+                      "id": 86,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 87,
+                          "label": "30ml"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 88,
+                          "label": "60ml"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 89,
+                          "label": "120ml"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 90,
+                          "label": "その他"
+                        }
+                      ],
+                      "direction": "row",
+                      "dense": true,
+                      "marginLeft": "10px",
+                      "grow": 0,
+                      "bindingKey": "enemaRadio"
+                    }
+                  ],
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 91,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 92,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 93,
+                  "contents": [
+                    {
+                      "type": "radioGroup",
+                      "id": 94,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 95,
+                          "label": "摘便実施"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 96,
+                          "label": "摘便未実施"
+                        }
+                      ],
+                      "direction": "column",
+                      "dense": true,
+                      "grow": 0,
+                      "shrink": 0,
+                      "label": "",
+                      "bindingKey": "poopRadio"
+                    },
+                    {
+                      "type": "box",
+                      "id": 97,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 98,
+                          "label": "量",
+                          "grow": 0,
+                          "marginLeft": "10px",
+                          "bindingKey": "poopAmountCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 99,
+                          "dense": true,
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "bindingKey": "poopAmountSelect",
+                          "options": [
+                            "選択",
+                            "母指大",
+                            "片手半分",
+                            "片手",
+                            "両手",
+                            "両手山盛り"
+                          ]
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "marginLeft": "",
+                      "alignItems": "align-center"
+                    },
+                    {
+                      "type": "box",
+                      "id": 100,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 101,
+                          "label": "性状",
+                          "grow": 0,
+                          "marginLeft": "10px",
+                          "shrink": 0,
+                          "bindingKey": "poopShapeCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 102,
+                          "dense": true,
+                          "flexGrow": 0,
+                          "marginLeft": "10px",
+                          "bindingKey": "poopShapeSelect",
+                          "options": [
+                            "選択",
+                            "ブリストルスケール①",
+                            "ブリストルスケール②",
+                            "ブリストルスケール③",
+                            "ブリストルスケール④",
+                            "ブリストルスケール⑤",
+                            "ブリストルスケール⑥",
+                            "ブリストルスケール⑦"
+                          ]
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "marginLeft": "",
+                      "alignItems": "align-center"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 103,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 104,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "checkbox",
+                  "id": 105,
+                  "label": "腹部マッサージ",
+                  "grow": 0,
+                  "bindingKey": "abdomenMassageCheck"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 106,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 107,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 108,
+                  "text": "オムツ交換",
+                  "textAlign": "center"
+                }
+              ],
+              "width": ""
+            },
+            {
+              "type": "tcol",
+              "id": 109,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 110,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 111,
+                      "label": "オムツ",
+                      "grow": 0,
+                      "bindingKey": "diaperCheck1"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 112,
+                      "label": "パット",
+                      "grow": 0,
+                      "marginLeft": "10px",
+                      "bindingKey": "diaperCheck2"
+                    }
+                  ],
+                  "justifyContent": "justify-start",
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 113,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 114,
+              "rowspan": "",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 115,
+                  "text": "清潔ケア・指導",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 116,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 117,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 118,
+                      "label": "入浴",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "bathingCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 119,
+                      "label": "シャワー浴",
+                      "grow": 0,
+                      "marginLeft": "",
+                      "marginRight": "20px",
+                      "bindingKey": "showerBathCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 120,
+                      "label": "部分浴",
+                      "grow": 0,
+                      "marginLeft": "",
+                      "marginRight": "20px",
+                      "bindingKey": "partialBathCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 121,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 122,
+                          "label": "洗髪",
+                          "grow": 0,
+                          "marginLeft": "",
+                          "marginRight": "10px",
+                          "bindingKey": "shampooCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 123,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "marginLeft": "",
+                          "marginRight": "10px",
+                          "bindingKey": "ShampooSelect",
+                          "options": [
+                            "選択",
+                            "ドライシャンプー",
+                            "シャンプー",
+                            "シャンプー/ドライヤー"
+                          ]
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "marginLeft": "",
+                      "alignItems": "align-center",
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 124,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 125,
+                          "label": "清拭",
+                          "grow": 0,
+                          "marginLeft": "",
+                          "bindingKey": "bedBathCheck",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "radioGroup",
+                          "id": 126,
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 127,
+                              "label": "全身"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 128,
+                              "label": "一部"
+                            }
+                          ],
+                          "direction": "row",
+                          "grow": 0,
+                          "marginLeft": "10px",
+                          "dense": true,
+                          "bindingKey": "bedBathRadio",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 129,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "flexShrink": 0,
+                          "bindingKey": "bedBathPartSelect",
+                          "options": [
+                            "選択",
+                            "上半身",
+                            "下半身",
+                            "腰背部",
+                            "胸腹部",
+                            "上肢",
+                            "下肢",
+                            "陰部",
+                            "臀部"
+                          ]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 130,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 131,
+                          "label": "爪切り",
+                          "grow": 0,
+                          "marginLeft": "",
+                          "marginRight": "20px",
+                          "bindingKey": "nailCuttingCheck",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "box",
+                          "id": 132,
+                          "contents": [
+                            {
+                              "type": "checkbox",
+                              "id": 133,
+                              "label": "手",
+                              "bindingKey": "nailCuttingHandsCheck",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 134,
+                              "bindingKey": "nailCuttingHandsSelect",
+                              "options": [
+                                "選択",
+                                "両手",
+                                "右手のみ",
+                                "左手のみ"
+                              ],
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "dense": true,
+                              "marginRight": ""
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
+                        },
+                        {
+                          "type": "box",
+                          "id": 135,
+                          "contents": [
+                            {
+                              "type": "checkbox",
+                              "id": 136,
+                              "label": "足",
+                              "bindingKey": "nailCuttingFootsCheck",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 137,
+                              "bindingKey": "nailCuttingFootsSelect",
+                              "options": [
+                                "選択",
+                                "両足",
+                                "右足のみ",
+                                "左足のみ"
+                              ],
+                              "flexShrink": 1,
+                              "flexGrow": 0,
+                              "dense": true
+                            }
+                          ],
+                          "alignItems": "align-center"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 138,
+                      "label": "耳垢除去",
+                      "grow": 0,
+                      "marginLeft": "",
+                      "marginRight": "20px",
+                      "bindingKey": "clearEarCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 139,
+                      "label": "髭剃り",
+                      "grow": 0,
+                      "marginLeft": "",
+                      "marginRight": "20px",
+                      "bindingKey": "shavingHairCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 140,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 141,
+                          "label": "口腔ケア",
+                          "grow": 0,
+                          "marginLeft": "",
+                          "marginRight": "10px",
+                          "shrink": 0,
+                          "bindingKey": " oralCareCheck"
+                        },
+                        {
+                          "type": "box",
+                          "id": 142,
+                          "contents": [
+                            {
+                              "type": "checkbox",
+                              "id": 143,
+                              "label": "歯磨き",
+                              "grow": 0,
+                              "marginLeft": "",
+                              "marginRight": "10px",
+                              "shrink": 0,
+                              "bindingKey": "dentifriceCheck"
+                            },
+                            {
+                              "type": "checkbox",
+                              "id": 144,
+                              "label": "うがい",
+                              "grow": 0,
+                              "marginLeft": "",
+                              "marginRight": "10px",
+                              "shrink": 0,
+                              "bindingKey": "gargleCheck"
+                            },
+                            {
+                              "type": "box",
+                              "id": 145,
+                              "contents": [
+                                {
+                                  "type": "checkbox",
+                                  "id": 146,
+                                  "label": "拭き取り",
+                                  "grow": 0,
+                                  "marginLeft": "",
+                                  "marginRight": "10px",
+                                  "shrink": 0,
+                                  "bindingKey": "oralWipeOffCheck"
+                                },
+                                {
+                                  "type": "box",
+                                  "id": 147,
+                                  "contents": [
+                                    {
+                                      "type": "checkbox",
+                                      "id": 148,
+                                      "label": "実施",
+                                      "grow": 0,
+                                      "marginLeft": "",
+                                      "marginRight": "10px",
+                                      "shrink": 0,
+                                      "bindingKey": "oralWipeOffTrueCheck"
+                                    },
+                                    {
+                                      "type": "checkbox",
+                                      "id": 149,
+                                      "label": "指導",
+                                      "grow": 0,
+                                      "marginLeft": "",
+                                      "marginRight": "",
+                                      "shrink": 0,
+                                      "bindingKey": "oralWipeOffNoCheck"
+                                    }
+                                  ],
+                                  "alignItems": "align-center",
+                                  "marginRight": "20px"
+                                }
+                              ],
+                              "alignItems": "align-center"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginLeft": "",
+                          "flexGrow": 0,
+                          "marginRight": "20px"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginLeft": "",
+                      "flexGrow": 0,
+                      "marginRight": "20px",
+                      "wrap": false
+                    }
+                  ],
+                  "layout": "column",
+                  "wrap": "wrap",
+                  "alignItems": "align-start",
+                  "justifyContent": "justify-start"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 150,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 151,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 152,
+                  "text": "衣生活のケア・指導",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 153,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 154,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 155,
+                      "label": "衣服調整",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "clothesAdjustmentCheck",
+                      "shrink": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 156,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 157,
+                          "label": "更衣",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "clothesChangeCheck",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 158,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "bindingKey": "clothesChangeSelect",
+                          "options": [
+                            "選択",
+                            "上着",
+                            "下着",
+                            "ゆかた等",
+                            "肌着"
+                          ]
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 159,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 160,
+                          "grow": 0,
+                          "label": "シーツ交換",
+                          "marginRight": "10px",
+                          "bindingKey": "changeSheetCheck",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 161,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "bindingKey": "changeSheetSelect",
+                          "options": ["選択", "シーツ", "横シーツ", "シート"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    }
+                  ],
+                  "layout": "horizontal",
+                  "wrap": "wrap",
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 162,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 163,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 164,
+                  "text": "食事栄養のケア・指導",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 165,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 166,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 167,
+                      "label": "栄養指導",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "nursingGuidanceCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 168,
+                      "label": "食事",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "eatingCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 169,
+                      "label": "飲水",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "drinkingCheck"
+                    }
+                  ],
+                  "layout": "horizontal",
+                  "wrap": "wrap",
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 170,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 171,
+              "rowspan": "4",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 172,
+                  "text": "皮膚処置",
+                  "textAlign": "center"
+                }
+              ],
+              "colspan": "1"
+            },
+            {
+              "type": "tcol",
+              "id": 173,
+              "rowspan": "",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 174,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 175,
+                      "label": "褥瘡予防",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "preventionOfBedsoresCheck"
+                    }
+                  ],
+                  "layout": "horizontal",
+                  "wrap": "wrap",
+                  "alignItems": "align-center"
+                }
+              ],
+              "colspan": "2"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 176,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 177,
+              "rowspan": "",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 178,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 179,
+                      "label": "褥瘡処置",
+                      "grow": 0,
+                      "marginRight": "10px",
+                      "shrink": 0,
+                      "bindingKey": "bedSoreTreatmentCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 180,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 181,
+                          "text": "部位",
+                          "flex": "",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "marginLeft": "",
+                          "marginBottom": "",
+                          "color": "",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 182,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "bindingKey": "locationSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "10px",
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 183,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 184,
+                          "text": "薬剤",
+                          "flex": "",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "marginLeft": "",
+                          "marginBottom": "",
+                          "color": "",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 185,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "options": ["選択"],
+                          "bindingKey": "medicineSelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "10px",
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 186,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 187,
+                          "text": "方法",
+                          "flex": "",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "marginLeft": "",
+                          "marginBottom": "",
+                          "color": "",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 188,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "options": ["選択"],
+                          "bindingKey": "methodSelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "10px",
+                      "flexGrow": 0
+                    }
+                  ],
+                  "flexGrow": 0,
+                  "alignItems": "align-center"
+                }
+              ],
+              "colspan": "2"
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 189,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 190,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 191,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 192,
+                      "label": "創処置",
+                      "grow": 0,
+                      "marginRight": "10px",
+                      "shrink": 0,
+                      "bindingKey": "creativeDisposalCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 193,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 194,
+                          "text": "部位",
+                          "flex": "",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "marginLeft": "",
+                          "marginBottom": "",
+                          "color": "",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 195,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "bindingKey": "bodyLocationSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "10px",
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 196,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 197,
+                          "text": "薬剤",
+                          "flex": "",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "marginLeft": "",
+                          "marginBottom": "",
+                          "color": "",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 198,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "options": ["選択"],
+                          "bindingKey": "treatmentSelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "10px",
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 199,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 200,
+                          "text": "方法",
+                          "flex": "",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "marginLeft": "",
+                          "marginBottom": "",
+                          "color": "",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 201,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "options": ["選択"],
+                          "bindingKey": "optionSelect"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "10px",
+                      "flexGrow": 0
+                    }
+                  ],
+                  "flexGrow": 0,
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 202,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 203,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 204,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 205,
+                      "label": "外用薬塗布",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "shrink": 0,
+                      "bindingKey": "topicalDrugCoatingCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 206,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 207,
+                          "text": "薬剤",
+                          "flex": "",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "marginLeft": "",
+                          "marginBottom": "",
+                          "color": "",
+                          "shrink": 0
+                        },
+                        {
+                          "type": "select",
+                          "id": 208,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "bindingKey": "coatingSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "20px",
+                      "flexGrow": 0
+                    }
+                  ],
+                  "flexGrow": 0,
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 209,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 210,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 211,
+                  "text": "薬の管理・指導",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 212,
+              "rowspan": "",
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 213,
+                  "layout": "column",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 214,
+                      "label": "残薬確認",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "residualMedicineConfirmationCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 215,
+                      "label": "服薬介助",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "medicineAssistCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 216,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 217,
+                          "label": "内服セット",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "oralSetCheck"
+                        },
+                        {
+                          "type": "text",
+                          "id": 218,
+                          "flexBasis": "auto",
+                          "text": "期間",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px"
+                        },
+                        {
+                          "type": "select",
+                          "id": 219,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "flexShrink": 1,
+                          "bindingKey": "periodSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 220,
+                      "label": "点眼",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "eyeDropsCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 221,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 222,
+                          "label": "吸入",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "inhalationCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 223,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "flexShrink": 1,
+                          "bindingKey": "inhalationSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 224,
+                      "label": "座薬",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "suppositoryCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 225,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 226,
+                          "label": "点滴",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "intravenousCheck"
+                        },
+                        {
+                          "type": "box",
+                          "id": 227,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 228,
+                              "text": "薬剤",
+                              "flex": "",
+                              "grow": 0,
+                              "marginRight": "10px",
+                              "marginLeft": "",
+                              "marginBottom": "",
+                              "color": "",
+                              "shrink": 0
+                            },
+                            {
+                              "type": "select",
+                              "id": 229,
+                              "flexGrow": 0,
+                              "dense": true,
+                              "flexShrink": 1,
+                              "bindingKey": "intravenousMedicineSelect",
+                              "options": ["選択"]
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "10px",
+                          "flexGrow": 0,
+                          "flexShrink": 1
+                        },
+                        {
+                          "type": "box",
+                          "id": 230,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 231,
+                              "text": "量",
+                              "flex": "",
+                              "grow": 0,
+                              "marginRight": "10px",
+                              "marginLeft": "",
+                              "marginBottom": "",
+                              "color": "",
+                              "shrink": 0
+                            },
+                            {
+                              "type": "select",
+                              "id": 232,
+                              "flexGrow": 0,
+                              "dense": true,
+                              "options": ["選択"],
+                              "bindingKey": "intravenousAmountSelect"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "10px",
+                          "flexGrow": 0,
+                          "flexShrink": 1
+                        },
+                        {
+                          "type": "box",
+                          "id": 233,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 234,
+                              "text": "速度",
+                              "flex": "",
+                              "grow": 0,
+                              "marginRight": "10px",
+                              "marginLeft": "",
+                              "marginBottom": "",
+                              "color": "",
+                              "shrink": 0
+                            },
+                            {
+                              "type": "select",
+                              "id": 235,
+                              "flexGrow": 0,
+                              "dense": true,
+                              "bindingKey": "intravenousSpeedSelect",
+                              "options": ["選択"]
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "10px",
+                          "flexGrow": 0,
+                          "flexShrink": 1
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "flexShrink": 1
+                    },
+                    {
+                      "type": "box",
+                      "id": 236,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 237,
+                          "label": "注射",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "injectionCheck"
+                        },
+                        {
+                          "type": "box",
+                          "id": 238,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 239,
+                              "text": "薬剤",
+                              "flex": "",
+                              "grow": 0,
+                              "marginRight": "10px",
+                              "marginLeft": "",
+                              "marginBottom": "",
+                              "color": "",
+                              "shrink": 0
+                            },
+                            {
+                              "type": "select",
+                              "id": 240,
+                              "flexGrow": 0,
+                              "dense": true,
+                              "flexShrink": 1,
+                              "bindingKey": "injectionMedicineSelect",
+                              "options": ["選択"]
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "10px",
+                          "flexGrow": 0,
+                          "flexShrink": 1
+                        },
+                        {
+                          "type": "box",
+                          "id": 241,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 242,
+                              "text": "部位",
+                              "flex": "",
+                              "grow": 0,
+                              "marginRight": "10px",
+                              "marginLeft": "",
+                              "marginBottom": "",
+                              "color": "",
+                              "shrink": 0
+                            },
+                            {
+                              "type": "select",
+                              "id": 243,
+                              "flexGrow": 0,
+                              "dense": true,
+                              "options": ["選択"],
+                              "bindingKey": "injectionLocationSelect"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "10px",
+                          "flexGrow": 0,
+                          "flexShrink": 1
+                        },
+                        {
+                          "type": "box",
+                          "id": 244,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 245,
+                              "text": "方法",
+                              "flex": "",
+                              "grow": 0,
+                              "marginRight": "10px",
+                              "marginLeft": "",
+                              "marginBottom": "",
+                              "color": "",
+                              "shrink": 0
+                            },
+                            {
+                              "type": "select",
+                              "id": 246,
+                              "flexGrow": 0,
+                              "dense": true,
+                              "options": ["選択"],
+                              "bindingKey": "injectionMethodSelect"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "10px",
+                          "flexGrow": 0,
+                          "flexShrink": 1
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "flexShrink": 1
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 247,
+                      "grow": 0,
+                      "label": "外用薬貼付",
+                      "marginRight": "20px",
+                      "bindingKey": "topicalMedicineAffixedCheck"
+                    }
+                  ],
+                  "wrap": "wrap",
+                  "alignItems": "align-start",
+                  "justifyContent": "justify-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 248,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 249,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 250,
+                  "text": "リハビリテーション",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 251,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 252,
+                  "contents": [
+                    {
+                      "type": "box",
+                      "id": 253,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 254,
+                          "label": "関節可動域",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "rangeOfMotionCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 255,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "flexShrink": 1,
+                          "bindingKey": "rangeOfMotionSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 256,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 257,
+                          "label": "マッサージ",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "massageCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 258,
+                          "dense": true,
+                          "width": "",
+                          "flexBasis": "",
+                          "flexGrow": 0,
+                          "flexShrink": 1,
+                          "bindingKey": "massageSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 259,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 260,
+                          "label": "筋力",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "20px",
+                          "bindingKey": "muscleStrengthCheck"
+                        },
+                        {
+                          "type": "box",
+                          "id": 261,
+                          "contents": [
+                            {
+                              "type": "checkbox",
+                              "id": 262,
+                              "label": "上肢",
+                              "grow": 0,
+                              "shrink": 0,
+                              "marginRight": "10px",
+                              "bindingKey": "upperLimbsCheck"
+                            },
+                            {
+                              "type": "checkbox",
+                              "id": 263,
+                              "label": "下肢",
+                              "grow": 0,
+                              "shrink": 0,
+                              "marginRight": "10px",
+                              "bindingKey": "lowerLimbsCheck"
+                            },
+                            {
+                              "type": "checkbox",
+                              "id": 264,
+                              "label": "体幹",
+                              "grow": 0,
+                              "shrink": 0,
+                              "marginRight": "10px",
+                              "bindingKey": "trunkCheck"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "flexGrow": 0,
+                          "marginRight": "20px"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "flexGrow": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 265,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 266,
+                          "label": "座位",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "sittingPositionCheck"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 267,
+                          "label": "立位",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "standingCheck"
+                        },
+                        {
+                          "type": "checkbox",
+                          "id": 268,
+                          "label": "歩行",
+                          "grow": 0,
+                          "shrink": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "walkingCheck"
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 269,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 270,
+                          "label": "呼吸リハ",
+                          "marginRight": "20px",
+                          "grow": 0,
+                          "shrink": 0,
+                          "bindingKey": " breathingRehabilitationCheck"
+                        },
+                        {
+                          "type": "box",
+                          "id": 271,
+                          "contents": [
+                            {
+                              "type": "radioGroup",
+                              "id": 272,
+                              "contents": [
+                                {
+                                  "type": "radio",
+                                  "id": 273,
+                                  "label": "補助筋マッサージ"
+                                },
+                                {
+                                  "type": "radio",
+                                  "id": 274,
+                                  "label": "ストレッチ"
+                                },
+                                {
+                                  "type": "radio",
+                                  "id": 275,
+                                  "label": "呼吸法"
+                                },
+                                {
+                                  "type": "radio",
+                                  "id": 276,
+                                  "label": "呼気介助"
+                                }
+                              ],
+                              "direction": "row",
+                              "dense": true,
+                              "bindingKey": " breathingRehabilitationRadio"
+                            }
+                          ],
+                          "flexGrow": 0,
+                          "alignItems": "align-start",
+                          "flexShrink": 0
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "box",
+                      "id": 277,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 278,
+                          "label": "口腔リハ",
+                          "marginRight": "20px",
+                          "grow": 0,
+                          "bindingKey": "oralRehabilitationCheck"
+                        },
+                        {
+                          "type": "box",
+                          "id": 279,
+                          "contents": [
+                            {
+                              "type": "radioGroup",
+                              "id": 280,
+                              "contents": [
+                                {
+                                  "type": "radio",
+                                  "id": 281,
+                                  "label": "嚥下"
+                                },
+                                {
+                                  "type": "radio",
+                                  "id": 282,
+                                  "label": "言語"
+                                }
+                              ],
+                              "direction": "row",
+                              "dense": true,
+                              "bindingKey": "oralRehabilitationRadio"
+                            }
+                          ],
+                          "flexGrow": 0,
+                          "alignItems": "align-start"
+                        }
+                      ],
+                      "alignItems": "align-center",
+                      "marginRight": "20px"
+                    }
+                  ],
+                  "flexGrow": 0,
+                  "layout": "column",
+                  "alignItems": "align-start",
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 283,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 284,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 285,
+                  "text": "排痰ケア",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 286,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "radioGroup",
+                  "id": 287,
+                  "contents": [
+                    {
+                      "type": "radio",
+                      "id": 288,
+                      "label": "体位ドレナージ"
+                    },
+                    {
+                      "type": "radio",
+                      "id": 289,
+                      "label": "スクイージング"
+                    },
+                    {
+                      "type": "radio",
+                      "id": 290,
+                      "label": "吸引"
+                    }
+                  ],
+                  "direction": "row",
+                  "dense": true,
+                  "bindingKey": "sputumCareRadio"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 291,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 292,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 293,
+                  "text": "医療処置",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 294,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 295,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 296,
+                      "label": "酸素療法",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "shrink": 0,
+                      "bindingKey": "oxygenTherapyCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 297,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 298,
+                          "label": "IVH・CVポート",
+                          "grow": 0,
+                          "marginRight": "20px",
+                          "bindingKey": "IvhCvPortCheck"
+                        },
+                        {
+                          "type": "radioGroup",
+                          "id": 299,
+                          "direction": "row",
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 300,
+                              "label": "ポンプ有"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 301,
+                              "label": "無"
+                            }
+                          ],
+                          "dense": true,
+                          "bindingKey": "IvhCvPortRadio"
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "marginRight": "20px",
+                      "flexShrink": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 302,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 303,
+                          "label": "針",
+                          "grow": 0,
+                          "marginRight": "20px",
+                          "bindingKey": "needleCheck"
+                        },
+                        {
+                          "type": "radioGroup",
+                          "id": 304,
+                          "direction": "row",
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 305,
+                              "label": "抜去"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 306,
+                              "label": "挿入"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 307,
+                              "label": "ルート交換"
+                            }
+                          ],
+                          "dense": true,
+                          "bindingKey": "needleRadio"
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "marginRight": "20px",
+                      "flexShrink": 0
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 308,
+                      "label": "胃瘻",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "shrink": 0,
+                      "bindingKey": "gastrostomyCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 309,
+                      "label": "腹膜透析",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "shrink": 0,
+                      "bindingKey": "peritonealDialysisCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 310,
+                      "label": "出口部管理",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "shrink": 0,
+                      "bindingKey": "exitManagementCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 311,
+                      "label": "ストマ処理",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "shrink": 0,
+                      "bindingKey": "stomaProcessingCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 312,
+                      "label": "パウチ交換",
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "shrink": 0,
+                      "bindingKey": "pouchExchangeCheck"
+                    },
+                    {
+                      "type": "box",
+                      "id": 313,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 314,
+                          "label": "点滴",
+                          "grow": 0,
+                          "marginRight": "20px",
+                          "shrink": 0,
+                          "bindingKey": "intravenousCheck1"
+                        },
+                        {
+                          "type": "box",
+                          "id": 315,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 316,
+                              "text": "薬剤",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 317,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "bindingKey": "intravenousSelect",
+                              "options": ["選択"]
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
+                        },
+                        {
+                          "type": "box",
+                          "id": 318,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 319,
+                              "text": "量",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 320,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": ["選択"],
+                              "bindingKey": "intravenousAmountSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
+                        },
+                        {
+                          "type": "box",
+                          "id": 321,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 322,
+                              "text": "速度",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 323,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": ["選択"],
+                              "bindingKey": "intravenousSpeedSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "marginRight": "20px",
+                      "flexShrink": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 324,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 325,
+                          "label": "注射",
+                          "grow": 0,
+                          "marginRight": "20px",
+                          "shrink": 0,
+                          "bindingKey": "injectionCheck1"
+                        },
+                        {
+                          "type": "box",
+                          "id": 326,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 327,
+                              "text": "薬剤",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 328,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": ["選択"],
+                              "bindingKey": "injectionMedicineSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
+                        },
+                        {
+                          "type": "box",
+                          "id": 329,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 330,
+                              "text": "部位",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 331,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": ["選択"],
+                              "bindingKey": "injectionLocationSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
+                        },
+                        {
+                          "type": "box",
+                          "id": 332,
+                          "contents": [
+                            {
+                              "type": "text",
+                              "id": 333,
+                              "text": "方法",
+                              "shrink": 0,
+                              "marginRight": "10px"
+                            },
+                            {
+                              "type": "select",
+                              "id": 334,
+                              "dense": true,
+                              "marginRight": "10px",
+                              "flexGrow": 0,
+                              "flexShrink": 1,
+                              "options": ["選択"],
+                              "bindingKey": "injectionMethodSelect1"
+                            }
+                          ],
+                          "alignItems": "align-center",
+                          "marginRight": "20px"
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "marginRight": "20px",
+                      "flexShrink": 0
+                    },
+                    {
+                      "type": "box",
+                      "id": 335,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 336,
+                          "label": "その他",
+                          "grow": 0,
+                          "marginRight": "20px",
+                          "shrink": 0,
+                          "bindingKey": "otherCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 337,
+                          "dense": true,
+                          "marginRight": "10px",
+                          "flexGrow": 0,
+                          "flexShrink": 1,
+                          "bindingKey": "otherSelect",
+                          "options": ["選択"]
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center",
+                      "marginRight": "20px",
+                      "flexShrink": 0
+                    }
+                  ],
+                  "wrap": true,
+                  "alignItems": "align-start",
+                  "layout": "column"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 338,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 339,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 340,
+                  "text": "睡眠のケア・指導",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 341,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 342,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 343,
+                      "shrink": 0,
+                      "grow": 0,
+                      "label": "入眠を促すマッサージ",
+                      "marginRight": "20px",
+                      "bindingKey": "massageEncourageFallingAsleepCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 344,
+                      "label": "生活指導",
+                      "grow": 0,
+                      "shrink": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "lifeGuidanceCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 345,
+                      "label": "足浴",
+                      "grow": 0,
+                      "shrink": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "footBath"
+                    }
+                  ],
+                  "wrap": "wrap"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 346,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 347,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 348,
+                  "text": "体重",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 349,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 350,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "textField",
+                      "id": 351,
+                      "shrink": 1,
+                      "grow": 0,
+                      "bindingKey": " bodyWeightText"
+                    },
+                    {
+                      "type": "text",
+                      "id": 352,
+                      "text": "kg",
+                      "grow": 0,
+                      "shrink": 0
+                    }
+                  ],
+                  "flexGrow": 0,
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 353,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 354,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 355,
+                  "text": "留意点",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 356,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "textarea",
+                  "id": 357,
+                  "rows": "3",
+                  "autoGrow": false,
+                  "style": "standard",
+                  "dense": true,
+                  "bindingKey": "pointsToRememberText"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 358,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 359,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 360,
+                  "text": "次回訪問予定日",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 361,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 362,
+                  "contents": [
+                    {
+                      "type": "radioGroup",
+                      "id": 363,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 364,
+                          "label": "未定"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 365,
+                          "label": "定期"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 366,
+                          "label": "振替"
+                        }
+                      ],
+                      "direction": "row",
+                      "bindingKey": "nextVisitDateRadio",
+                      "dense": true,
+                      "grow": 0,
+                      "shrink": 0,
+                      "marginRight": "20px"
+                    },
+                    {
+                      "type": "datePicker",
+                      "id": 367,
+                      "dense": true,
+                      "locale": "ja",
+                      "marginRight": "20px",
+                      "grow": 0,
+                      "shrink": 1,
+                      "bindingKey": "nextVisitDatePicker"
+                    },
+                    {
+                      "type": "timeIntervalSelect",
+                      "id": 368,
+                      "dense": true,
+                      "time": [
+                        "00:00",
+                        "00:30",
+                        "01:00",
+                        "01:30",
+                        "02:00",
+                        "02:30",
+                        "03:00",
+                        "03:30",
+                        "04:00",
+                        "04:30",
+                        "05:00",
+                        "05:30",
+                        "06:00",
+                        "06:30",
+                        "07:00",
+                        "07:30",
+                        "08:00",
+                        "08:30",
+                        "09:00",
+                        "09:30",
+                        "10:00",
+                        "10:30",
+                        "11:00",
+                        "11:30",
+                        "12:00",
+                        "12:30",
+                        "13:00",
+                        "13:30",
+                        "14:00",
+                        "14:30",
+                        "15:00",
+                        "15:30",
+                        "16:00",
+                        "16:30",
+                        "17:00",
+                        "17:30",
+                        "18:00",
+                        "18:30",
+                        "19:00",
+                        "19:30",
+                        "20:00",
+                        "20:30",
+                        "21:00",
+                        "21:30",
+                        "22:00",
+                        "22:30",
+                        "23:00",
+                        "23:30"
+                      ],
+                      "marginRight": "",
+                      "grow": 0,
+                      "shrink": 1,
+                      "bindingKey": "nextVisitDateSelect"
+                    }
+                  ],
+                  "wrap": false,
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "id": 369,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 370,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 371,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 372,
+                  "text": "実績",
+                  "textAlign": "center"
+                }
+              ],
+              "width": "15%"
+            },
+            {
+              "type": "tcol",
+              "id": 373,
+              "width": "25%",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 374,
+                  "text": "基本療養費"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 375,
+              "width": "60%",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 376,
+                  "contents": [
+                    {
+                      "type": "radioGroup",
+                      "id": 377,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 378,
+                          "label": "Ⅰ"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 379,
+                          "label": "Ⅱ"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 380,
+                          "label": "Ⅲ"
+                        }
+                      ],
+                      "direction": "row",
+                      "dense": true,
+                      "grow": 0,
+                      "shrink": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "basicMedicalExpensesRadio"
+                    },
+                    {
+                      "type": "radioGroup",
+                      "id": 381,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 382,
+                          "label": "定期"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 383,
+                          "label": "緊急"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 384,
+                          "label": "緊急訪問看護加算"
+                        }
+                      ],
+                      "direction": "row",
+                      "dense": true,
+                      "grow": 0,
+                      "shrink": 0,
+                      "bindingKey": "basicMedicalExpensesRadio1"
+                    }
+                  ],
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 385,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 386,
+              "contents": []
+            },
+            {
+              "type": "tcol",
+              "id": 387,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 388,
+                  "text": "精神基本療養費",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 389,
+              "width": "60%",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 390,
+                  "contents": [
+                    {
+                      "type": "radioGroup",
+                      "id": 391,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 392,
+                          "label": "Ⅰ (30分未満)"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 393,
+                          "label": "Ⅱ (30分以上)"
+                        }
+                      ],
+                      "direction": "row",
+                      "dense": true,
+                      "grow": 0,
+                      "shrink": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "basicMentalHealthExpensesRadio"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 394,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 395,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 396,
+                  "text": "加算",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 397,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 398,
+                  "text": "緊急時訪問看護加算"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 399,
+              "contents": [
+                {
+                  "type": "radioGroup",
+                  "id": 400,
+                  "contents": [
+                    {
+                      "type": "radio",
+                      "id": 401,
+                      "label": "有"
+                    },
+                    {
+                      "type": "radio",
+                      "id": 402,
+                      "label": "無"
+                    }
+                  ],
+                  "direction": "row",
+                  "dense": true,
+                  "grow": 0,
+                  "shrink": 0,
+                  "marginRight": "20px",
+                  "bindingKey": "emergencyHomeVisitNursingAdditionRadio"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 403,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 404
+            },
+            {
+              "type": "tcol",
+              "id": 405,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 406,
+                  "text": "特別管理加算",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 407,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 408,
+                  "contents": [
+                    {
+                      "type": "radioGroup",
+                      "id": 409,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 410,
+                          "label": "Ⅰ"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 411,
+                          "label": "Ⅱ"
+                        }
+                      ],
+                      "dense": true,
+                      "grow": 0,
+                      "marginRight": "20px",
+                      "bindingKey": "specialManagementAdditionRadio"
+                    },
+                    {
+                      "type": "box",
+                      "id": 412,
+                      "contents": [
+                        {
+                          "type": "radioGroup",
+                          "id": 413,
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 414,
+                              "label": "悪性腫瘍指導管理"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 415,
+                              "label": "気管切開指導管理"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 416,
+                              "label": "気管ｶﾆｭｰﾚ"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 417,
+                              "label": "留置ｶﾃｰﾃﾙ"
+                            }
+                          ],
+                          "direction": "row",
+                          "dense": true,
+                          "shrink": 0,
+                          "bindingKey": "specialManagementAdditionRadio1"
+                        },
+                        {
+                          "type": "radioGroup",
+                          "id": 418,
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 419,
+                              "label": "人工肛門・膀胱"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 420,
+                              "label": "真皮超褥瘡"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 421,
+                              "label": "週3日以上の点滴"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 422,
+                              "label": "各種在宅指導管理"
+                            }
+                          ],
+                          "direction": "row",
+                          "dense": true,
+                          "shrink": 0,
+                          "bindingKey": "specialManagementAdditionRadio2"
+                        }
+                      ],
+                      "layout": "column",
+                      "justifyContent": "justify-space-between"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 423,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 424
+            },
+            {
+              "type": "tcol",
+              "id": 425
+            },
+            {
+              "type": "tcol",
+              "id": 426,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 427,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 428,
+                      "label": "退院時共同指導管理加算",
+                      "shrink": 0,
+                      "marginRight": "20px",
+                      "grow": 0,
+                      "bindingKey": "jointGuidanceManagementAdditionAtDischargeCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 429,
+                      "label": "退院支援導管加算 (退院日)",
+                      "shrink": 0,
+                      "marginRight": "20px",
+                      "grow": 0,
+                      "bindingKey": "dischargeSupportConduitAdditionCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 430,
+                      "label": "複数名看護加算",
+                      "shrink": 0,
+                      "marginRight": "20px",
+                      "grow": 0,
+                      "bindingKey": "multipleNursingAdditionCheck"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 431,
+                      "label": "長時間訪問看護加算",
+                      "shrink": 1,
+                      "marginRight": "20px",
+                      "grow": 0,
+                      "bindingKey": "longTermHomeVisitNursingAdditionCheck"
+                    }
+                  ],
+                  "wrap": true,
+                  "layout": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 432,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 433,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 434,
+                  "text": "保険外",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 435,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 436,
+                  "contents": [
+                    {
+                      "type": "box",
+                      "id": 437,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 438,
+                          "label": "交通費",
+                          "grow": 0,
+                          "marginRight": "20px",
+                          "bindingKey": "transportationExpensesCheck"
+                        },
+                        {
+                          "type": "radioGroup",
+                          "id": 439,
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 440,
+                              "label": "250円"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 441,
+                              "label": "500円"
+                            }
+                          ],
+                          "direction": "row",
+                          "dense": true,
+                          "grow": 0,
+                          "bindingKey": "transportationExpensesRadio"
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center"
+                    },
+                    {
+                      "type": "box",
+                      "id": 442,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 443,
+                          "label": "キャンセル料",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "cancellationChargeCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 444,
+                          "dense": true,
+                          "flexGrow": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "cancellationChargeSelect",
+                          "options": ["選択"]
+                        },
+                        {
+                          "type": "text",
+                          "id": 445,
+                          "text": "円",
+                          "grow": 0
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center"
+                    },
+                    {
+                      "type": "box",
+                      "id": 446,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 447,
+                          "label": "休日・時間外",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "holidaysAfterHoursCheck"
+                        },
+                        {
+                          "type": "select",
+                          "id": 448,
+                          "dense": true,
+                          "flexGrow": 0,
+                          "marginRight": "10px",
+                          "bindingKey": "holidaysAfterHoursSelect",
+                          "options": ["選択"]
+                        },
+                        {
+                          "type": "text",
+                          "id": 449,
+                          "text": "円",
+                          "grow": 0
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center"
+                    },
+                    {
+                      "type": "box",
+                      "id": 450,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 451,
+                          "label": "超過時間利用料 ( 30 分 3,000 円 ×",
+                          "grow": 0,
+                          "marginRight": "10px",
+                          "shrink": 0,
+                          "bindingKey": "overtimeUsageFeeCheck "
+                        },
+                        {
+                          "type": "select",
+                          "id": 452,
+                          "flexGrow": 0,
+                          "dense": true,
+                          "flexShrink": 1,
+                          "bindingKey": "overtimeUsageFeeSelect",
+                          "options": ["選択"]
+                        },
+                        {
+                          "type": "text",
+                          "id": 453,
+                          "text": ")",
+                          "grow": 0,
+                          "marginLeft": "5px"
+                        }
+                      ],
+                      "flexGrow": 0,
+                      "alignItems": "align-center"
+                    }
+                  ],
+                  "layout": "column"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "id": 454,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 455,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 456,
+              "contents": [
+                {
+                  "type": "textarea",
+                  "id": 457,
+                  "rows": "4",
+                  "dense": true,
+                  "bindingKey": "bottomtextarea1"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 458,
+              "contents": [
+                {
+                  "type": "textarea",
+                  "id": 459,
+                  "rows": "4",
+                  "dense": true,
+                  "bindingKey": "bottomtextarea2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 460,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 461,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 462,
+                  "text": "経過記録"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 463,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 464,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "textarea",
+                  "id": 465,
+                  "rows": "4",
+                  "dense": true,
+                  "bindingKey": "progressRecordText"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -6,17 +6,25 @@
     >
       <v-menu close-on-click offset-y min-width="120" max-height="300">
         <template v-slot:activator="{ on, attrs }">
-          <toolbar-btn
-            v-bind="attrs"
-            v-on="on"
-            dark
+          <v-btn-toggle
             class="mr-1"
-            color="primary"
-            :disabled="!selectedNode || elementsCanBeAdded.length === 0"
+            :background-color="
+              !selectedNode || elementsCanBeAdded.length === 0
+                ? 'grey'
+                : 'primary'
+            "
+            dark
           >
-            <v-icon small>mdi-plus</v-icon>
-            <v-icon small>mdi-menu-down</v-icon>
-          </toolbar-btn>
+            <toolbar-btn
+              v-bind="attrs"
+              v-on="on"
+              color="primary"
+              :disabled="!selectedNode || elementsCanBeAdded.length === 0"
+            >
+              <v-icon small>mdi-plus</v-icon>
+              <v-icon small>mdi-menu-down</v-icon>
+            </toolbar-btn>
+          </v-btn-toggle>
         </template>
         <v-list dense>
           <v-list-item
@@ -42,13 +50,13 @@
       <v-btn-toggle class="mr-1" background-color="grey" dark>
         <toolbar-btn
           @click="moveUpNode"
-          :disabled="!selectedNode || template === selectedNode"
+          :disabled="!selectedNode || selectRootNode"
         >
           <v-icon size="16px">mdi-chevron-up</v-icon>
         </toolbar-btn>
         <toolbar-btn
           @click="moveDownNode"
-          :disabled="!selectedNode || template === selectedNode"
+          :disabled="!selectedNode || selectRootNode"
         >
           <v-icon small>mdi-chevron-down</v-icon>
         </toolbar-btn>
@@ -60,7 +68,7 @@
         </toolbar-btn>
         <toolbar-btn
           @click="cutNode"
-          :disabled="!selectedNode || template === selectedNode"
+          :disabled="!selectedNode || selectRootNode"
         >
           <v-icon small>mdi-content-cut</v-icon>
         </toolbar-btn>
@@ -81,21 +89,27 @@
         </toolbar-btn>
       </v-btn-toggle>
 
-      <toolbar-btn color="secondary" dark class="mr-1" @click="openTreeviewAll">
-        <v-icon small v-if="!isTreeviewAllOpen"
-          >mdi-unfold-more-horizontal</v-icon
-        >
-        <v-icon small v-else>mdi-unfold-less-horizontal</v-icon>
-      </toolbar-btn>
+      <v-btn-toggle dark background-color="secondary" class="mr-1">
+        <toolbar-btn color="secondary" @click="openTreeviewAll">
+          <v-icon small v-if="!isTreeviewAllOpen"
+            >mdi-unfold-more-horizontal</v-icon
+          >
+          <v-icon small v-else>mdi-unfold-less-horizontal</v-icon>
+        </toolbar-btn>
+      </v-btn-toggle>
 
-      <toolbar-btn
-        color="red"
+      <v-btn-toggle
+        :background-color="!selectedNode || selectRootNode ? 'grey' : 'red'"
         dark
-        @click="deleteNode"
-        :disabled="!selectedNode || template === selectedNode"
       >
-        <v-icon small>mdi-close</v-icon>
-      </toolbar-btn>
+        <toolbar-btn
+          color="red"
+          @click="deleteNode"
+          :disabled="!selectedNode || selectRootNode"
+        >
+          <v-icon small>mdi-close</v-icon>
+        </toolbar-btn>
+      </v-btn-toggle>
     </v-layout>
 
     <v-layout style="flex: 1 0 0; overflow: auto">
@@ -183,6 +197,9 @@ export default {
   },
 
   computed: {
+    selectRootNode() {
+      return this.selectedNode === this.template;
+    },
     elementsCanBeAdded() {
       if (!this.selectedNode?.type) return [];
 
@@ -277,19 +294,15 @@ export default {
     },
     replaceNodeId(node, uniqueId = this.genUniqueId()) {
       node.id = uniqueId;
+
+      let uniqueNodeId = uniqueId;
       if ("contents" in node) {
-        let previosChildNode = null;
         for (const childNode of node.contents) {
-          if (!previosChildNode) {
-            this.replaceNodeId(childNode, uniqueId + 1);
-          } else {
-            this.replaceNodeId(childNode, this.findMaxId(previosChildNode) + 1);
-          }
-          previosChildNode = childNode;
+          uniqueNodeId = this.replaceNodeId(childNode, uniqueNodeId + 1);
         }
       }
 
-      return node;
+      return uniqueNodeId;
     },
     findParentNode(node, parentNode = this.template) {
       if ("contents" in parentNode) {
@@ -374,8 +387,7 @@ export default {
       if (this.firstPasteAfterCut) {
         this.restoreCopiedNodeBindingData();
       } else {
-        newNode = this.resetBindingKey(newNode);
-        newNode = this.replaceNodeId(newNode);
+        this.replaceNodeId(this.resetBindingKey(newNode));
       }
 
       if ("contents" in this.selectedNode) {
@@ -426,6 +438,6 @@ export default {
 
 <style lang="scss">
 .operation-toolbar .v-btn {
-  padding: 0 8px !important;
+  padding: 0 6px !important;
 }
 </style>

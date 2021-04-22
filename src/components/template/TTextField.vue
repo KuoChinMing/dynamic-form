@@ -43,16 +43,19 @@ export default {
     data: {
       handler(data) {
         this.style = {
-          flexGrow: data.flex,
+          flexGrow: data.grow,
           flexShrink: data.shrink,
           flexBasis: data.flexBasis,
+          marginTop: data.marginTop,
+          marginLeft: data.marginLeft,
+          marginBottom: data.marginBottom,
+          marginRight: data.marginRight,
           backgroundColor: data.backgroundColor,
           width: data.width,
         };
         this.attrs = {
           disabled: this.disabled ?? data.disabled,
         };
-        console.log(this.attrs);
       },
       immediate: true,
       deep: true,
@@ -63,6 +66,10 @@ export default {
     innerValue(newValue) {
       this.$emit("input", newValue);
     },
+  },
+
+  created() {
+    this.innerValue = this.value;
   },
 };
 </script>
