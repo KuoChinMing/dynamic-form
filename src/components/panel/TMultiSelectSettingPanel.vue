@@ -45,13 +45,67 @@
     </v-row>
 
     <element-setting-input-box
-      v-model="element['margin']"
-      type="textField"
+      v-model="element['grow']"
+      type="select"
       input-class="white"
-      label="margin"
+      label="grow"
+      :items="[
+        { text: 'true', value: 1 },
+        { text: 'false', value: 0 },
+      ]"
       dense
       outlined
       hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['shirnk']"
+      type="select"
+      input-class="white"
+      label="shrink"
+      :items="[
+        { text: 'true', value: 1 },
+        { text: 'false', value: 0 },
+      ]"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginTop']"
+      input-class="white"
+      label="marginTop"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginLeft']"
+      input-class="white"
+      label="marginLeft"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginBottom']"
+      input-class="white"
+      label="marginBottom"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['marginRight']"
+      input-class="white"
+      label="marginRight"
+      hide-details
+      dense
+      outlined
     ></element-setting-input-box>
 
     <element-setting-input-box

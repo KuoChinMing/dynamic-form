@@ -40,10 +40,16 @@ export default {
     data: {
       handler(data) {
         this.style = {
+          flexShrink: data.shrink,
+          flexGrow: data.grow,
           width: data.width,
-          margin: data.margin,
           backgroundColor: data.backgroundColor,
+          marginTop: data.marginTop,
+          marginLeft: data.marginLeft,
+          marginBottom: data.marginBottom,
+          marginRight: data.marginRight,
         };
+
         this.comboboxAttrs = {
           dense: data.dense,
           [data.style]: true,
