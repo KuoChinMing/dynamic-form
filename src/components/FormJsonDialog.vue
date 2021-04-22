@@ -10,6 +10,16 @@
             class="rounded body-1"
             rows="20"
           ></textarea>
+          <div class="text-right">
+            <v-btn
+              @click="tidyId"
+              small
+              class="text-lowercase subtitle-1"
+              color="primary"
+              text
+              >tidy id</v-btn
+            >
+          </div>
         </v-sheet>
       </v-card-text>
 
@@ -24,7 +34,6 @@
           outlined
           >copy</v-btn
         >
-
         <v-btn
           @click="closeDialog"
           class="text-capitalize"
@@ -50,7 +59,7 @@
       absolute
       centered
       :color="snackbarColor"
-      class="text-capitalize text-center"
+      class="text-center"
     >
       {{ notificationMessage }}
     </v-snackbar>
@@ -71,7 +80,7 @@ export default {
 
   data() {
     return {
-      inputTemplateString: "",
+      templateString: "",
       notificationMessage: "",
       showNotification: false,
       isOpen: false,
@@ -94,14 +103,6 @@ export default {
 
   computed: {
     ...mapState(["template"]),
-    templateString: {
-      get() {
-        return JSON.stringify(this.template, null, 2);
-      },
-      set(newValue) {
-        this.inputTemplateString = newValue;
-      },
-    },
   },
 
   watch: {
@@ -111,16 +112,41 @@ export default {
     isOpen(newValue) {
       this.$emit("input", newValue);
     },
+    template: {
+      handler() {
+        this.templateString = JSON.stringify(this.template, null, 2);
+      },
+      immediate: true,
+      deep: true,
+    },
   },
   created() {
     if (this.value) {
       this.value = this.isOpen;
     }
-
-    this.inputTemplateString = this.templateString;
   },
 
   methods: {
+    async tidyId() {
+      const template = JSON.parse(this.templateString);
+
+      const tidy = (node, id = 0) => {
+        node.id = id;
+
+        let childMaxId = id;
+        if ("contents" in node) {
+          for (const childNode of node.contents) {
+            childMaxId = tidy(childNode, childMaxId + 1);
+          }
+        }
+
+        return childMaxId;
+      };
+
+      tidy(template);
+      this.templateString = JSON.stringify(template, null, 2);
+      this.notify.normal("id now is tidy");
+    },
     closeDialog() {
       this.isOpen = false;
     },
@@ -132,7 +158,7 @@ export default {
     },
     applyTemplate() {
       try {
-        const template = JSON.parse(this.inputTemplateString);
+        const template = JSON.parse(this.templateString);
         this.$store.commit("template", template);
         this.closeDialog();
       } catch (error) {

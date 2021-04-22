@@ -17,7 +17,7 @@
                 ref="overlay"
                 style="position: absolute; z-index: 9999; opacity: 0.4"
                 class="grey"
-                :class="{ 'd-none': !highlight }"
+                :class="{ 'd-none': !highlightMask }"
               ></div>
             </v-sheet>
           </div>
@@ -78,7 +78,7 @@ export default {
 
   data() {
     return {
-      highlight: false,
+      highlightMask: false,
       selectedNode: null,
       split: null,
     };
@@ -151,10 +151,10 @@ export default {
       this.$refs.overlay.style.width = width + "px";
       this.$refs.overlay.style.height = height + "px";
 
-      this.highlight = true;
+      this.highlightMask = true;
     },
     removeHighLight() {
-      this.highlight = false;
+      this.highlightMask = false;
     },
     selectNode(selectedNode) {
       this.selectedNode = selectedNode;
