@@ -12,12 +12,12 @@
           ></textarea>
           <div class="text-right">
             <v-btn
-              @click="resetBindingData"
+              @click="cleanBindingData"
               small
               class="text-lowercase subtitle-1"
               color="primary"
               text
-              >reset binding data</v-btn
+              >clean binding data</v-btn
             >
           </div>
         </v-sheet>
@@ -128,22 +128,26 @@ export default {
   },
 
   methods: {
-    resetBindingData() {
+    cleanBindingData() {
       const bindingData = JSON.parse(this.bindingDataString);
+      const newBindingData = {};
 
-      const reset = (node) => {
-        bindingData[node.bindingKey] = null;
+      const clean = (node) => {
+        const bindingKey = node.bindingKey;
+        if (bindingKey) {
+          newBindingData[bindingKey] = bindingData[bindingKey] ?? null;
+        }
 
         if ("contents" in node) {
           for (const childNode of node.contents) {
-            reset(childNode);
+            clean(childNode);
           }
         }
       };
+      clean(this.template);
 
-      reset(this.template);
-      this.bindingDataString = JSON.stringify(bindingData, null, 2);
-      this.notify.normal("data now is reset");
+      this.bindingDataString = JSON.stringify(newBindingData, null, 2);
+      this.notify.normal("binding data now is clean");
     },
     closeDialog() {
       this.isOpen = false;
