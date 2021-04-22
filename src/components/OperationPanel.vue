@@ -405,7 +405,7 @@ export default {
 
       if ("contents" in node) {
         for (const childNode of node.contents) {
-          this.storeCopiedNodeBindingData(childNode);
+          this.deleteBindingData(childNode);
         }
       }
     },
