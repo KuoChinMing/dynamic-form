@@ -127,7 +127,7 @@ export default {
   },
 
   methods: {
-    async tidyId() {
+    tidyId() {
       const template = JSON.parse(this.templateString);
 
       const tidy = (node, id = 0) => {
