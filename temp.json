@@ -14,10 +14,957 @@
             {
               "type": "tcol",
               "id": 3,
+              "width": "16.6%",
               "contents": [
                 {
                   "type": "text",
                   "id": 4,
+                  "text": "利用者氏名",
+                  "fontStyle": "",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 5,
+              "width": "16.6%",
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 6,
+                  "width": "auto",
+                  "bindingKey": "patientName"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 7,
+              "width": "16.6%",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 8,
+                  "text": "訪問者",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 9,
+              "width": "16.6%",
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 10,
+                  "width": "auto",
+                  "bindingKey": "visitorName"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 11,
+              "width": "16.6%",
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 12,
+                  "text": "同行者",
+                  "width": "",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 13,
+              "width": "16.6%",
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 14,
+                  "width": "auto",
+                  "bindingKey": "partnerName"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 15,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 16,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 17,
+                  "text": "訪問日時",
+                  "textAlign": "center"
+                }
+              ],
+              "width": "16.6%"
+            },
+            {
+              "type": "tcol",
+              "id": 18,
+              "colspan": "3",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 19,
+                  "contents": [
+                    {
+                      "type": "radioGroup",
+                      "id": 20,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 21,
+                          "label": "定期"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 22,
+                          "label": "緊急"
+                        }
+                      ],
+                      "dense": true,
+                      "direction": "row",
+                      "bindingKey": "visitDateRadio"
+                    },
+                    {
+                      "type": "datePicker",
+                      "id": 23,
+                      "locale": "ja",
+                      "style": "standard",
+                      "dense": true,
+                      "bindingKey": "visitDatePicker",
+                      "width": "",
+                      "label": "日付の選択"
+                    },
+                    {
+                      "type": "text",
+                      "id": 24,
+                      "text": "　"
+                    },
+                    {
+                      "type": "timeIntervalSelect",
+                      "id": 25,
+                      "time": [
+                        "時間選択",
+                        "00:00",
+                        "00:30",
+                        "01:00",
+                        "01:30",
+                        "02:00",
+                        "02:30",
+                        "03:00",
+                        "03:30",
+                        "04:00",
+                        "04:30",
+                        "05:00",
+                        "05:30",
+                        "06:00",
+                        "06:30",
+                        "07:00",
+                        "07:30",
+                        "08:00",
+                        "08:30",
+                        "09:00",
+                        "09:30",
+                        "10:00",
+                        "10:30",
+                        "11:00",
+                        "11:30",
+                        "12:00",
+                        "12:30",
+                        "13:00",
+                        "13:30",
+                        "14:00",
+                        "14:30",
+                        "15:00",
+                        "15:30",
+                        "16:00",
+                        "16:30",
+                        "17:00",
+                        "17:30",
+                        "18:00",
+                        "18:30",
+                        "19:00",
+                        "19:30",
+                        "20:00",
+                        "20:30",
+                        "21:00",
+                        "21:30",
+                        "22:00",
+                        "22:30",
+                        "23:00",
+                        "23:30"
+                      ],
+                      "dense": true,
+                      "width": "12%",
+                      "bindingKey": "visitTimeInterval"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 26,
+              "colspan": "2",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 27,
+                  "layout": "column",
+                  "contents": [
+                    {
+                      "type": "box",
+                      "id": 28,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 29,
+                          "text": "室温",
+                          "flexBasis": "auto"
+                        },
+                        {
+                          "type": "textField",
+                          "id": 30,
+                          "width": "",
+                          "bindingKey": "roomTemperature"
+                        },
+                        {
+                          "type": "text",
+                          "id": 31,
+                          "text": "℃",
+                          "flexBasis": "auto"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "id": 32,
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 33,
+                          "text": "湿度",
+                          "flexBasis": "auto"
+                        },
+                        {
+                          "type": "textField",
+                          "id": 34,
+                          "width": "",
+                          "bindingKey": "roomHumidity"
+                        },
+                        {
+                          "type": "text",
+                          "id": 35,
+                          "text": "%",
+                          "flexBasis": "auto"
+                        }
+                      ]
+                    }
+                  ],
+                  "wrap": "wrap",
+                  "fillHeight": false,
+                  "alignItems": "align-start"
+                }
+              ],
+              "width": "16.6%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "id": 36,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 37,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 38,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 39,
+                  "text": "體溫",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 40,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 41,
+                  "textAlign": "center",
+                  "text": "脈拍"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 42,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 43,
+                  "text": "血圧",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 44,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 45,
+                  "text": "呼吸",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 46,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 47,
+                  "text": "SpO2",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 48,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 49,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 50,
+                  "bindingKey": "bodyTemperature"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 51,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 52,
+                  "layout": "column",
+                  "contents": [
+                    {
+                      "type": "textField",
+                      "id": 53,
+                      "bindingKey": "pulseInput",
+                      "width": ""
+                    },
+                    {
+                      "type": "box",
+                      "id": 54,
+                      "contents": [
+                        {
+                          "type": "radioGroup",
+                          "id": 55,
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 56,
+                              "label": "整脈"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 57,
+                              "label": "不整脈"
+                            }
+                          ],
+                          "direction": "row",
+                          "dense": true,
+                          "bindingKey": "pulseRadio"
+                        },
+                        {
+                          "type": "select",
+                          "id": 58,
+                          "dense": true,
+                          "bindingKey": "pulseSelect",
+                          "options": [
+                            "選択",
+                            "リズム不整",
+                            "結滞"
+                          ]
+                        }
+                      ],
+                      "layout": "column",
+                      "flexGrow": 0,
+                      "flexShrink": 0,
+                      "fillHeight": true,
+                      "alignItems": "",
+                      "wrap": true,
+                      "justifyContent": "justify-start"
+                    },
+                    {
+                      "type": "box",
+                      "id": 59,
+                      "contents": [
+                        {
+                          "type": "checkbox",
+                          "id": 60,
+                          "label": "脈圧",
+                          "bindingKey": "bloodPressureCheckbox"
+                        },
+                        {
+                          "type": "radioGroup",
+                          "id": 61,
+                          "contents": [
+                            {
+                              "type": "radio",
+                              "id": 62,
+                              "label": "良好"
+                            },
+                            {
+                              "type": "radio",
+                              "id": 63,
+                              "label": "不良"
+                            }
+                          ],
+                          "dense": true,
+                          "direction": "row",
+                          "bindingKey": "bloodPressureRadio"
+                        }
+                      ],
+                      "alignItems": "align-end"
+                    }
+                  ],
+                  "justifyContent": "center",
+                  "flexGrow": 1
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 64,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 65,
+                  "layout": "column",
+                  "contents": [
+                    {
+                      "type": "box",
+                      "id": 66,
+                      "layout": "horizontal",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "id": 67,
+                          "text": "最高/最低",
+                          "flexBasis": "auto"
+                        },
+                        {
+                          "type": "textField",
+                          "id": 68,
+                          "shrink": "",
+                          "flex": "",
+                          "flexBasis": "",
+                          "width": "15%",
+                          "bindingKey": "bloodPressure"
+                        }
+                      ],
+                      "wrap": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 69,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 70,
+                  "bindingKey": "breatheInput"
+                },
+                {
+                  "type": "radioGroup",
+                  "id": 71,
+                  "contents": [
+                    {
+                      "type": "radio",
+                      "id": 72,
+                      "label": "副雑音あり"
+                    },
+                    {
+                      "type": "radio",
+                      "id": 73,
+                      "label": "なし"
+                    }
+                  ],
+                  "direction": "row",
+                  "bindingKey": "breatheNoiseRadio"
+                },
+                {
+                  "type": "select",
+                  "id": 74,
+                  "style": "",
+                  "dense": true,
+                  "width": "",
+                  "flexBasis": "",
+                  "flexGrow": 1,
+                  "options": [
+                    "選択",
+                    "連続性高調整副雑音",
+                    "連続性低調性副雑音",
+                    "断続性粗い副雑音",
+                    "断続性細かい副雑音"
+                  ],
+                  "bindingKey": "breathNoiseSelectionValue"
+                },
+                {
+                  "type": "box",
+                  "id": 75,
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 76,
+                      "label": "air入り",
+                      "bindingKey": "breatheAir"
+                    },
+                    {
+                      "type": "radioGroup",
+                      "id": 77,
+                      "contents": [
+                        {
+                          "type": "radio",
+                          "id": 78,
+                          "label": "良好"
+                        },
+                        {
+                          "type": "radio",
+                          "id": 79,
+                          "label": "不良"
+                        }
+                      ],
+                      "direction": "row",
+                      "dense": true,
+                      "bindingKey": "breatheAirRadio"
+                    }
+                  ],
+                  "alignItems": "align-end"
+                }
+              ]
+            },
+            {
+              "type": "tcol",
+              "id": 80,
+              "contents": [
+                {
+                  "type": "textField",
+                  "id": 81,
+                  "bindingKey": "spO2Input"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "id": 82,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 83,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 84,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 85,
+                  "text": "排尿",
+                  "textAlign": "center"
+                }
+              ],
+              "rowspan": "4",
+              "width": "20%"
+            },
+            {
+              "type": "tcol",
+              "id": 86,
+              "width": "80%",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 87,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 88,
+                      "label": "尿量",
+                      "bindingKey": "urineVolume",
+                      "grow": 0,
+                      "marginRight": "8px"
+                    },
+                    {
+                      "type": "select",
+                      "id": 89,
+                      "dense": true,
+                      "style": "",
+                      "flexBasis": "auto",
+                      "bindingKey": "urineAmount",
+                      "options": [
+                        "選択",
+                        "<100",
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "> 400"
+                      ],
+                      "width": "100px",
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 90,
+                      "text": "ml",
+                      "margin": "0 8px 0 0"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 91,
+                      "label": "性状",
+                      "bindingKey": "urineSituation",
+                      "grow": 0,
+                      "marginRight": "8px"
+                    },
+                    {
+                      "type": "select",
+                      "id": 92,
+                      "bindingKey": "urineSituationSelection",
+                      "dense": true,
+                      "options": [
+                        "選択",
+                        "クリア",
+                        "混濁",
+                        "浮遊物"
+                      ],
+                      "width": "100px",
+                      "flexGrow": 0
+                    }
+                  ],
+                  "wrap": "nowrap",
+                  "justifyContent": "justify-start",
+                  "alignItems": "align-center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 93,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 94,
+              "width": "",
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 95,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 96,
+                      "label": "道量",
+                      "bindingKey": "urinePathVolume",
+                      "grow": 0,
+                      "marginRight": "8px"
+                    },
+                    {
+                      "type": "text",
+                      "id": 97,
+                      "text": "("
+                    },
+                    {
+                      "type": "select",
+                      "id": 98,
+                      "dense": true,
+                      "style": "",
+                      "flexBasis": "auto",
+                      "options": [
+                        "選択",
+                        "<100",
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        ">400"
+                      ],
+                      "bindingKey": "pathSelection",
+                      "flexGrow": 0,
+                      "width": "100px",
+                      "flexShrink": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 99,
+                      "text": "ml）　"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 100,
+                      "grow": 0,
+                      "marginRight": "8px",
+                      "label": "性状",
+                      "bindingKey": "urinePathSituation"
+                    },
+                    {
+                      "type": "text",
+                      "id": 101,
+                      "text": "(",
+                      "flexBasis": "auto"
+                    },
+                    {
+                      "type": "select",
+                      "id": 102,
+                      "dense": true,
+                      "options": [
+                        "選択",
+                        "クリア",
+                        "混濁",
+                        "浮遊物"
+                      ],
+                      "bindingKey": "pathSituationSelection",
+                      "flexGrow": 0,
+                      "width": "100px"
+                    },
+                    {
+                      "type": "text",
+                      "id": 103,
+                      "text": "）"
+                    }
+                  ],
+                  "wrap": "nowrap"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 104,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 105,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 106,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 107,
+                      "bindingKey": "urineTubeCheckbox",
+                      "label": "尿管交換",
+                      "grow": 0,
+                      "marginRight": "8px"
+                    },
+                    {
+                      "type": "text",
+                      "id": 108,
+                      "text": "(",
+                      "flexBasis": "auto"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 109,
+                      "grow": 0,
+                      "label": "管のサイズ",
+                      "bindingKey": "urineTubecheckbox1"
+                    },
+                    {
+                      "type": "select",
+                      "id": 110,
+                      "dense": true,
+                      "width": "100px",
+                      "options": [
+                        "選択",
+                        "12Fr",
+                        "14Fr",
+                        "16Fr",
+                        "18Fr",
+                        "20Fr"
+                      ],
+                      "bindingKey": "tubeSelection",
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 111,
+                      "text": "Fr　"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 112,
+                      "bindingKey": "urineTubeWaterCheckbox",
+                      "label": "カフ水",
+                      "grow": 0
+                    },
+                    {
+                      "type": "select",
+                      "id": 113,
+                      "dense": true,
+                      "width": "100px",
+                      "flexBasis": "",
+                      "bindingKey": "waterSelection",
+                      "options": [
+                        "選択",
+                        "5ml",
+                        "10ml",
+                        "15ml",
+                        "20ml",
+                        "30ml"
+                      ],
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 114,
+                      "flexBasis": "auto",
+                      "text": "ml）"
+                    }
+                  ],
+                  "wrap": "wrap"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trow",
+          "id": 115,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 116,
+              "contents": [
+                {
+                  "type": "box",
+                  "id": 117,
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "checkbox",
+                      "id": 118,
+                      "label": "尿管管理",
+                      "bindingKey": "urineTubeExchange1",
+                      "grow": 0
+                    },
+                    {
+                      "type": "text",
+                      "id": 119,
+                      "text": "(",
+                      "flexBasis": "auto"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 120,
+                      "grow": 0,
+                      "bindingKey": "bladderClean"
+                    },
+                    {
+                      "type": "text",
+                      "id": 121,
+                      "flexBasis": "auto",
+                      "text": "膀胱洗浄　"
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 122,
+                      "grow": 0,
+                      "bindingKey": "bladderClean1",
+                      "label": "ミルキング"
+                    },
+                    {
+                      "type": "select",
+                      "id": 123,
+                      "dense": true,
+                      "width": "100px",
+                      "flexBasis": "",
+                      "options": [
+                        "選択",
+                        "実施",
+                        "指導"
+                      ],
+                      "bindingKey": "urinaryCleanSelection",
+                      "flexGrow": 0
+                    },
+                    {
+                      "type": "checkbox",
+                      "id": 124,
+                      "bindingKey": "bladderClean2",
+                      "label": "パープルシンドローム)",
+                      "grow": 0
+                    }
+                  ],
+                  "wrap": "wrap"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "id": 125,
+      "contents": [
+        {
+          "type": "trow",
+          "id": 126,
+          "contents": [
+            {
+              "type": "tcol",
+              "id": 127,
+              "contents": [
+                {
+                  "type": "text",
+                  "id": 128,
                   "text": "排便",
                   "textAlign": "center"
                 }
@@ -27,30 +974,36 @@
             },
             {
               "type": "tcol",
-              "id": 5,
+              "id": 129,
               "colspan": "2",
               "width": "80%",
               "contents": [
                 {
                   "type": "box",
-                  "id": 6,
+                  "id": 130,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 7,
+                      "id": 131,
                       "label": "腸蠕動音",
                       "grow": 0,
                       "bindingKey": "intestinalSoundsCheck"
                     },
                     {
                       "type": "select",
-                      "id": 8,
+                      "id": 132,
                       "dense": true,
                       "width": "",
                       "bindingKey": "intestinalSoundsSelect",
                       "flexGrow": 0,
-                      "options": ["選択", "聞かれず", "弱め", "良好", "更新"],
+                      "options": [
+                        "選択",
+                        "聞かれず",
+                        "弱め",
+                        "良好",
+                        "更新"
+                      ],
                       "marginLeft": "10px"
                     }
                   ],
@@ -62,21 +1015,21 @@
         },
         {
           "type": "trow",
-          "id": 9,
+          "id": 133,
           "contents": [
             {
               "type": "tcol",
-              "id": 10,
+              "id": 134,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 11,
+                  "id": 135,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 12,
+                      "id": 136,
                       "label": "排便状況",
                       "bindingKey": "defecationCheck"
                     }
@@ -88,20 +1041,20 @@
         },
         {
           "type": "trow",
-          "id": 13,
+          "id": 137,
           "contents": [
             {
               "type": "tcol",
-              "id": 14,
+              "id": 138,
               "contents": [
                 {
                   "type": "box",
-                  "id": 15,
+                  "id": 139,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 16,
+                      "id": 140,
                       "label": "日",
                       "grow": 0,
                       "marginRight": "20px",
@@ -109,18 +1062,18 @@
                     },
                     {
                       "type": "box",
-                      "id": 17,
+                      "id": 141,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 18,
+                          "id": 142,
                           "label": "量",
                           "grow": 0,
                           "bindingKey": "defecationAmountSundayCheck"
                         },
                         {
                           "type": "select",
-                          "id": 19,
+                          "id": 143,
                           "dense": true,
                           "width": "",
                           "options": [
@@ -140,7 +1093,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 20,
+                          "id": 144,
                           "label": "性状",
                           "marginLeft": "10px",
                           "grow": 0,
@@ -149,7 +1102,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 21,
+                          "id": 145,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -185,16 +1138,16 @@
             },
             {
               "type": "tcol",
-              "id": 22,
+              "id": 146,
               "contents": [
                 {
                   "type": "box",
-                  "id": 23,
+                  "id": 147,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 24,
+                      "id": 148,
                       "label": "月",
                       "grow": 0,
                       "marginRight": "20px",
@@ -202,18 +1155,18 @@
                     },
                     {
                       "type": "box",
-                      "id": 25,
+                      "id": 149,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 26,
+                          "id": 150,
                           "label": "量",
                           "grow": 0,
                           "bindingKey": "defecationAmountMondayCheck"
                         },
                         {
                           "type": "select",
-                          "id": 27,
+                          "id": 151,
                           "dense": true,
                           "width": "",
                           "options": [
@@ -233,7 +1186,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 28,
+                          "id": 152,
                           "label": "性状",
                           "marginLeft": "10px",
                           "grow": 0,
@@ -242,7 +1195,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 29,
+                          "id": 153,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -280,20 +1233,20 @@
         },
         {
           "type": "trow",
-          "id": 30,
+          "id": 154,
           "contents": [
             {
               "type": "tcol",
-              "id": 31,
+              "id": 155,
               "contents": [
                 {
                   "type": "box",
-                  "id": 32,
+                  "id": 156,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 33,
+                      "id": 157,
                       "label": "火",
                       "grow": 0,
                       "marginRight": "20px",
@@ -301,18 +1254,18 @@
                     },
                     {
                       "type": "box",
-                      "id": 34,
+                      "id": 158,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 35,
+                          "id": 159,
                           "label": "量",
                           "grow": 0,
                           "bindingKey": "defecationAmountTuesdayCheck"
                         },
                         {
                           "type": "select",
-                          "id": 36,
+                          "id": 160,
                           "dense": true,
                           "width": "",
                           "options": [
@@ -332,7 +1285,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 37,
+                          "id": 161,
                           "label": "性状",
                           "marginLeft": "10px",
                           "grow": 0,
@@ -341,7 +1294,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 38,
+                          "id": 162,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -377,16 +1330,16 @@
             },
             {
               "type": "tcol",
-              "id": 39,
+              "id": 163,
               "contents": [
                 {
                   "type": "box",
-                  "id": 40,
+                  "id": 164,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 41,
+                      "id": 165,
                       "label": "水",
                       "grow": 0,
                       "marginRight": "20px",
@@ -394,18 +1347,18 @@
                     },
                     {
                       "type": "box",
-                      "id": 42,
+                      "id": 166,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 43,
+                          "id": 167,
                           "label": "量",
                           "grow": 0,
                           "bindingKey": "defecationAmountWednesdayCheck"
                         },
                         {
                           "type": "select",
-                          "id": 44,
+                          "id": 168,
                           "dense": true,
                           "width": "",
                           "options": [
@@ -425,7 +1378,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 45,
+                          "id": 169,
                           "label": "性状",
                           "marginLeft": "10px",
                           "grow": 0,
@@ -434,7 +1387,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 46,
+                          "id": 170,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -472,20 +1425,20 @@
         },
         {
           "type": "trow",
-          "id": 47,
+          "id": 171,
           "contents": [
             {
               "type": "tcol",
-              "id": 48,
+              "id": 172,
               "contents": [
                 {
                   "type": "box",
-                  "id": 49,
+                  "id": 173,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 50,
+                      "id": 174,
                       "label": "木",
                       "grow": 0,
                       "marginRight": "20px",
@@ -493,18 +1446,18 @@
                     },
                     {
                       "type": "box",
-                      "id": 51,
+                      "id": 175,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 52,
+                          "id": 176,
                           "label": "量",
                           "grow": 0,
                           "bindingKey": "defecationAmountThursdayCheck"
                         },
                         {
                           "type": "select",
-                          "id": 53,
+                          "id": 177,
                           "dense": true,
                           "width": "",
                           "options": [
@@ -524,7 +1477,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 54,
+                          "id": 178,
                           "label": "性状",
                           "marginLeft": "10px",
                           "grow": 0,
@@ -533,7 +1486,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 55,
+                          "id": 179,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -569,16 +1522,16 @@
             },
             {
               "type": "tcol",
-              "id": 56,
+              "id": 180,
               "contents": [
                 {
                   "type": "box",
-                  "id": 57,
+                  "id": 181,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 58,
+                      "id": 182,
                       "label": "金",
                       "grow": 0,
                       "marginRight": "20px",
@@ -586,18 +1539,18 @@
                     },
                     {
                       "type": "box",
-                      "id": 59,
+                      "id": 183,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 60,
+                          "id": 184,
                           "label": "量",
                           "grow": 0,
                           "bindingKey": "defecationAmountFridayCheck"
                         },
                         {
                           "type": "select",
-                          "id": 61,
+                          "id": 185,
                           "dense": true,
                           "width": "",
                           "options": [
@@ -617,7 +1570,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 62,
+                          "id": 186,
                           "label": "性状",
                           "marginLeft": "10px",
                           "grow": 0,
@@ -626,7 +1579,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 63,
+                          "id": 187,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -664,20 +1617,20 @@
         },
         {
           "type": "trow",
-          "id": 64,
+          "id": 188,
           "contents": [
             {
               "type": "tcol",
-              "id": 65,
+              "id": 189,
               "contents": [
                 {
                   "type": "box",
-                  "id": 66,
+                  "id": 190,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 67,
+                      "id": 191,
                       "label": "土",
                       "grow": 0,
                       "marginRight": "20px",
@@ -685,18 +1638,18 @@
                     },
                     {
                       "type": "box",
-                      "id": 68,
+                      "id": 192,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 69,
+                          "id": 193,
                           "label": "量",
                           "grow": 0,
                           "bindingKey": "defecationAmountSaturdayCheck"
                         },
                         {
                           "type": "select",
-                          "id": 70,
+                          "id": 194,
                           "dense": true,
                           "width": "",
                           "options": [
@@ -716,7 +1669,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 71,
+                          "id": 195,
                           "label": "性状",
                           "marginLeft": "10px",
                           "grow": 0,
@@ -725,7 +1678,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 72,
+                          "id": 196,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -761,27 +1714,27 @@
             },
             {
               "type": "tcol",
-              "id": 73,
+              "id": 197,
               "contents": []
             }
           ]
         },
         {
           "type": "trow",
-          "id": 74,
+          "id": 198,
           "contents": [
             {
               "type": "tcol",
-              "id": 75,
+              "id": 199,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 76,
+                  "id": 200,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 77,
+                      "id": 201,
                       "label": "指診",
                       "grow": 0,
                       "shrink": 0,
@@ -789,16 +1742,16 @@
                     },
                     {
                       "type": "radioGroup",
-                      "id": 78,
+                      "id": 202,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 79,
+                          "id": 203,
                           "label": "触れず"
                         },
                         {
                           "type": "radio",
-                          "id": 80,
+                          "id": 204,
                           "label": "触れる"
                         }
                       ],
@@ -811,12 +1764,17 @@
                     },
                     {
                       "type": "select",
-                      "id": 81,
+                      "id": 205,
                       "flexGrow": 0,
                       "dense": true,
                       "flexShrink": 1,
                       "bindingKey": "touchExaminationSelect",
-                      "options": ["選択", "硬便", "普通便", "軟便"]
+                      "options": [
+                        "選択",
+                        "硬便",
+                        "普通便",
+                        "軟便"
+                      ]
                     }
                   ],
                   "alignItems": "align-center"
@@ -827,20 +1785,20 @@
         },
         {
           "type": "trow",
-          "id": 82,
+          "id": 206,
           "contents": [
             {
               "type": "tcol",
-              "id": 83,
+              "id": 207,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 84,
+                  "id": 208,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 85,
+                      "id": 209,
                       "label": "浣腸",
                       "grow": 0,
                       "shrink": 0,
@@ -848,26 +1806,26 @@
                     },
                     {
                       "type": "radioGroup",
-                      "id": 86,
+                      "id": 210,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 87,
+                          "id": 211,
                           "label": "30ml"
                         },
                         {
                           "type": "radio",
-                          "id": 88,
+                          "id": 212,
                           "label": "60ml"
                         },
                         {
                           "type": "radio",
-                          "id": 89,
+                          "id": 213,
                           "label": "120ml"
                         },
                         {
                           "type": "radio",
-                          "id": 90,
+                          "id": 214,
                           "label": "その他"
                         }
                       ],
@@ -886,29 +1844,29 @@
         },
         {
           "type": "trow",
-          "id": 91,
+          "id": 215,
           "contents": [
             {
               "type": "tcol",
-              "id": 92,
+              "id": 216,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 93,
+                  "id": 217,
                   "contents": [
                     {
                       "type": "radioGroup",
-                      "id": 94,
+                      "id": 218,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 95,
+                          "id": 219,
                           "label": "摘便実施"
                         },
                         {
                           "type": "radio",
-                          "id": 96,
+                          "id": 220,
                           "label": "摘便未実施"
                         }
                       ],
@@ -921,11 +1879,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 97,
+                      "id": 221,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 98,
+                          "id": 222,
                           "label": "量",
                           "grow": 0,
                           "marginLeft": "10px",
@@ -933,7 +1891,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 99,
+                          "id": 223,
                           "dense": true,
                           "flexGrow": 0,
                           "marginLeft": "10px",
@@ -954,11 +1912,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 100,
+                      "id": 224,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 101,
+                          "id": 225,
                           "label": "性状",
                           "grow": 0,
                           "marginLeft": "10px",
@@ -967,7 +1925,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 102,
+                          "id": 226,
                           "dense": true,
                           "flexGrow": 0,
                           "marginLeft": "10px",
@@ -996,16 +1954,16 @@
         },
         {
           "type": "trow",
-          "id": 103,
+          "id": 227,
           "contents": [
             {
               "type": "tcol",
-              "id": 104,
+              "id": 228,
               "colspan": "2",
               "contents": [
                 {
                   "type": "checkbox",
-                  "id": 105,
+                  "id": 229,
                   "label": "腹部マッサージ",
                   "grow": 0,
                   "bindingKey": "abdomenMassageCheck"
@@ -1016,15 +1974,15 @@
         },
         {
           "type": "trow",
-          "id": 106,
+          "id": 230,
           "contents": [
             {
               "type": "tcol",
-              "id": 107,
+              "id": 231,
               "contents": [
                 {
                   "type": "text",
-                  "id": 108,
+                  "id": 232,
                   "text": "オムツ交換",
                   "textAlign": "center"
                 }
@@ -1033,23 +1991,23 @@
             },
             {
               "type": "tcol",
-              "id": 109,
+              "id": 233,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 110,
+                  "id": 234,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 111,
+                      "id": 235,
                       "label": "オムツ",
                       "grow": 0,
                       "bindingKey": "diaperCheck1"
                     },
                     {
                       "type": "checkbox",
-                      "id": 112,
+                      "id": 236,
                       "label": "パット",
                       "grow": 0,
                       "marginLeft": "10px",
@@ -1065,16 +2023,16 @@
         },
         {
           "type": "trow",
-          "id": 113,
+          "id": 237,
           "contents": [
             {
               "type": "tcol",
-              "id": 114,
+              "id": 238,
               "rowspan": "",
               "contents": [
                 {
                   "type": "text",
-                  "id": 115,
+                  "id": 239,
                   "text": "清潔ケア・指導",
                   "textAlign": "center"
                 }
@@ -1082,16 +2040,16 @@
             },
             {
               "type": "tcol",
-              "id": 116,
+              "id": 240,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 117,
+                  "id": 241,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 118,
+                      "id": 242,
                       "label": "入浴",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1099,7 +2057,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 119,
+                      "id": 243,
                       "label": "シャワー浴",
                       "grow": 0,
                       "marginLeft": "",
@@ -1108,7 +2066,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 120,
+                      "id": 244,
                       "label": "部分浴",
                       "grow": 0,
                       "marginLeft": "",
@@ -1117,11 +2075,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 121,
+                      "id": 245,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 122,
+                          "id": 246,
                           "label": "洗髪",
                           "grow": 0,
                           "marginLeft": "",
@@ -1130,7 +2088,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 123,
+                          "id": 247,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -1153,11 +2111,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 124,
+                      "id": 248,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 125,
+                          "id": 249,
                           "label": "清拭",
                           "grow": 0,
                           "marginLeft": "",
@@ -1166,16 +2124,16 @@
                         },
                         {
                           "type": "radioGroup",
-                          "id": 126,
+                          "id": 250,
                           "contents": [
                             {
                               "type": "radio",
-                              "id": 127,
+                              "id": 251,
                               "label": "全身"
                             },
                             {
                               "type": "radio",
-                              "id": 128,
+                              "id": 252,
                               "label": "一部"
                             }
                           ],
@@ -1188,7 +2146,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 129,
+                          "id": 253,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -1215,11 +2173,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 130,
+                      "id": 254,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 131,
+                          "id": 255,
                           "label": "爪切り",
                           "grow": 0,
                           "marginLeft": "",
@@ -1229,11 +2187,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 132,
+                          "id": 256,
                           "contents": [
                             {
                               "type": "checkbox",
-                              "id": 133,
+                              "id": 257,
                               "label": "手",
                               "bindingKey": "nailCuttingHandsCheck",
                               "shrink": 0,
@@ -1241,7 +2199,7 @@
                             },
                             {
                               "type": "select",
-                              "id": 134,
+                              "id": 258,
                               "bindingKey": "nailCuttingHandsSelect",
                               "options": [
                                 "選択",
@@ -1260,11 +2218,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 135,
+                          "id": 259,
                           "contents": [
                             {
                               "type": "checkbox",
-                              "id": 136,
+                              "id": 260,
                               "label": "足",
                               "bindingKey": "nailCuttingFootsCheck",
                               "shrink": 0,
@@ -1272,7 +2230,7 @@
                             },
                             {
                               "type": "select",
-                              "id": 137,
+                              "id": 261,
                               "bindingKey": "nailCuttingFootsSelect",
                               "options": [
                                 "選択",
@@ -1295,7 +2253,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 138,
+                      "id": 262,
                       "label": "耳垢除去",
                       "grow": 0,
                       "marginLeft": "",
@@ -1304,7 +2262,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 139,
+                      "id": 263,
                       "label": "髭剃り",
                       "grow": 0,
                       "marginLeft": "",
@@ -1313,11 +2271,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 140,
+                      "id": 264,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 141,
+                          "id": 265,
                           "label": "口腔ケア",
                           "grow": 0,
                           "marginLeft": "",
@@ -1327,11 +2285,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 142,
+                          "id": 266,
                           "contents": [
                             {
                               "type": "checkbox",
-                              "id": 143,
+                              "id": 267,
                               "label": "歯磨き",
                               "grow": 0,
                               "marginLeft": "",
@@ -1341,7 +2299,7 @@
                             },
                             {
                               "type": "checkbox",
-                              "id": 144,
+                              "id": 268,
                               "label": "うがい",
                               "grow": 0,
                               "marginLeft": "",
@@ -1351,11 +2309,11 @@
                             },
                             {
                               "type": "box",
-                              "id": 145,
+                              "id": 269,
                               "contents": [
                                 {
                                   "type": "checkbox",
-                                  "id": 146,
+                                  "id": 270,
                                   "label": "拭き取り",
                                   "grow": 0,
                                   "marginLeft": "",
@@ -1365,11 +2323,11 @@
                                 },
                                 {
                                   "type": "box",
-                                  "id": 147,
+                                  "id": 271,
                                   "contents": [
                                     {
                                       "type": "checkbox",
-                                      "id": 148,
+                                      "id": 272,
                                       "label": "実施",
                                       "grow": 0,
                                       "marginLeft": "",
@@ -1379,7 +2337,7 @@
                                     },
                                     {
                                       "type": "checkbox",
-                                      "id": 149,
+                                      "id": 273,
                                       "label": "指導",
                                       "grow": 0,
                                       "marginLeft": "",
@@ -1419,15 +2377,15 @@
         },
         {
           "type": "trow",
-          "id": 150,
+          "id": 274,
           "contents": [
             {
               "type": "tcol",
-              "id": 151,
+              "id": 275,
               "contents": [
                 {
                   "type": "text",
-                  "id": 152,
+                  "id": 276,
                   "text": "衣生活のケア・指導",
                   "textAlign": "center"
                 }
@@ -1435,16 +2393,16 @@
             },
             {
               "type": "tcol",
-              "id": 153,
+              "id": 277,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 154,
+                  "id": 278,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 155,
+                      "id": 279,
                       "label": "衣服調整",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1453,11 +2411,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 156,
+                      "id": 280,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 157,
+                          "id": 281,
                           "label": "更衣",
                           "grow": 0,
                           "marginRight": "10px",
@@ -1466,7 +2424,7 @@
                         },
                         {
                           "type": "select",
-                          "id": 158,
+                          "id": 282,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
@@ -1487,11 +2445,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 159,
+                      "id": 283,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 160,
+                          "id": 284,
                           "grow": 0,
                           "label": "シーツ交換",
                           "marginRight": "10px",
@@ -1500,13 +2458,18 @@
                         },
                         {
                           "type": "select",
-                          "id": 161,
+                          "id": 285,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
                           "bindingKey": "changeSheetSelect",
-                          "options": ["選択", "シーツ", "横シーツ", "シート"]
+                          "options": [
+                            "選択",
+                            "シーツ",
+                            "横シーツ",
+                            "シート"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -1524,15 +2487,15 @@
         },
         {
           "type": "trow",
-          "id": 162,
+          "id": 286,
           "contents": [
             {
               "type": "tcol",
-              "id": 163,
+              "id": 287,
               "contents": [
                 {
                   "type": "text",
-                  "id": 164,
+                  "id": 288,
                   "text": "食事栄養のケア・指導",
                   "textAlign": "center"
                 }
@@ -1540,16 +2503,16 @@
             },
             {
               "type": "tcol",
-              "id": 165,
+              "id": 289,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 166,
+                  "id": 290,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 167,
+                      "id": 291,
                       "label": "栄養指導",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1557,7 +2520,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 168,
+                      "id": 292,
                       "label": "食事",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1565,7 +2528,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 169,
+                      "id": 293,
                       "label": "飲水",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1582,16 +2545,16 @@
         },
         {
           "type": "trow",
-          "id": 170,
+          "id": 294,
           "contents": [
             {
               "type": "tcol",
-              "id": 171,
+              "id": 295,
               "rowspan": "4",
               "contents": [
                 {
                   "type": "text",
-                  "id": 172,
+                  "id": 296,
                   "text": "皮膚処置",
                   "textAlign": "center"
                 }
@@ -1600,16 +2563,16 @@
             },
             {
               "type": "tcol",
-              "id": 173,
+              "id": 297,
               "rowspan": "",
               "contents": [
                 {
                   "type": "box",
-                  "id": 174,
+                  "id": 298,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 175,
+                      "id": 299,
                       "label": "褥瘡予防",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1627,20 +2590,20 @@
         },
         {
           "type": "trow",
-          "id": 176,
+          "id": 300,
           "contents": [
             {
               "type": "tcol",
-              "id": 177,
+              "id": 301,
               "rowspan": "",
               "contents": [
                 {
                   "type": "box",
-                  "id": 178,
+                  "id": 302,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 179,
+                      "id": 303,
                       "label": "褥瘡処置",
                       "grow": 0,
                       "marginRight": "10px",
@@ -1649,11 +2612,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 180,
+                      "id": 304,
                       "contents": [
                         {
                           "type": "text",
-                          "id": 181,
+                          "id": 305,
                           "text": "部位",
                           "flex": "",
                           "grow": 0,
@@ -1665,11 +2628,13 @@
                         },
                         {
                           "type": "select",
-                          "id": 182,
+                          "id": 306,
                           "flexGrow": 0,
                           "dense": true,
                           "bindingKey": "locationSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -1678,11 +2643,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 183,
+                      "id": 307,
                       "contents": [
                         {
                           "type": "text",
-                          "id": 184,
+                          "id": 308,
                           "text": "薬剤",
                           "flex": "",
                           "grow": 0,
@@ -1694,10 +2659,12 @@
                         },
                         {
                           "type": "select",
-                          "id": 185,
+                          "id": 309,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": ["選択"],
+                          "options": [
+                            "選択"
+                          ],
                           "bindingKey": "medicineSelect"
                         }
                       ],
@@ -1707,11 +2674,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 186,
+                      "id": 310,
                       "contents": [
                         {
                           "type": "text",
-                          "id": 187,
+                          "id": 311,
                           "text": "方法",
                           "flex": "",
                           "grow": 0,
@@ -1723,10 +2690,12 @@
                         },
                         {
                           "type": "select",
-                          "id": 188,
+                          "id": 312,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": ["選択"],
+                          "options": [
+                            "選択"
+                          ],
                           "bindingKey": "methodSelect"
                         }
                       ],
@@ -1745,20 +2714,20 @@
         },
         {
           "type": "trow",
-          "id": 189,
+          "id": 313,
           "contents": [
             {
               "type": "tcol",
-              "id": 190,
+              "id": 314,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 191,
+                  "id": 315,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 192,
+                      "id": 316,
                       "label": "創処置",
                       "grow": 0,
                       "marginRight": "10px",
@@ -1767,11 +2736,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 193,
+                      "id": 317,
                       "contents": [
                         {
                           "type": "text",
-                          "id": 194,
+                          "id": 318,
                           "text": "部位",
                           "flex": "",
                           "grow": 0,
@@ -1783,11 +2752,13 @@
                         },
                         {
                           "type": "select",
-                          "id": 195,
+                          "id": 319,
                           "flexGrow": 0,
                           "dense": true,
                           "bindingKey": "bodyLocationSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -1796,11 +2767,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 196,
+                      "id": 320,
                       "contents": [
                         {
                           "type": "text",
-                          "id": 197,
+                          "id": 321,
                           "text": "薬剤",
                           "flex": "",
                           "grow": 0,
@@ -1812,10 +2783,12 @@
                         },
                         {
                           "type": "select",
-                          "id": 198,
+                          "id": 322,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": ["選択"],
+                          "options": [
+                            "選択"
+                          ],
                           "bindingKey": "treatmentSelect"
                         }
                       ],
@@ -1825,11 +2798,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 199,
+                      "id": 323,
                       "contents": [
                         {
                           "type": "text",
-                          "id": 200,
+                          "id": 324,
                           "text": "方法",
                           "flex": "",
                           "grow": 0,
@@ -1841,10 +2814,12 @@
                         },
                         {
                           "type": "select",
-                          "id": 201,
+                          "id": 325,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": ["選択"],
+                          "options": [
+                            "選択"
+                          ],
                           "bindingKey": "optionSelect"
                         }
                       ],
@@ -1862,20 +2837,20 @@
         },
         {
           "type": "trow",
-          "id": 202,
+          "id": 326,
           "contents": [
             {
               "type": "tcol",
-              "id": 203,
+              "id": 327,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 204,
+                  "id": 328,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 205,
+                      "id": 329,
                       "label": "外用薬塗布",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1884,11 +2859,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 206,
+                      "id": 330,
                       "contents": [
                         {
                           "type": "text",
-                          "id": 207,
+                          "id": 331,
                           "text": "薬剤",
                           "flex": "",
                           "grow": 0,
@@ -1900,11 +2875,13 @@
                         },
                         {
                           "type": "select",
-                          "id": 208,
+                          "id": 332,
                           "flexGrow": 0,
                           "dense": true,
                           "bindingKey": "coatingSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -1921,15 +2898,15 @@
         },
         {
           "type": "trow",
-          "id": 209,
+          "id": 333,
           "contents": [
             {
               "type": "tcol",
-              "id": 210,
+              "id": 334,
               "contents": [
                 {
                   "type": "text",
-                  "id": 211,
+                  "id": 335,
                   "text": "薬の管理・指導",
                   "textAlign": "center"
                 }
@@ -1937,18 +2914,18 @@
             },
             {
               "type": "tcol",
-              "id": 212,
+              "id": 336,
               "rowspan": "",
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 213,
+                  "id": 337,
                   "layout": "column",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 214,
+                      "id": 338,
                       "label": "残薬確認",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1956,7 +2933,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 215,
+                      "id": 339,
                       "label": "服薬介助",
                       "grow": 0,
                       "marginRight": "20px",
@@ -1964,11 +2941,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 216,
+                      "id": 340,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 217,
+                          "id": 341,
                           "label": "内服セット",
                           "grow": 0,
                           "shrink": 0,
@@ -1977,7 +2954,7 @@
                         },
                         {
                           "type": "text",
-                          "id": 218,
+                          "id": 342,
                           "flexBasis": "auto",
                           "text": "期間",
                           "grow": 0,
@@ -1986,14 +2963,16 @@
                         },
                         {
                           "type": "select",
-                          "id": 219,
+                          "id": 343,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "periodSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2002,7 +2981,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 220,
+                      "id": 344,
                       "label": "点眼",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2010,11 +2989,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 221,
+                      "id": 345,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 222,
+                          "id": 346,
                           "label": "吸入",
                           "grow": 0,
                           "shrink": 0,
@@ -2023,14 +3002,16 @@
                         },
                         {
                           "type": "select",
-                          "id": 223,
+                          "id": 347,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "inhalationSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2039,7 +3020,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 224,
+                      "id": 348,
                       "label": "座薬",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2047,11 +3028,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 225,
+                      "id": 349,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 226,
+                          "id": 350,
                           "label": "点滴",
                           "grow": 0,
                           "shrink": 0,
@@ -2060,11 +3041,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 227,
+                          "id": 351,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 228,
+                              "id": 352,
                               "text": "薬剤",
                               "flex": "",
                               "grow": 0,
@@ -2076,12 +3057,14 @@
                             },
                             {
                               "type": "select",
-                              "id": 229,
+                              "id": 353,
                               "flexGrow": 0,
                               "dense": true,
                               "flexShrink": 1,
                               "bindingKey": "intravenousMedicineSelect",
-                              "options": ["選択"]
+                              "options": [
+                                "選択"
+                              ]
                             }
                           ],
                           "alignItems": "align-center",
@@ -2091,11 +3074,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 230,
+                          "id": 354,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 231,
+                              "id": 355,
                               "text": "量",
                               "flex": "",
                               "grow": 0,
@@ -2107,10 +3090,12 @@
                             },
                             {
                               "type": "select",
-                              "id": 232,
+                              "id": 356,
                               "flexGrow": 0,
                               "dense": true,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "intravenousAmountSelect"
                             }
                           ],
@@ -2121,11 +3106,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 233,
+                          "id": 357,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 234,
+                              "id": 358,
                               "text": "速度",
                               "flex": "",
                               "grow": 0,
@@ -2137,11 +3122,13 @@
                             },
                             {
                               "type": "select",
-                              "id": 235,
+                              "id": 359,
                               "flexGrow": 0,
                               "dense": true,
                               "bindingKey": "intravenousSpeedSelect",
-                              "options": ["選択"]
+                              "options": [
+                                "選択"
+                              ]
                             }
                           ],
                           "alignItems": "align-center",
@@ -2156,11 +3143,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 236,
+                      "id": 360,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 237,
+                          "id": 361,
                           "label": "注射",
                           "grow": 0,
                           "shrink": 0,
@@ -2169,11 +3156,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 238,
+                          "id": 362,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 239,
+                              "id": 363,
                               "text": "薬剤",
                               "flex": "",
                               "grow": 0,
@@ -2185,12 +3172,14 @@
                             },
                             {
                               "type": "select",
-                              "id": 240,
+                              "id": 364,
                               "flexGrow": 0,
                               "dense": true,
                               "flexShrink": 1,
                               "bindingKey": "injectionMedicineSelect",
-                              "options": ["選択"]
+                              "options": [
+                                "選択"
+                              ]
                             }
                           ],
                           "alignItems": "align-center",
@@ -2200,11 +3189,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 241,
+                          "id": 365,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 242,
+                              "id": 366,
                               "text": "部位",
                               "flex": "",
                               "grow": 0,
@@ -2216,10 +3205,12 @@
                             },
                             {
                               "type": "select",
-                              "id": 243,
+                              "id": 367,
                               "flexGrow": 0,
                               "dense": true,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "injectionLocationSelect"
                             }
                           ],
@@ -2230,11 +3221,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 244,
+                          "id": 368,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 245,
+                              "id": 369,
                               "text": "方法",
                               "flex": "",
                               "grow": 0,
@@ -2246,10 +3237,12 @@
                             },
                             {
                               "type": "select",
-                              "id": 246,
+                              "id": 370,
                               "flexGrow": 0,
                               "dense": true,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "injectionMethodSelect"
                             }
                           ],
@@ -2265,7 +3258,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 247,
+                      "id": 371,
                       "grow": 0,
                       "label": "外用薬貼付",
                       "marginRight": "20px",
@@ -2282,15 +3275,15 @@
         },
         {
           "type": "trow",
-          "id": 248,
+          "id": 372,
           "contents": [
             {
               "type": "tcol",
-              "id": 249,
+              "id": 373,
               "contents": [
                 {
                   "type": "text",
-                  "id": 250,
+                  "id": 374,
                   "text": "リハビリテーション",
                   "textAlign": "center"
                 }
@@ -2298,20 +3291,20 @@
             },
             {
               "type": "tcol",
-              "id": 251,
+              "id": 375,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 252,
+                  "id": 376,
                   "contents": [
                     {
                       "type": "box",
-                      "id": 253,
+                      "id": 377,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 254,
+                          "id": 378,
                           "label": "関節可動域",
                           "grow": 0,
                           "shrink": 0,
@@ -2320,14 +3313,16 @@
                         },
                         {
                           "type": "select",
-                          "id": 255,
+                          "id": 379,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "rangeOfMotionSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2336,11 +3331,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 256,
+                      "id": 380,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 257,
+                          "id": 381,
                           "label": "マッサージ",
                           "grow": 0,
                           "shrink": 0,
@@ -2349,14 +3344,16 @@
                         },
                         {
                           "type": "select",
-                          "id": 258,
+                          "id": 382,
                           "dense": true,
                           "width": "",
                           "flexBasis": "",
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "massageSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2365,11 +3362,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 259,
+                      "id": 383,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 260,
+                          "id": 384,
                           "label": "筋力",
                           "grow": 0,
                           "shrink": 0,
@@ -2378,11 +3375,11 @@
                         },
                         {
                           "type": "box",
-                          "id": 261,
+                          "id": 385,
                           "contents": [
                             {
                               "type": "checkbox",
-                              "id": 262,
+                              "id": 386,
                               "label": "上肢",
                               "grow": 0,
                               "shrink": 0,
@@ -2391,7 +3388,7 @@
                             },
                             {
                               "type": "checkbox",
-                              "id": 263,
+                              "id": 387,
                               "label": "下肢",
                               "grow": 0,
                               "shrink": 0,
@@ -2400,7 +3397,7 @@
                             },
                             {
                               "type": "checkbox",
-                              "id": 264,
+                              "id": 388,
                               "label": "体幹",
                               "grow": 0,
                               "shrink": 0,
@@ -2419,11 +3416,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 265,
+                      "id": 389,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 266,
+                          "id": 390,
                           "label": "座位",
                           "grow": 0,
                           "shrink": 0,
@@ -2432,7 +3429,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 267,
+                          "id": 391,
                           "label": "立位",
                           "grow": 0,
                           "shrink": 0,
@@ -2441,7 +3438,7 @@
                         },
                         {
                           "type": "checkbox",
-                          "id": 268,
+                          "id": 392,
                           "label": "歩行",
                           "grow": 0,
                           "shrink": 0,
@@ -2455,11 +3452,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 269,
+                      "id": 393,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 270,
+                          "id": 394,
                           "label": "呼吸リハ",
                           "marginRight": "20px",
                           "grow": 0,
@@ -2468,30 +3465,30 @@
                         },
                         {
                           "type": "box",
-                          "id": 271,
+                          "id": 395,
                           "contents": [
                             {
                               "type": "radioGroup",
-                              "id": 272,
+                              "id": 396,
                               "contents": [
                                 {
                                   "type": "radio",
-                                  "id": 273,
+                                  "id": 397,
                                   "label": "補助筋マッサージ"
                                 },
                                 {
                                   "type": "radio",
-                                  "id": 274,
+                                  "id": 398,
                                   "label": "ストレッチ"
                                 },
                                 {
                                   "type": "radio",
-                                  "id": 275,
+                                  "id": 399,
                                   "label": "呼吸法"
                                 },
                                 {
                                   "type": "radio",
-                                  "id": 276,
+                                  "id": 400,
                                   "label": "呼気介助"
                                 }
                               ],
@@ -2510,11 +3507,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 277,
+                      "id": 401,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 278,
+                          "id": 402,
                           "label": "口腔リハ",
                           "marginRight": "20px",
                           "grow": 0,
@@ -2522,20 +3519,20 @@
                         },
                         {
                           "type": "box",
-                          "id": 279,
+                          "id": 403,
                           "contents": [
                             {
                               "type": "radioGroup",
-                              "id": 280,
+                              "id": 404,
                               "contents": [
                                 {
                                   "type": "radio",
-                                  "id": 281,
+                                  "id": 405,
                                   "label": "嚥下"
                                 },
                                 {
                                   "type": "radio",
-                                  "id": 282,
+                                  "id": 406,
                                   "label": "言語"
                                 }
                               ],
@@ -2563,15 +3560,15 @@
         },
         {
           "type": "trow",
-          "id": 283,
+          "id": 407,
           "contents": [
             {
               "type": "tcol",
-              "id": 284,
+              "id": 408,
               "contents": [
                 {
                   "type": "text",
-                  "id": 285,
+                  "id": 409,
                   "text": "排痰ケア",
                   "textAlign": "center"
                 }
@@ -2579,26 +3576,26 @@
             },
             {
               "type": "tcol",
-              "id": 286,
+              "id": 410,
               "colspan": "2",
               "contents": [
                 {
                   "type": "radioGroup",
-                  "id": 287,
+                  "id": 411,
                   "contents": [
                     {
                       "type": "radio",
-                      "id": 288,
+                      "id": 412,
                       "label": "体位ドレナージ"
                     },
                     {
                       "type": "radio",
-                      "id": 289,
+                      "id": 413,
                       "label": "スクイージング"
                     },
                     {
                       "type": "radio",
-                      "id": 290,
+                      "id": 414,
                       "label": "吸引"
                     }
                   ],
@@ -2612,15 +3609,15 @@
         },
         {
           "type": "trow",
-          "id": 291,
+          "id": 415,
           "contents": [
             {
               "type": "tcol",
-              "id": 292,
+              "id": 416,
               "contents": [
                 {
                   "type": "text",
-                  "id": 293,
+                  "id": 417,
                   "text": "医療処置",
                   "textAlign": "center"
                 }
@@ -2628,16 +3625,16 @@
             },
             {
               "type": "tcol",
-              "id": 294,
+              "id": 418,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 295,
+                  "id": 419,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 296,
+                      "id": 420,
                       "label": "酸素療法",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2646,11 +3643,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 297,
+                      "id": 421,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 298,
+                          "id": 422,
                           "label": "IVH・CVポート",
                           "grow": 0,
                           "marginRight": "20px",
@@ -2658,17 +3655,17 @@
                         },
                         {
                           "type": "radioGroup",
-                          "id": 299,
+                          "id": 423,
                           "direction": "row",
                           "contents": [
                             {
                               "type": "radio",
-                              "id": 300,
+                              "id": 424,
                               "label": "ポンプ有"
                             },
                             {
                               "type": "radio",
-                              "id": 301,
+                              "id": 425,
                               "label": "無"
                             }
                           ],
@@ -2683,11 +3680,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 302,
+                      "id": 426,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 303,
+                          "id": 427,
                           "label": "針",
                           "grow": 0,
                           "marginRight": "20px",
@@ -2695,22 +3692,22 @@
                         },
                         {
                           "type": "radioGroup",
-                          "id": 304,
+                          "id": 428,
                           "direction": "row",
                           "contents": [
                             {
                               "type": "radio",
-                              "id": 305,
+                              "id": 429,
                               "label": "抜去"
                             },
                             {
                               "type": "radio",
-                              "id": 306,
+                              "id": 430,
                               "label": "挿入"
                             },
                             {
                               "type": "radio",
-                              "id": 307,
+                              "id": 431,
                               "label": "ルート交換"
                             }
                           ],
@@ -2725,7 +3722,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 308,
+                      "id": 432,
                       "label": "胃瘻",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2734,7 +3731,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 309,
+                      "id": 433,
                       "label": "腹膜透析",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2743,7 +3740,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 310,
+                      "id": 434,
                       "label": "出口部管理",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2752,7 +3749,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 311,
+                      "id": 435,
                       "label": "ストマ処理",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2761,7 +3758,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 312,
+                      "id": 436,
                       "label": "パウチ交換",
                       "grow": 0,
                       "marginRight": "20px",
@@ -2770,11 +3767,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 313,
+                      "id": 437,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 314,
+                          "id": 438,
                           "label": "点滴",
                           "grow": 0,
                           "marginRight": "20px",
@@ -2783,24 +3780,26 @@
                         },
                         {
                           "type": "box",
-                          "id": 315,
+                          "id": 439,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 316,
+                              "id": 440,
                               "text": "薬剤",
                               "shrink": 0,
                               "marginRight": "10px"
                             },
                             {
                               "type": "select",
-                              "id": 317,
+                              "id": 441,
                               "dense": true,
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
                               "bindingKey": "intravenousSelect",
-                              "options": ["選択"]
+                              "options": [
+                                "選択"
+                              ]
                             }
                           ],
                           "alignItems": "align-center",
@@ -2808,23 +3807,25 @@
                         },
                         {
                           "type": "box",
-                          "id": 318,
+                          "id": 442,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 319,
+                              "id": 443,
                               "text": "量",
                               "shrink": 0,
                               "marginRight": "10px"
                             },
                             {
                               "type": "select",
-                              "id": 320,
+                              "id": 444,
                               "dense": true,
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "intravenousAmountSelect1"
                             }
                           ],
@@ -2833,23 +3834,25 @@
                         },
                         {
                           "type": "box",
-                          "id": 321,
+                          "id": 445,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 322,
+                              "id": 446,
                               "text": "速度",
                               "shrink": 0,
                               "marginRight": "10px"
                             },
                             {
                               "type": "select",
-                              "id": 323,
+                              "id": 447,
                               "dense": true,
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "intravenousSpeedSelect1"
                             }
                           ],
@@ -2864,11 +3867,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 324,
+                      "id": 448,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 325,
+                          "id": 449,
                           "label": "注射",
                           "grow": 0,
                           "marginRight": "20px",
@@ -2877,23 +3880,25 @@
                         },
                         {
                           "type": "box",
-                          "id": 326,
+                          "id": 450,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 327,
+                              "id": 451,
                               "text": "薬剤",
                               "shrink": 0,
                               "marginRight": "10px"
                             },
                             {
                               "type": "select",
-                              "id": 328,
+                              "id": 452,
                               "dense": true,
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "injectionMedicineSelect1"
                             }
                           ],
@@ -2902,23 +3907,25 @@
                         },
                         {
                           "type": "box",
-                          "id": 329,
+                          "id": 453,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 330,
+                              "id": 454,
                               "text": "部位",
                               "shrink": 0,
                               "marginRight": "10px"
                             },
                             {
                               "type": "select",
-                              "id": 331,
+                              "id": 455,
                               "dense": true,
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "injectionLocationSelect1"
                             }
                           ],
@@ -2927,23 +3934,25 @@
                         },
                         {
                           "type": "box",
-                          "id": 332,
+                          "id": 456,
                           "contents": [
                             {
                               "type": "text",
-                              "id": 333,
+                              "id": 457,
                               "text": "方法",
                               "shrink": 0,
                               "marginRight": "10px"
                             },
                             {
                               "type": "select",
-                              "id": 334,
+                              "id": 458,
                               "dense": true,
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": ["選択"],
+                              "options": [
+                                "選択"
+                              ],
                               "bindingKey": "injectionMethodSelect1"
                             }
                           ],
@@ -2958,11 +3967,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 335,
+                      "id": 459,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 336,
+                          "id": 460,
                           "label": "その他",
                           "grow": 0,
                           "marginRight": "20px",
@@ -2971,13 +3980,15 @@
                         },
                         {
                           "type": "select",
-                          "id": 337,
+                          "id": 461,
                           "dense": true,
                           "marginRight": "10px",
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "otherSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         }
                       ],
                       "flexGrow": 0,
@@ -2996,15 +4007,15 @@
         },
         {
           "type": "trow",
-          "id": 338,
+          "id": 462,
           "contents": [
             {
               "type": "tcol",
-              "id": 339,
+              "id": 463,
               "contents": [
                 {
                   "type": "text",
-                  "id": 340,
+                  "id": 464,
                   "text": "睡眠のケア・指導",
                   "textAlign": "center"
                 }
@@ -3012,17 +4023,17 @@
             },
             {
               "type": "tcol",
-              "id": 341,
+              "id": 465,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 342,
+                  "id": 466,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 343,
+                      "id": 467,
                       "shrink": 0,
                       "grow": 0,
                       "label": "入眠を促すマッサージ",
@@ -3031,7 +4042,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 344,
+                      "id": 468,
                       "label": "生活指導",
                       "grow": 0,
                       "shrink": 0,
@@ -3040,7 +4051,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 345,
+                      "id": 469,
                       "label": "足浴",
                       "grow": 0,
                       "shrink": 0,
@@ -3056,15 +4067,15 @@
         },
         {
           "type": "trow",
-          "id": 346,
+          "id": 470,
           "contents": [
             {
               "type": "tcol",
-              "id": 347,
+              "id": 471,
               "contents": [
                 {
                   "type": "text",
-                  "id": 348,
+                  "id": 472,
                   "text": "体重",
                   "textAlign": "center"
                 }
@@ -3072,24 +4083,24 @@
             },
             {
               "type": "tcol",
-              "id": 349,
+              "id": 473,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 350,
+                  "id": 474,
                   "layout": "horizontal",
                   "contents": [
                     {
                       "type": "textField",
-                      "id": 351,
+                      "id": 475,
                       "shrink": 1,
                       "grow": 0,
                       "bindingKey": " bodyWeightText"
                     },
                     {
                       "type": "text",
-                      "id": 352,
+                      "id": 476,
                       "text": "kg",
                       "grow": 0,
                       "shrink": 0
@@ -3104,15 +4115,15 @@
         },
         {
           "type": "trow",
-          "id": 353,
+          "id": 477,
           "contents": [
             {
               "type": "tcol",
-              "id": 354,
+              "id": 478,
               "contents": [
                 {
                   "type": "text",
-                  "id": 355,
+                  "id": 479,
                   "text": "留意点",
                   "textAlign": "center"
                 }
@@ -3120,12 +4131,12 @@
             },
             {
               "type": "tcol",
-              "id": 356,
+              "id": 480,
               "colspan": "2",
               "contents": [
                 {
                   "type": "textarea",
-                  "id": 357,
+                  "id": 481,
                   "rows": "3",
                   "autoGrow": false,
                   "style": "standard",
@@ -3138,15 +4149,15 @@
         },
         {
           "type": "trow",
-          "id": 358,
+          "id": 482,
           "contents": [
             {
               "type": "tcol",
-              "id": 359,
+              "id": 483,
               "contents": [
                 {
                   "type": "text",
-                  "id": 360,
+                  "id": 484,
                   "text": "次回訪問予定日",
                   "textAlign": "center"
                 }
@@ -3154,30 +4165,30 @@
             },
             {
               "type": "tcol",
-              "id": 361,
+              "id": 485,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 362,
+                  "id": 486,
                   "contents": [
                     {
                       "type": "radioGroup",
-                      "id": 363,
+                      "id": 487,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 364,
+                          "id": 488,
                           "label": "未定"
                         },
                         {
                           "type": "radio",
-                          "id": 365,
+                          "id": 489,
                           "label": "定期"
                         },
                         {
                           "type": "radio",
-                          "id": 366,
+                          "id": 490,
                           "label": "振替"
                         }
                       ],
@@ -3190,7 +4201,7 @@
                     },
                     {
                       "type": "datePicker",
-                      "id": 367,
+                      "id": 491,
                       "dense": true,
                       "locale": "ja",
                       "marginRight": "20px",
@@ -3200,7 +4211,7 @@
                     },
                     {
                       "type": "timeIntervalSelect",
-                      "id": 368,
+                      "id": 492,
                       "dense": true,
                       "time": [
                         "00:00",
@@ -3269,19 +4280,19 @@
     },
     {
       "type": "table",
-      "id": 369,
+      "id": 493,
       "contents": [
         {
           "type": "trow",
-          "id": 370,
+          "id": 494,
           "contents": [
             {
               "type": "tcol",
-              "id": 371,
+              "id": 495,
               "contents": [
                 {
                   "type": "text",
-                  "id": 372,
+                  "id": 496,
                   "text": "実績",
                   "textAlign": "center"
                 }
@@ -3290,42 +4301,42 @@
             },
             {
               "type": "tcol",
-              "id": 373,
+              "id": 497,
               "width": "25%",
               "contents": [
                 {
                   "type": "text",
-                  "id": 374,
+                  "id": 498,
                   "text": "基本療養費"
                 }
               ]
             },
             {
               "type": "tcol",
-              "id": 375,
+              "id": 499,
               "width": "60%",
               "contents": [
                 {
                   "type": "box",
-                  "id": 376,
+                  "id": 500,
                   "contents": [
                     {
                       "type": "radioGroup",
-                      "id": 377,
+                      "id": 501,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 378,
+                          "id": 502,
                           "label": "Ⅰ"
                         },
                         {
                           "type": "radio",
-                          "id": 379,
+                          "id": 503,
                           "label": "Ⅱ"
                         },
                         {
                           "type": "radio",
-                          "id": 380,
+                          "id": 504,
                           "label": "Ⅲ"
                         }
                       ],
@@ -3338,21 +4349,21 @@
                     },
                     {
                       "type": "radioGroup",
-                      "id": 381,
+                      "id": 505,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 382,
+                          "id": 506,
                           "label": "定期"
                         },
                         {
                           "type": "radio",
-                          "id": 383,
+                          "id": 507,
                           "label": "緊急"
                         },
                         {
                           "type": "radio",
-                          "id": 384,
+                          "id": 508,
                           "label": "緊急訪問看護加算"
                         }
                       ],
@@ -3371,20 +4382,20 @@
         },
         {
           "type": "trow",
-          "id": 385,
+          "id": 509,
           "contents": [
             {
               "type": "tcol",
-              "id": 386,
+              "id": 510,
               "contents": []
             },
             {
               "type": "tcol",
-              "id": 387,
+              "id": 511,
               "contents": [
                 {
                   "type": "text",
-                  "id": 388,
+                  "id": 512,
                   "text": "精神基本療養費",
                   "textAlign": "center"
                 }
@@ -3392,25 +4403,25 @@
             },
             {
               "type": "tcol",
-              "id": 389,
+              "id": 513,
               "width": "60%",
               "contents": [
                 {
                   "type": "box",
-                  "id": 390,
+                  "id": 514,
                   "contents": [
                     {
                       "type": "radioGroup",
-                      "id": 391,
+                      "id": 515,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 392,
+                          "id": 516,
                           "label": "Ⅰ (30分未満)"
                         },
                         {
                           "type": "radio",
-                          "id": 393,
+                          "id": 517,
                           "label": "Ⅱ (30分以上)"
                         }
                       ],
@@ -3429,15 +4440,15 @@
         },
         {
           "type": "trow",
-          "id": 394,
+          "id": 518,
           "contents": [
             {
               "type": "tcol",
-              "id": 395,
+              "id": 519,
               "contents": [
                 {
                   "type": "text",
-                  "id": 396,
+                  "id": 520,
                   "text": "加算",
                   "textAlign": "center"
                 }
@@ -3445,31 +4456,31 @@
             },
             {
               "type": "tcol",
-              "id": 397,
+              "id": 521,
               "contents": [
                 {
                   "type": "text",
-                  "id": 398,
+                  "id": 522,
                   "text": "緊急時訪問看護加算"
                 }
               ]
             },
             {
               "type": "tcol",
-              "id": 399,
+              "id": 523,
               "contents": [
                 {
                   "type": "radioGroup",
-                  "id": 400,
+                  "id": 524,
                   "contents": [
                     {
                       "type": "radio",
-                      "id": 401,
+                      "id": 525,
                       "label": "有"
                     },
                     {
                       "type": "radio",
-                      "id": 402,
+                      "id": 526,
                       "label": "無"
                     }
                   ],
@@ -3486,19 +4497,19 @@
         },
         {
           "type": "trow",
-          "id": 403,
+          "id": 527,
           "contents": [
             {
               "type": "tcol",
-              "id": 404
+              "id": 528
             },
             {
               "type": "tcol",
-              "id": 405,
+              "id": 529,
               "contents": [
                 {
                   "type": "text",
-                  "id": 406,
+                  "id": 530,
                   "text": "特別管理加算",
                   "textAlign": "center"
                 }
@@ -3506,24 +4517,24 @@
             },
             {
               "type": "tcol",
-              "id": 407,
+              "id": 531,
               "contents": [
                 {
                   "type": "box",
-                  "id": 408,
+                  "id": 532,
                   "contents": [
                     {
                       "type": "radioGroup",
-                      "id": 409,
+                      "id": 533,
                       "contents": [
                         {
                           "type": "radio",
-                          "id": 410,
+                          "id": 534,
                           "label": "Ⅰ"
                         },
                         {
                           "type": "radio",
-                          "id": 411,
+                          "id": 535,
                           "label": "Ⅱ"
                         }
                       ],
@@ -3534,30 +4545,30 @@
                     },
                     {
                       "type": "box",
-                      "id": 412,
+                      "id": 536,
                       "contents": [
                         {
                           "type": "radioGroup",
-                          "id": 413,
+                          "id": 537,
                           "contents": [
                             {
                               "type": "radio",
-                              "id": 414,
+                              "id": 538,
                               "label": "悪性腫瘍指導管理"
                             },
                             {
                               "type": "radio",
-                              "id": 415,
+                              "id": 539,
                               "label": "気管切開指導管理"
                             },
                             {
                               "type": "radio",
-                              "id": 416,
+                              "id": 540,
                               "label": "気管ｶﾆｭｰﾚ"
                             },
                             {
                               "type": "radio",
-                              "id": 417,
+                              "id": 541,
                               "label": "留置ｶﾃｰﾃﾙ"
                             }
                           ],
@@ -3568,26 +4579,26 @@
                         },
                         {
                           "type": "radioGroup",
-                          "id": 418,
+                          "id": 542,
                           "contents": [
                             {
                               "type": "radio",
-                              "id": 419,
+                              "id": 543,
                               "label": "人工肛門・膀胱"
                             },
                             {
                               "type": "radio",
-                              "id": 420,
+                              "id": 544,
                               "label": "真皮超褥瘡"
                             },
                             {
                               "type": "radio",
-                              "id": 421,
+                              "id": 545,
                               "label": "週3日以上の点滴"
                             },
                             {
                               "type": "radio",
-                              "id": 422,
+                              "id": 546,
                               "label": "各種在宅指導管理"
                             }
                           ],
@@ -3608,27 +4619,27 @@
         },
         {
           "type": "trow",
-          "id": 423,
+          "id": 547,
           "contents": [
             {
               "type": "tcol",
-              "id": 424
+              "id": 548
             },
             {
               "type": "tcol",
-              "id": 425
+              "id": 549
             },
             {
               "type": "tcol",
-              "id": 426,
+              "id": 550,
               "contents": [
                 {
                   "type": "box",
-                  "id": 427,
+                  "id": 551,
                   "contents": [
                     {
                       "type": "checkbox",
-                      "id": 428,
+                      "id": 552,
                       "label": "退院時共同指導管理加算",
                       "shrink": 0,
                       "marginRight": "20px",
@@ -3637,7 +4648,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 429,
+                      "id": 553,
                       "label": "退院支援導管加算 (退院日)",
                       "shrink": 0,
                       "marginRight": "20px",
@@ -3646,7 +4657,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 430,
+                      "id": 554,
                       "label": "複数名看護加算",
                       "shrink": 0,
                       "marginRight": "20px",
@@ -3655,7 +4666,7 @@
                     },
                     {
                       "type": "checkbox",
-                      "id": 431,
+                      "id": 555,
                       "label": "長時間訪問看護加算",
                       "shrink": 1,
                       "marginRight": "20px",
@@ -3672,15 +4683,15 @@
         },
         {
           "type": "trow",
-          "id": 432,
+          "id": 556,
           "contents": [
             {
               "type": "tcol",
-              "id": 433,
+              "id": 557,
               "contents": [
                 {
                   "type": "text",
-                  "id": 434,
+                  "id": 558,
                   "text": "保険外",
                   "textAlign": "center"
                 }
@@ -3688,20 +4699,20 @@
             },
             {
               "type": "tcol",
-              "id": 435,
+              "id": 559,
               "colspan": "2",
               "contents": [
                 {
                   "type": "box",
-                  "id": 436,
+                  "id": 560,
                   "contents": [
                     {
                       "type": "box",
-                      "id": 437,
+                      "id": 561,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 438,
+                          "id": 562,
                           "label": "交通費",
                           "grow": 0,
                           "marginRight": "20px",
@@ -3709,16 +4720,16 @@
                         },
                         {
                           "type": "radioGroup",
-                          "id": 439,
+                          "id": 563,
                           "contents": [
                             {
                               "type": "radio",
-                              "id": 440,
+                              "id": 564,
                               "label": "250円"
                             },
                             {
                               "type": "radio",
-                              "id": 441,
+                              "id": 565,
                               "label": "500円"
                             }
                           ],
@@ -3733,11 +4744,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 442,
+                      "id": 566,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 443,
+                          "id": 567,
                           "label": "キャンセル料",
                           "grow": 0,
                           "marginRight": "10px",
@@ -3745,16 +4756,18 @@
                         },
                         {
                           "type": "select",
-                          "id": 444,
+                          "id": 568,
                           "dense": true,
                           "flexGrow": 0,
                           "marginRight": "10px",
                           "bindingKey": "cancellationChargeSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         },
                         {
                           "type": "text",
-                          "id": 445,
+                          "id": 569,
                           "text": "円",
                           "grow": 0
                         }
@@ -3764,11 +4777,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 446,
+                      "id": 570,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 447,
+                          "id": 571,
                           "label": "休日・時間外",
                           "grow": 0,
                           "marginRight": "10px",
@@ -3776,16 +4789,18 @@
                         },
                         {
                           "type": "select",
-                          "id": 448,
+                          "id": 572,
                           "dense": true,
                           "flexGrow": 0,
                           "marginRight": "10px",
                           "bindingKey": "holidaysAfterHoursSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         },
                         {
                           "type": "text",
-                          "id": 449,
+                          "id": 573,
                           "text": "円",
                           "grow": 0
                         }
@@ -3795,11 +4810,11 @@
                     },
                     {
                       "type": "box",
-                      "id": 450,
+                      "id": 574,
                       "contents": [
                         {
                           "type": "checkbox",
-                          "id": 451,
+                          "id": 575,
                           "label": "超過時間利用料 ( 30 分 3,000 円 ×",
                           "grow": 0,
                           "marginRight": "10px",
@@ -3808,16 +4823,18 @@
                         },
                         {
                           "type": "select",
-                          "id": 452,
+                          "id": 576,
                           "flexGrow": 0,
                           "dense": true,
                           "flexShrink": 1,
                           "bindingKey": "overtimeUsageFeeSelect",
-                          "options": ["選択"]
+                          "options": [
+                            "選択"
+                          ]
                         },
                         {
                           "type": "text",
-                          "id": 453,
+                          "id": 577,
                           "text": ")",
                           "grow": 0,
                           "marginLeft": "5px"
@@ -3837,19 +4854,19 @@
     },
     {
       "type": "table",
-      "id": 454,
+      "id": 578,
       "contents": [
         {
           "type": "trow",
-          "id": 455,
+          "id": 579,
           "contents": [
             {
               "type": "tcol",
-              "id": 456,
+              "id": 580,
               "contents": [
                 {
                   "type": "textarea",
-                  "id": 457,
+                  "id": 581,
                   "rows": "4",
                   "dense": true,
                   "bindingKey": "bottomtextarea1"
@@ -3858,11 +4875,11 @@
             },
             {
               "type": "tcol",
-              "id": 458,
+              "id": 582,
               "contents": [
                 {
                   "type": "textarea",
-                  "id": 459,
+                  "id": 583,
                   "rows": "4",
                   "dense": true,
                   "bindingKey": "bottomtextarea2"
@@ -3873,16 +4890,16 @@
         },
         {
           "type": "trow",
-          "id": 460,
+          "id": 584,
           "contents": [
             {
               "type": "tcol",
-              "id": 461,
+              "id": 585,
               "colspan": "2",
               "contents": [
                 {
                   "type": "text",
-                  "id": 462,
+                  "id": 586,
                   "text": "経過記録"
                 }
               ]
@@ -3891,16 +4908,16 @@
         },
         {
           "type": "trow",
-          "id": 463,
+          "id": 587,
           "contents": [
             {
               "type": "tcol",
-              "id": 464,
+              "id": 588,
               "colspan": "2",
               "contents": [
                 {
                   "type": "textarea",
-                  "id": 465,
+                  "id": 589,
                   "rows": "4",
                   "dense": true,
                   "bindingKey": "progressRecordText"
@@ -3908,6 +4925,102 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "imageUploader",
+      "id": 590,
+      "bindingKey": "imageUploader",
+      "title": "圖片標注",
+      "totalNumberText": "圖片總數",
+      "totalNumberValue": 4,
+      "horizontalText": "橫向數",
+      "horizontalValue": "2",
+      "verticalText": "縱向數",
+      "verticalValue": "2",
+      "totalSizeWidthText": "總寬",
+      "totalSizeWidthValue": "850",
+      "totalSizeHeightText": "總高",
+      "totalSizeHeightValue": "650",
+      "contents": [
+        {
+          "type": "annotatePic",
+          "position": 0,
+          "options": [
+            "選択",
+            "薬（追加）",
+            "薬（変更）",
+            "検査データ",
+            "創部",
+            "ノート・手紙",
+            "保険証",
+            "限度額管理表"
+          ],
+          "text": "annotatePic",
+          "style": {},
+          "defaultPic": "no_default",
+          "defaultPicB64": "",
+          "image": "",
+          "id": 591
+        },
+        {
+          "type": "annotatePic",
+          "position": 1,
+          "options": [
+            "選択",
+            "薬（追加）",
+            "薬（変更）",
+            "検査データ",
+            "創部",
+            "ノート・手紙",
+            "保険証",
+            "限度額管理表"
+          ],
+          "text": "annotatePic",
+          "defaultPic": "no_default",
+          "defaultPicB64": "",
+          "image": "",
+          "id": 592
+        },
+        {
+          "type": "annotatePic",
+          "position": 2,
+          "options": [
+            "選択",
+            "薬（追加）",
+            "薬（変更）",
+            "検査データ",
+            "創部",
+            "ノート・手紙",
+            "保険証",
+            "限度額管理表"
+          ],
+          "text": "annotatePic",
+          "defaultPic": "no_default",
+          "defaultPicB64": "",
+          "image": "",
+          "id": 593
+        },
+        {
+          "type": "annotatePic",
+          "position": 3,
+          "options": [
+            "選択",
+            "薬（追加）",
+            "薬（変更）",
+            "検査データ",
+            "創部",
+            "ノート・手紙",
+            "保険証",
+            "限度額管理表"
+          ],
+          "optionValue": "1",
+          "text": "annotatePic",
+          "defaultPic": "no_default",
+          "defaultPicB64": "",
+          "image": "",
+          "id": 594
         }
       ]
     }
