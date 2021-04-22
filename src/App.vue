@@ -93,7 +93,6 @@
       absolute
       centered
       color="primary"
-      class="text-capitalize text-center"
     >
       {{ notificationMessage }}
     </v-snackbar>
