@@ -10,15 +10,29 @@
             class="rounded body-1"
             rows="20"
           ></textarea>
+
           <div class="text-right">
-            <v-btn
-              @click="tidyId"
-              small
-              class="text-lowercase subtitle-1"
-              color="primary"
-              text
-              >tidy id</v-btn
-            >
+            <v-badge overlap color="transparent">
+              <v-btn
+                @click="tidyId"
+                small
+                class="text-lowercase subtitle-1"
+                color="primary"
+                text
+                >tidy id</v-btn
+              >
+
+              <template v-slot:badge>
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-icon v-on="on" v-bind="attrs" small color="grey"
+                      >mdi-alert-circle-outline</v-icon
+                    >
+                  </template>
+                  <span>tidy id 會依序重新給予元件 id</span>
+                </v-tooltip>
+              </template>
+            </v-badge>
           </div>
         </v-sheet>
       </v-card-text>
@@ -59,7 +73,6 @@
       absolute
       centered
       :color="snackbarColor"
-      class="text-center"
     >
       {{ notificationMessage }}
     </v-snackbar>

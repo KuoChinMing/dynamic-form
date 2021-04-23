@@ -10,15 +10,36 @@
             class="rounded body-1"
             rows="20"
           ></textarea>
+
           <div class="text-right">
-            <v-btn
-              @click="cleanBindingData"
-              small
-              class="text-lowercase subtitle-1"
-              color="primary"
-              text
-              >clean binding data</v-btn
-            >
+            <v-badge overlap color="transparent">
+              <v-btn
+                @click="remapBindingData"
+                small
+                class="text-lowercase subtitle-1"
+                color="primary"
+                text
+                >remap binding data</v-btn
+              >
+
+              <template v-slot:badge>
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-icon
+                      v-on="on"
+                      v-bind="attrs"
+                      small
+                      color="grey"
+                      >mdi-alert-circle-outline</v-icon
+                    >
+                  </template>
+                  <span
+                    >重新映射 template 中的 binding key，並刪除多餘的 binding
+                    value</span
+                  >
+                </v-tooltip>
+              </template>
+            </v-badge>
           </div>
         </v-sheet>
       </v-card-text>
@@ -60,7 +81,6 @@
       absolute
       centered
       :color="snackbarColor"
-      class="text-capitalize text-center"
     >
       {{ notificationMessage }}
     </v-snackbar>
@@ -128,11 +148,11 @@ export default {
   },
 
   methods: {
-    cleanBindingData() {
+    remapBindingData() {
       const bindingData = JSON.parse(this.bindingDataString);
       const newBindingData = {};
 
-      const clean = (node) => {
+      const remapping = (node) => {
         const bindingKey = node.bindingKey;
         if (bindingKey) {
           newBindingData[bindingKey] = bindingData[bindingKey] ?? null;
@@ -140,14 +160,14 @@ export default {
 
         if ("contents" in node) {
           for (const childNode of node.contents) {
-            clean(childNode);
+            remapping(childNode);
           }
         }
       };
-      clean(this.template);
+      remapping(this.template);
 
       this.bindingDataString = JSON.stringify(newBindingData, null, 2);
-      this.notify.normal("binding data now is clean");
+      this.notify.normal("remap binding data successfully");
     },
     closeDialog() {
       this.isOpen = false;
