@@ -129,6 +129,16 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['backgroundColor']"
+      type="textField"
+      label="backgrounColor"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['fontWeight']"
       :items="[
         { text: 'bold', value: 'bold' },
