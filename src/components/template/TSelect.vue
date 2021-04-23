@@ -48,6 +48,7 @@ export default {
       flexShrink: data.flexShrink,
       flexGrow: data.flexGrow,
       width: data.width,
+      maxWidth: data.maxWidth,
       backgroundColor: data.backgroundColor,
       marginTop: data.marginTop,
       marginLeft: data.marginLeft,

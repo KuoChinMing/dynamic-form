@@ -123,6 +123,16 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['maxWidth']"
+      type="textField"
+      input-class="white"
+      label="maxWidth"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['style']"
       type="select"
       input-class="white"
