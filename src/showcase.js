@@ -6002,7 +6002,12 @@ const tableTemplate = {
     progressRecordText: null,
     progressRecordCheck: null,
     progressRecordSelect: "選択",
-    imageUploader:[{"imageId":"","optionValue":"選択"},{"imageId":"","optionValue":"選択"},{"imageId":"","optionValue":"選択"},{"imageId":"","optionValue":"選択"}]
+    imageUploader: [
+      { imageId: "", optionValue: "選択" },
+      { imageId: "", optionValue: "選択" },
+      { imageId: "", optionValue: "選択" },
+      { imageId: "", optionValue: "選択" },
+    ],
   },
 };
 

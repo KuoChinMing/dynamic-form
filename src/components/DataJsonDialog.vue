@@ -25,11 +25,7 @@
               <template v-slot:badge>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on, attrs }">
-                    <v-icon
-                      v-on="on"
-                      v-bind="attrs"
-                      small
-                      color="grey"
+                    <v-icon v-on="on" v-bind="attrs" small color="grey"
                       >mdi-alert-circle-outline</v-icon
                     >
                   </template>

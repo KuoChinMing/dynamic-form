@@ -413,11 +413,7 @@
                           "id": 58,
                           "dense": true,
                           "bindingKey": "pulseSelect",
-                          "options": [
-                            "選択",
-                            "リズム不整",
-                            "結滞"
-                          ]
+                          "options": ["選択", "リズム不整", "結滞"]
                         }
                       ],
                       "layout": "column",
@@ -673,12 +669,7 @@
                       "id": 92,
                       "bindingKey": "urineSituationSelection",
                       "dense": true,
-                      "options": [
-                        "選択",
-                        "クリア",
-                        "混濁",
-                        "浮遊物"
-                      ],
+                      "options": ["選択", "クリア", "混濁", "浮遊物"],
                       "width": "100px",
                       "flexGrow": 0
                     }
@@ -761,12 +752,7 @@
                       "type": "select",
                       "id": 102,
                       "dense": true,
-                      "options": [
-                        "選択",
-                        "クリア",
-                        "混濁",
-                        "浮遊物"
-                      ],
+                      "options": ["選択", "クリア", "混濁", "浮遊物"],
                       "bindingKey": "pathSituationSelection",
                       "flexGrow": 0,
                       "width": "100px"
@@ -926,11 +912,7 @@
                       "dense": true,
                       "width": "100px",
                       "flexBasis": "",
-                      "options": [
-                        "選択",
-                        "実施",
-                        "指導"
-                      ],
+                      "options": ["選択", "実施", "指導"],
                       "bindingKey": "urinaryCleanSelection",
                       "flexGrow": 0
                     },
@@ -997,13 +979,7 @@
                       "width": "",
                       "bindingKey": "intestinalSoundsSelect",
                       "flexGrow": 0,
-                      "options": [
-                        "選択",
-                        "聞かれず",
-                        "弱め",
-                        "良好",
-                        "更新"
-                      ],
+                      "options": ["選択", "聞かれず", "弱め", "良好", "更新"],
                       "marginLeft": "10px"
                     }
                   ],
@@ -1769,12 +1745,7 @@
                       "dense": true,
                       "flexShrink": 1,
                       "bindingKey": "touchExaminationSelect",
-                      "options": [
-                        "選択",
-                        "硬便",
-                        "普通便",
-                        "軟便"
-                      ]
+                      "options": ["選択", "硬便", "普通便", "軟便"]
                     }
                   ],
                   "alignItems": "align-center"
@@ -2464,12 +2435,7 @@
                           "flexBasis": "",
                           "flexGrow": 0,
                           "bindingKey": "changeSheetSelect",
-                          "options": [
-                            "選択",
-                            "シーツ",
-                            "横シーツ",
-                            "シート"
-                          ]
+                          "options": ["選択", "シーツ", "横シーツ", "シート"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2632,9 +2598,7 @@
                           "flexGrow": 0,
                           "dense": true,
                           "bindingKey": "locationSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2662,9 +2626,7 @@
                           "id": 309,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": [
-                            "選択"
-                          ],
+                          "options": ["選択"],
                           "bindingKey": "medicineSelect"
                         }
                       ],
@@ -2693,9 +2655,7 @@
                           "id": 312,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": [
-                            "選択"
-                          ],
+                          "options": ["選択"],
                           "bindingKey": "methodSelect"
                         }
                       ],
@@ -2756,9 +2716,7 @@
                           "flexGrow": 0,
                           "dense": true,
                           "bindingKey": "bodyLocationSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2786,9 +2744,7 @@
                           "id": 322,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": [
-                            "選択"
-                          ],
+                          "options": ["選択"],
                           "bindingKey": "treatmentSelect"
                         }
                       ],
@@ -2817,9 +2773,7 @@
                           "id": 325,
                           "flexGrow": 0,
                           "dense": true,
-                          "options": [
-                            "選択"
-                          ],
+                          "options": ["選択"],
                           "bindingKey": "optionSelect"
                         }
                       ],
@@ -2879,9 +2833,7 @@
                           "flexGrow": 0,
                           "dense": true,
                           "bindingKey": "coatingSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -2970,9 +2922,7 @@
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "periodSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -3009,9 +2959,7 @@
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "inhalationSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -3062,9 +3010,7 @@
                               "dense": true,
                               "flexShrink": 1,
                               "bindingKey": "intravenousMedicineSelect",
-                              "options": [
-                                "選択"
-                              ]
+                              "options": ["選択"]
                             }
                           ],
                           "alignItems": "align-center",
@@ -3093,9 +3039,7 @@
                               "id": 356,
                               "flexGrow": 0,
                               "dense": true,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "intravenousAmountSelect"
                             }
                           ],
@@ -3126,9 +3070,7 @@
                               "flexGrow": 0,
                               "dense": true,
                               "bindingKey": "intravenousSpeedSelect",
-                              "options": [
-                                "選択"
-                              ]
+                              "options": ["選択"]
                             }
                           ],
                           "alignItems": "align-center",
@@ -3177,9 +3119,7 @@
                               "dense": true,
                               "flexShrink": 1,
                               "bindingKey": "injectionMedicineSelect",
-                              "options": [
-                                "選択"
-                              ]
+                              "options": ["選択"]
                             }
                           ],
                           "alignItems": "align-center",
@@ -3208,9 +3148,7 @@
                               "id": 367,
                               "flexGrow": 0,
                               "dense": true,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "injectionLocationSelect"
                             }
                           ],
@@ -3240,9 +3178,7 @@
                               "id": 370,
                               "flexGrow": 0,
                               "dense": true,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "injectionMethodSelect"
                             }
                           ],
@@ -3320,9 +3256,7 @@
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "rangeOfMotionSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -3351,9 +3285,7 @@
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "massageSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "alignItems": "align-center",
@@ -3797,9 +3729,7 @@
                               "flexGrow": 0,
                               "flexShrink": 1,
                               "bindingKey": "intravenousSelect",
-                              "options": [
-                                "選択"
-                              ]
+                              "options": ["選択"]
                             }
                           ],
                           "alignItems": "align-center",
@@ -3823,9 +3753,7 @@
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "intravenousAmountSelect1"
                             }
                           ],
@@ -3850,9 +3778,7 @@
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "intravenousSpeedSelect1"
                             }
                           ],
@@ -3896,9 +3822,7 @@
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "injectionMedicineSelect1"
                             }
                           ],
@@ -3923,9 +3847,7 @@
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "injectionLocationSelect1"
                             }
                           ],
@@ -3950,9 +3872,7 @@
                               "marginRight": "10px",
                               "flexGrow": 0,
                               "flexShrink": 1,
-                              "options": [
-                                "選択"
-                              ],
+                              "options": ["選択"],
                               "bindingKey": "injectionMethodSelect1"
                             }
                           ],
@@ -3986,9 +3906,7 @@
                           "flexGrow": 0,
                           "flexShrink": 1,
                           "bindingKey": "otherSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         }
                       ],
                       "flexGrow": 0,
@@ -4761,9 +4679,7 @@
                           "flexGrow": 0,
                           "marginRight": "10px",
                           "bindingKey": "cancellationChargeSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         },
                         {
                           "type": "text",
@@ -4794,9 +4710,7 @@
                           "flexGrow": 0,
                           "marginRight": "10px",
                           "bindingKey": "holidaysAfterHoursSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         },
                         {
                           "type": "text",
@@ -4828,9 +4742,7 @@
                           "dense": true,
                           "flexShrink": 1,
                           "bindingKey": "overtimeUsageFeeSelect",
-                          "options": [
-                            "選択"
-                          ]
+                          "options": ["選択"]
                         },
                         {
                           "type": "text",
