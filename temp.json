@@ -4824,6 +4824,7 @@
                       "id": 531,
                       "dense": true,
                       "time": [
+                        "時間選択",
                         "00:00",
                         "00:30",
                         "01:00",
@@ -5698,7 +5699,11 @@
           "text": "画像",
           "fontSize": "1.25em",
           "fontWeight": "normal",
-          "backgroundColor": "#F0FBFF"
+          "backgroundColor": "#F0FBFF",
+          "paddingTop": "8px",
+          "paddingRight": "",
+          "paddingLeft": "8px",
+          "paddingBottom": "8px"
         }
       ],
       "marginBottom": "5px",
