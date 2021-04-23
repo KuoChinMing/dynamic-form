@@ -227,6 +227,48 @@
     ></element-setting-input-box>
 
     <v-divider class="my-6"></v-divider>
+    <p class="text-h5 font-weight-bold">Padding</p>
+    <element-setting-input-box
+      v-model="element['paddingTop']"
+      type="textField"
+      label="paddingTop"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['paddingRight']"
+      type="textField"
+      label="paddingRight"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['paddingBottom']"
+      type="textField"
+      label="paddingBottom"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['paddingLeft']"
+      type="textField"
+      label="paddingLeft"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <v-divider class="my-6"></v-divider>
 
     <p class="text-h5 font-weight-bold">Offset</p>
 
@@ -234,6 +276,16 @@
       v-model="element['top']"
       type="textField"
       label="offsetTop"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['right']"
+      type="textField"
+      label="offsetEnd"
       input-class="white"
       dense
       outlined
@@ -254,16 +306,6 @@
       v-model="element['left']"
       type="textField"
       label="offsetStart"
-      input-class="white"
-      dense
-      outlined
-      hide-details
-    ></element-setting-input-box>
-
-    <element-setting-input-box
-      v-model="element['right']"
-      type="textField"
-      label="offsetEnd"
       input-class="white"
       dense
       outlined
