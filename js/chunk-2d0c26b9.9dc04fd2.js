@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c26b9"],{"49db":function(t,n,o){"use strict";o.r(n);var r,a,e={name:"TTrow",props:{data:{type:Object,default:function(){}}},render:function(){var t=arguments[0],n={backgroundColor:this.data.backgroundColor};return t("tr",{style:n},[this.$slots.default])}},u=e,l=o("2877"),c=Object(l["a"])(u,r,a,!1,null,null,null);n["default"]=c.exports}}]);
+//# sourceMappingURL=chunk-2d0c26b9.9dc04fd2.js.map
