@@ -15,6 +15,7 @@ export default {
       padding: "8px",
       width: this.data.width || 0,
       backgroundColor: this.data.backgroundColor,
+      verticalAlign: this.data.verticalAlign,
     };
 
     return (

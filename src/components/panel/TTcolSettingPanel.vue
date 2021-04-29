@@ -39,6 +39,17 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['verticalAlign']"
+      input-class="white"
+      label="verticalAlign"
+      type="select"
+      :items="['top', 'middle', 'bottom']"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['backgroundColor']"
       input-class="white"
       label="backgroundColor"
