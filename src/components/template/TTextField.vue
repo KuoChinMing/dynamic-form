@@ -54,6 +54,7 @@ export default {
         };
         this.attrs = {
           disabled: this.disabled ?? data.disabled,
+          label: data.label,
           dense: true,
         };
       },

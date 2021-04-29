@@ -37,6 +37,16 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['label']"
+      type="textField"
+      input-class="white"
+      label="label"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['grow']"
       type="select"
       input-class="white"
