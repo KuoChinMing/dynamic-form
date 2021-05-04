@@ -10,11 +10,12 @@ export default {
   },
 
   render() {
+    const data = this.data;
     const style = {
       borderCollapse: "collapse",
       borderSpacing: 0,
-      width: "100%",
-      tableLayout: "fixed",
+      tableLayout: data.layout,
+      width: data.width,
       backgroundColor: this.data.backgroundColor,
     };
 

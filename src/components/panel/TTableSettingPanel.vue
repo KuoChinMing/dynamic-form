@@ -19,6 +19,27 @@
       outlined
       hide-details
     ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['layout']"
+      type="select"
+      :items="['auto', 'fixed']"
+      input-class="white"
+      label="layout"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['width']"
+      type="textField"
+      input-class="white"
+      label="width"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
   </v-container>
 </template>
 
