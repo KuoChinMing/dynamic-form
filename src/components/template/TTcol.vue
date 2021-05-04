@@ -10,16 +10,30 @@ export default {
   },
 
   render() {
+    const data = this.data;
+    const paddingProperty = data.paddingAll
+      ? {
+          padding: data.paddingAll,
+        }
+      : {
+          paddingTop: data.paddingTop,
+          paddingRight: data.paddingRight,
+          paddingBottom: data.paddingBottom,
+          paddingLeft: data.paddingLeft,
+        };
+
     const style = {
-      border: "1px solid #ddd",
-      padding: "8px",
-      width: this.data.width || 0,
-      backgroundColor: this.data.backgroundColor,
-      verticalAlign: this.data.verticalAlign,
+      borderWidth: data.borderWidth,
+      borderStyle: data.borderStyle,
+      borderColor: data.borderColor,
+      width: data.width,
+      backgroundColor: data.backgroundColor,
+      verticalAlign: data.verticalAlign,
+      ...paddingProperty,
     };
 
     return (
-      <td colspan={this.data.colspan} rowspan={this.data.rowspan} style={style}>
+      <td colspan={data.colspan} rowspan={data.rowspan} style={style}>
         {this.$slots.default}
       </td>
     );

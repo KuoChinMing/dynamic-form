@@ -66,6 +66,87 @@
       dense
       outlined
     ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['borderWidth']"
+      input-class="white"
+      label="borderWidth"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['borderStyle']"
+      input-class="white"
+      type="select"
+      label="borderStyle"
+      :items="['none', 'dotted', 'dashed', 'solid']"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['borderColor']"
+      input-class="white"
+      label="borderColor"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <v-divider class="my-6"></v-divider>
+    <p class="text-h5 font-weight-bold">Padding</p>
+    <element-setting-input-box
+      v-model="element['paddingAll']"
+      type="textField"
+      label="paddingAll"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['paddingTop']"
+      type="textField"
+      label="paddingTop"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['paddingRight']"
+      type="textField"
+      label="paddingRight"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['paddingBottom']"
+      type="textField"
+      label="paddingBottom"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['paddingLeft']"
+      type="textField"
+      label="paddingLeft"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
   </v-container>
 </template>
 
