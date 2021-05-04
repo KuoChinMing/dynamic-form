@@ -222,7 +222,9 @@ export default {
   watch: {
     template() {
       // refresh treeview when template changed.
-      // TODO: 改變 root 時，panel 會一起消失，但是 apply JSON 時 panel 應該消失，兩者會互相衝突
+      // 如果改變的是 root 時，不用 refresh treeview 與 elementSettingPanel
+      if (this.selectedNode === this.template) return;
+      
       this.removeTreeviewActive();
       this.treeviewKey++;
       this.isTreeviewAllOpen = this.$refs.treeview.openAll;
