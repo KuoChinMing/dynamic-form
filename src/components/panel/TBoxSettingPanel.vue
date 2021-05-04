@@ -26,8 +26,7 @@
       type="select"
       label="layout"
       :items="[
-        { text: '', value: '' },
-        { text: 'horizontal', value: 'row' },
+        { text: 'horizontal', value: '' },
         { text: 'vertical', value: 'column' },
       ]"
       hide-details
