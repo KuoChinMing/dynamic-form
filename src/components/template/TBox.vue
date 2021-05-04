@@ -27,23 +27,37 @@ export default {
   watch: {
     data: {
       handler(data) {
+        const paddingProperty = data.paddingAll
+          ? {
+              paddingAll: data.paddingAll,
+            }
+          : {
+              paddingTop: data.paddingTop,
+              paddingRight: data.paddingRight,
+              paddingBottom: data.paddingBottom,
+              paddingLeft: data.paddingLeft,
+            };
+
+        const marginProperty = data.marginAll
+          ? {
+              marginAll: data.marginAll,
+            }
+          : {
+              marginTop: data.marginTop,
+              marginLeft: data.marginLeft,
+              marginBottom: data.marginBottom,
+              marginRight: data.marginRight,
+            };
+
         this.style = {
-          // width: "100%",
           flexGrow: data.flexGrow,
           flexShrink: data.flexShrink,
           flexBasis: data.flexBasis,
-          marginTop: data.marginTop,
-          marginLeft: data.marginLeft,
-          marginBottom: data.marginBottom,
-          marginRight: data.marginRight,
-          // TODO: paddingAll
-          // padding: data.paddingAll,
-          paddingTop: data.paddingTop,
-          paddingRight: data.paddingRight,
-          paddingBottom: data.paddingBottom,
-          paddingLeft: data.paddingLeft,
           backgroundColor: data.backgroundColor,
+          ...paddingProperty,
+          ...marginProperty,
         };
+
         this.attrs = {
           [data.layout]: true,
           [data.alignItems]: true,

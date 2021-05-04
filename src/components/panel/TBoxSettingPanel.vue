@@ -135,6 +135,17 @@
       outlined
     ></element-setting-input-box>
 
+    <v-divider class="my-6"></v-divider>
+    <p class="text-h5 font-weight-bold">Margin</p>
+    <element-setting-input-box
+      v-model="element['marginAll']"
+      input-class="white"
+      label="marginAll"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
     <element-setting-input-box
       v-model="element['marginTop']"
       input-class="white"
@@ -173,6 +184,16 @@
 
     <v-divider class="my-6"></v-divider>
     <p class="text-h5 font-weight-bold">Padding</p>
+    <element-setting-input-box
+      v-model="element['paddingAll']"
+      type="textField"
+      label="paddingAll"
+      input-class="white"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
     <element-setting-input-box
       v-model="element['paddingTop']"
       type="textField"
