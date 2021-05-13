@@ -59,7 +59,7 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['shirnk']"
+      v-model="element['shrink']"
       type="select"
       input-class="white"
       label="shrink"
