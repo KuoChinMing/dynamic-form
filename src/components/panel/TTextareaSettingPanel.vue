@@ -154,6 +154,18 @@
       dense
       outlined
     ></element-setting-input-box>
+
+    <v-divider class="my-6"></v-divider>
+    <v-row align="center">
+      <v-col cols="3" class="text-right">
+        <label>disabled when</label>
+      </v-col>
+      <v-col cols="9">
+        <v-btn @click="element['disabledConditions'] = disabledConditions"
+          >set disabled conditions</v-btn
+        >
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -178,6 +190,51 @@ export default {
       type: [Object, null],
       default: null,
     },
+  },
+
+  data() {
+    return {
+      disabledConditions: {
+        group: {
+          leftOperand: {
+            group: {
+              leftOperand: {
+                when: "checkbox",
+                is: true,
+              },
+              operator: "and",
+              rightOperand: {
+                group: {
+                  leftOperand: {
+                    group: {
+                      leftOperand: {
+                        when: "radioGroup",
+                        is: "enable",
+                      },
+                      operator: "or",
+                      rightOperand: {
+                        when: "radioGroup",
+                        is: "enable2",
+                      },
+                    },
+                  },
+                  operator: "or",
+                  rightOperand: {
+                    when: "input",
+                    is: "enable",
+                  },
+                },
+              },
+            },
+          },
+          operator: "or",
+          rightOperand: {
+            when: "datePicker",
+            is: "2021-05-12",
+          },
+        },
+      },
+    };
   },
 };
 </script>
