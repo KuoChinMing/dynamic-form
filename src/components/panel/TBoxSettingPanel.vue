@@ -73,6 +73,35 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
+      v-model="element['borderWidth']"
+      input-class="white"
+      label="borderWidth"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['borderStyle']"
+      input-class="white"
+      type="select"
+      label="borderStyle"
+      :items="['none', 'dotted', 'dashed', 'solid']"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
+      v-model="element['borderColor']"
+      input-class="white"
+      label="borderColor"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <element-setting-input-box
       v-model="element['fillHeight']"
       input-class="white"
       type="select"

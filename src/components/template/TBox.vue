@@ -50,6 +50,9 @@ export default {
             };
 
         this.style = {
+          borderWidth: data.borderWidth,
+          borderStyle: data.borderStyle,
+          borderColor: data.borderColor,
           flexGrow: data.flexGrow,
           flexShrink: data.flexShrink,
           flexBasis: data.flexBasis,
