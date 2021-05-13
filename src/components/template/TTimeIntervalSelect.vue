@@ -57,6 +57,9 @@ export default {
           multiple: data.multiple,
           hideDetails: true,
           disabled: this.disabled ?? data.disabled,
+          menuProps: {
+            maxHeight: data.menuHeight,
+          },
           // chips: true,
           // smallChips: true,
         };

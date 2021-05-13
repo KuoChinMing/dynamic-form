@@ -168,6 +168,16 @@
       hide-details
     ></element-setting-input-box>
 
+    <element-setting-input-box
+      v-model="element['menuHeight']"
+      type="textField"
+      input-class="white"
+      label="menuHeight"
+      dense
+      outlined
+      hide-details
+    ></element-setting-input-box>
+
     <v-divider class="my-6"></v-divider>
 
     <v-row>
