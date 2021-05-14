@@ -154,12 +154,32 @@
       dense
       outlined
     ></element-setting-input-box>
+
+    <v-row>
+      <v-col cols="12">
+        <disabled-conditions-setting
+          :conditions="element['enabledConditions']"
+        ></disabled-conditions-setting>
+      </v-col>
+
+      <v-col cols="12">
+        <v-layout justify-end>
+          <v-chip-group>
+            <v-chip label color="primary" small>not</v-chip>
+            <v-chip label color="primary" small>or</v-chip>
+            <v-chip label color="primary" small>and</v-chip>
+            <v-chip label color="primary" small>group</v-chip>
+          </v-chip-group>
+        </v-layout>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
+import DisabledConditionsSetting from "@/components/panel/DisabledConditionsSetting.vue";
 
 export default {
   name: "TTextareaSettingPanel",
@@ -167,6 +187,7 @@ export default {
   components: {
     ElementSettingInputBox,
     BindingKeyInputBox,
+    DisabledConditionsSetting,
   },
 
   props: {

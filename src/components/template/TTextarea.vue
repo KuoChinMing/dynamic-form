@@ -121,7 +121,7 @@ export default {
       if (!conditions) return;
 
       if ("when" in conditions && "is" in conditions) {
-        return bindingData[conditions.when] === conditions.is;
+        return bindingData[conditions.when] === String(conditions.is);
       }
 
       const CONDITIONS_STR = JSON.stringify(conditions, null, 2);
