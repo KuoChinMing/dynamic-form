@@ -5,6 +5,7 @@
         <v-chip-group
           v-model="selectedTemplate"
           active-class="primary--text text--accent-4"
+          column
         >
           <v-chip
             label
