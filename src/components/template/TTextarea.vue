@@ -26,32 +26,41 @@ export default {
     },
   },
 
+  computed: {
+    textareaDisabled() {
+      // 表單被 disabled 的條件 (this.disabled) 優先，
+      // 其次是元素的 disabled (this.data.dislabed)
+      // 最後才是條件式 enabled (且 enabled 不是 undefeind 或 null)，
+      return this.disabled ?? this.data.disabled ?? !this.enabled;
+    },
+  },
+
   data() {
     return {
       style: {},
       textareaAttrs: {},
       innerValue: "",
-      disabledCon: null,
+      enabled: null,
     };
   },
 
   watch: {
-    disabled(disabled) {
-      this.textareaAttrs.disabled = disabled;
+    textareaDisabled(textareaDisabled) {
+      this.textareaAttrs.disabled = textareaDisabled;
     },
+    // data enalbed conditions 不應該 reactive
+    // "data.enabledConditions"(enabledConditions) {
+    //   this.enabled = !!this.getEnabled(enabledConditions, this.bindingData);
+    // },
     bindingData: {
-      handler() {
-        const disabledConditions = this.data["disabledConditions"];
-        if (!disabledConditions) return;
+      handler(bindingData) {
+        const enabledConditions = this.data["enabledConditions"];
 
-        this.disabledCon = !this.calculateDisableConditions(disabledConditions);
+        this.enabled =
+          enabledConditions && this.getEnabled(enabledConditions, bindingData);
       },
       immediate: true,
       deep: true,
-    },
-    disabledCon() {
-      this.textareaAttrs.disabled =
-        this.disabled ?? this.disabledCon ?? this.data.disabled;
     },
     data: {
       handler(data) {
@@ -69,7 +78,7 @@ export default {
           hint: data.hint,
           hideDetails: data.hideHint,
           rows: data.rows,
-          disabled: this.disabled ?? this.disabledCon ?? data.disabled,
+          disabled: this.textareaDisabled,
         };
       },
       immediate: true,
@@ -88,46 +97,87 @@ export default {
   },
 
   methods: {
-    calculateDisableConditions(conditions) {
-      if (!("group" in conditions)) {
-        if (
-          !("when" in conditions) ||
-          !(conditions["when"] in this.bindingData)
-        ) {
-          return null;
+    getEnabled(conditions, bindingData) {
+      if (!conditions) return;
+
+      let conditionsClone;
+
+      try {
+        //  prevent conditions from mutating
+        conditionsClone = JSON.parse(JSON.stringify(conditions));
+      } catch {
+        const CONDITIONS_STR = JSON.stringify(conditions, null, 2);
+        throw new Error(
+          `enabled conditions can't be parse. \n ${CONDITIONS_STR}`
+        );
+      }
+
+      return this.calculateEnableConditions(conditionsClone, bindingData);
+    },
+
+    // 考慮例外處理: conditions: null, undefined, {}, 過多的 operator, bindingData 找不到值
+    // 使用後序 (postfix) 的運算規則
+    calculateEnableConditions(conditions, bindingData) {
+      if (!conditions) return;
+
+      if ("when" in conditions && "is" in conditions) {
+        return bindingData[conditions.when] === conditions.is;
+      }
+
+      const CONDITIONS_STR = JSON.stringify(conditions, null, 2);
+
+      if ("operators" in conditions && "operands" in conditions) {
+        // 計算左值
+        const leftOperand = conditions.operands.shift();
+        let leftVal = this.calculateEnableConditions(leftOperand, bindingData);
+        if (leftVal == undefined) {
+          throw new Error(`operand is missing. \n ${CONDITIONS_STR}`);
         }
 
-        if (this.bindingData[conditions.when] !== conditions.is) {
-          console.log(conditions);
+        while (conditions.operators.length) {
+          // 檢查運算元是否為 not，是的話則反向左值, 直到不是 not 為止
+          const operator = conditions.operators.shift();
+          if (operator === "not") {
+            leftVal = !leftVal;
+            continue;
+          }
+
+          // 計算右值
+          const rightOperand = conditions.operands.shift();
+          let rightVal = this.calculateEnableConditions(
+            rightOperand,
+            bindingData
+          );
+          if (rightVal == undefined) {
+            throw new Error(`operand is missing. \n ${CONDITIONS_STR}`);
+          }
+
+          // 檢查下個運算元是否為 not，的話則反向右值，直到不是 not 為止
+          let nextOperator = conditions.operators.shift();
+          while (nextOperator === "not") {
+            rightVal = !rightVal;
+            nextOperator = conditions.operators.shift();
+          }
+          if (nextOperator) {
+            conditions.operators.unshift(nextOperator);
+          }
+
+          switch (operator) {
+            case "and":
+              leftVal = leftVal && rightVal;
+              break;
+            case "or":
+              leftVal = leftVal || rightVal;
+              break;
+            default:
+              throw new Error(`operator ${operator} is invalid.`);
+          }
         }
-        return this.bindingData[conditions.when] === conditions.is;
+
+        return leftVal;
       }
 
-      if (
-        !("leftOperand" in conditions.group) ||
-        !("operator" in conditions.group) ||
-        !("rightOperand" in conditions.group)
-      ) {
-        const conditionsStr = JSON.stringify(conditions, null, 2);
-        throw new Error(`condition format is not valid: \n ${conditionsStr}`);
-      }
-
-      const leftVal = this.calculateDisableConditions(
-        conditions.group["leftOperand"]
-      );
-      const rightVal = this.calculateDisableConditions(
-        conditions.group["rightOperand"]
-      );
-      if (conditions.group["operator"] === "and") {
-        return leftVal && rightVal;
-      }
-      if (conditions.group["operator"] === "or") {
-        return leftVal || rightVal;
-      }
-
-      throw new Error(
-        `operator ${conditions.group["operator"]}  is not valid.`
-      );
+      throw new Error(`conditions is invalid. \n ${CONDITIONS_STR}`);
     },
   },
 };
