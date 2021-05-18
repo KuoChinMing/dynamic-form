@@ -48,16 +48,11 @@ export default {
     textareaDisabled(textareaDisabled) {
       this.textareaAttrs.disabled = textareaDisabled;
     },
-    // data enalbed conditions 不應該 reactive
-    // "data.enabledConditions"(enabledConditions) {
-    //   this.enabled = !!this.getEnabled(enabledConditions, this.bindingData);
-    // },
     bindingData: {
       handler(bindingData) {
         const enabledConditions = this.data["enabledConditions"];
 
-        this.enabled =
-          enabledConditions && this.getEnabled(enabledConditions, bindingData);
+        this.updateEnabledConditions(enabledConditions, bindingData);
       },
       immediate: true,
       deep: true,
@@ -80,6 +75,7 @@ export default {
           rows: data.rows,
           disabled: this.textareaDisabled,
         };
+        this.updateEnabledConditions(data.enabledConditions, this.bindingData);
       },
       immediate: true,
       deep: true,
@@ -97,6 +93,9 @@ export default {
   },
 
   methods: {
+    updateEnabledConditions(conditions, bindingData) {
+      this.enabled = this.getEnabled(conditions, bindingData);
+    },
     getEnabled(conditions, bindingData) {
       if (!conditions) return;
 
@@ -121,7 +120,7 @@ export default {
       if (!conditions) return;
 
       if ("when" in conditions && "is" in conditions) {
-        return bindingData[conditions.when] === String(conditions.is);
+        return String(bindingData[conditions.when]) === String(conditions.is);
       }
 
       const CONDITIONS_STR = JSON.stringify(conditions, null, 2);

@@ -6873,7 +6873,7 @@ export const templates = {
   diagnosisTemplate,
   textFieldTemplate,
   newElementTemplate,
-  dynamicDisabledInputTemplate
+  dynamicDisabledInputTemplate,
 };
 
 export const bindingData = tableTemplate.bindingData;

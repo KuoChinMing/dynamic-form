@@ -1,95 +1,52 @@
 <template>
-  <v-layout column v-if="'operators' in conditions">
-    <span v-for="(operator, index) in operators" :key="index"
-      ><v-chip small class="my-1" label color="primary" text-color="white">{{
-        operator
-      }}</v-chip>
-    </span>
-
-    <v-layout column class="pl-12">
-      <v-layout align-center v-if="operand">
-        <span class="mr-2">when</span>
-        <v-select
-          v-model="operand.when"
-          :items="Object.keys(bindingData)"
-          dense
-          outlined
-          hide-details
-          class="white"
-        ></v-select>
-        <span class="mx-2">is</span>
-        <v-text-field
-          v-model="operand.is"
-          dense
-          outlined
-          hide-details
-          class="white"
-        ></v-text-field>
-      </v-layout>
-
-      <span class="mr-2">
-        <v-chip small class="my-1" label color="primary" text-color="white">{{
-          nextOperator
-        }}</v-chip>
-      </span>
-
-      <!-- recursion start -->
-      <disabled-conditions-setting
-        v-if="false"
-        :conditions="conditions"
-      ></disabled-conditions-setting>
-      <span class="mr-2">
-        <v-chip small class="my-1" label color="primary" text-color="white"
-          >not</v-chip
+  <v-layout column>
+    <div v-for="(operand, index) in conditions.operands" :key="index">
+      <template v-if="operatorsGroups[index]">
+        <span
+          v-for="(notOperator, index) in operatorsGroups[index].nots"
+          :key="index"
         >
-      </span>
+          <v-chip color="primary" small class="my-1" label>{{
+            notOperator
+          }}</v-chip>
+        </span>
+      </template>
 
-      <v-layout column class="pl-12">
-        <v-layout align-center>
+      <v-layout column>
+        <v-layout align-center v-if="'is' in operand">
           <span class="mr-2">when</span>
-          <v-select dense outlined hide-details class="white"></v-select>
+          <v-select
+            v-model="operand.when"
+            :items="Object.keys(bindingData)"
+            dense
+            outlined
+            hide-details
+            class="white"
+          ></v-select>
           <span class="mx-2">is</span>
           <v-text-field
+            v-model="operand.is"
             dense
             outlined
             hide-details
             class="white"
           ></v-text-field>
         </v-layout>
-
-        <span>
-          <v-chip color="primary" small class="my-1" label>and</v-chip>
-        </span>
-
-        <v-layout align-center>
-          <span class="px-2">when</span>
-          <v-select dense outlined hide-details class="white"></v-select>
-          <span class="px-2">is</span>
-          <v-text-field
-            dense
-            outlined
-            hide-details
-            class="white"
-          ></v-text-field>
-        </v-layout>
-
-        <span>
-          <v-chip color="primary" small class="my-1" label>or</v-chip>
-        </span>
-
-        <v-layout align-center>
-          <span class="px-2">when</span>
-          <v-select dense outlined hide-details class="white"></v-select>
-          <span class="px-2">is</span>
-          <v-text-field
-            dense
-            outlined
-            hide-details
-            class="white"
-          ></v-text-field>
-        </v-layout>
+        <disabled-conditions-setting
+          v-else
+          :conditions="operand"
+          class="pl-12"
+        ></disabled-conditions-setting>
       </v-layout>
-    </v-layout>
+      <v-chip
+        color="primary"
+        small
+        class="my-1"
+        label
+        v-if="operatorsGroups[index] && operatorsGroups[index].others[0]"
+        >{{ operatorsGroups[index].others[0] }}</v-chip
+      >
+    </div>
   </v-layout>
 </template>
 
@@ -105,7 +62,7 @@ export default {
 
   props: {
     conditions: {
-      type: Object,
+      type: [Object, Array],
       default: () => {},
     },
   },
@@ -118,65 +75,27 @@ export default {
 
   data() {
     return {
-      operators: [],
-      operands: null,
-      nextOperator: null,
-
-      // enabledConditions: {
-      //   operators: ["not"],
-      //   operands: [
-      //     {
-      //       operators: ["or", "not"],
-      //       operands: [
-      //         {
-      //           when: "checkbox",
-      //           is: true,
-      //         },
-      //         {
-      //           operators: ["and", "or"],
-      //           operands: [
-      //             {
-      //               when: "checkbox2",
-      //               is: true,
-      //             },
-      //             {
-      //               operators: ["or"],
-      //               operands: [
-      //                 {
-      //                   when: "radioGroup",
-      //                   is: "enable",
-      //                 },
-      //                 {
-      //                   when: "radioGroup",
-      //                   is: "enable-2",
-      //                 },
-      //               ],
-      //             },
-      //             {
-      //               when: "select",
-      //               is: "enable",
-      //             },
-      //           ],
-      //         },
-      //       ],
-      //     },
-      //   ],
-      // },
+      operatorsGroups: [],
     };
   },
 
   created() {
-    let operator = this.conditions.operators.shift();
-    this.operators.push(operator);
-    while (operator === "not") {
-      operator = this.conditions.operators.shift();
-      if (operator) {
-        this.operators.push(operator);
-      }
-    }
+    // 分離 not 運算子，與其他運算子
+    const operators =
+      this.conditions.operators &&
+      JSON.parse(JSON.stringify(this.conditions.operators));
+    while (operators.length) {
+      let operator = operators.shift();
+      let operatorsGroup = { nots: [], others: [] };
 
-    this.nextOperator = this.conditions.operators.shift();
-    this.operand = this.conditions.operands.shift();
+      while (operator === "not") {
+        operatorsGroup.nots.push(operator);
+        operator = operators.shift();
+      }
+
+      operatorsGroup.others.push(operator);
+      this.operatorsGroups.push(operatorsGroup);
+    }
   },
 };
 </script>
