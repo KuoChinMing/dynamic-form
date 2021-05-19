@@ -156,7 +156,10 @@
     ></element-setting-input-box>
 
     <v-row>
-      <v-col cols="12">
+      <v-col cols="3" class="text-right">
+        <label>enabled Conditions</label>
+      </v-col>
+      <v-col cols="9">
         <disabled-conditions-setting
           :conditions="element['enabledConditions']"
         ></disabled-conditions-setting>
@@ -165,10 +168,27 @@
       <v-col cols="12">
         <v-layout justify-end>
           <v-chip-group>
-            <v-chip label color="primary" small>not</v-chip>
-            <v-chip label color="primary" small>or</v-chip>
-            <v-chip label color="primary" small>and</v-chip>
-            <v-chip label color="primary" small>group</v-chip>
+            <v-chip label color="primary" small @click="addNotCondition"
+              >not</v-chip
+            >
+            <v-chip label color="primary" small @click="addOrCondition"
+              >or</v-chip
+            >
+            <v-chip label color="primary" small @click="addAddCondition"
+              >and</v-chip
+            >
+            <v-chip label color="primary" small @click="addIndividual"
+              >individual</v-chip
+            >
+            <v-chip label color="primary" small @click="addGroup"
+              >group-start</v-chip
+            >
+            <v-chip label color="primary" small @click="jumpOutGroup"
+              >group-end</v-chip
+            >
+            <v-chip label color="error" small @click="resetConditions"
+              >reset</v-chip
+            >
           </v-chip-group>
         </v-layout>
       </v-col>
@@ -198,6 +218,43 @@ export default {
     bindingData: {
       type: [Object, null],
       default: null,
+    },
+  },
+
+  data() {
+    return {
+      groupIndex: this.element["enabledConditions"],
+      groupHistoryStack: [],
+    };
+  },
+
+  methods: {
+    addNotCondition() {
+      this.groupIndex.operators.push("not");
+    },
+    addOrCondition() {
+      this.groupIndex.operators.push("or");
+    },
+    addAddCondition() {
+      this.groupIndex.operators.push("and");
+    },
+    addIndividual() {
+      this.groupIndex.operands.push({ when: "", is: "" });
+    },
+    addGroup() {
+      const group = { operators: [], operands: [{ when: "", is: "" }] };
+      this.groupIndex.operands.push(group);
+      this.groupHistoryStack.push(this.groupIndex);
+      this.groupIndex = group;
+    },
+    jumpOutGroup() {
+      if (!this.groupHistoryStack.length) return;
+
+      this.groupIndex = this.groupHistoryStack.pop();
+    },
+    resetConditions() {
+      this.element["enabledConditions"] = { operators: [], operands: [] };
+      this.groupIndex = this.element["enabledConditions"];
     },
   },
 };

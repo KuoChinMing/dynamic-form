@@ -147,9 +147,9 @@ export default {
             rightOperand,
             bindingData
           );
-          if (rightVal == undefined) {
-            throw new Error(`operand is missing. \n ${CONDITIONS_STR}`);
-          }
+          // if (rightVal == undefined) {
+          //   throw new Error(`operand is missing. \n ${CONDITIONS_STR}`);
+          // }
 
           // 檢查下個運算元是否為 not，的話則反向右值，直到不是 not 為止
           let nextOperator = conditions.operators.shift();

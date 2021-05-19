@@ -79,23 +79,36 @@ export default {
     };
   },
 
-  created() {
-    // 分離 not 運算子，與其他運算子
-    const operators =
-      this.conditions.operators &&
-      JSON.parse(JSON.stringify(this.conditions.operators));
-    while (operators.length) {
-      let operator = operators.shift();
-      let operatorsGroup = { nots: [], others: [] };
+  watch: {
+    conditions: {
+      handler() {
+        // 分離 not 運算子，與其他運算子
+        this.operatorsGroups = [];
+        const operators =
+          this.conditions.operators && this.deepCopy(this.conditions.operators);
 
-      while (operator === "not") {
-        operatorsGroup.nots.push(operator);
-        operator = operators.shift();
-      }
+        while (operators.length) {
+          let operator = operators.shift();
+          let operatorsGroup = { nots: [], others: [] };
 
-      operatorsGroup.others.push(operator);
-      this.operatorsGroups.push(operatorsGroup);
-    }
+          while (operator === "not") {
+            operatorsGroup.nots.push(operator);
+            operator = operators.shift();
+          }
+
+          operatorsGroup.others.push(operator);
+          this.operatorsGroups.push(operatorsGroup);
+        }
+      },
+      deep: true,
+      immediate: true,
+    },
+  },
+
+  methods: {
+    deepCopy(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    },
   },
 };
 </script>
