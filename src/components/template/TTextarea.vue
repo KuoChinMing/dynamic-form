@@ -30,8 +30,10 @@ export default {
     textareaDisabled() {
       // 表單被 disabled 的條件 (this.disabled) 優先，
       // 其次是元素的 disabled (this.data.dislabed)
-      // 最後才是條件式 enabled (且 enabled 不是 undefeind 或 null)，
-      return this.disabled ?? this.data.disabled ?? !this.enabled;
+      // 最後才是條件式 disabled
+      return this.disabled ?? this.data.disabled !== "conditions"
+        ? this.data.disabled
+        : this.disabledConditions;
     },
   },
 
@@ -40,7 +42,7 @@ export default {
       style: {},
       textareaAttrs: {},
       innerValue: "",
-      enabled: null,
+      disabledConditions: null,
     };
   },
 
@@ -50,9 +52,9 @@ export default {
     },
     bindingData: {
       handler(bindingData) {
-        const enabledConditions = this.data["enabledConditions"];
+        const disabledConditions = this.data["disabledConditions"];
 
-        this.updateEnabledConditions(enabledConditions, bindingData);
+        this.updateDisabledConditions(disabledConditions, bindingData);
       },
       immediate: true,
       deep: true,
@@ -75,7 +77,10 @@ export default {
           rows: data.rows,
           disabled: this.textareaDisabled,
         };
-        this.updateEnabledConditions(data.enabledConditions, this.bindingData);
+        this.updateDisabledConditions(
+          data.disabledConditions,
+          this.bindingData
+        );
       },
       immediate: true,
       deep: true,
@@ -93,10 +98,10 @@ export default {
   },
 
   methods: {
-    updateEnabledConditions(conditions, bindingData) {
-      this.enabled = this.getEnabled(conditions, bindingData);
+    updateDisabledConditions(conditions, bindingData) {
+      this.disabledConditions = this.getDisabled(conditions, bindingData);
     },
-    getEnabled(conditions, bindingData) {
+    getDisabled(conditions, bindingData) {
       if (!conditions) return;
 
       let conditionsClone;
@@ -107,31 +112,29 @@ export default {
       } catch {
         const CONDITIONS_STR = JSON.stringify(conditions, null, 2);
         throw new Error(
-          `enabled conditions can't be parse. \n ${CONDITIONS_STR}`
+          `disabled conditions can't be parse. \n ${CONDITIONS_STR}`
         );
       }
 
-      return this.calculateEnableConditions(conditionsClone, bindingData);
+      return this.calculateDisabledConditions(conditionsClone, bindingData);
     },
 
     // 考慮例外處理: conditions: null, undefined, {}, 過多的 operator, bindingData 找不到值
     // 使用後序 (postfix) 的運算規則
-    calculateEnableConditions(conditions, bindingData) {
+    calculateDisabledConditions(conditions, bindingData) {
       if (!conditions) return;
 
       if ("when" in conditions && "is" in conditions) {
         return String(bindingData[conditions.when]) === String(conditions.is);
       }
 
-      const CONDITIONS_STR = JSON.stringify(conditions, null, 2);
-
       if ("operators" in conditions && "operands" in conditions) {
         // 計算左值
         const leftOperand = conditions.operands.shift();
-        let leftVal = this.calculateEnableConditions(leftOperand, bindingData);
-        if (leftVal == undefined) {
-          throw new Error(`operand is missing. \n ${CONDITIONS_STR}`);
-        }
+        let leftVal = this.calculateDisabledConditions(
+          leftOperand,
+          bindingData
+        );
 
         while (conditions.operators.length) {
           // 檢查運算元是否為 not，是的話則反向左值, 直到不是 not 為止
@@ -143,13 +146,10 @@ export default {
 
           // 計算右值
           const rightOperand = conditions.operands.shift();
-          let rightVal = this.calculateEnableConditions(
+          let rightVal = this.calculateDisabledConditions(
             rightOperand,
             bindingData
           );
-          // if (rightVal == undefined) {
-          //   throw new Error(`operand is missing. \n ${CONDITIONS_STR}`);
-          // }
 
           // 檢查下個運算元是否為 not，的話則反向右值，直到不是 not 為止
           let nextOperator = conditions.operators.shift();
@@ -176,6 +176,7 @@ export default {
         return leftVal;
       }
 
+      const CONDITIONS_STR = JSON.stringify(conditions, null, 2);
       throw new Error(`conditions is invalid. \n ${CONDITIONS_STR}`);
     },
   },
