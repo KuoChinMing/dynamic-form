@@ -190,8 +190,8 @@
             <v-chip label color="primary" small @click="addAddCondition"
               >and</v-chip
             >
-            <v-chip label color="primary" small @click="addIndividual"
-              >individual</v-chip
+            <v-chip label color="primary" small @click="addCondition"
+              >condition</v-chip
             >
             <v-chip label color="primary" small @click="addGroup"
               >group-start</v-chip
@@ -264,7 +264,7 @@ export default {
     addAddCondition() {
       this.groupIndex.operators.push("and");
     },
-    addIndividual() {
+    addCondition() {
       this.groupIndex.operands.push({ when: "", is: "" });
     },
     addGroup() {
