@@ -155,13 +155,26 @@
       outlined
     ></element-setting-input-box>
 
-    <v-row>
-      <v-col cols="3" class="text-right">
-        <label>enabled Conditions</label>
-      </v-col>
-      <v-col cols="9">
+    <element-setting-input-box
+      v-model="element['disabled']"
+      input-class="white"
+      label="disabled"
+      type="select"
+      :items="[
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+        { text: 'conditions', value: 'conditions' },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <v-row v-if="element['disabled'] === 'conditions'">
+      <v-col offset="3" cols="9">
         <disabled-conditions-setting
-          :conditions="element['enabledConditions']"
+          :conditions="element['disabledConditions']"
+          :group-index="groupIndex"
         ></disabled-conditions-setting>
       </v-col>
 
@@ -223,9 +236,22 @@ export default {
 
   data() {
     return {
-      groupIndex: this.element["enabledConditions"],
-      groupHistoryStack: [],
+      groupIndex: {},
+      groupStack: [],
     };
+  },
+
+  watch: {
+    "element.disabled": {
+      handler(val) {
+        if (val === "conditions" && !this.element["disabledConditions"]) {
+          const conditions = { operators: [], operands: [] };
+          this.$set(this.element, "disabledConditions", conditions);
+          this.groupIndex = this.element["disabledConditions"];
+        }
+      },
+      immediate: true,
+    },
   },
 
   methods: {
@@ -242,19 +268,19 @@ export default {
       this.groupIndex.operands.push({ when: "", is: "" });
     },
     addGroup() {
-      const group = { operators: [], operands: [{ when: "", is: "" }] };
+      const group = { operators: [], operands: [] };
       this.groupIndex.operands.push(group);
-      this.groupHistoryStack.push(this.groupIndex);
+      this.groupStack.push(this.groupIndex);
       this.groupIndex = group;
     },
     jumpOutGroup() {
-      if (!this.groupHistoryStack.length) return;
+      if (!this.groupStack.length) return;
 
-      this.groupIndex = this.groupHistoryStack.pop();
+      this.groupIndex = this.groupStack.pop();
     },
     resetConditions() {
-      this.element["enabledConditions"] = { operators: [], operands: [] };
-      this.groupIndex = this.element["enabledConditions"];
+      this.element["disabledConditions"] = { operators: [], operands: [] };
+      this.groupIndex = this.element["disabledConditions"];
     },
   },
 };

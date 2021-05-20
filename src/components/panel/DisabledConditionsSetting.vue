@@ -1,5 +1,5 @@
 <template>
-  <v-layout column>
+  <v-layout column v-if="conditions">
     <div v-for="(operand, index) in conditions.operands" :key="index">
       <template v-if="operatorsGroups[index]">
         <span
@@ -18,6 +18,7 @@
           <v-select
             v-model="operand.when"
             :items="Object.keys(bindingData)"
+            style="width: 250px"
             dense
             outlined
             hide-details
@@ -26,6 +27,7 @@
           <span class="mx-2">is</span>
           <v-text-field
             v-model="operand.is"
+            style="width: 250px"
             dense
             outlined
             hide-details
@@ -36,8 +38,10 @@
           v-else
           :conditions="operand"
           class="pl-12"
+          :group-index="groupIndex"
         ></disabled-conditions-setting>
       </v-layout>
+
       <v-chip
         color="primary"
         small
@@ -47,6 +51,29 @@
         >{{ operatorsGroups[index].others[0] }}</v-chip
       >
     </div>
+
+    <!-- 在做設定的時候，not 運算子數量有可能會比運算元更多 -->
+    <v-layout v-if="operatorsGroups.length > conditions.operands.length">
+      <span
+        v-for="(notOperator, index) in operatorsGroups[
+          operatorsGroups.length - 1
+        ].nots"
+        :key="index"
+      >
+        <v-chip color="primary" small class="my-1" label>{{
+          notOperator
+        }}</v-chip>
+      </span>
+    </v-layout>
+
+    <!-- 提示箭頭 -->
+    <v-icon
+      v-if="groupIndex === conditions"
+      class="mr-auto"
+      color="primary"
+      style="right: 24px"
+      >mdi-arrow-right-bold</v-icon
+    >
   </v-layout>
 </template>
 
@@ -65,6 +92,10 @@ export default {
       type: [Object, Array],
       default: () => {},
     },
+    groupIndex: {
+      type: Object,
+      default: () => {},
+    },
   },
 
   computed: {
@@ -81,11 +112,13 @@ export default {
 
   watch: {
     conditions: {
-      handler() {
+      handler(conditions) {
+        if (!conditions) return;
+
         // 分離 not 運算子，與其他運算子
         this.operatorsGroups = [];
         const operators =
-          this.conditions.operators && this.deepCopy(this.conditions.operators);
+          conditions.operators && this.deepCopy(conditions.operators);
 
         while (operators.length) {
           let operator = operators.shift();
@@ -96,7 +129,9 @@ export default {
             operator = operators.shift();
           }
 
-          operatorsGroup.others.push(operator);
+          if (operator) {
+            operatorsGroup.others.push(operator);
+          }
           this.operatorsGroups.push(operatorsGroup);
         }
       },
