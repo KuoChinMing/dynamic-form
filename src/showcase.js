@@ -6622,15 +6622,22 @@ const dynamicDisabledInputTemplate = {
     id: 0,
     contents: [
       {
-        type: "box",
+        type: "text",
         id: 1,
+        text: "textarea  will disabled when:",
+        fontSize: "1.5rem",
+        color: "blue",
+      },
+      {
+        type: "box",
+        id: 2,
         borderWidth: "2px",
         borderStyle: "solid",
         borderColor: "lightblue",
         contents: [
           {
             type: "text",
-            id: 2,
+            id: 3,
             text: "!",
             fontSize: "2.2rem",
             color: "blue",
@@ -6645,7 +6652,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 3,
+            id: 4,
             text: "(",
             fontSize: "2rem",
             color: "blue",
@@ -6655,7 +6662,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "checkbox",
-            id: 4,
+            id: 5,
             bindingKey: "checkbox",
             label: "checkbox",
             marginBottom: "",
@@ -6663,7 +6670,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 5,
+            id: 6,
             text: "||",
             fontSize: "2rem",
             color: "blue",
@@ -6676,7 +6683,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 6,
+            id: 7,
             text: "!",
             fontSize: "2.2rem",
             color: "blue",
@@ -6689,7 +6696,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 7,
+            id: 8,
             text: "(",
             fontSize: "2rem",
             color: "blue",
@@ -6699,7 +6706,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "checkbox",
-            id: 8,
+            id: 9,
             label: "checkbox-2",
             marginBottom: "",
             grow: 0,
@@ -6708,7 +6715,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 9,
+            id: 10,
             text: "&&",
             fontSize: "2rem",
             color: "blue",
@@ -6721,28 +6728,28 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "radioGroup",
-            id: 10,
+            id: 11,
             bindingKey: "radioGroup",
             contents: [
               {
                 type: "radio",
-                id: 11,
-                label: "enable",
-              },
-              {
-                type: "radio",
                 id: 12,
-                label: "disable",
+                label: "disable1",
               },
               {
                 type: "radio",
                 id: 13,
-                label: "enable-2",
+                label: "enable1",
               },
               {
                 type: "radio",
                 id: 14,
-                label: "disable-2",
+                label: "disabled2",
+              },
+              {
+                type: "radio",
+                id: 15,
+                label: "enable2",
               },
             ],
             direction: "column",
@@ -6751,7 +6758,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 15,
+            id: 16,
             text: "||",
             fontSize: "2rem",
             color: "blue",
@@ -6764,7 +6771,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "select",
-            id: 16,
+            id: 17,
             bindingKey: "select",
             options: ["請選擇", "enable", "disable"],
             style: "outlined",
@@ -6774,7 +6781,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 17,
+            id: 18,
             text: ")",
             fontSize: "2rem",
             color: "blue",
@@ -6784,7 +6791,7 @@ const dynamicDisabledInputTemplate = {
           },
           {
             type: "text",
-            id: 18,
+            id: 19,
             text: ")",
             fontSize: "2rem",
             color: "blue",
@@ -6805,16 +6812,16 @@ const dynamicDisabledInputTemplate = {
       },
       {
         type: "separator",
-        id: 19,
+        id: 20,
         marginTop: "20px",
         marginBottom: "20px",
       },
       {
         type: "textarea",
-        id: 20,
+        id: 21,
         bindingKey: "textarea",
         style: "outlined",
-        enabledConditions: {
+        disabledConditions: {
           operators: ["not"],
           operands: [
             {
@@ -6822,31 +6829,31 @@ const dynamicDisabledInputTemplate = {
               operands: [
                 {
                   when: "checkbox",
-                  is: true,
+                  is: "true",
                 },
                 {
                   operators: ["and", "or"],
                   operands: [
                     {
                       when: "checkbox2",
-                      is: true,
+                      is: "true",
                     },
                     {
                       operators: ["or"],
                       operands: [
                         {
                           when: "radioGroup",
-                          is: "enable",
+                          is: "disable1",
                         },
                         {
                           when: "radioGroup",
-                          is: "enable-2",
+                          is: "disable2",
                         },
                       ],
                     },
                     {
                       when: "select",
-                      is: "enable",
+                      is: "disable",
                     },
                   ],
                 },
@@ -6854,6 +6861,7 @@ const dynamicDisabledInputTemplate = {
             },
           ],
         },
+        disabled: "conditions",
       },
     ],
     layout: "column",
@@ -6862,8 +6870,8 @@ const dynamicDisabledInputTemplate = {
   bindingData: {
     checkbox: false,
     checkbox2: true,
-    radioGroup: "enable-2",
-    select: "請選擇",
+    radioGroup: "disable1",
+    select: "enable",
     textarea: "dynamic enable is AWESOME!\n",
   },
 };
