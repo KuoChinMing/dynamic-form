@@ -247,8 +247,9 @@ export default {
         if (val === "conditions" && !this.element["disabledConditions"]) {
           const conditions = { operators: [], operands: [] };
           this.$set(this.element, "disabledConditions", conditions);
-          this.groupIndex = this.element["disabledConditions"];
         }
+
+        this.groupIndex = this.element["disabledConditions"];
       },
       immediate: true,
     },
