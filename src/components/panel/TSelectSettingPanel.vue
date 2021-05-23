@@ -168,6 +168,28 @@
       hide-details
     ></element-setting-input-box>
 
+    <element-setting-input-box
+      v-model="element['disabled']"
+      input-class="white"
+      label="disabled"
+      type="select"
+      :items="[
+        { text: 'true', value: true },
+        { text: 'false', value: false },
+        { text: 'conditions', value: 'conditions' },
+      ]"
+      hide-details
+      dense
+      outlined
+    ></element-setting-input-box>
+
+    <disabled-conditions-setting-box
+      v-if="element['disabled'] === 'conditions'"
+      :conditions="element['disabledConditions']"
+      @reset-conditions="resetConditions"
+    >
+    </disabled-conditions-setting-box>
+
     <v-divider class="my-6"></v-divider>
 
     <v-row class="align-center">
@@ -217,6 +239,7 @@
 <script>
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
+import disabledConditionsMixin from "./disabledConditionsMixin.js";
 
 export default {
   name: "TSelectSettingPanel",
@@ -225,6 +248,8 @@ export default {
     ElementSettingInputBox,
     BindingKeyInputBox,
   },
+
+  mixins: [disabledConditionsMixin],
 
   props: {
     element: {
