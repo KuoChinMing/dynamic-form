@@ -27,6 +27,7 @@
 
 <script>
 import { VDatePicker, VMenu } from "vuetify/lib";
+import disabledMixin from "./disabledMixin.js";
 
 export default {
   name: "TDatePicker",
@@ -50,6 +51,8 @@ export default {
     VMenu,
   },
 
+  mixins: [disabledMixin],
+
   data() {
     return {
       style: {},
@@ -61,7 +64,7 @@ export default {
   },
 
   watch: {
-    formDisabled(disabled) {
+    disabled(disabled) {
       this.inputAttrs.disabled = disabled;
     },
     data: {
@@ -77,7 +80,7 @@ export default {
           width: data.width,
         };
         this.inputAttrs = {
-          disabled: this.formDisabled ?? data.disabled,
+          disabled: this.disabled,
           label: data.label,
           dense: data.dense,
           [data.style]: true,

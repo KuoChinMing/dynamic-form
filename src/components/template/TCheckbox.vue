@@ -1,5 +1,6 @@
 <script>
 import { VLayout, VFlex, VCheckbox } from "vuetify/lib";
+import disabledMixin from "./disabledMixin.js";
 
 export default {
   name: "TCheckBox",
@@ -17,6 +18,8 @@ export default {
       default: undefined,
     },
   },
+
+  mixins: [disabledMixin],
 
   components: {
     VFlex,
@@ -59,7 +62,7 @@ export default {
       attrs: {
         label: data.label,
         hideDetails: true,
-        disabled: this.formDisabled ?? data.disabled,
+        disabled: this.disabled,
       },
     };
 

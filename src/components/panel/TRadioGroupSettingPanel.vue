@@ -83,11 +83,19 @@
       :items="[
         { text: 'true', value: true },
         { text: 'false', value: false },
+        { text: 'conditions', value: 'conditions' },
       ]"
       hide-details
       dense
       outlined
     ></element-setting-input-box>
+
+    <disabled-conditions-setting-box
+      v-if="element['disabled'] === 'conditions'"
+      :conditions="element['disabledConditions']"
+      @reset-conditions="resetConditions"
+    >
+    </disabled-conditions-setting-box>
 
     <element-setting-input-box
       v-model="element['grow']"
@@ -199,6 +207,7 @@
 <script>
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
+import disabledConditionsMixin from "./disabledConditionsMixin.js";
 
 export default {
   name: "TRadioGroupSettingPanel",
@@ -207,6 +216,8 @@ export default {
     ElementSettingInputBox,
     BindingKeyInputBox,
   },
+
+  mixins: [disabledConditionsMixin],
 
   props: {
     element: {

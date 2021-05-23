@@ -15,7 +15,7 @@
       <v-layout column>
         <v-layout align-center v-if="'is' in operand">
           <span class="mr-2">when</span>
-          <v-select
+          <v-combobox
             v-model="operand.when"
             :items="Object.keys(bindingData)"
             style="width: 250px"
@@ -23,7 +23,7 @@
             outlined
             hide-details
             class="white"
-          ></v-select>
+          ></v-combobox>
           <span class="mx-2">is</span>
           <v-text-field
             v-model="operand.is"

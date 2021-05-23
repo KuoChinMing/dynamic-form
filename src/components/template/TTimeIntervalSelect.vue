@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import disabledMixin from "./disabledMixin.js";
+
 export default {
   name: "TMultiSelect",
 
@@ -25,6 +27,8 @@ export default {
     },
   },
 
+  mixins: [disabledMixin],
+
   data() {
     return {
       style: {},
@@ -34,7 +38,7 @@ export default {
   },
 
   watch: {
-    formDisabled(disabled) {
+    disabled(disabled) {
       this.comboboxAttrs.disabled = disabled;
     },
     data: {
@@ -56,7 +60,7 @@ export default {
           items: data.time,
           multiple: data.multiple,
           hideDetails: true,
-          disabled: this.formDisabled ?? data.disabled,
+          disabled: this.disabled,
           menuProps: {
             maxHeight: data.menuHeight,
           },

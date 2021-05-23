@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import disabledMixin from "./disabledMixin.js";
+
 export default {
   name: "TRadioGroup",
 
@@ -24,6 +26,8 @@ export default {
     },
   },
 
+  mixins: [disabledMixin],
+
   data() {
     return {
       style: {},
@@ -33,7 +37,7 @@ export default {
   },
 
   watch: {
-    formDisabled(disabled) {
+    disabled(disabled) {
       this.radioGroupAttrs.disabled = disabled;
     },
     data: {
@@ -57,7 +61,7 @@ export default {
           label: data.label,
           dense: data.dense,
           [data.direction]: true,
-          disabled: this.formDisabled ?? data.disabled,
+          disabled: this.disabled,
           hideDetails: true,
         };
       },
