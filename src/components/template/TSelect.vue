@@ -1,5 +1,6 @@
 <script>
 import { VSelect, VFlex } from "vuetify/lib";
+import disabledConditionsMixin from "./disabledConditionsMixin.js";
 
 export default {
   name: "TSelect",
@@ -8,6 +9,8 @@ export default {
     VSelect,
     VFlex,
   },
+
+  mixins: [disabledConditionsMixin],
 
   props: {
     data: {
@@ -20,6 +23,17 @@ export default {
     disabled: {
       type: [Boolean, undefined],
       default: undefined,
+    },
+  },
+
+  computed: {
+    textareaDisabled() {
+      // 表單被 disabled 的條件 (this.disabled) 優先，
+      // 其次是元素的 disabled (this.data.dislabed)
+      // 最後才是條件式 disabled
+      return this.disabled ?? this.data.disabled !== "conditions"
+        ? this.data.disabled
+        : this.disabledConditions;
     },
   },
 
@@ -60,7 +74,7 @@ export default {
       items: data.options,
       [data.style]: true,
       hideDetails: true,
-      disabled: this.disabled ?? data.disabled,
+      disabled: this.textareaDisabled,
     };
 
     return (
