@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import disabledConditionsMixin from "./disabledConditionsMixin.js";
+import disabledMixin from "./disabledMixin.js";
 
 export default {
   name: "TTextarea",
@@ -18,24 +18,9 @@ export default {
     value: {
       type: undefined,
     },
-    disabled: {
-      type: [Boolean, undefined],
-      default: undefined,
-    },
   },
 
-  mixins: [disabledConditionsMixin],
-
-  computed: {
-    textareaDisabled() {
-      // 表單被 disabled 的條件 (this.disabled) 優先，
-      // 其次是元素的 disabled (this.data.dislabed)
-      // 最後才是條件式 disabled
-      return this.disabled ?? this.data.disabled !== "conditions"
-        ? this.data.disabled
-        : this.disabledConditions;
-    },
-  },
+  mixins: [disabledMixin],
 
   data() {
     return {
@@ -46,8 +31,8 @@ export default {
   },
 
   watch: {
-    textareaDisabled(textareaDisabled) {
-      this.textareaAttrs.disabled = textareaDisabled;
+    disabled(disabled) {
+      this.textareaAttrs.disabled = disabled;
     },
     data: {
       handler(data) {
@@ -65,7 +50,7 @@ export default {
           hint: data.hint,
           hideDetails: data.hideHint,
           rows: data.rows,
-          disabled: this.textareaDisabled,
+          disabled: this.disabled,
         };
       },
       immediate: true,

@@ -8,6 +8,24 @@ export default {
       type: Object,
       deafult: () => {},
     },
+    formDisabled: {
+      type: [Boolean, undefined],
+      default: undefined,
+    },
+  },
+
+  computed: {
+    disabled() {
+      // 表單被 disabled 的條件 (this.disabled) 優先，
+      // 其次是元素的 disabled (this.data.dislabed)
+      // 最後才是條件式的 disabled
+      return (
+        this.formDisabled ??
+        (this.data.disabled !== "conditions"
+          ? this.data.disabled
+          : this.disabledConditions)
+      );
+    },
   },
 
   data() {
