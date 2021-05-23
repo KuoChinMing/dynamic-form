@@ -17,7 +17,7 @@ export default {
       handler(newVal) {
         if (
           newVal === "conditions" &&
-          !("disabeldConditions" in this.element)
+          !("disabledConditions" in this.element)
         ) {
           this.resetConditions();
         }
