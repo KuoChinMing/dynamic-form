@@ -77,7 +77,7 @@ export default {
             data={element}
             v-model={this.bindingData[element.bindingKey]}
             binding-data={this.bindingData}
-            disabled={this.disabled}
+            form-disabled={this.disabled}
             id={`form-element-${element.id}`}
           >
             {element.contents?.map((el) => this.renderElement(el))}
@@ -88,7 +88,7 @@ export default {
       return (
         <Component
           data={element}
-          disabled={this.disabled}
+          form-disabled={this.disabled}
           binding-data={this.bindingData}
           id={`form-element-${element.id}`}
         >

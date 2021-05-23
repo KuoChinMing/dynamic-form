@@ -12,7 +12,7 @@ export default {
     value: {
       type: undefined,
     },
-    disabled: {
+    formDisabled: {
       type: [Boolean, undefined],
       default: undefined,
     },
@@ -59,7 +59,7 @@ export default {
       attrs: {
         label: data.label,
         hideDetails: true,
-        disabled: this.disabled ?? data.disabled,
+        disabled: this.formDisabled ?? data.disabled,
       },
     };
 

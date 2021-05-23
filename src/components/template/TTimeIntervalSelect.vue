@@ -19,7 +19,7 @@ export default {
     value: {
       type: undefined,
     },
-    disabled: {
+    formDisabled: {
       type: [Boolean, undefined],
       default: undefined,
     },
@@ -34,7 +34,7 @@ export default {
   },
 
   watch: {
-    disabled(disabled) {
+    formDisabled(disabled) {
       this.comboboxAttrs.disabled = disabled;
     },
     data: {
@@ -56,7 +56,7 @@ export default {
           items: data.time,
           multiple: data.multiple,
           hideDetails: true,
-          disabled: this.disabled ?? data.disabled,
+          disabled: this.formDisabled ?? data.disabled,
           menuProps: {
             maxHeight: data.menuHeight,
           },

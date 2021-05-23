@@ -39,7 +39,7 @@ export default {
     value: {
       type: undefined,
     },
-    disabled: {
+    formDisabled: {
       type: [Boolean, undefined],
       default: undefined,
     },
@@ -61,7 +61,7 @@ export default {
   },
 
   watch: {
-    disabled(disabled) {
+    formDisabled(disabled) {
       this.inputAttrs.disabled = disabled;
     },
     data: {
@@ -77,7 +77,7 @@ export default {
           width: data.width,
         };
         this.inputAttrs = {
-          disabled: this.disabled ?? data.disabled,
+          disabled: this.formDisabled ?? data.disabled,
           label: data.label,
           dense: data.dense,
           [data.style]: true,

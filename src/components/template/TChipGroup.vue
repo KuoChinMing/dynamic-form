@@ -16,7 +16,7 @@ export default {
     value: {
       type: undefined,
     },
-    disabled: {
+    formDisabled: {
       type: [Boolean, undefined],
       default: undefined,
     },
@@ -30,7 +30,7 @@ export default {
   },
 
   watch: {
-    disabled(disabled) {
+    formDisabled(disabled) {
       this.attrs.disabled = disabled;
     },
     data: {
@@ -40,7 +40,7 @@ export default {
           multiple: data.multiple,
           column: true,
           hideDetails: true,
-          disabled: this.disabled ?? data.disabled,
+          disabled: this.formDisabled ?? data.disabled,
         };
       },
       immediate: true,

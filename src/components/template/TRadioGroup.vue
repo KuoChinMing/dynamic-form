@@ -18,7 +18,7 @@ export default {
     value: {
       type: undefined,
     },
-    disabled: {
+    formDisabled: {
       type: [Boolean, undefined],
       default: undefined,
     },
@@ -33,7 +33,7 @@ export default {
   },
 
   watch: {
-    disabled(disabled) {
+    formDisabled(disabled) {
       this.radioGroupAttrs.disabled = disabled;
     },
     data: {
@@ -57,7 +57,7 @@ export default {
           label: data.label,
           dense: data.dense,
           [data.direction]: true,
-          disabled: this.disabled ?? data.disabled,
+          disabled: this.formDisabled ?? data.disabled,
           hideDetails: true,
         };
       },
