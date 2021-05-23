@@ -170,49 +170,19 @@
       outlined
     ></element-setting-input-box>
 
-    <v-row v-if="element['disabled'] === 'conditions'">
-      <v-col offset="3" cols="9">
-        <disabled-conditions-setting
-          :conditions="element['disabledConditions']"
-          :group-index="groupIndex"
-        ></disabled-conditions-setting>
-      </v-col>
-
-      <v-col cols="12">
-        <v-layout justify-end>
-          <v-chip-group>
-            <v-chip label color="primary" small @click="addNotCondition"
-              >not</v-chip
-            >
-            <v-chip label color="primary" small @click="addOrCondition"
-              >or</v-chip
-            >
-            <v-chip label color="primary" small @click="addAddCondition"
-              >and</v-chip
-            >
-            <v-chip label color="primary" small @click="addCondition"
-              >condition</v-chip
-            >
-            <v-chip label color="primary" small @click="addGroup"
-              >group-start</v-chip
-            >
-            <v-chip label color="primary" small @click="jumpOutGroup"
-              >group-end</v-chip
-            >
-            <v-chip label color="error" small @click="resetConditions"
-              >reset</v-chip
-            >
-          </v-chip-group>
-        </v-layout>
-      </v-col>
-    </v-row>
+    <disabled-conditions-setting-box
+      v-if="element['disabled'] === 'conditions'"
+      :conditions="element['disabledConditions']"
+      @reset-conditions="resetConditions"
+    >
+    </disabled-conditions-setting-box>
   </v-container>
 </template>
 
 <script>
 import ElementSettingInputBox from "@/components/panel/ElementSettingInputBox.vue";
 import BindingKeyInputBox from "@/components/panel/BindingKeyInputBox.vue";
-import DisabledConditionsSetting from "@/components/panel/DisabledConditionsSetting.vue";
+import disabledConditionsMixin from "./disabledConditionsMixin.js";
 
 export default {
   name: "TTextareaSettingPanel",
@@ -220,8 +190,9 @@ export default {
   components: {
     ElementSettingInputBox,
     BindingKeyInputBox,
-    DisabledConditionsSetting,
   },
+
+  mixins: [disabledConditionsMixin],
 
   props: {
     element: {
@@ -231,57 +202,6 @@ export default {
     bindingData: {
       type: [Object, null],
       default: null,
-    },
-  },
-
-  data() {
-    return {
-      groupIndex: {},
-      groupStack: [],
-    };
-  },
-
-  watch: {
-    "element.disabled": {
-      handler(val) {
-        if (val === "conditions" && !this.element["disabledConditions"]) {
-          const conditions = { operators: [], operands: [] };
-          this.$set(this.element, "disabledConditions", conditions);
-        }
-
-        this.groupIndex = this.element["disabledConditions"];
-      },
-      immediate: true,
-    },
-  },
-
-  methods: {
-    addNotCondition() {
-      this.groupIndex.operators.push("not");
-    },
-    addOrCondition() {
-      this.groupIndex.operators.push("or");
-    },
-    addAddCondition() {
-      this.groupIndex.operators.push("and");
-    },
-    addCondition() {
-      this.groupIndex.operands.push({ when: "", is: "" });
-    },
-    addGroup() {
-      const group = { operators: [], operands: [] };
-      this.groupIndex.operands.push(group);
-      this.groupStack.push(this.groupIndex);
-      this.groupIndex = group;
-    },
-    jumpOutGroup() {
-      if (!this.groupStack.length) return;
-
-      this.groupIndex = this.groupStack.pop();
-    },
-    resetConditions() {
-      this.element["disabledConditions"] = { operators: [], operands: [] };
-      this.groupIndex = this.element["disabledConditions"];
     },
   },
 };
