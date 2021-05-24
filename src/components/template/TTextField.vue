@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import disabledMixin from "./disabledMixin.js";
+
 export default {
   name: "TTextField",
 
@@ -27,6 +29,8 @@ export default {
     },
   },
 
+  mixins: [disabledMixin],
+
   data() {
     return {
       style: {},
@@ -36,7 +40,7 @@ export default {
   },
 
   watch: {
-    formDisabled(disabled) {
+    disabled(disabled) {
       this.attrs.disabled = disabled;
     },
     data: {
@@ -53,9 +57,10 @@ export default {
           width: data.width,
         };
         this.attrs = {
-          disabled: this.formDisabled ?? data.disabled,
+          disabled: this.disabled,
           label: data.label,
           dense: true,
+          [data.style]: true,
         };
       },
       immediate: true,
