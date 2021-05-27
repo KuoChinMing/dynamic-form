@@ -60,6 +60,9 @@ export default {
       [data.style]: true,
       hideDetails: true,
       disabled: this.disabled,
+      menuProps: {
+        auto: true,
+      },
     };
 
     return (

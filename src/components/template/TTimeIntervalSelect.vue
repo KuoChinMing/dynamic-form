@@ -11,7 +11,7 @@
 import disabledMixin from "./disabledMixin.js";
 
 export default {
-  name: "TMultiSelect",
+  name: "TTimeIntervalSelect",
 
   props: {
     data: {
@@ -62,6 +62,7 @@ export default {
           hideDetails: true,
           disabled: this.disabled,
           menuProps: {
+            auto: true,
             maxHeight: data.menuHeight,
           },
           // chips: true,
