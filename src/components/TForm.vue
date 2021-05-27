@@ -40,6 +40,8 @@ export default {
       handleAsyncImport(
         import("@/components/template/TTimeIntervalSelect.vue")
       ),
+    TCombobox: () =>
+      handleAsyncImport(import("@/components/template/TCombobox.vue")),
     TChipGroup: () =>
       handleAsyncImport(import("@/components/template/TChipGroup.vue")),
     TChip: () => handleAsyncImport(import("@/components/template/TChip.vue")),

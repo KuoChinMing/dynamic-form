@@ -18,4 +18,5 @@ export default [
   "datePicker",
   "timeIntervalSelect",
   "imageUploader",
+  "combobox",
 ];

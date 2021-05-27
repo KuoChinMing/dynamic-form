@@ -65,6 +65,8 @@ export default {
       handleAsyncImport(
         import("@/components/panel/TTimeIntervalSelectSettingPanel.vue")
       ),
+    TComboboxSettingPanel: () =>
+      handleAsyncImport(import("@/components/panel/TComboboxSettingPanel.vue")),
     TSeparatorSettingPanel: () =>
       handleAsyncImport(
         import("@/components/panel/TSeparatorSettingPanel.vue")

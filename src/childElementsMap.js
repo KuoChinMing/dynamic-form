@@ -21,5 +21,6 @@ export default {
   chip: [],
   datePicker: [],
   timeIntervalSelect: [],
+  combobox: [],
   imageUploader: [],
 };

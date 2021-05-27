@@ -10,6 +10,7 @@ export const elementsNeedBindingKey = [
   "datePicker",
   "multiSelect",
   "timeIntervalSelect",
+  "combobox",
   "chipGroup",
 ];
 
@@ -23,5 +24,6 @@ export default [
   "datePicker",
   "multiSelect",
   "timeIntervalSelect",
+  "combobox",
   "chipGroup",
 ];

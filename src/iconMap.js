@@ -20,6 +20,7 @@ export const iconMap = {
   separator: "mdi-minus-thick",
   chipGroup: "mdi-checkbox-multiple-blank",
   chip: "mdi-square-rounded",
+  combobox: "mdi-text-box-search",
 };
 
 export default {
@@ -42,4 +43,5 @@ export default {
   separator: "mdi-minus-thick",
   chipGroup: "mdi-checkbox-multiple-blank",
   chip: "mdi-square-rounded",
+  combobox: "mdi-text-box-search",
 };
