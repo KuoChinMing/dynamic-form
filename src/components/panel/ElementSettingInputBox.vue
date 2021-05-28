@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { VTextField, VSelect } from "vuetify/lib";
+import { VTextField, VSelect, VCombobox } from "vuetify/lib";
 
 export default {
   name: "ElementSettingInputBox",
@@ -24,6 +24,7 @@ export default {
   components: {
     VTextField,
     VSelect,
+    VCombobox,
   },
 
   props: {
@@ -51,6 +52,7 @@ export default {
       const attrs = {
         textField: this.$attrs,
         select: { ...this.$attrs, items: this.items },
+        combobox: { ...this.$attrs, items: this.items },
       };
 
       return attrs[this.type] ?? attrs["textField"];
@@ -59,6 +61,7 @@ export default {
       const type = {
         textField: "v-text-field",
         select: "v-select",
+        combobox: "v-combobox",
       };
 
       return type[this.type] ?? type["textField"];

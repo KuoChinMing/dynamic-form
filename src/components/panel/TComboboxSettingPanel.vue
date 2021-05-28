@@ -30,7 +30,7 @@
       v-model="bindingData[element['bindingKey']]"
       :disabled="!element['bindingKey']"
       :input-class="{ white: element['bindingKey'] }"
-      type="select"
+      type="combobox"
       :items="element['options']"
       label="defaultValue"
       hide-details
@@ -39,7 +39,7 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['flexGrow']"
+      v-model="element['grow']"
       type="select"
       input-class="white"
       label="grow"
@@ -53,7 +53,7 @@
     ></element-setting-input-box>
 
     <element-setting-input-box
-      v-model="element['flexShrink']"
+      v-model="element['shrink']"
       type="select"
       input-class="white"
       label="shrink"
